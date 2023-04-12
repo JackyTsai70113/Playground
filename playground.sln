@@ -3,10 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "playground", "playground\playground.csproj", "{FC84934A-E4B6-4A25-B115-241AA4FB9C12}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "playground.UnitTest", "playground.UnitTest\playground.UnitTest.csproj", "{39291F48-E8E8-4B3E-8257-29CFD1ED493C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumCrawler", "SeleniumCrawler\SeleniumCrawler.csproj", "{C5070D35-6188-4C2A-B359-89AAFE0B639F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC84934A-E4B6-4A25-B115-241AA4FB9C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC84934A-E4B6-4A25-B115-241AA4FB9C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC84934A-E4B6-4A25-B115-241AA4FB9C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC84934A-E4B6-4A25-B115-241AA4FB9C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39291F48-E8E8-4B3E-8257-29CFD1ED493C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39291F48-E8E8-4B3E-8257-29CFD1ED493C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39291F48-E8E8-4B3E-8257-29CFD1ED493C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39291F48-E8E8-4B3E-8257-29CFD1ED493C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5070D35-6188-4C2A-B359-89AAFE0B639F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5070D35-6188-4C2A-B359-89AAFE0B639F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5070D35-6188-4C2A-B359-89AAFE0B639F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5070D35-6188-4C2A-B359-89AAFE0B639F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
