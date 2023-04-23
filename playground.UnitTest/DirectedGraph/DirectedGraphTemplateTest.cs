@@ -14,5 +14,14 @@ public class DirectedGraphTemplateTest
         var actual = DirectedGraphTemplateClass.DirectedGraphTemplate(edges);
         
         Assert.Equal(actual, expected);
+
+
+
+        var d = new Dictionary<string, int>();
+        var eee = d.Select(x => (v: x.Key, cnt: x.Value))
+            .OrderBy(x => x.cnt)
+            .ThenBy(x => x.v)
+            .Select(x => x.v)
+            .ToList();
     }
 }
