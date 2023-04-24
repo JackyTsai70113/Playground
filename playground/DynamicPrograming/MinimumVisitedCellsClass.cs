@@ -19,7 +19,6 @@ public class MinimumVisitedCellsClass
             {
                 if (x == m - 1 && y == n - 1)
                     return step;
-                Console.WriteLine(x + " " + y);
                 for (int k = maxRows[y] + 1; k < m && k <= grid[x][y] + x; ++k)
                     l2.Add((k, y));
                 for (int k = maxCols[x] + 1; k < n && k <= grid[x][y] + y; ++k)

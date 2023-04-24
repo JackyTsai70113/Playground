@@ -4,23 +4,32 @@ public class WidthOfBinaryTreeClass
 {
     public static int WidthOfBinaryTree(TreeNode? root)
     {
-        var q = new Queue<(TreeNode? node, int idx)>();
-        q.Enqueue((root, 0));
-        int res = 1;
-        while (q.Count > 0)
-        {
-            while(q.Count>0)
-            {
-                var (node, idx) = q.Dequeue();
-                if (node != null){
-                    q.Enqueue((node.left, 2 * idx));
-                    q.Enqueue((node.right, 2 * idx + 1));
-                    
-                } else {
+        if (root is null)
+            return 0;
 
-                }
+        int maxWidth = 0;
+        var queue = new Queue<(TreeNode, int)>();
+        queue.Enqueue((root, 0));
+
+        while (queue.Count > 0)
+        {
+            int size = queue.Count;
+            int left = queue.Peek().Item2;
+            int right = left;
+
+            for (int i = 0; i < size; i++)
+            {
+                (TreeNode node, int index) = queue.Dequeue();
+                right = index;
+
+                if (node.left is not null)
+                    queue.Enqueue((node.left, 2 * index));
+
+                if (node.right is not null)
+                    queue.Enqueue((node.right, 2 * index + 1));
             }
+            maxWidth = Math.Max(maxWidth, right - left + 1);
         }
-        return res;
+        return maxWidth;
     }
 }

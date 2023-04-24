@@ -18,7 +18,6 @@ public class MiceAndCheeseClass
             {
                 dp[j] = Math.Max(dp[j], (i - 1 >= 0 ? temp[j] : 0) + reward2[i]);
                 dp[j + 1] = Math.Max(dp[j + 1], (i - 1 >= 0 ? temp[j] : 0) + reward1[i]);
-                //Console.WriteLine(j + " " + dp[i,j] + " " + dp[i,j+1]);
                 if (j == k)
                 {
                     res = Math.Max(res, dp[j]);

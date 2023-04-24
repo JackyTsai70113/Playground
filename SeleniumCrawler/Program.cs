@@ -6,59 +6,8 @@ namespace SeleniumCrawler
 {
     internal class Program
     {
-        public static string[] serviceUrls = new string[] {
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Other/EnableSearchService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Other/ForumAuthNotification/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Other/RatingService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Other/OceanChannelRelationServiceTransfer/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Other/Forum.Ocean.ManagementSystem/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Columnist/ColumnistService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Utils/PCoinSender/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Utils/PopularStatisticsTool/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Article/LabelArticleService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Article/promotedarticleservice/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Article/articlereportcount/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Article/TopicArticlePopularStatistics/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Article/PostChecker/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Group/GroupServiceUtil/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Group/GroupUnreadCountService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Group/GroupService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Group/GroupService.Admin/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Schedule/Forum.Ocean.Question/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Schedule/Forum.Ocean.ExpertStatistics/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Schedule/Forum.Ocean.ArticlePopularStatistics/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Schedule/Forum.Ocean.ArticleSender/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/ChatroomService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Forum.Ocean/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/ForumOceanService/Forum.Ocean.Service/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Article/ArticleService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Article/SearchArticleService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Other/InvestingBlog/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Other/StreamingMediaService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Other/TopicService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Other/StockReportToForumSender/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Space/SpaceMemberSearchable/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Space/SpaceService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Space/SpaceService.Admin/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Space/SpaceService.Api/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/postmanscripts/Staging/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/SyncMemberSearchService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/YamlEnvReplacer/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/JsonToEnvironmentParser/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/GitOpsTemplate/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/RedisCopyTool/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/opstools/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/gke_autodeployment/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/CompatibilityTest/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/ForumHealthChecker/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Utils/multipleap-cicdtest/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Member/SearchMemberService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Member/MemberService.Admin/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Department/Member/MemberService/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Core/cmoney.forum.redis.converter/-/services/hangouts_chat/edit",
-            //"http://192.168.10.147:8080/MultipleAP/Forum/Core/Forum.RepositoryService/-/services/hangouts_chat/edit",
-            };
-        static void Main(string[] args)
+        public static string[] serviceUrls = Array.Empty<string>();
+        static void Main()
         {
             // 建立 ChromeDriver
             var driver = new ChromeDriver();
