@@ -1,8 +1,7 @@
-using NuGet.Frameworks;
-using playground.Array;
+using playground.Arrays;
 using playground.UnitTest.Utils;
 
-namespace playground.UnitTest.Array;
+namespace playground.UnitTest.Arrays;
 
 public class PacificAtlanticTest
 {
