@@ -41,6 +41,6 @@ public class FindOrderClass
             }
         }
 
-        return res.Count == n ? res.ToArray() : Array.Empty<int>();
+        return res.Count == n ? res.ToArray() : new int[0];
     }
 }
