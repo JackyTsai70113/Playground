@@ -1,5 +1,3 @@
-using System.Net;
-
 namespace playground.DirectedWeightedGraph;
 
 public class DirectedWeightedGraphTemplateClass
@@ -13,19 +11,17 @@ public class DirectedWeightedGraphTemplateClass
             graph[e[0]].Add((e[1], e[2]));
         }
 
-        // 1 DFS
         var res = new List<int>();
         var seen = new HashSet<int>();
         void dfs(int i)
         {
-            res.Add(i);
+            if (!graph.ContainsKey(i)) return;
             foreach (var (n, w) in graph[i])
             {
                 if (seen.Contains(n)) continue;
                 seen.Add(n);
                 dfs(n);
             }
-            res.Add(i);
         }
         int first = graph.Keys.First();
         seen.Add(first);
