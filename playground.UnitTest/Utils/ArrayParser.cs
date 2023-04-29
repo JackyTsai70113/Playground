@@ -41,6 +41,13 @@ public static class ArrayParser
             if (l < str.Length)
             {
                 var s = str.Substring(l + 1, r - l - 1);
+                if (string.IsNullOrWhiteSpace(s))
+                {
+                    res.Add(Array.Empty<T>());
+                    l++;
+                    r++;
+                    continue;
+                }
                 var arr = s.Split(',').Select(x => (T)Convert.ChangeType(x.Trim(), typeof(T))).ToArray();
                 res.Add(arr);
             }
