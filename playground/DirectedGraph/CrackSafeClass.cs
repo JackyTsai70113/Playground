@@ -11,22 +11,20 @@ public class CrackSafeClass
         var cur = new StringBuilder();
         HashSet<string> s = new();
 
-        void dfs(StringBuilder sb){
-            for (int i = 0; i < k; ++i){
-                cur!.Append(i);
-                if(!s.Contains(cur.ToString())){
-                    s.Add(cur.ToString());
-                    res!.Append(i);
-                    cur.Remove(cur.Length - 1, 1);
-                    dfs(cur);
+        void dfs(string str){
+            for (int i = k-1; i >=0; --i){
+                var cur = str+i;
+                if(!s.Contains(cur)){
+                    s.Add(cur);
+                    res.Append(i);
+                    dfs(cur[1..]);
                 }
             }
         }
         for (int i = 0; i < n - 1; ++i){
             res.Append(0);
-            cur.Append(0);
         }
-        dfs(cur);
+        dfs(res.ToString());
         return res.ToString();
     }
 }

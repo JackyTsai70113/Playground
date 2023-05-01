@@ -2,16 +2,33 @@ namespace playground.UnionFind;
 
 public class UnionFindClass
 {
+    private readonly int n;
     private readonly int[] groups;
     private readonly int[] ranks;
     public UnionFindClass(int n)
     {
+        this.n = n;
         groups = new int[n];
         ranks = new int[n];
         for (int i = 0; i < n; ++i)
         {
             groups[i] = i;
         }
+    }
+
+    public UnionFindClass(UnionFindClass uf)
+    {
+        groups = (int[])uf.groups.Clone();
+        ranks = (int[])uf.ranks.Clone();
+    }
+    public int GroupCount()
+    {
+        var hs = new HashSet<int>();
+        for (int node = 0; node < n; ++node)
+        {
+            hs.Add(Find(node));
+        }
+        return hs.Count;
     }
     public int Find(int node)
     {

@@ -22,7 +22,6 @@ namespace playground.SlidingWindow
                         return;
                     }
                 }
-                Console.WriteLine(l + " " + r);
                 if (resl == -1 || (r - l) < (resr - resl))
                 {
                     resr = r;
