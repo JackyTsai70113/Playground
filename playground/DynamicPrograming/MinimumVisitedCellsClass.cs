@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 namespace playground.DynamicPrograming;
 
 public class MinimumVisitedCellsClass

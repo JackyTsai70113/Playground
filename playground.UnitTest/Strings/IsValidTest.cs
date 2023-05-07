@@ -1,4 +1,6 @@
-namespace playground.UnitTest;
+using playground.Strings;
+
+namespace playground.UnitTest.Strings;
 
 public class IsValidTest
 {

@@ -1,4 +1,4 @@
-namespace playground;
+namespace playground.Mathematics;
 
 public class IsPrimeClass
 {
@@ -7,6 +7,7 @@ public class IsPrimeClass
     {
         Max = max;
     }
+
     public bool IsPrime(int number)
     {
         var primeSet = new SortedSet<int>();

@@ -11,7 +11,7 @@ public class InsertClass
         {
             index++;
         }
-        
+
         res.Insert(index, newInterval);
 
         while (index + 1 < res.Count && Interval.DoOverlap(res[index], res[index + 1]))

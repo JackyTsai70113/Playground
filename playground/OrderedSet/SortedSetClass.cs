@@ -1,4 +1,4 @@
-namespace playground;
+namespace playground.OrderedSet;
 public class SortedSetClass
 {
     public static int[] GetViewBetween(int[] arr, int l, int r)

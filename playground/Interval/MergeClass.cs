@@ -1,5 +1,3 @@
-using System.Data;
-
 namespace playground.Interval;
 
 public class MergeClass

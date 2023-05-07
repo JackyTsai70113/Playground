@@ -17,22 +17,28 @@ public class FindMinHeightTreesClass
         for (int i = 0; i < n; ++i)
         {
             degrees[i] = graph[i].Count;
-            if(degrees[i] == 1){
+            if (degrees[i] == 1)
+            {
                 q.Enqueue(i);
             }
         }
 
         var res = new List<int>();
-        while(q.Count > 0){
+        while (q.Count > 0)
+        {
             res = new List<int>();
-            while(q.Count > 0){
+            while (q.Count > 0)
+            {
                 res.Add(q.Dequeue());
             }
-            foreach(var node in res){
+            foreach (var node in res)
+            {
                 degrees[node]--;
-                foreach(var nei in graph[node]){
+                foreach (var nei in graph[node])
+                {
                     degrees[nei]--;
-                    if(degrees[nei] == 1){
+                    if (degrees[nei] == 1)
+                    {
                         q.Enqueue(nei);
                     }
                 }

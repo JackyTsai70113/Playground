@@ -1,6 +1,7 @@
+using playground.DirectedGraph;
 using playground.UnitTest.Utils;
 
-namespace playground.DirectedGraph;
+namespace playground.UnitTest.DirectedGraph;
 
 public class LargestPathValueTest
 {

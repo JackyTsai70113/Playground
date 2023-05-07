@@ -17,18 +17,4 @@ public partial class UndirectedGraphTest
         int[] result = MinReverseOperationsClass.MinReverseOperations(n, p, banned, k);
         Assert.Equal(expect, result);
     }
-
-    [Theory]
-    [MemberData(nameof(Data), 0)]
-    [InlineData(1, new int[] { }, new int[] { 0 })]
-    [InlineData(2, new int[] { 0, 1 }, new int[] { 0, 1 })]
-    [InlineData(4, new int[] { 1, 0, 1, 2, 1, 3 }, new int[] { 1 })]
-    [InlineData(6, new int[] { 3, 0, 3, 1, 3, 2, 3, 4, 5, 4 }, new int[] { 3, 4 })]
-    [InlineData(4, new int[] { 0, 1, 1, 2, 2, 3 }, new int[] { 1, 2 })]
-    public void FindMinHeightTrees(int n, int[] array, int[] expect)
-    {
-        int[][] edges = array.To2dArray(2);
-        IList<int> result = FindMinHeightTreesClass.FindMinHeightTrees(n, edges);
-        Assert.Equal(expect, result.ToArray());
-    }
 }

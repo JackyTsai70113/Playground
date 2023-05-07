@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace playground;
+namespace playground.Strings;
 
 public class ReverseOnlyLettersClass
 {
@@ -12,7 +12,7 @@ public class ReverseOnlyLettersClass
         {
             if (char.IsLetter(c))
             {
-                while(!char.IsLetter(s[end]))
+                while (!char.IsLetter(s[end]))
                     end--;
                 sb.Append(s[end--]);
             }
