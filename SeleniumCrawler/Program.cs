@@ -29,7 +29,7 @@ namespace SeleniumCrawler
 
                 // note checkbox
                 var webhookInput = eventDriver.FindElement(By.Id("service_webhook"));
-                webhookInput.SendKeys("https://chat.googleapis.com/v1/spaces/AAAAnd5HeBk/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=NGhsKBbsAxa5mHN3Md4rxva-EQ-VOsnJWT53DMS9_R4%3D");
+                webhookInput.SendKeys("");
 
                 // note checkbox
                 var saveButton = eventDriver.FindElement(By.XPath("/html/body/div/div[2]/div[3]/div/div[2]/div[2]/form/div[3]/button"));
