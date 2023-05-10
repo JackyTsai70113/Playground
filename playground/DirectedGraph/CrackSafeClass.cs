@@ -29,7 +29,6 @@ public class CrackSafeClass
             res.Append(0);
         }
         dfs(res.ToString());
-        dfs(res.ToString());
         return res.ToString();
     }
 }
