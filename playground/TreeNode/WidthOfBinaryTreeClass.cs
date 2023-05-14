@@ -1,8 +1,10 @@
-namespace playground.TreeNode;
+using playground.BinaryTree;
+
+namespace playground.TreeNodew.ttt;
 
 public class WidthOfBinaryTreeClass
 {
-    public static int WidthOfBinaryTree(TreeNode? root)
+    public static int WidthOfBinaryTree(TreeNode root)
     {
         if (root is null)
             return 0;

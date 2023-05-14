@@ -1,10 +1,10 @@
-namespace playground.UnionFind;
+namespace playground.UnionFinds;
 
 public class FindCircleNumClass
 {
     public static int FindCircleNum(int[][] A)
     {
-        var uf = new UnionFindClass(A.Length);
+        var uf = new UnionFind(A.Length);
         for (int i = 0; i < A.Length; ++i)
         {
             for (int j = i + 1; j < A.Length; ++j)

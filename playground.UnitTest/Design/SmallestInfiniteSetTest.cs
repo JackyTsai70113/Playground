@@ -7,20 +7,21 @@ public class SmallestInfiniteSetTest
 {
     [Theory]
     [InlineData("[SmallestInfiniteSet, addBack, popSmallest, popSmallest, popSmallest, addBack, popSmallest, popSmallest, popSmallest]", "[[], [2], [], [], [], [1], [], [], []]", "[null, null, 1, 2, 3, null, 1, 4, 5]")]
-    public void SmallestInfiniteSetClass(string funcArr, string valArr, string expectedStr)
+    public void SmallestInfiniteSetTest1(string funcArr, string valArr, string expectedStr)
     {
         var funcs = funcArr.ToArr<string>();
 
         var vals = valArr.To2dArr<int>();
 
-        SmallestInfiniteSetClass obj = new();
         var expected = expectedStr.ToArr<string>();
+
+        SmallestInfiniteSet obj = new();
         for (int i = 0; i < funcs.Length; ++i)
         {
             switch (funcs[i])
             {
                 case "SmallestInfiniteSet":
-                    obj = new SmallestInfiniteSetClass();
+                    obj = new SmallestInfiniteSet();
                     break;
                 case "addBack":
                     obj.AddBack(vals[i][0]);
@@ -30,7 +31,7 @@ public class SmallestInfiniteSetTest
                     else Assert.Equal(int.Parse(expected[i]), obj.PopSmallest());
                     break;
                 default:
-                    break;
+                    throw new Exception();
             }
         }
     }

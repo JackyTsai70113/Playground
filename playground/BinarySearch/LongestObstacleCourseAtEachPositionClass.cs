@@ -2,13 +2,12 @@ namespace playground.BinarySearch;
 
 public class LongestObstacleCourseAtEachPositionClass
 {
-    /// <remarks>https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position/</remarks>
+    /// <remarks>https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position</remarks>
     public static int[] LongestObstacleCourseAtEachPosition(int[] obstacles)
     {
         var d = new Dictionary<int, int>();
         var l = new List<int>();
         var res = new List<int>();
-        int n = obstacles.Length;
         foreach (var ob in obstacles)
         {
             if (!d.ContainsKey(ob))

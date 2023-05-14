@@ -1,11 +1,11 @@
 namespace playground.Design;
 
-public class SmallestInfiniteSetClass
+public class SmallestInfiniteSet
 {
     private int minNum;
     private readonly SortedSet<int> s;
 
-    public SmallestInfiniteSetClass()
+    public SmallestInfiniteSet()
     {
         minNum = 1;
         s = new();

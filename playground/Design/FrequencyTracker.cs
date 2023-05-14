@@ -2,8 +2,8 @@ namespace playground.Design;
 
 public class FrequencyTracker
 {
-    int[] arr1;
-    int[] arr2;
+    readonly int[] arr1;
+    readonly int[] arr2;
     public FrequencyTracker()
     {
         arr1 = new int[100001];

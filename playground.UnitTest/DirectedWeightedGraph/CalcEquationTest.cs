@@ -6,15 +6,16 @@ namespace playground.UnitTest.DirectedWeightedGraph;
 public class DirectedWeightedGraphTest
 {
     [Theory]
-    [InlineData(new string[] { "a", "b", "b", "c" }, new double[] { 2.0, 3.0 }, new string[] { "a", "c", "b", "a", "a", "e", "a", "a", "x", "x" }, new double[] { 6.00000, 0.50000, -1.00000, 1.00000, -1.00000 })]
-    public void CalcEquationTest(string[] array, double[] values, string[] array2, double[] expected)
+    [InlineData("[[a,b], [b,c]]", "[2.0, 3.0]", "[[a,c], [b,a], [a,e], [a,a], [x,x]]", "[6.00000, 0.50000, -1.00000, 1.00000, -1.00000]")]
+    public void CalcEquationTest(string equationsStr, string valuesStr, string queriesStr, string expectedStr)
     {
         //
-        var equations = array.To2dArray(2);
-        var queries = array2.To2dArray(2);
+        var equations = equationsStr.To2dArr<string>();
+        var values = valuesStr.ToArr<double>();
+        var queries = queriesStr.To2dArr<string>();
         //
         var actual = CalcEquationClass.CalcEquation(equations, values, queries);
         //
-        Assert.Equal(expected, actual);
+        Assert.Equal(expectedStr.ToArr<double>(), actual);
     }
 }

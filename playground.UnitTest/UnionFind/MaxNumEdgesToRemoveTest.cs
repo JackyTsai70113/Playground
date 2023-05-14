@@ -1,4 +1,4 @@
-using playground.UnionFind;
+using playground.UnionFinds;
 using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.UnionFind;

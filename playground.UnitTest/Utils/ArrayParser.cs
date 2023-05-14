@@ -2,28 +2,11 @@ namespace playground.UnitTest.Utils;
 
 public static class ArrayParser
 {
-    public static T[][] To2dArray<T>(this T[] array, int rowCount)
-    {
-        if (array.Length % rowCount != 0)
-        {
-            throw new ArgumentException("invalid array.Length");
-        }
-        var res = new T[array.Length / rowCount][];
-        for (int i = 0; i < res.Length; ++i)
-        {
-            res[i] = new T[rowCount];
-            for (int j = 0; j < rowCount; ++j)
-            {
-                res[i][j] = array[i * rowCount + j];
-            }
-        }
-        return res;
-    }
-
     public static T[] ToArr<T>(this string str)
     {
         str = str.Trim();
         str = str[1..^1];
+        if (str == string.Empty) return Array.Empty<T>();
         var arr = str.Split(',').Select(x => (T)Convert.ChangeType(x.Trim(), typeof(T))).ToArray();
         return arr;
     }

@@ -1,11 +1,11 @@
-namespace playground.UnionFind;
+namespace playground.UnionFinds;
 
-public class UnionFindClass
+public class UnionFind
 {
     private readonly int n;
     private readonly int[] groups;
     private readonly int[] ranks;
-    public UnionFindClass(int n)
+    public UnionFind(int n)
     {
         this.n = n;
         groups = new int[n];
@@ -16,7 +16,7 @@ public class UnionFindClass
         }
     }
 
-    public UnionFindClass(UnionFindClass uf)
+    public UnionFind(UnionFind uf)
     {
         groups = (int[])uf.groups.Clone();
         ranks = (int[])uf.ranks.Clone();
