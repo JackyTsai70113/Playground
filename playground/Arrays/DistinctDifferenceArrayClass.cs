@@ -9,7 +9,7 @@ public class DistinctDifferenceArrayClass
         var d2 = new Dictionary<int, int>();
         foreach (var num in nums)
         {
-            d2[num] = d2.ContainsKey(num) ? d2[num] + 1 : 1;
+            d2[num] = d2.TryGetValue(num, out var val) ? val + 1 : 1;
         }
 
         var res = new int[nums.Length];
