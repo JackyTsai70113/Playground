@@ -2,7 +2,7 @@ namespace playground.Greedy;
 
 public class KSimilarityClass
 {
-    /// <remarks>https://leetcode.com/problems/k-similar-strings/</remarks>
+    /// <remarks>https://leetcode.com/problems/k-similar-strings</remarks>
     public static int KSimilarity(string s1, string s2)
     {
         var q = new Queue<(string s, int d)>();

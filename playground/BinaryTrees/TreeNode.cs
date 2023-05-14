@@ -1,4 +1,4 @@
-namespace playground.BinaryTree;
+namespace playground.BinaryTrees;
 
 public class TreeNode
 {

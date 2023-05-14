@@ -12,11 +12,11 @@ public class FindMinHeightTreesTest
     [InlineData(4, "[[1, 0], [1, 2], [1, 3]]", "[1]")]
     [InlineData(6, "[[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]", "[3, 4]")]
     [InlineData(4, "[[0, 1], [1, 2], [2, 3]]", "[1, 2 ]")]
-    public void FindMinHeightTrees(int n, string str, string expect)
+    public void FindMinHeightTrees(int n, string str, string expected)
     {
         int[][] edges = str.To2dArr<int>();
         IList<int> actual = FindMinHeightTreesClass.FindMinHeightTrees(n, edges);
-        Assert.Equal(expect.ToArr<int>(), actual.ToArray());
+        Assert.Equal(expected.ToArr<int>(), actual.ToArray());
     }
 
     public static IEnumerable<object[]> GetData()

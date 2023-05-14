@@ -2,6 +2,7 @@ namespace playground.Arrays;
 
 public class MostPopularCreatorClass
 {
+    /// <remarks>https://leetcode.com/problems/most-popular-video-creator</remarks>
     public static IList<IList<string>> MostPopularCreator(string[] cr, string[] ids, int[] views)
     {
         int n = cr.Length;

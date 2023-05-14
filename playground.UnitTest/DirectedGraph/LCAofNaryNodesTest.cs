@@ -21,6 +21,7 @@ public class LCAofNaryNodesTest
 
         TestDataRoot = node1;
     }
+
     [Theory]
     [InlineData(new int[] { }, new int[] { })]
     [InlineData(new int[] { 6 }, new int[] { 5 })]

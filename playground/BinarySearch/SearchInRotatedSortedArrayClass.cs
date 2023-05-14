@@ -1,8 +1,9 @@
 namespace playground.BinarySearch;
 
-public class SearchClass
+public class SearchInRotatedSortedArrayClass
 {
-    public static int Search(int[] nums, int target)
+    /// <remarks>https://leetcode.com/problems/search-in-rotated-sorted-array</remarks>
+    public static int SearchInRotatedSortedArray(int[] nums, int target)
     {
         int n = nums.Length;
         int l = 0, r = n - 1;

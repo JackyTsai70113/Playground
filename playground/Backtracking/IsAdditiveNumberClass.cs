@@ -4,6 +4,7 @@ namespace playground.Backtracking;
 
 public class IsAdditiveNumberClass
 {
+    /// <remarks>https://leetcode.com/problems/additive-number</remarks>
     public static bool IsAdditiveNumber(string num)
     {
         int n = num.Length;

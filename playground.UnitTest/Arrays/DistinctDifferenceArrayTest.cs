@@ -12,6 +12,7 @@ public class DistinctDifferenceArrayTest
     {
         var nums = numsStr.ToArr<int>();
         var actual = DistinctDifferenceArrayClass.DistinctDifferenceArray(nums);
-        Assert.Equal(expectedStr.ToArr<int>(), actual);
+        var expected = expectedStr.ToArr<int>();
+        Assert.Equal(expected, actual);
     }
 }

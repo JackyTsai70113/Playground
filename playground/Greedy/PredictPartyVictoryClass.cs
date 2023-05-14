@@ -2,6 +2,7 @@ namespace playground.Greedy;
 
 public class PredictPartyVictoryClass
 {
+    /// <remarks>https://leetcode.com/problems/dota2-senate</remarks>
     public static string PredictPartyVictory(string senate)
     {
         int n = senate.Length;
@@ -46,6 +47,7 @@ public class PredictPartyVictoryClass
         }
     }
 
+    /// <remarks>https://leetcode.com/problems/dota2-senate</remarks>
     public static string PredictPartyVictory2(string senate)
     {
         int n = senate.Length;

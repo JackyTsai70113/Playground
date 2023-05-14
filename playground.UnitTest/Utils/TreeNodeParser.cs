@@ -1,10 +1,10 @@
-using playground.BinaryTree;
+using playground.BinaryTrees;
 
 namespace playground.UnitTest.Utils;
 
 public static class TreeNodeParser
 {
-    public static TreeNode? ToTreeNode(this string str)
+    public static TreeNode ToTreeNode(this string str)
     {
         var arr = str.ToArr<string>();
         if (arr.Length == 0 || arr[0] == "null") return null;
@@ -29,5 +29,13 @@ public static class TreeNodeParser
             j++;
         }
         return res;
+    }
+
+    public static bool IsSameTree(this TreeNode p, TreeNode q)
+    {
+        if (p == null && q == null) return true;
+        if (p == null || q == null) return false;
+        if (p.val != q.val) return false;
+        return IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
     }
 }

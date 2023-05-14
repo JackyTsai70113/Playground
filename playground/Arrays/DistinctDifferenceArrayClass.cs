@@ -2,7 +2,7 @@ namespace playground.Arrays;
 
 public class DistinctDifferenceArrayClass
 {
-    /// <remarks>https://leetcode.com/problems/find-the-distinct-difference-array/</remarks>
+    /// <remarks>https://leetcode.com/problems/find-the-distinct-difference-array</remarks>
     public static int[] DistinctDifferenceArray(int[] nums)
     {
         var s = new HashSet<int>();

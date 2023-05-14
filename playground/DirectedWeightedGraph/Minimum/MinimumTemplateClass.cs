@@ -52,7 +52,7 @@ public class MinimumTemplateClass
     }
 }
 
-public class Point2D : IPoint
+public class Point2D
 {
     public readonly int x;
     public readonly int y;

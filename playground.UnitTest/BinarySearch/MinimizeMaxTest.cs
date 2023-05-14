@@ -13,10 +13,10 @@ public class MinimizeMaxTest
     [InlineData(new int[] { 4, 2, 2, 1 }, 1, 0)]
     [InlineData(new int[] { 1 }, 0, 0)]
     [InlineData(new int[] { 1, 2 }, 0, 0)]
-    public void MinimizeMax(int[] nums, int p, int expect)
+    public void MinimizeMax(int[] nums, int p, int expected)
     {
-        int result = MinimizeMaxClass.MinimizeMax(nums, p);
+        int actual = MinimizeMaxClass.MinimizeMax(nums, p);
 
-        Assert.Equal(expect, result);
+        Assert.Equal(expected, actual);
     }
 }

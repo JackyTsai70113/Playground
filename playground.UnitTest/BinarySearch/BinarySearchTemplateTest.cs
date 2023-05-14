@@ -31,11 +31,11 @@ public class BinarySearchTemplateTest
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 5, 5)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 6, 7)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 7, 8)]
-    public void GetLowerBoundWithFunc(int[] nums, int p, int expect)
+    public void GetLowerBoundWithFunc(int[] nums, int p, int expected)
     {
-        int result = BinarySearchTemplateClass.GetLowerBound(nums, 0, nums.Length, (val) => val >= p);
+        int actual = BinarySearchTemplateClass.GetLowerBound(nums, 0, nums.Length, (val) => val >= p);
 
-        Assert.Equal(expect, result);
+        Assert.Equal(expected, actual);
     }
 
     [Theory] //             0  1  2  3  4  5  6  7
@@ -47,11 +47,11 @@ public class BinarySearchTemplateTest
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 5, 5)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 6, 7)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 7, 8)]
-    public void GetLowerBound(int[] nums, int p, int expect)
+    public void GetLowerBound(int[] nums, int p, int expected)
     {
-        int result = BinarySearchTemplateClass.GetLowerBound(nums, p);
+        int actual = BinarySearchTemplateClass.GetLowerBound(nums, p);
 
-        Assert.Equal(expect, result);
+        Assert.Equal(expected, actual);
     }
 
     [Theory] //             0  1  2  3  4  5  6  7
@@ -63,10 +63,10 @@ public class BinarySearchTemplateTest
     [InlineData(new int[] { 1, 2, 2, 2, 3, 4, 4, 5 }, 5, 7)]
     [InlineData(new int[] { 1, 2, 2, 2, 3, 4, 4, 5 }, 6, 7)]
     [InlineData(new int[] { }, 5, -1)]
-    public void GetUpperBound(int[] nums, int p, int expect)
+    public void GetUpperBound(int[] nums, int p, int expected)
     {
-        int result = BinarySearchTemplateClass.GetUpperBound(nums, p);
+        int actual = BinarySearchTemplateClass.GetUpperBound(nums, p);
 
-        Assert.Equal(expect, result);
+        Assert.Equal(expected, actual);
     }
 }

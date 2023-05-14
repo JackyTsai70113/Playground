@@ -2,7 +2,7 @@ namespace playground.Greedy;
 
 public class MinSwapsCouplesClass
 {
-    /// <remarks>https://leetcode.com/problems/couples-holding-hands/</remarks>
+    /// <remarks>https://leetcode.com/problems/couples-holding-hands</remarks>
     public static int MinSwapsCouples(int[] row)
     {
         static bool isCouple((int x, int y) a)
@@ -27,7 +27,7 @@ public class MinSwapsCouplesClass
             return string.Join(',', res);
         }
 
-        int n = row.Length;
+        int n = row.Length, res = 0;
         var seats = new (int x, int y)[n / 2];
         for (int i = 0; i < n; i += 2) seats[i / 2] = (row[i], row[i + 1]);
 
@@ -37,7 +37,10 @@ public class MinSwapsCouplesClass
         while (q.Count > 0)
         {
             var (s, d) = q.Dequeue();
-            if (isArranged(s)) return d;
+            if (isArranged(s)) {
+                res = d;
+                break;
+            }
             int i = 0;
             while (isCouple(s[i])) i++;
             for (int j = i + 1; j < n / 2; ++j)
@@ -51,21 +54,9 @@ public class MinSwapsCouplesClass
                 {
                     (s[i].y, s[j].y) = (s[j].y, s[i].y);
                 }
-                else if (isCouple((s[i].y, s[j].x)))
-                {
-                    (s[i].x, s[j].x) = (s[j].x, s[i].x);
-                }
-                else if (isCouple((s[i].y, s[j].y)))
-                {
-                    (s[i].x, s[j].y) = (s[j].y, s[i].x);
-                }
-                else
-                {
-                    continue;
-                }
                 if (set.Add(toKey(s))) q.Enqueue((s, d + 1));
             }
         }
-        return 0;
+        return res;
     }
 }

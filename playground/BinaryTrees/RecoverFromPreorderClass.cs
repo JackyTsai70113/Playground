@@ -1,4 +1,4 @@
-namespace playground.BinaryTree;
+namespace playground.BinaryTrees;
 
 public class RecoverFromPreorderClass
 {
@@ -17,10 +17,12 @@ public class RecoverFromPreorderClass
             while (stack.Count > level)
                 stack.Pop();
             var node = new TreeNode(val);
-            if (stack.Peek().left == null)
-                stack.Peek().left = node;
-            else
-                stack.Peek().right = node;
+            if(stack.Count > 0) {
+                if (stack.Peek().left == null)
+                    stack.Peek().left = node;
+                else
+                    stack.Peek().right = node;
+            }
             stack.Push(node);
         }
         while (stack.Count > 1)

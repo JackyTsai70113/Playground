@@ -12,9 +12,9 @@ public partial class UndirectedGraphTest
     [InlineData(5, 0, new int[] { }, 2, new int[] { 0, 1, 2, 3, 4 })]
     [InlineData(6, 0, new int[] { }, 4, new int[] { 0, 3, 2, 1, 2, 3 })]
     [InlineData(8, 6, new int[] { 0 }, 5, new int[] { -1, -1, 1, -1, 1, -1, 0, -1 })]
-    public void MinReverseOperationsTest(int n, int p, int[] banned, int k, int[] expect)
+    public void MinReverseOperationsTest(int n, int p, int[] banned, int k, int[] expected)
     {
-        int[] result = MinReverseOperationsClass.MinReverseOperations(n, p, banned, k);
-        Assert.Equal(expect, result);
+        var actual = MinReverseOperationsClass.MinReverseOperations(n, p, banned, k);
+        Assert.Equal(expected, actual);
     }
 }

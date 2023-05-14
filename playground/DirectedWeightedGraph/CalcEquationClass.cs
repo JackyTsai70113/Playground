@@ -2,16 +2,8 @@ namespace playground.DirectedWeightedGraph;
 
 public class CalcEquationClass
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="equations"></param>
-    /// <param name="values"></param>
-    /// <param name="queries"></param>
-    /// <returns></returns>
     /// <remarks>https://leetcode.com/problems/evaluate-division</remarks>
-    public static double[] CalcEquation(IList<IList<string>> equations, double[] values, IList<IList<string>> queries)
-    {
+    public static double[] CalcEquation(IList<IList<string>> equations, double[] values, IList<IList<string>> queries) {
         var graph = new Dictionary<string, Dictionary<string, double>>();
         for (int i = 0; i < equations.Count; ++i)
         {
@@ -52,11 +44,9 @@ public class CalcEquationClass
             return 1.0;
         }
         seen.Add(start);
-        foreach (var nei in graph[start].Keys)
-        {
+        foreach(var nei in graph[start].Keys){
             var pathWeight = GetPathWeight(graph, nei, end, seen);
-            if (pathWeight != -1.0)
-            {
+            if(pathWeight != -1.0){
                 return graph[start][nei] * pathWeight;
             }
         }

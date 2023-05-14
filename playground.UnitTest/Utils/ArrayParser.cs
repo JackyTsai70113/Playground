@@ -6,8 +6,7 @@ public static class ArrayParser
     {
         str = str.Trim();
         str = str[1..^1];
-        if (str == string.Empty) return Array.Empty<T>();
-        var arr = str.Split(',').Select(x => (T)Convert.ChangeType(x.Trim(), typeof(T))).ToArray();
+        var arr = str.Split(',').Where(s => !string.IsNullOrWhiteSpace(s)).Select(s => (T)Convert.ChangeType(s.Trim(), typeof(T))).ToArray();
         return arr;
     }
 

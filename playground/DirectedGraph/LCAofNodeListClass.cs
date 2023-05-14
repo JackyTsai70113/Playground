@@ -12,8 +12,6 @@ public class LCAofNaryNodesClass
 
     private static List<int> LCA(NaryTreeNode root, HashSet<int> valueSet)
     {
-        if (root == null)
-            return new List<int>();
         if (valueSet.Contains(root.val))
             return new List<int> { root.val };
         if (root.children.Count == 0)

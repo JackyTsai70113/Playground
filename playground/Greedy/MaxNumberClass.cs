@@ -2,7 +2,7 @@ namespace playground.Greedy;
 
 public class MaxNumberClass
 {
-    /// <remarks>https://leetcode.com/problems/create-maximum-number/</remarks>
+    /// <remarks>https://leetcode.com/problems/create-maximum-number</remarks>
     public static int[] MaxNumber(int[] nums1, int[] nums2, int k)
     {
         var l1 = MaxSub(nums1.ToList(), k);

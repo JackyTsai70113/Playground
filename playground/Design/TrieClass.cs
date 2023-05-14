@@ -1,5 +1,6 @@
 namespace playground.Design;
 
+/// <remarks>https://leetcode.com/problems/implement-trie-prefix-tree</remarks>>
 public class TrieClass
 {
     private static readonly int MAX = 26;
