@@ -1,7 +1,8 @@
-namespace playground.Interval;
+namespace playground.Intervals;
 
 public class MergeClass
 {
+    /// <remarks>https://leetcode.com/problems/merge-intervals</remarks>
     public static int[][] Merge(int[][] A)
     {
         Array.Sort(A, (x, y) =>
@@ -15,7 +16,7 @@ public class MergeClass
                 return x[1] - y[1];
             }
         });
-        var res = new List<int[]>{A[0]};
+        var res = new List<int[]> { A[0] };
         for (int i = 1; i < A.Length; ++i)
         {
             if (Interval.DoOverlap(res[^1], A[i]))

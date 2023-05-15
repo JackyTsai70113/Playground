@@ -13,4 +13,14 @@ public class ShortestPathCalculatorGraphTest
             });
         Assert.Equal(graph.ShortestPath(node1, node2), expected);
     }
+
+    [Theory]
+    [InlineData(0, 3, -1)]
+    public void ShortestPathCalculatorGraph2(int node1, int node2, int expected)
+    {
+        var graph = new ShortestPathCalculatorGraphClass(4, new int[][]{
+            new int[] {0, 2, 5}, new int[]{3, 1, 2}
+            });
+        Assert.Equal(graph.ShortestPath(node1, node2), expected);
+    }
 }

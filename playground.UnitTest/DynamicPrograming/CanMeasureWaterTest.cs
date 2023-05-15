@@ -5,6 +5,7 @@ namespace playground.UnitTest.DynamicPrograming;
 public class CanMeasureWaterTest
 {
     [Theory]
+    [InlineData(3, 5, 9, false)]
     [InlineData(3, 5, 4, true)]
     [InlineData(2, 6, 5, false)]
     [InlineData(1, 2, 3, true)]
@@ -15,6 +16,7 @@ public class CanMeasureWaterTest
     }
 
     [Theory]
+    [InlineData(3, 5, 9, false)]
     [InlineData(3, 5, 4, true)]
     [InlineData(2, 6, 5, false)]
     [InlineData(1, 2, 3, true)]

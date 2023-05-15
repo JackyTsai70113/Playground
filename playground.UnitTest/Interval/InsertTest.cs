@@ -1,5 +1,4 @@
-using playground.Interval;
-using playground.UnitTest.Utils;
+using playground.Intervals;
 
 namespace playground.UnitTest.Interval;
 

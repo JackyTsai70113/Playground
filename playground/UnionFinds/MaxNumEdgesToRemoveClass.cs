@@ -2,6 +2,7 @@ namespace playground.UnionFinds;
 
 public class MaxNumEdgesToRemoveClass
 {
+    /// <remarks>https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable</remarks>
     public static int MaxNumEdgesToRemove(int n, int[][] edges)
     {
         edges = edges.OrderBy(e => -e[0]).ToArray();

@@ -51,14 +51,3 @@ public class MinimumTemplateClass
         return Math.Abs(p1.x - p2.x) + Math.Abs(p1.y - p2.y);
     }
 }
-
-public class Point2D
-{
-    public readonly int x;
-    public readonly int y;
-    public Point2D(int[] point)
-    {
-        x = point[0];
-        y = point[1];
-    }
-}

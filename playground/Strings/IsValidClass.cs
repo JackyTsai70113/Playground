@@ -2,6 +2,7 @@ namespace playground.Strings;
 
 public class IsValidClass
 {
+    /// <remarks>https://leetcode.com/problems/valid-parentheses</remarks>
     public static bool IsValid(string s)
     {
         Stack<int> stack = new();

@@ -1,4 +1,4 @@
-namespace playground.Interval;
+namespace playground.Intervals;
 
 public class Interval
 {

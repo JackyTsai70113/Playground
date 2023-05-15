@@ -16,7 +16,6 @@ public class IsNumberClass
         {
             return IsValidDecimal(s, 0, eIdx - 1) && eIdx + 1 <= s.Length - 1 && IsValidInteger(s, eIdx + 1, s.Length - 1);
         }
-
     }
 
     static bool IsValidDecimal(string s, int l, int r)

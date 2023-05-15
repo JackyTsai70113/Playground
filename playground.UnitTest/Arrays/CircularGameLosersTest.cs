@@ -1,5 +1,4 @@
 using playground.Arrays;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.Arrays;
 
@@ -10,7 +9,7 @@ public class CircularGameLosersTest
     [InlineData(4, 4, "[2,3,4]")]
     public void CircularGameLosers(int n, int k, string expected)
     {
-        var actual = CircularGameLosersClass.CircularGameLosers(n, k);
+        int[] actual = CircularGameLosersClass.CircularGameLosers(n, k);
         Assert.Equal(actual, expected.ToArr<int>());
     }
 }
