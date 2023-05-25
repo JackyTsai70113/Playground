@@ -1,4 +1,4 @@
-using playground.Intervals;
+using playground.Interval;
 
 namespace playground.UnitTest.Interval;
 
@@ -12,7 +12,7 @@ public class InsertTest
     public void Insert(string intervalsStr, string newIntervalStr, string expectedStr)
     {
         var intervals = intervalsStr.To2dArr<int>();
-        var newInterval = newIntervalStr.ToArr<int>();
+        var newInterval = newIntervalStr.ToArr();
         var actual = InsertClass.Insert(intervals, newInterval);
         Assert.Equal(expectedStr.To2dArr<int>(), actual);
     }

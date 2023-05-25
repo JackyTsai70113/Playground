@@ -1,5 +1,4 @@
 using playground.DynamicPrograming;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.DynamicPrograming;
 
@@ -13,7 +12,7 @@ public class NthSuperUglyNumberTest
     [InlineData(5911, "[2,3,5,7]", 2144153025)]
     public void NthSuperUglyNumber(int n, string primesStr, int expected)
     {
-        var primes = primesStr.ToArr<int>();
+        var primes = primesStr.ToArr();
         var actual = NthSuperUglyNumberClass.NthSuperUglyNumber(n, primes);
         Assert.Equal(expected, actual);
     }

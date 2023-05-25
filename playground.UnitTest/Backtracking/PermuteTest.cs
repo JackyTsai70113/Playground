@@ -1,5 +1,4 @@
 using playground.Backtracking;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.Backtracking;
 
@@ -10,7 +9,7 @@ public class PermuteTest
     [InlineData("[0,1]", "[[0,1],[1,0]]")]
     public void Permute(string str, string str2)
     {
-        var arr = str.ToArr<int>();
+        var arr = str.ToArr();
         var actual = PermuteClass.Permute(arr);
         var expected = str2.To2dArr<int>();
         Assert.Equal(expected, actual.ToArray());

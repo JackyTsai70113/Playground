@@ -2,6 +2,11 @@ namespace playground.UnitTest.Utils;
 
 public static class ArrayParser
 {
+    public static int[] ToArr(this string str)
+    {
+        return str.ToArr<int>();
+    }
+
     public static T[] ToArr<T>(this string str)
     {
         str = str.Trim();

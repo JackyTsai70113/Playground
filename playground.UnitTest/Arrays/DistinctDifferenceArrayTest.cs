@@ -1,5 +1,4 @@
 using playground.Arrays;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.Arrays;
 
@@ -10,9 +9,9 @@ public class DistinctDifferenceArrayTest
     [InlineData("[3,2,3,4,2]", "[-2,-1,0,2,3]")]
     public void DistinctDifferenceArray(string numsStr, string expectedStr)
     {
-        var nums = numsStr.ToArr<int>();
+        var nums = numsStr.ToArr();
         var actual = DistinctDifferenceArrayClass.DistinctDifferenceArray(nums);
-        var expected = expectedStr.ToArr<int>();
+        var expected = expectedStr.ToArr();
         Assert.Equal(expected, actual);
     }
 }

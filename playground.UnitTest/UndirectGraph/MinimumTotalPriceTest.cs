@@ -1,5 +1,4 @@
 using playground.UndirectedGraph;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.UndirectGraph;
 
@@ -13,7 +12,7 @@ public class MinimumTotalPriceTest
     public void MinimumTotalPrice(int n, string edgesStr, string priceStr, string tripsStr, int expected)
     {
         var edges = edgesStr.To2dArr<int>();
-        var price = priceStr.ToArr<int>();
+        var price = priceStr.ToArr();
         var trips = tripsStr.To2dArr<int>();
         var actual = MinimumTotalPriceClass.MinimumTotalPrice(n, edges, price, trips);
         Assert.Equal(expected, actual);

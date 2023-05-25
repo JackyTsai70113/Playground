@@ -2,6 +2,7 @@ namespace playground.DirectedWeightedGraph.Minimum;
 
 public class MinimumCostClass
 {
+    /// <remarks>https://leetcode.com/problems/minimum-cost-of-a-path-with-special-roads</remarks>
     public static int MinimumCost(int[] s, int[] t, int[][] roads)
     {
         var filterRoads = new List<int[]>();
