@@ -1,6 +1,6 @@
 using playground.Intervals;
 
-namespace playground.UnitTest.Interval;
+namespace playground.UnitTest.Intervals;
 
 public class MergeTest
 {
