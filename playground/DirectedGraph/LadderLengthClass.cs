@@ -2,10 +2,13 @@ namespace playground.DirectedGraph;
 
 public class LadderLengthClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/word-ladder
+    /// </summary>
     public static int LadderLength(string beginWord, string endWord, IList<string> ws)
     {
-        if (ws.IndexOf(endWord) == -1)
-            return 0;
+        if (ws.IndexOf(endWord) == -1) return 0;
+        ws = ws.Append(beginWord).ToList();
         int m = ws.Count, n = ws[0].Length, diffs;
         var graph = new Dictionary<string, List<string>>();
         for (int i = 0; i < m; i++)
@@ -27,23 +30,6 @@ public class LadderLengthClass
                 graph[ws[i]].Add(ws[j]);
                 graph[ws[j]].Add(ws[i]);
             }
-        }
-
-        if (!graph.ContainsKey(beginWord))
-            graph[beginWord] = new List<string>();
-        for (int j = 0; j < m; j++)
-        {
-            diffs = 0;
-            for (int k = 0; diffs < 2 && k < n; ++k)
-            {
-                if (beginWord[k] != ws[j][k])
-                    diffs++;
-            }
-            if (diffs != 1)
-                continue;
-            if (!graph.ContainsKey(ws[j]))
-                graph[ws[j]] = new List<string>();
-            graph[beginWord].Add(ws[j]);
         }
 
         var step = 1;

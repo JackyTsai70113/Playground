@@ -13,8 +13,7 @@ public class PredictPartyVictoryTest
     public void PredictPartyVictory(string senate, string expected)
     {
         var actual = PredictPartyVictoryClass.PredictPartyVictory(senate);
-
-        Assert.Equal(actual, expected);
+        Assert.Equal(expected, actual);
     }
 
     [Theory]
@@ -26,7 +25,6 @@ public class PredictPartyVictoryTest
     public void PredictPartyVictory2(string senate, string expected)
     {
         var actual = PredictPartyVictoryClass.PredictPartyVictory2(senate);
-
-        Assert.Equal(actual, expected);
+        Assert.Equal(expected, actual);
     }
 }

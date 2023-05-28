@@ -1,20 +1,14 @@
 using playground.Interval;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.Design;
 
 public class PeekingIteratorTest
 {
     [Theory]
-    [InlineData("[PeekingIterator,next,peek,next,next,hasNext]", "[[1,2,3],[],[],[],[],[]]", "[null, 1, 2, 2, 3, false]")]
-    public void SmallestInfiniteSetTest1(string funcArr, string valArr, string expectedStr)
+    [InlineData(new string[] { "PeekingIterator", "next", "peek", "next", "next", "hasNext" }, "[[1,2,3],[],[],[],[],[]]", new string[] { null, "1", "2", "2", "3", "false" })]
+    public void PeekingIterator(string[] funcs, string valArr, string[] expected)
     {
-        var funcs = funcArr.ToArr<string>();
-
-        var vals = valArr.To2dArr<int>();
-
-        var expected = expectedStr.ToArr<string>();
-
+        var vals = valArr.To2dArr();
         PeekingIterator obj = new(((IEnumerable<int>)vals[0]).GetEnumerator());
         for (int i = 1; i < funcs.Length; ++i)
         {

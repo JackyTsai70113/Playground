@@ -33,7 +33,7 @@ public class ListNode
 
 public static class ListNodeExtension
 {
-    public static ListNode Reverse(ListNode head)
+    public static ListNode Reverse(this ListNode head)
     {
         ListNode pre = new(), p = head;
         while (p != null)

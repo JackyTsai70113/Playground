@@ -1,19 +1,14 @@
 using playground.Design;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.Design;
 
 public class CombinationIteratorTest
 {
     [Theory]
-    [InlineData("[CombinationIterator, next, hasNext, next, hasNext, next, hasNext]", "[[abc, 2], [], [], [], [], [], []]", "[null, ab, true, ac, true, bc, false]")]
-    public void CombinationIteratorTest1(string a, string b, string expectedStr)
+    [InlineData(new string[] { "CombinationIterator", "next", "hasNext", "next", "hasNext", "next", "hasNext" }, "[[abc, 2], [], [], [], [], [], []]", new string[] { null, "ab", "true", "ac", "true", "bc", "false" })]
+    public void CombinationIteratorTest1(string[] funcs, string b, string[] expected)
     {
-        var funcs = a.ToArr<string>();
-
         var vals = b.To2dArr<string>();
-
-        var expected = expectedStr.ToArr<string>();
 
         CombinationIterator obj = new(vals[0][0], int.Parse(vals[0][1]));
         for (int i = 1; i < funcs.Length; ++i)

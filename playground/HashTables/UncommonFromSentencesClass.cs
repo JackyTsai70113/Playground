@@ -8,11 +8,11 @@ public class UncommonFromSentencesClass
         var d = new Dictionary<string, int>();
         foreach (var str in s1.Split(' '))
         {
-            d[str] = d.ContainsKey(str) ? d[str] + 1 : 1;
+            d[str] = d.TryGetValue(str, out int val) ? val + 1 : 1;
         }
         foreach (var str in s2.Split(' '))
         {
-            d[str] = d.ContainsKey(str) ? d[str] + 1 : 1;
+            d[str] = d.TryGetValue(str, out int val) ? val + 1 : 1;
         }
         var res = new List<string>();
         foreach (var k in d.Keys)

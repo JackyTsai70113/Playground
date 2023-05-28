@@ -13,7 +13,6 @@ public class MaxNumberTest
     public void MaxNumber(int[] nums1, int[] nums2, int k, int[] expected)
     {
         var actual = MaxNumberClass.MaxNumber(nums1, nums2, k);
-
         Assert.Equal(expected, actual);
     }
 }

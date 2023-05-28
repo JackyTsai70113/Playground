@@ -11,7 +11,6 @@ public class MinWindowTest
     public void MinWindow(string s, string t, string expected)
     {
         var actual = MinWindowClass.MinWindow(s, t);
-
         Assert.Equal(expected, actual);
     }
 }

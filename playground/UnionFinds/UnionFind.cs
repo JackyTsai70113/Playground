@@ -3,23 +3,24 @@ namespace playground.UnionFinds;
 public class UnionFind
 {
     private readonly int n;
-    private readonly int[] groups;
-    private readonly int[] ranks;
+    public int[] Groups { get; private set; }
+    public int[] Ranks { get; private set; }
     public UnionFind(int n)
     {
         this.n = n;
-        groups = new int[n];
-        ranks = new int[n];
+        Groups = new int[n];
+        Ranks = new int[n];
         for (int i = 0; i < n; ++i)
         {
-            groups[i] = i;
+            Groups[i] = i;
+            Ranks[i] = 1;
         }
     }
 
     public UnionFind(UnionFind uf)
     {
-        groups = (int[])uf.groups.Clone();
-        ranks = (int[])uf.ranks.Clone();
+        Groups = uf.Groups.ToArray();
+        Ranks = uf.Ranks.ToArray();
     }
     public int GroupCount()
     {
@@ -32,28 +33,26 @@ public class UnionFind
     }
     public int Find(int node)
     {
-        if (groups[node] != node)
+        if (Groups[node] != node)
         {
-            groups[node] = Find(groups[node]);
+            Groups[node] = Find(Groups[node]);
         }
-        return groups[node];
+        return Groups[node];
     }
     public void Join(int node1, int node2)
     {
         int group1 = Find(node1);
         int group2 = Find(node2);
-        if (ranks[group1] > ranks[group2])
+        if (group1 == group2) return;
+        if (Ranks[group2] > Ranks[group1])
         {
-            groups[group2] = group1;
-        }
-        else if (ranks[group1] < ranks[group2])
-        {
-            groups[group1] = group2;
+            Groups[group1] = group2;
+            Ranks[group2] += Ranks[group1];
         }
         else
         {
-            groups[group2] = group1;
-            ranks[group1]++;
+            Groups[group2] = group1;
+            Ranks[group1] += Ranks[group2];
         }
     }
     public bool AreConnected(int node1, int node2)

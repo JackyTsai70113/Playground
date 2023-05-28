@@ -36,10 +36,6 @@ public class IsPrimeClass
             {
                 break;
             }
-            if (number % prime == 0)
-            {
-                return false;
-            }
         }
         return true;
     }

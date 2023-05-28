@@ -10,6 +10,7 @@ public class IsAdditiveNumberTest
     [InlineData("10", false)]
     [InlineData("101", true)]
     [InlineData("199001200", false)]
+    [InlineData("12122436", true)]
     public void IsAdditiveNumber(string num, bool expected)
     {
         var actual = IsAdditiveNumberClass.IsAdditiveNumber(num);

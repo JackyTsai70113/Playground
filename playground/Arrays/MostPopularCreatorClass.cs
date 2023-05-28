@@ -23,9 +23,9 @@ public class MostPopularCreatorClass
                     view = views[i];
                     id = ids[i];
                 }
-                else if (p[cr[i]].view == views[i] && p[cr[i]].id.CompareTo(ids[i]) == 1)
+                else if (p[cr[i]].view == views[i])
                 {
-                    id = ids[i];
+                    if (p[cr[i]].id.CompareTo(ids[i]) == 1) id = ids[i];
                 }
                 p[cr[i]] = (totalView, view, id);
             }

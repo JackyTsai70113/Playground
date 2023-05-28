@@ -10,6 +10,6 @@ public class CountGoodStringsTest
     public void CountGoodStrings(int low, int high, int zero, int one, int expected)
     {
         var actual = CountGoodStringsClass.CountGoodStrings(low, high, zero, one);
-        Assert.Equal(actual, expected);
+        Assert.Equal(expected, actual);
     }
 }

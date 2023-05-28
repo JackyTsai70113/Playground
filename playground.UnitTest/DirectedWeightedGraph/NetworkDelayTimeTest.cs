@@ -1,5 +1,4 @@
 using playground.DirectedWeightedGraph;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.DirectedWeightedGraph;
 
@@ -10,12 +9,9 @@ public class NetworkDelayTimeTest
     [InlineData("[[1,2,1]]", 2, 1, 1)]
     [InlineData("[[1,2,1]]", 2, 2, -1)]
     [InlineData("[[1,2,1],[2,3,2],[1,3,2]]", 3, 1, 2)]
-    public void NetworkDelayTime(string timesStr, int n, int k, int expected)
+    public void NetworkDelayTime(string times, int n, int k, int expected)
     {
-        int[][] times = timesStr.To2dArr<int>();
-
-        var actual = NetworkDelayTimeClass.NetworkDelayTime(times, n, k);
-
-        Assert.Equal(actual, expected);
+        var actual = NetworkDelayTimeClass.NetworkDelayTime(times.To2dArr(), n, k);
+        Assert.Equal(expected, actual);
     }
 }

@@ -5,14 +5,13 @@ namespace playground.UnitTest.Greedy;
 public class MinSwapsCouplesTest
 {
     [Theory]
-    [InlineData("[0,2,1,3]", 1)]
-    [InlineData("[3,2,0,1]", 0)]
-    [InlineData("[2,0,5,4,3,1]", 1)]
-    [InlineData("[5,4,2,6,3,1,0,7]", 2)]
-    public void MinSwapsCouples(string str, int expected)
+    [InlineData(new int[] { 0, 2, 1, 3 }, 1)]
+    [InlineData(new int[] { 3, 2, 0, 1 }, 0)]
+    [InlineData(new int[] { 2, 0, 5, 4, 3, 1 }, 1)]
+    [InlineData(new int[] { 5, 4, 2, 6, 3, 1, 0, 7 }, 2)]
+    public void MinSwapsCouples(int[] row, int expected)
     {
-        var seats = str.ToArr();
-        var actual = MinSwapsCouplesClass.MinSwapsCouples(seats);
+        var actual = MinSwapsCouplesClass.MinSwapsCouples(row);
         Assert.Equal(expected, actual);
     }
 }

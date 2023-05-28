@@ -1,5 +1,8 @@
 namespace playground.Design;
 
+/// <summary>
+/// https://leetcode.com/problems/iterator-for-combination
+/// </summary>
 public class CombinationIterator
 {
     readonly string s;

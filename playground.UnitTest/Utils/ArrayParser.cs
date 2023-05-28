@@ -15,6 +15,11 @@ public static class ArrayParser
         return arr;
     }
 
+    public static int[][] To2dArr(this string str)
+    {
+        return str.To2dArr<int>();
+    }
+
     public static T[][] To2dArr<T>(this string str)
     {
         str = str.Trim();

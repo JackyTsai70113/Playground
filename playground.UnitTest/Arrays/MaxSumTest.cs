@@ -8,12 +8,9 @@ public class MaxSumTest
     [InlineData("[[2,1,1],[1,1,0],[0,1,1]]", 7)]
     [InlineData("[[2,1,1],[0,1,1],[1,0,1]]", 7)]
     [InlineData("[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1]]", 7)]
-    public void MaxSum(string arr, int expected)
+    public void MaxSum(string grid, int expected)
     {
-        int[][] grid = arr.To2dArr<int>();
-
-        var actual = MaxSumClass.MaxSum(grid);
-
+        var actual = MaxSumClass.MaxSum(grid.To2dArr());
         Assert.Equal(expected, actual);
     }
 }

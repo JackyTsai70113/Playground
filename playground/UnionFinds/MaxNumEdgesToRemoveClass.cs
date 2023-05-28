@@ -10,8 +10,9 @@ public class MaxNumEdgesToRemoveClass
 
         var uf = new UnionFind(n + 1);
         int edgesIndex = 0;
-        for (; edgesIndex < edges.Length && edges[edgesIndex][0] == 3; ++edgesIndex)
+        for (; edgesIndex < edges.Length; ++edgesIndex)
         {
+            if (edges[edgesIndex][0] != 3) break;
             int u = edges[edgesIndex][1], v = edges[edgesIndex][2];
             if (uf.AreConnected(u, v))
             {
@@ -24,8 +25,9 @@ public class MaxNumEdgesToRemoveClass
         }
 
         var uf1 = new UnionFind(uf);
-        for (; edgesIndex < edges.Length && edges[edgesIndex][0] == 2; ++edgesIndex)
+        for (; edgesIndex < edges.Length; ++edgesIndex)
         {
+            if (edges[edgesIndex][0] != 2) break;
             int u = edges[edgesIndex][1], v = edges[edgesIndex][2];
             if (uf1.AreConnected(u, v))
             {
@@ -38,15 +40,13 @@ public class MaxNumEdgesToRemoveClass
         }
         for (int i = 2; i < n + 1; ++i)
         {
-            if (!uf1.AreConnected(1, i))
-            {
-                return -1;
-            }
+            if (!uf1.AreConnected(1, i)) return -1;
         }
 
         var uf2 = new UnionFind(uf);
-        for (; edgesIndex < edges.Length && edges[edgesIndex][0] == 1; ++edgesIndex)
+        for (; edgesIndex < edges.Length; ++edgesIndex)
         {
+            if (edges[edgesIndex][0] != 1) break;
             int u = edges[edgesIndex][1], v = edges[edgesIndex][2];
             if (uf2.AreConnected(u, v))
             {
@@ -59,10 +59,7 @@ public class MaxNumEdgesToRemoveClass
         }
         for (int i = 2; i < n + 1; ++i)
         {
-            if (!uf2.AreConnected(1, i))
-            {
-                return -1;
-            }
+            if (!uf2.AreConnected(1, i)) return -1;
         }
         return res;
     }

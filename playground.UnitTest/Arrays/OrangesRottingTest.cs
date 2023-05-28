@@ -1,5 +1,4 @@
 using playground.Arrays;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.Arrays;
 
@@ -9,12 +8,9 @@ public class OrangesRottingTest
     [InlineData("[[2,1,1],[1,1,0],[0,1,1]]", 4)]
     [InlineData("[[2,1,1],[0,1,1],[1,0,1]]", -1)]
     [InlineData("[[0,2]]]", 0)]
-    public void OrangesRotting(string arr, int expected)
+    public void OrangesRotting(string grid, int expected)
     {
-        int[][] grid = arr.To2dArr<int>();
-
-        var actual = OrangesRottingClass.OrangesRotting(grid);
-
+        var actual = OrangesRottingClass.OrangesRotting(grid.To2dArr());
         Assert.Equal(expected, actual);
     }
 }

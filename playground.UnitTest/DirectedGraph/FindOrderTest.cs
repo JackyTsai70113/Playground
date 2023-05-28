@@ -1,5 +1,4 @@
 using playground.DirectedGraph;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.DirectedGraph;
 
@@ -11,10 +10,8 @@ public class FindOrderTest
     [InlineData(1, "[]", new int[] { 0 })]
     public void FindOrder(int n, string arr, int[] expected)
     {
-        var pre = arr.To2dArr<int>();
-
+        var pre = arr.To2dArr();
         var actual = FindOrderClass.FindOrder(n, pre);
-
         Assert.Equal(expected, actual);
     }
 }

@@ -23,7 +23,7 @@ public class IsAdditiveNumberClass
     {
         if (c == num.Length)
             return a != 0;
-        if (num[a] == '0' && b - a > 1 || num[b] == '0' && c - b > 1)
+        if (num[b] == '0' && c - b > 1)
             return false;
         var sb = new StringBuilder();
         int val = 0, cc = c, bb = b;

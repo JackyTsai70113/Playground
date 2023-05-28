@@ -1,5 +1,4 @@
 using playground.BinaryTrees;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.BinaryTrees;
 
@@ -20,10 +19,9 @@ public class WidthOfBinaryTreeTest
     [InlineData("[1,3,2,5,3,null,9]", 4)]
     [InlineData("[1,3,2,5]", 2)]
     [InlineData("[1,1,1,1,1,1,1,null,null,null,1,null,null,null,null,2,2,2,2,2,2,2,null,2,null,null,2,null,2]", 8)]
-    public void WidthOfBinaryTree2(string str, int expected)
+    public void WidthOfBinaryTree2(string root, int expected)
     {
-        var node = str.ToTreeNode();
-        var actual = WidthOfBinaryTreeClass.WidthOfBinaryTree2(node);
+        var actual = WidthOfBinaryTreeClass.WidthOfBinaryTree2(root.ToTreeNode());
         Assert.Equal(expected, actual);
     }
 }

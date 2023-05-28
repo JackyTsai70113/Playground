@@ -1,5 +1,4 @@
 using playground.UndirectedGraph;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.UndirectGraph;
 
@@ -18,12 +17,9 @@ public class MakeConnectedTest
     [InlineData(4, "[[0, 1], [0, 2], [1, 2]]", 1)]
     [InlineData(4, "[[0, 1], [0, 2], [2, 3]]", 0)]
     [InlineData(3, "[[0, 1], [0, 2], [1, 2]]", 0)]
-    public void MakeConnected(int n, string str, int expected)
+    public void MakeConnected(int n, string A, int expected)
     {
-        var arr = str.To2dArr<int>();
-
-        int actual = MakeConnectedClass.MakeConnected(n, arr);
-
+        int actual = MakeConnectedClass.MakeConnected(n, A.To2dArr());
         Assert.Equal(expected, actual);
     }
 }

@@ -1,20 +1,14 @@
 using playground.Design;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.Design;
 
 public class SmallestInfiniteSetTest
 {
     [Theory]
-    [InlineData("[SmallestInfiniteSet, addBack, popSmallest, popSmallest, popSmallest, addBack, popSmallest, popSmallest, popSmallest]", "[[], [2], [], [], [], [1], [], [], []]", "[null, null, 1, 2, 3, null, 1, 4, 5]")]
-    public void SmallestInfiniteSetTest1(string funcArr, string valArr, string expectedStr)
+    [InlineData(new string[] { "SmallestInfiniteSet", "addBack", "popSmallest", "popSmallest", "popSmallest", "addBack", "popSmallest", "popSmallest", "popSmallest" }, "[[], [2], [], [], [], [1], [], [], []]", new string[] { null, null, "1", "2", "3", null, "1", "4", "5" })]
+    public void SmallestInfiniteSetTest1(string[] funcs, string valArr, string[] expected)
     {
-        var funcs = funcArr.ToArr<string>();
-
-        var vals = valArr.To2dArr<int>();
-
-        var expected = expectedStr.ToArr<string>();
-
+        var vals = valArr.To2dArr();
         SmallestInfiniteSet obj = new();
         for (int i = 0; i < funcs.Length; ++i)
         {

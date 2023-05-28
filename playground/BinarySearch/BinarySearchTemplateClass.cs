@@ -25,7 +25,7 @@ public class BinarySearchTemplateClass
     }
 
     /// <summary>
-    /// 取得 arr 中大於等於 target 的最左index <summary>
+    /// 取得 arr 中大於等於 target 的最左index
     /// </summary>
     public static int GetLowerBound(int[] arr, int target)
     {

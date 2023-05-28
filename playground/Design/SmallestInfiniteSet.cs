@@ -1,5 +1,8 @@
 namespace playground.Design;
 
+/// <summary>
+/// https://leetcode.com/problems/smallest-number-in-infinite-set
+/// </summary>
 public class SmallestInfiniteSet
 {
     private int minNum;

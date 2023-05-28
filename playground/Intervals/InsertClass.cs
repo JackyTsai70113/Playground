@@ -1,3 +1,5 @@
+using playground.BinarySearch;
+
 namespace playground.Intervals;
 
 public class InsertClass
@@ -6,8 +8,8 @@ public class InsertClass
     {
         var res = intervals.ToList();
 
-        int index = Interval.GetUpperBound(intervals.Select(x => x[0]).ToArray(), newInterval[0]);
-        if (index < intervals.Length && intervals[index][1] < newInterval[0])
+        int index = BinarySearchTemplateClass.GetUpperBound(intervals.Select(x => x[0]).ToArray(), newInterval[0]);
+        if (index == -1 || index < intervals.Length && intervals[index][1] < newInterval[0])
         {
             index++;
         }

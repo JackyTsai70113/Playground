@@ -20,6 +20,6 @@ public class StangePrinterTest
     public void Test(string a, int expected)
     {
         var actual = StangePrinterClass.StrangePrinter(a);
-        Assert.Equal(actual, expected);
+        Assert.Equal(expected, actual);
     }
 }

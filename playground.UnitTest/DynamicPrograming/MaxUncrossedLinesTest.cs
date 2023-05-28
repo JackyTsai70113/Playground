@@ -1,17 +1,16 @@
 using playground.DynamicPrograming;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.DynamicPrograming;
 
 public class MaxUncrossedLinesTest
 {
     [Theory]
-    [InlineData("[1,4,2]","[1,2,4]", 2)]
-    [InlineData("[2,5,1,2,5]","[10,5,2,1,5,2]", 3)]
-    [InlineData("[1,3,7,1,7,5]","[1,9,2,5,1]", 2)]
-    public void MaxUncrossedLines(string a, string b, int expected)
+    [InlineData(new int[] { 1, 4, 2 }, new int[] { 1, 2, 4 }, 2)]
+    [InlineData(new int[] { 2, 5, 1, 2, 5 }, new int[] { 10, 5, 2, 1, 5, 2 }, 3)]
+    [InlineData(new int[] { 1, 3, 7, 1, 7, 5 }, new int[] { 1, 9, 2, 5, 1 }, 2)]
+    public void MaxUncrossedLines(int[] nums1, int[] nums2, int expected)
     {
-        int actual = MaxUncrossedLinesClass.MaxUncrossedLines(a.ToArr<int>(), b.ToArr<int>());
+        int actual = MaxUncrossedLinesClass.MaxUncrossedLines(nums1, nums2);
 
         Assert.Equal(expected, actual);
     }

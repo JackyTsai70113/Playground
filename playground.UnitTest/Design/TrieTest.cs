@@ -1,21 +1,18 @@
 using playground.Design;
-using playground.UnitTest.Utils;
 
 namespace playground.UnitTest.Design;
 
 public class TrieTest
 {
     [Theory]
-    [InlineData("[Trie, insert, search]", "[[], [apple], [apple]]", "[null, null, true]")]
-    [InlineData("[Trie, insert, search, search, startsWith, insert, search]", "[[], [apple], [apple], [app], [app], [app], [app]]","[null, null, true, false, true, null, true]")]
-    public void Trie(string funcArr, string valArr, string expectedStr)
+    [InlineData(new string[] { "Trie", "insert", "search" }, "[[], [apple], [apple]]", new string[] { null, null, "true" })]
+    [InlineData(new string[] { "Trie", "insert", "search" }, "[[], [apple], [app]]", new string[] { null, null, "false" })]
+    [InlineData(new string[] { "Trie", "insert", "search" }, "[[], [apple], [b]]", new string[] { null, null, "false" })]
+    [InlineData(new string[] { "Trie", "insert", "search", "search", "startsWith", "insert", "search" }, "[[], [apple], [apple], [app], [app], [app], [app]]", new string[] { null, null, "true", "false", "true", null, "true" })]
+    public void Trie(string[] funcs, string valArr, string[] expected)
     {
-        var funcs = funcArr.ToArr<string>();
-
         var vals = valArr.To2dArr<string>();
-
         TrieClass obj = new();
-        var expected = expectedStr.ToArr<string>();
         for (int i = 0; i < funcs.Length; ++i)
         {
             switch (funcs[i])

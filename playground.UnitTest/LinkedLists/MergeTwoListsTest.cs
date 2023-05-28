@@ -9,12 +9,12 @@ public class MergeTwoListsTest
     [InlineData("[]", "[]", "[]")]
     [InlineData("[]", "[0]", "[0]")]
     [InlineData("[0]", "[]", "[0]")]
-    public void MergeTwoLists(string a, string b, string expected)
+    public void MergeTwoLists(string list1, string list2, string expected)
     {
-        var actual = MergeTwoListsClass.MergeTwoLists(a.ToListNode(), b.ToListNode());
+        var actual = MergeTwoListsClass.MergeTwoLists(list1.ToListNode(), list2.ToListNode());
         if (expected == "[]")
             Assert.Null(actual);
         else
-            Assert.Equal(expected.ToString(), actual.ToString());
+            Assert.Equal(expected, actual.ToString());
     }
 }
