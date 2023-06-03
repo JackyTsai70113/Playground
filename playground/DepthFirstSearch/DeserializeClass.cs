@@ -7,8 +7,6 @@ public class DeserializeClass
     /// </summary>
     public static NestedInteger Deserialize(string s)
     {
-        if (s == string.Empty)
-            return new NestedInteger();
         if (s[0] != '[')
             return new NestedInteger(int.Parse(s));
         var res = new NestedInteger();
@@ -107,5 +105,6 @@ public class NestedInteger : INestedInteger
     public void SetInteger(int value)
     {
         this.value = value;
+        this.nis = null;
     }
 }

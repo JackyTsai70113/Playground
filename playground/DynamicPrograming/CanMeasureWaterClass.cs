@@ -2,9 +2,12 @@ namespace playground.DynamicPrograming;
 
 public class CanMeasureWaterClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/water-and-jug-problem/
+    /// </summary>
     public static bool CanMeasureWater(int a, int b, int target)
     {
-        if (target < 0 || target > a + b)
+        if (target > a + b)
             return false;
 
         static int gcd(int x, int y)
@@ -16,7 +19,7 @@ public class CanMeasureWaterClass
 
     public static bool CanMeasureWater2(int a, int b, int target)
     {
-        if (target < 0 || target > a + b)
+        if (target > a + b)
             return false;
 
         var q = new Queue<int>();

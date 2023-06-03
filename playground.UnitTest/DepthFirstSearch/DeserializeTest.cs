@@ -9,9 +9,17 @@ public class DeserializeTest
     [InlineData("[[]]", "[[]]")]
     [InlineData("324", "324")]
     [InlineData("[123,[456,[789]]]", "[123,[456,[789]]]")]
-    public void IsAdditiveNumber(string s, string expected)
+    public void Deserialize(string actualStr, string expectedStr)
     {
-        Assert.NotNull(DeserializeClass.Deserialize(s));
-        Assert.Equal(expected, s);
+        var actual = DeserializeClass.Deserialize(actualStr);
+        var expected = DeserializeClass.Deserialize(expectedStr);
+        Assert.Equivalent(expected, actual);
+        Assert.Equal(expected.GetInteger(), actual.GetInteger());
+        Assert.Equal(expected.IsInteger(), actual.IsInteger());
+        Assert.Equivalent(expected.GetList(), actual.GetList());
+
+        actual.SetInteger(1);
+        expected.SetInteger(1);
+        Assert.Equivalent(expected, actual);
     }
 }

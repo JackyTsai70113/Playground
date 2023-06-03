@@ -2,6 +2,9 @@ namespace playground.BinarySearch;
 
 public class SearchMatrixClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/search-a-2d-matrix
+    /// </summary>
     public static bool SearchMatrix(int[][] A, int target)
     {
         int m = A.Length, n = A[0].Length;

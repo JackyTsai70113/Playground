@@ -47,7 +47,7 @@ public class BinarySearchTemplateClass
 
     public static int GetUpperBound(int[] arr, int target)
     {
-        int l = -1, r = arr.Length - 1;
+        int l = 0, r = arr.Length - 1;
         while (l < r)
         {
             int m = l + (r - l + 1) / 2;

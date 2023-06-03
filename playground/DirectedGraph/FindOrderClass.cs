@@ -2,6 +2,9 @@ namespace playground.DirectedGraph;
 
 public class FindOrderClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/course-schedule-ii
+    /// </summary>
     public static int[] FindOrder(int n, int[][] prerequisites)
     {
         var res = new List<int>();

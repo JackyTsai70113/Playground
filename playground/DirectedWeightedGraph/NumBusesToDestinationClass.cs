@@ -2,6 +2,9 @@ namespace playground.DirectedGraph;
 
 public class NumBusesToDestinationClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/bus-routes
+    /// </summary>
     public static int NumBusesToDestination(int[][] routes, int source, int target)
     {
         int n = routes.Length;

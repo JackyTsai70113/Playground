@@ -2,6 +2,9 @@ namespace playground.SlidingWindow
 {
     public class MinWindowClass
     {
+        /// <summary>
+        /// https://leetcode.com/problems/minimum-window-substring
+        /// </summary>
         public static string MinWindow(string s, string t)
         {
             if (s.Length < t.Length) return string.Empty;
@@ -41,7 +44,7 @@ namespace playground.SlidingWindow
                 if (!d.ContainsKey(s[r])) continue;
                 d[s[r]]--;
                 bool ifAdd = false;
-                while (l < r && (!d.TryGetValue(s[l], out var val) || val < 0))
+                while (!d.TryGetValue(s[l], out var val) || val < 0)
                 {
                     if (d.TryGetValue(s[l], out _)) d[s[l]]++;
                     l++;

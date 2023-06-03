@@ -4,12 +4,15 @@ namespace playground.Intervals;
 
 public class InsertClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/insert-interval
+    /// </summary>
     public static int[][] Insert(int[][] intervals, int[] newInterval)
     {
         var res = intervals.ToList();
 
         int index = BinarySearchTemplateClass.GetUpperBound(intervals.Select(x => x[0]).ToArray(), newInterval[0]);
-        if (index == -1 || index < intervals.Length && intervals[index][1] < newInterval[0])
+        if (index < intervals.Length && intervals[index][1] < newInterval[0])
         {
             index++;
         }

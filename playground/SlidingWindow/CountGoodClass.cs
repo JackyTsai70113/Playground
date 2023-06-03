@@ -27,11 +27,6 @@ public class CountGoodClass
             {
                 res += n - r + 1;
             }
-            else
-            {
-                if (r == n)
-                    break;
-            }
         }
         return res;
     }

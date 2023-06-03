@@ -1,9 +1,10 @@
-using System.Diagnostics.CodeAnalysis;
-
 namespace playground.Strings;
 
 public class IsNumberClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/valid-number
+    /// </summary>
     public static bool IsNumber(string s)
     {
         s = s.ToLower();
@@ -31,7 +32,7 @@ public class IsNumberClass
         int pointIdx = s.IndexOf('.', l, r - l + 1);
         if (pointIdx == -1)
         {
-            return r >= l && IsValidIntegerWithoutSign(s, l, r);
+            return IsValidIntegerWithoutSign(s, l, r);
         }
         else
         {

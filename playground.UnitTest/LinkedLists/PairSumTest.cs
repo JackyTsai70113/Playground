@@ -5,6 +5,7 @@ namespace playground.UnitTest.LinkedLists;
 public class PairSumTest
 {
     [Theory]
+    [InlineData("[5,3]", 8)]
     [InlineData("[5,3,2,1]", 6)]
     [InlineData("[5,4,2,1]", 6)]
     [InlineData("[5,5,2,1]", 7)]

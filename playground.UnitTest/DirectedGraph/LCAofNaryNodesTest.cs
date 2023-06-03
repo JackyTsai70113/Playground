@@ -92,4 +92,12 @@ public class LCAofNaryNodesTest
         var actual = LCAofNaryNodesClass.LCAofNaryNodes(TestDataRoot, nodes.ToList());
         Assert.Equal(expected.ToList(), actual);
     }
+
+    [Theory]
+    [InlineData(new int[] { }, new int[] { })]
+    public void LCAofNaryNodes2(int[] nodes, int[] expected)
+    {
+        var actual = LCAofNaryNodesClass.LCAofNaryNodes(null, nodes.ToList());
+        Assert.Equal(expected.ToList(), actual);
+    }
 }

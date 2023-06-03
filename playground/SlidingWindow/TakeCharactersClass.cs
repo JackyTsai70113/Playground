@@ -2,6 +2,9 @@ namespace playground.SlidingWindow;
 
 public class TakeCharactersClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/take-k-of-each-character-from-left-and-right
+    /// </summary>
     public static int TakeCharacters(string s, int k)
     {
         int n = s.Length, res = int.MaxValue;
@@ -19,6 +22,6 @@ public class TakeCharactersClass
             res = Math.Min(res, n - r + l);
             ++cnt[s[l] - 'a'];
         }
-        return res == int.MaxValue ? -1 : res;
+        return res;
     }
 }

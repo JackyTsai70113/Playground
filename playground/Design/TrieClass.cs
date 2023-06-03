@@ -1,6 +1,6 @@
 namespace playground.Design;
 
-/// <remarks>https://leetcode.com/problems/implement-trie-prefix-tree</remarks>>
+/// <remarks>https://leetcode.com/problems/implement-trie-prefix-tree</remarks>
 public class TrieClass
 {
     private static readonly int MAX = 26;
@@ -65,7 +65,7 @@ public class TrieClass
             if (!cur.Contains(word[i])) return false;
             cur = cur.Get(word[i]);
         }
-        return cur != null && cur.IsEnd();
+        return cur.IsEnd();
     }
 
     public bool StartsWith(string prefix)
@@ -73,7 +73,6 @@ public class TrieClass
         var cur = root;
         for (int i = 0; i < prefix.Length && cur != null; ++i)
         {
-            if (!cur.Contains(prefix[i])) return false;
             cur = cur.Get(prefix[i]);
         }
         return cur != null;

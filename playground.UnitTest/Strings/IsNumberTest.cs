@@ -19,6 +19,7 @@ public class IsNumberTest
     [InlineData("-123.456e789", true)]
     [InlineData("0", true)]
     [InlineData("abc", false)]
+    [InlineData("4e+", false)]
     [InlineData("1a", false)]
     [InlineData("1e", false)]
     [InlineData("e3", false)]
