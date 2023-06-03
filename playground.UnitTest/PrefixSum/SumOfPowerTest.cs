@@ -1,6 +1,6 @@
-using playground.Backtracking;
+using playground.PrefixSum;
 
-namespace playground.UnitTest.Backtracking;
+namespace playground.UnitTest.PrefixSum;
 
 public class SumOfPowerTest
 {

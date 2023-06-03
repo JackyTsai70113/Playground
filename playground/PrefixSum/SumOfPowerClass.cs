@@ -1,4 +1,4 @@
-namespace playground.Backtracking;
+namespace playground.PrefixSum;
 
 public class SumOfPowerClass
 {
