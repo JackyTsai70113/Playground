@@ -9,6 +9,7 @@ public class MaxNumOfMarkedIndicesTest
     [InlineData(new int[] { 7, 6, 8 }, 0)]
     [InlineData(new int[] { 9, 2, 5, 4 }, 4)]
     [InlineData(new int[] { 3, 2, 5, 4 }, 2)]
+    [InlineData(new int[] { 1, 1, 1, 2, 2, 2 }, 6)]
     public void MaxNumOfMarkedIndices(int[] nums, int expected)
     {
         var actual = MaxNumOfMarkedIndicesClass.MaxNumOfMarkedIndices(nums);

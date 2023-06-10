@@ -22,6 +22,19 @@ public class BinarySearchTemplateTest
         Assert.Equal(expected2, actual);
     }
 
+    [Theory] //             0  1  2  3  4  5  6  7 => 有重複的元素則不會是最小 index
+    [InlineData(new int[] { 1, 1, 1, 1, 2, 2, 2, 2 }, 4, 4, 2, 5, 5)]
+    [InlineData(new int[] { 1, 1, 1, 1, 2, 2, 2, 2 }, 3, 4, 2, 4, 4)]
+    [InlineData(new int[] { 1, 1, 1, 1, 2, 2, 2, 2 }, 2, 4, 2, 4, 4)]
+    public void ArrayBinarySearchWithLength(int[] nums, int index, int length, int p, int expected, int expected2)
+    {
+        int actual = BinarySearchTemplateClass.ArrayBinarySearch(nums, index, length, p);
+
+        Assert.Equal(expected, actual);
+        if (actual < 0) actual = ~actual;
+        Assert.Equal(expected2, actual);
+    }
+
     [Theory] //             0  1  2  3  4  5  6  7
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 0, 0)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 1, 0)]

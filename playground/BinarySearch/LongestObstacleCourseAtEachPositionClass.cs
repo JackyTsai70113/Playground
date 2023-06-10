@@ -47,7 +47,7 @@ public class LongestObstacleCourseAtEachPositionClass
         return res.ToArray();
     }
 
-    /// <remarks>https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position/</remarks>
+    /// <remarks>https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-positionP</remarks>
     public static int[] LongestObstacleCourseAtEachPosition2(int[] obstacles)
     {
         int n = obstacles.Length, len = 0;

@@ -7,6 +7,11 @@ public class BinarySearchTemplateClass
         return Array.BinarySearch(arr, target);
     }
 
+    public static int ArrayBinarySearch(int[] arr, int index, int length, int target)
+    {
+        return Array.BinarySearch(arr, index, length, target);
+    }
+
     public static int GetLowerBound(int[] arr, int l, int r, Func<int, bool> func)
     {
         while (l < r)
