@@ -15,7 +15,7 @@ public class SearchInRotatedSortedArrayTest
     [InlineData(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 7, 3)]
     [InlineData(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 8, -1)]
     [InlineData(new int[] { 1 }, 0, -1)]
-    public void Search(int[] nums, int target, int expected)
+    public void SearchInRotatedSortedArray(int[] nums, int target, int expected)
     {
         var actual = SearchInRotatedSortedArrayClass.SearchInRotatedSortedArray(nums, target);
 

@@ -6,7 +6,7 @@ public class SmallestInfiniteSetTest
 {
     [Theory]
     [InlineData(new string[] { "SmallestInfiniteSet", "addBack", "popSmallest", "popSmallest", "popSmallest", "addBack", "popSmallest", "popSmallest", "popSmallest" }, "[[], [2], [], [], [], [1], [], [], []]", new string[] { null, null, "1", "2", "3", null, "1", "4", "5" })]
-    public void SmallestInfiniteSetTest1(string[] funcs, string valArr, string[] expected)
+    public void SmallestInfiniteSet(string[] funcs, string valArr, string[] expected)
     {
         var vals = valArr.To2dArr();
         SmallestInfiniteSet obj = new();
