@@ -1,36 +1,37 @@
-namespace playground.Design;
-
-/// <summary>
-/// https://leetcode.com/problems/smallest-number-in-infinite-set
-/// </summary>
-public class SmallestInfiniteSet
+namespace playground.Design
 {
-    private int minNum;
-    private readonly SortedSet<int> s;
-
-    public SmallestInfiniteSet()
+    /// <summary>
+    /// https://leetcode.com/problems/smallest-number-in-infinite-set
+    /// </summary>
+    public class SmallestInfiniteSet
     {
-        minNum = 1;
-        s = new();
-    }
+        private int minNum;
+        private readonly SortedSet<int> s;
 
-    public int? PopSmallest()
-    {
-        if (s.Count != 0)
+        public SmallestInfiniteSet()
         {
-            var temp = s.Min();
-            s.Remove(temp);
-            return temp;
+            minNum = 1;
+            s = new();
         }
-        minNum++;
-        return minNum - 1;
-    }
 
-    public void AddBack(int num)
-    {
-        if (minNum > num)
+        public int? PopSmallest()
         {
-            s.Add(num);
+            if (s.Count != 0)
+            {
+                int temp = s.Min;
+                _ = s.Remove(temp);
+                return temp;
+            }
+            minNum++;
+            return minNum - 1;
+        }
+
+        public void AddBack(int num)
+        {
+            if (minNum > num)
+            {
+                _ = s.Add(num);
+            }
         }
     }
 }

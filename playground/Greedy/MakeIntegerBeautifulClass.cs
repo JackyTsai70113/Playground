@@ -12,7 +12,7 @@ public class MakeIntegerBeautifulClass
             res += num - n % num;
             n = n + num - n % num;
             r++;
-            sum = n.ToString().Select(x => int.Parse(x.ToString())).ToArray().Sum();
+            sum = n.ToString().Select(x => int.Parse(x.ToString())).Sum();
         }
         return res;
     }

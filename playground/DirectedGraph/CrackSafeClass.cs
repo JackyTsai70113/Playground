@@ -8,7 +8,6 @@ public class CrackSafeClass
     public static string CrackSafe(int n, int k)
     {
         var res = new StringBuilder();
-        var cur = new StringBuilder();
         HashSet<string> s = new();
 
         void dfs(string str)

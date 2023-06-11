@@ -16,7 +16,8 @@ public class MinimumCostClass
 
         var dists = new Dictionary<(int x, int y), int> { [(s[0], s[1])] = 0 };
         var pq = new PriorityQueue<(int, (int x, int y)), int>();
-        for (pq.Enqueue((0, (s[0], s[1])), 0); pq.Count > 0;)
+        pq.Enqueue((0, (s[0], s[1])), 0);
+        while(pq.Count > 0)
         {
             var (curDist, curPoint) = pq.Dequeue();
             foreach (var r in filterRoads)

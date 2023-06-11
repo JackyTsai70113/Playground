@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace playground.Design;
 
 /// <summary>
@@ -16,22 +18,22 @@ public class CombinationIterator
         s = characters;
         m = s.Length;
         n = combinationLength;
-        mask = (((1 << n) - 1) << m - n);
+        mask = ((1 << n) - 1) << m - n;
         hasNext = true;
     }
 
     public string Next()
     {
-        string res = "";
+        var res = new StringBuilder();
         for (int i = 0; i < m; ++i)
         {
             if ((mask & (1 << m - i - 1)) > 0)
             {
-                res += s[i];
+                res.Append(s[i]);
             }
         }
         UpdateMask();
-        return res;
+        return res.ToString();
     }
 
     // can be optimized by Gosper's hack.
