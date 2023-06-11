@@ -1,34 +1,53 @@
-namespace playground.Arrays;
-
-public class DifferenceOfDistinctValuesClass
+namespace playground.Arrays
 {
-    /// <summary>
-    /// https://leetcode.com/problems/difference-of-number-of-distinct-values-on-diagonals
-    /// </summary>
-    public static int[][] DifferenceOfDistinctValues(int[][] grid)
+    public class DifferenceOfDistinctValuesClass
     {
-        int m = grid.Length, n = grid[0].Length;
-        var res = new int[m][];
-        for (int i = 0; i < m; ++i) res[i] = new int[n];
-        void fill(int r, int c)
+        /// <summary>
+        /// https://leetcode.com/problems/difference-of-number-of-distinct-values-on-diagonals
+        /// </summary>
+        public static int[][] DifferenceOfDistinctValues(int[][] grid)
         {
-            Dictionary<int, int> tl = new(), br = new();
-            for (int rr = r, cc = c; rr < m && cc < n; ++rr, ++cc)
+            int m = grid.Length, n = grid[0].Length;
+            int[][] res = new int[m][];
+            for (int i = 0; i < m; ++i)
             {
-                tl[grid[rr][cc]] = tl.TryGetValue(grid[rr][cc], out int val) ? val + 1 : 1;
+                res[i] = new int[n];
             }
-            for (int rr = r, cc = c; rr < m && cc < n; ++rr, ++cc)
+
+            void fill(int r, int c)
             {
-                tl[grid[rr][cc]]--;
-                if (tl[grid[rr][cc]] == 0) tl.Remove(grid[rr][cc]);
-                if (rr != r) br[grid[rr - 1][cc - 1]] = br.TryGetValue(grid[rr - 1][cc - 1], out int val) ? val + 1 : 1;
-                res[rr][cc] = Math.Abs(tl.Keys.Count - br.Keys.Count);
+                Dictionary<int, int> topLeftDict = new(), bottomRightDict = new();
+                for (int rr = r, cc = c; rr < m && cc < n; ++rr, ++cc)
+                {
+                    topLeftDict[grid[rr][cc]] = topLeftDict.TryGetValue(grid[rr][cc], out int val) ? val + 1 : 1;
+                }
+                for (int rr = r, cc = c; rr < m && cc < n; ++rr, ++cc)
+                {
+                    topLeftDict[grid[rr][cc]]--;
+                    if (topLeftDict[grid[rr][cc]] == 0)
+                    {
+                        topLeftDict.Remove(grid[rr][cc]);
+                    }
+
+                    if (rr != r)
+                    {
+                        bottomRightDict[grid[rr - 1][cc - 1]] = bottomRightDict.TryGetValue(grid[rr - 1][cc - 1], out int val) ? val + 1 : 1;
+                    }
+
+                    res[rr][cc] = Math.Abs(topLeftDict.Keys.Count - bottomRightDict.Keys.Count);
+                }
             }
+            for (int i = 0; i < n; ++i)
+            {
+                fill(0, i);
+            }
+
+            for (int i = 1; i < m; ++i)
+            {
+                fill(i, 0);
+            }
+
+            return res;
         }
-        for (int i = 0; i < n; ++i)
-            fill(0, i);
-        for (int i = 1; i < m; ++i)
-            fill(i, 0);
-        return res;
     }
 }
