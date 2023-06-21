@@ -8,7 +8,7 @@ public class MakeIntegerBeautifulClass
         long res = 0, r = 0;
         while (sum > target)
         {
-            long num = (long)Math.Pow(10, r+1);
+            long num = (long)Math.Pow(10, r + 1);
             res += num - n % num;
             n = n + num - n % num;
             r++;

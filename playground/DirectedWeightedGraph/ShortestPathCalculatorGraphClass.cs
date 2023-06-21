@@ -27,8 +27,10 @@ public class ShortestPathCalculatorGraphClass
         {
             var (node, dist) = q.Dequeue();
             if (node == node2) return dist;
-            foreach ((int nei, int neiDist) in graph[node]){
-                if (path[nei] > path[node] + neiDist){
+            foreach ((int nei, int neiDist) in graph[node])
+            {
+                if (path[nei] > path[node] + neiDist)
+                {
                     path[nei] = path[node] + neiDist;
                     q.Enqueue((nei, path[nei]), path[nei]);
                 }

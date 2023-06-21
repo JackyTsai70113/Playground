@@ -20,7 +20,8 @@ public class RecoverFromPreorderClass
             while (stack.Count > level)
                 stack.Pop();
             var node = new TreeNode(val);
-            if(stack.Count > 0) {
+            if (stack.Count > 0)
+            {
                 if (stack.Peek().left == null)
                     stack.Peek().left = node;
                 else

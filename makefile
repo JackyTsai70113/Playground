@@ -18,3 +18,9 @@ test2:
 		-reports:"./playground.UnitTest/TestResults/coverage.cobertura.xml" \
 		-targetdir:"./playground.UnitTest/TestResults" \
 		-reporttypes:Html
+
+test-result2:
+	start "playground/playground.UnitTest/TestResults/index.html"
+
+test3:
+	echo "$(shell uname)"

@@ -7,13 +7,13 @@ public class CanTraverseAllPairsClass
     /// </summary>
     public static bool CanTraverseAllPairs(int[] nums)
     {
-        if(nums.Length == 1) return true;
+        if (nums.Length == 1) return true;
         int n = nums.Length;
         var index = new Dictionary<int, int>();
         var uf = new UnionFind(n);
         for (int i = 0; i < n; ++i)
         {
-            if(nums[i] == 1) return false;
+            if (nums[i] == 1) return false;
             for (int p = 2; p <= (int)Math.Sqrt(nums[i]); ++p)
             {
                 if (nums[i] % p != 0) continue;

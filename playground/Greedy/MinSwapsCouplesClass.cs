@@ -37,7 +37,8 @@ public class MinSwapsCouplesClass
         while (q.Count > 0)
         {
             var (s, d) = q.Dequeue();
-            if (isArranged(s)) {
+            if (isArranged(s))
+            {
                 res = d;
                 break;
             }

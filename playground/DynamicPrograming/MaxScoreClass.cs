@@ -17,17 +17,18 @@ public class MaxScoreClass
         {
             dp[i] = -1;
         }
-        
+
         int dfs(int op, int mask)
         {
-            if(op>n/2) return 0;
-            if(dp[mask] != -1) return dp[mask];
-            for (int i = 0; i < n; ++i){
-                if((mask & (1<<i)) > 0)
+            if (op > n / 2) return 0;
+            if (dp[mask] != -1) return dp[mask];
+            for (int i = 0; i < n; ++i)
+            {
+                if ((mask & (1 << i)) > 0)
                     continue;
-                for (int j = i+1; j < n; j++)
+                for (int j = i + 1; j < n; j++)
                 {
-                    if((mask & (1<<j)) > 0)
+                    if ((mask & (1 << j)) > 0)
                         continue;
                     int newMask = mask | (1 << i) | (1 << j);
                     int score = op * gcd(nums[i], nums[j]) + dfs(op + 1, newMask);
