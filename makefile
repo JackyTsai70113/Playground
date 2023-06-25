@@ -1,4 +1,7 @@
+shellName = $(shell uname)
+
 test:
+ifeq ($(shellName),Darwin)
 	dotnet test /p:CollectCoverage=true \
 		/p:CoverletOutputFormat=cobertura \
 		/p:CoverletOutput=./TestResults/coverage.cobertura.xml
@@ -6,11 +9,7 @@ test:
 		-reports:"./playground.UnitTest/TestResults/coverage.cobertura.xml" \
 		-targetdir:"./playground.UnitTest/TestResults" \
 		-reporttypes:Html
-
-test-result:
-	open playground.UnitTest/TestResults/index.html
-
-test2:
+else
 	dotnet test /p:CollectCoverage=true \
 		/p:CoverletOutputFormat=cobertura \
 		/p:CoverletOutput=./TestResults/coverage.cobertura.xml
@@ -18,9 +17,11 @@ test2:
 		-reports:"./playground.UnitTest/TestResults/coverage.cobertura.xml" \
 		-targetdir:"./playground.UnitTest/TestResults" \
 		-reporttypes:Html
+endif
 
-test-result2:
+tresult:
+ifeq ($(shellName),Darwin)
+	open playground.UnitTest/TestResults/index.html
+else
 	start "playground/playground.UnitTest/TestResults/index.html"
-
-test3:
-	echo "$(shell uname)"
+endif
