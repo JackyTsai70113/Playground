@@ -10,7 +10,7 @@ public class MinimumTimeTest
     [InlineData("[[0,1,2,100],[100,4,3,8],[100,100,100,9]]", 9)]
     [InlineData("[[0,1,2,100],[100,4,3,4],[100,100,100,9]]", 9)]
     [InlineData("[[0,1,1000],[3,2,1000],[1000,1000,1000]]", 1002)]
-    [MemberData(nameof(GetData), new object[0])]
+    [MemberData(nameof(GetData))]
     public void MinimumTime(string grid, int expected)
     {
         var actual = MinimumTimeClass.MinimumTime(grid.To2dArr());

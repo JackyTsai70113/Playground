@@ -8,7 +8,7 @@ public class GetAveragesTest
     [InlineData(new int[] { 7, 4, 3, 9, 1, 8, 5, 2, 6 }, 3, new int[] { -1, -1, -1, 5, 4, 4, -1, -1, -1 })]
     [InlineData(new int[] { 100000 }, 0, new int[] { 100000 })]
     [InlineData(new int[] { 8 }, 100000, new int[] { -1 })]
-    [MemberData(nameof(GetData), new object[0])]
+    [MemberData(nameof(GetData))]
     public void GetAverages(int[] nums, int k, int[] expected)
     {
         var actual = GetAveragesClass.GetAverages(nums, k);

@@ -5,7 +5,7 @@ namespace playground.UnitTest.UndirectGraph;
 public class FindMinHeightTreesTest
 {
     [Theory]
-    [MemberData(nameof(GetData), new object[0])]
+    [MemberData(nameof(GetData))]
     [InlineData(1, "[[]]", new int[] { 0 })]
     [InlineData(2, "[[0, 1]]", new int[] { 0, 1 })]
     [InlineData(4, "[[1, 0], [1, 2], [1, 3]]", new int[] { 1 })]

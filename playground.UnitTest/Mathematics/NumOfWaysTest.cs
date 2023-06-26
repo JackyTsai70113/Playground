@@ -6,7 +6,7 @@ public class NumOfWaysTest
 {
     [Theory]
     [InlineData(new int[] { 3, 1, 2, 5, 4, 6 }, 19)]
-    [MemberData(nameof(GetData), new object[0])]
+    [MemberData(nameof(GetData))]
     public void NumOfWays(int[] nums, int expected)
     {
         var actual = new NumOfWaysClass().NumOfWays(nums);

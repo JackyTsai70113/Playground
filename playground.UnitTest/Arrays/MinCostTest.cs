@@ -9,7 +9,7 @@ public class MinCostTest
     [InlineData(new int[] { 1, 2, 3 }, 4, 6)]
     [InlineData(new int[] { 31, 25, 18, 59 }, 27, 119)]
     [InlineData(new int[] { 15, 150, 56, 69, 214, 203 }, 42, 298)]
-    [MemberData(nameof(GetData), new object[0])]
+    [MemberData(nameof(GetData))]
     public void MinCost(int[] nums, int x, long expected)
     {
         var actual = MinCostClass.MinCost(nums, x);
