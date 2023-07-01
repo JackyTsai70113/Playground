@@ -2,6 +2,9 @@ namespace playground.Greedy;
 
 public class MinimizeConcatenatedLengthClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/decremental-string-concatenation
+    /// </summary>
     public static int MinimizeConcatenatedLength(string[] words)
     {
         var memo = new int[1001, 26, 26];

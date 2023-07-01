@@ -3,8 +3,8 @@ namespace playground.UnionFinds;
 public class UnionFind
 {
     private readonly int n;
-    public int[] Groups { get; private set; }
-    public int[] Ranks { get; private set; }
+    private readonly int[] Groups;
+    private readonly int[] Ranks;
     public UnionFind(int n)
     {
         this.n = n;
@@ -46,19 +46,19 @@ public class UnionFind
         if (group1 == group2) return;
         if (Ranks[group2] > Ranks[group1])
         {
-            Groups[group1] = group2;
-            Ranks[group2] += Ranks[group1];
+            (group1, group2) = (group2, group1);
         }
-        else
-        {
-            Groups[group2] = group1;
-            Ranks[group1] += Ranks[group2];
-        }
+        Groups[group2] = group1;
+        Ranks[group1] += Ranks[group2];
     }
     public bool AreConnected(int node1, int node2)
     {
         int group1 = Find(node1);
         int group2 = Find(node2);
         return group1 == group2;
+    }
+    public int GetSize(int node)
+    {
+        return Ranks[Find(node)];
     }
 }
