@@ -1,5 +1,4 @@
 using playground.Mathematics;
-using playground.Stacks;
 
 namespace playground.UnitTest.Mathematics;
 
