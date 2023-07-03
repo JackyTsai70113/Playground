@@ -2,41 +2,21 @@ namespace playground.Mathematics;
 
 public class IsPrimeClass
 {
-    private readonly int Max;
-    public IsPrimeClass(int max)
+    private readonly bool[] isPrime;
+    public IsPrimeClass(int n)
     {
-        Max = max;
+        isPrime = Enumerable.Repeat(true, n).ToArray();
+        for (int i = 2; i < n; i++)
+        {
+            if (!isPrime[i])
+                continue;
+            for (int j = 2 * i; j < n; j += i)
+                isPrime[j] = false;
+        }
     }
 
     public bool IsPrime(int number)
     {
-        var primeSet = new SortedSet<int>();
-        for (int i = 2; i * i <= Max; ++i)
-        {
-            var isPrime = true;
-            foreach (var p in primeSet)
-            {
-                if (i % p == 0)
-                {
-                    isPrime = false;
-                }
-            }
-            if (isPrime)
-            {
-                primeSet.Add(i);
-            }
-        }
-        if (number <= (int)Math.Sqrt(Max))
-        {
-            return primeSet.Contains(number);
-        }
-        foreach (var prime in primeSet)
-        {
-            if (prime * prime > number)
-            {
-                break;
-            }
-        }
-        return true;
+        return number < isPrime.Length && isPrime[number];
     }
 }

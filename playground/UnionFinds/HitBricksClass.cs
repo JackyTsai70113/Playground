@@ -33,6 +33,18 @@ public class HitBricksClass
                     uf.Join(node, r * C + c - 1);
             }
         }
+
+        void f(int node, int x0, int y0)
+        {
+            for (int i = 0; i < 4; ++i)
+            {
+                int x = x0 + drs[i], y = y0 + dcs[i];
+                if (x >= 0 && y >= 0 && x < R && y < C && A[x][y] == 1)
+                {
+                    uf.Join(node, x * C + y);
+                }
+            }
+        }
         var res = new int[hits.Length];
         for (int t = hits.Length - 1; t >= 0; --t)
         {
@@ -43,15 +55,7 @@ public class HitBricksClass
             var preCount = uf.GetSize(R * C);
             A[x0][y0] = 1;
             int node = x0 * C + y0;
-            for (int i = 0; i < 4; ++i)
-            {
-                int x = x0 + drs[i], y = y0 + dcs[i];
-                if (x >= 0 && y >= 0 && x < R && y < C && A[x][y] == 1)
-                {
-                    uf.Join(node, x * C + y);
-                }
-            }
-
+            f(node, x0, y0);
             if (x0 == 0)
                 uf.Join(node, R * C);
             res[t] = Math.Max(0, uf.GetSize(R * C) - preCount - 1);
