@@ -1,4 +1,4 @@
-namespace playground.PriorityQueue;
+namespace playground.PriorityQueues;
 
 public class KSmallestPairsClass
 {

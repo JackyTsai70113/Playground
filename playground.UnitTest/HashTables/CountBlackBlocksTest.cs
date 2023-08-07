@@ -1,6 +1,6 @@
-using playground.DynamicPrograming;
+using playground.HashTables;
 
-namespace playground.UnitTest.Arrays;
+namespace playground.UnitTest.HashTables;
 
 public class CountBlackBlocksTest
 {

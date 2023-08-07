@@ -1,6 +1,6 @@
-using playground.PriorityQueue;
+using playground.PriorityQueues;
 
-namespace playground.UnitTest.PriorityQueue;
+namespace playground.UnitTest.PriorityQueues;
 
 public class MaximumSafenessFactorTest
 {
