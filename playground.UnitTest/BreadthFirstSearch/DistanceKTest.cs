@@ -1,4 +1,3 @@
-using playground.BinaryTrees;
 using playground.BreadthFirstSearch;
 
 namespace playground.UnitTest.BreadthFirstSearch;
