@@ -14,3 +14,5 @@ public class OrangesRottingTest
         Assert.Equal(expected, actual);
     }
 }
+
+// 動物系 人人果實 幻獸種 尼卡型態 太陽神尼卡

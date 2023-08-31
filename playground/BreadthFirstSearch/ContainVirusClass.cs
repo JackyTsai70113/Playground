@@ -19,8 +19,7 @@ public class ContainVirusClass
                     {
                         var region = new Region();
                         region.Construct(A, seen, i, j, dirs);
-                        region.SetWallsCount(A, dirs);
-                        if (region.WallsCount > 0)
+                        if (region.CanInfected())
                             regions.Add(region);
                     }
                 }
@@ -28,11 +27,12 @@ public class ContainVirusClass
 
             if (regions.Count == 0)
                 break;
-            regions.Sort((x, y) => y.WallsCount - x.WallsCount);
+
+            regions.Sort();
 
             var topRegion = regions[0];
             regions.RemoveAt(0);
-            res += topRegion.WallsCount;
+            res += topRegion.GetWallsCount();
             topRegion.StopInfection(A);
 
             foreach (var region in regions)
@@ -41,60 +41,60 @@ public class ContainVirusClass
 
         return res;
     }
+}
 
-    public class Region
+internal class Region : IComparable<Region>
+{
+    public HashSet<(int x, int y)> Infecteds { get; set; } = new();
+    public HashSet<(int x, int y)> UnInfecteds { get; set; } = new();
+    public int WallsCount { get; private set; }
+
+    public void Construct(int[][] A, bool[,] seen, int x0, int y0, int[] dirs)
     {
-        public HashSet<(int x, int y)> Infecteds { get; set; } = new();
-        public HashSet<(int x, int y)> UnInfecteds { get; set; } = new();
-        public int WallsCount { get; set; }
-
-        public void Construct(int[][] A, bool[,] seen, int x0, int y0, int[] dirs)
+        if (x0 < 0 || y0 < 0 || x0 == A.Length || y0 == A[0].Length || A[x0][y0] == 2)
+            return;
+        if (A[x0][y0] == 0)
         {
-            if (x0 < 0 || y0 < 0 || x0 == A.Length || y0 == A[0].Length || seen[x0, y0])
+            UnInfecteds.Add((x0, y0));
+            WallsCount++;
+        }
+        else if (A[x0][y0] == 1)
+        {
+            Infecteds.Add((x0, y0));
+            if (seen[x0, y0])
                 return;
-            if (A[x0][y0] == 0)
+            seen[x0, y0] = true;
+            for (int i = 0; i < 4; i++)
             {
-                UnInfecteds.Add((x0, y0));
-            }
-            else if (A[x0][y0] == 1)
-            {
-                seen[x0, y0] = true;
-                Infecteds.Add((x0, y0));
-                for (int i = 0; i < 4; i++)
-                {
-                    Construct(A, seen, x0 + dirs[i], y0 + dirs[i + 1], dirs);
-                }
+                Construct(A, seen, x0 + dirs[i], y0 + dirs[i + 1], dirs);
             }
         }
+    }
 
-        public void StopInfection(int[][] A)
-        {
-            foreach (var (x0, y0) in Infecteds)
-                A[x0][y0] = 2;
-        }
+    public void StopInfection(int[][] A)
+    {
+        foreach (var (x0, y0) in Infecteds)
+            A[x0][y0] = 2;
+    }
 
-        public void Infected(int[][] A)
-        {
-            foreach (var (x0, y0) in UnInfecteds)
-                A[x0][y0] = 1;
-        }
+    public void Infected(int[][] A)
+    {
+        foreach (var (x0, y0) in UnInfecteds)
+            A[x0][y0] = 1;
+    }
 
-        public void SetWallsCount(int[][] A, int[] dirs)
-        {
-            WallsCount = 0;
-            foreach (var (x0, y0) in Infecteds)
-            {
-                for (int i = 0; i < 4; i++)
-                {
-                    int x = x0 + dirs[i], y = y0 + dirs[i + 1];
-                    if (x < 0 || y < 0 || x == A.Length || y == A[0].Length)
-                        continue;
-                    if (A[x][y] == 0)
-                    {
-                        WallsCount++;
-                    }
-                }
-            }
-        }
+    public bool CanInfected()
+    {
+        return UnInfecteds.Count > 0;
+    }
+
+    public int GetWallsCount()
+    {
+        return WallsCount;
+    }
+
+    public int CompareTo(Region other)
+    {
+        return other.UnInfecteds.Count - UnInfecteds.Count;
     }
 }

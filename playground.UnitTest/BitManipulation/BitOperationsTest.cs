@@ -13,6 +13,8 @@ public class BitOperationsTest
     [InlineData(6, 2)]
     [InlineData(7, 3)]
     [InlineData(8, 1)]
+    [InlineData(12, 2)]
+    [InlineData(13, 3)]
     public void BitOperationsPopCount(int num, int expected)
     {
         var actual = BitOperationsClass.PopCount(num);
