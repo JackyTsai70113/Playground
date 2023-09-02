@@ -26,4 +26,25 @@ public class MinExtraCharClass
         }
         return dfs(0);
     }
+
+    /// <summary>
+    /// tabulation
+    /// </summary>
+    public static int MinExtraChar2(string s, string[] A)
+    {
+        int n = s.Length;
+        var memo = new int[n + 1];
+        Array.Fill(memo, n);
+        for (int i = 1; i <= n; i++)
+        {
+            foreach (var a in A)
+            {
+                if (i >= a.Length
+                    && s[(i - a.Length)..i] == a)
+                    memo[i] = Math.Min(memo[i], memo[i - a.Length] - a.Length);
+            }
+            memo[i] = Math.Min(memo[i], memo[i - 1]);
+        }
+        return memo[n];
+    }
 }
