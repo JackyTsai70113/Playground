@@ -1,6 +1,6 @@
 using playground.UnionFinds;
 
-namespace playground.UnitTest.UnionFind;
+namespace playground.UnitTest.UnionFinds;
 
 public class FindCircleNumTest
 {
