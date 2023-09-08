@@ -2,6 +2,9 @@ namespace playground.BitManipulation;
 
 public class MaximumOrClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/maximum-or
+    /// </summary>
     public static long MaximumOr(int[] nums, int k)
     {
         int n = nums.Length, left = 0;
