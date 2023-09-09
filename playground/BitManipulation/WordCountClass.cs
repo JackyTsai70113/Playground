@@ -1,5 +1,3 @@
-using System.Numerics;
-
 namespace playground.BitManipulation;
 
 public class WordCountClass

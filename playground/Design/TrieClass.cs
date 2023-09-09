@@ -1,89 +1,49 @@
-namespace playground.Design
+using playground.TreeNodes;
+
+namespace playground.Design;
+
+public interface ITrieClass
 {
-    /// <remarks>https://leetcode.com/problems/implement-trie-prefix-tree</remarks>
-    public class TrieClass
+    void Insert(string word);
+    bool Search(string word);
+    bool StartsWith(string prefix);
+}
+
+/// <remarks>https://leetcode.com/problems/implement-trie-prefix-tree</remarks>
+public class TrieClass : ITrieClass
+{
+    private readonly TreeNode<bool> root;
+    public TrieClass()
     {
-        private static readonly int MAX = 26;
-        private sealed class TreeNode
+        root = new(); // for all alphabets
+    }
+
+    public void Insert(string word)
+    {
+        var cur = root;
+        foreach (var c in word)
         {
-            public TreeNode(TreeNode[] children)
-            {
-                this.children = children;
-            }
-
-            private bool isEnd;
-            private readonly TreeNode[] children;
-
-            public void Add(char ch)
-            {
-                children[ch - 'a'] = new TreeNode(new TreeNode[MAX]);
-            }
-
-            public TreeNode Get(char ch)
-            {
-                return children[ch - 'a'];
-            }
-
-            public bool Contains(char ch)
-            {
-                return children[ch - 'a'] != null;
-            }
-
-            public bool IsEnd()
-            {
-                return isEnd;
-            }
-
-            public void SetEnd(bool isEnd)
-            {
-                this.isEnd = isEnd;
-            }
+            int childIndex = c - 'a';
+            if (!cur.HasChild(childIndex))
+                cur.AddChild(childIndex, false);
+            cur = cur.GetChild(childIndex);
         }
+        cur.SetValue(true);
+    }
 
-        private readonly TreeNode root;
-        public TrieClass()
+    public bool Search(string word)
+    {
+        var routes = word.Select(c => c - 'a');
+        if (!root.TrySearch(routes, out bool isEnd))
         {
-            root = new TreeNode(new TreeNode[MAX]);
+            return false;
         }
+        return isEnd;
+    }
 
-        public void Insert(string word)
-        {
-            TreeNode cur = root;
-            for (int i = 0; i < word.Length; ++i)
-            {
-                if (!cur.Contains(word[i]))
-                {
-                    cur.Add(word[i]);
-                }
-
-                cur = cur.Get(word[i]);
-            }
-            cur.SetEnd(true);
-        }
-
-        public bool Search(string word)
-        {
-            TreeNode cur = root;
-            for (int i = 0; i < word.Length && cur != null; ++i)
-            {
-                if (!cur.Contains(word[i]))
-                {
-                    return false;
-                }
-
-                cur = cur.Get(word[i]);
-            }
-            return cur.IsEnd();
-        }
-
-        public bool StartsWith(string prefix)
-        {
-            TreeNode cur = root;
-            for (int i = 0; i < prefix.Length && cur != null; ++i)
-            {
-                cur = cur.Get(prefix[i]);
-            }
-            return cur != null;
-        }
+    public bool StartsWith(string prefix)
+    {
+        var routes = prefix.Select(c => c - 'a');
+        return root.TrySearch(routes, out _);
     }
 }

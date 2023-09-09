@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace playground.BitManipulation;
 
 public class MinimumIncompatibilityClass

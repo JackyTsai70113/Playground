@@ -6,28 +6,29 @@ public class TrieTest
 {
     [Theory]
     [InlineData(new string[] { "Trie", "insert", "search" }, "[[], [apple], [apple]]", new string[] { null, null, "true" })]
+    [InlineData(new string[] { "Trie", "insert", "startsWith" }, "[[], [apple], [pple]]", new string[] { null, null, "false" })]
     [InlineData(new string[] { "Trie", "insert", "search" }, "[[], [apple], [app]]", new string[] { null, null, "false" })]
     [InlineData(new string[] { "Trie", "insert", "search" }, "[[], [apple], [b]]", new string[] { null, null, "false" })]
     [InlineData(new string[] { "Trie", "insert", "search", "search", "startsWith", "insert", "search" }, "[[], [apple], [apple], [app], [app], [app], [app]]", new string[] { null, null, "true", "false", "true", null, "true" })]
-    public void Trie(string[] funcs, string valArr, string[] expected)
+    public void Trie(string[] functions, string valArr, string[] expected)
     {
         var vals = valArr.To2dArr<string>();
-        TrieClass obj = new();
-        for (int i = 0; i < funcs.Length; ++i)
+        TrieClass trie = new();
+        for (int i = 0; i < functions.Length; ++i)
         {
-            switch (funcs[i])
+            switch (functions[i])
             {
                 case "Trie":
-                    obj = new TrieClass();
+                    trie = new TrieClass();
                     break;
                 case "insert":
-                    obj.Insert(vals[i][0]);
+                    trie.Insert(vals[i][0]);
                     break;
                 case "search":
-                    Assert.Equal(expected[i], obj.Search(vals[i][0]).ToString().ToLower());
+                    Assert.Equal(expected[i], trie.Search(vals[i][0]).ToString().ToLower());
                     break;
                 case "startsWith":
-                    Assert.Equal(expected[i], obj.StartsWith(vals[i][0]).ToString().ToLower());
+                    Assert.Equal(expected[i], trie.StartsWith(vals[i][0]).ToString().ToLower());
                     break;
                 default:
                     break;

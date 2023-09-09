@@ -1,6 +1,6 @@
-using playground.Trees;
+using playground.BreadthFirstSearch;
 
-namespace playground.UnitTest.Trees;
+namespace playground.UnitTest.BreadthFirstSearch;
 
 public class NumOfMinutesTest
 {
