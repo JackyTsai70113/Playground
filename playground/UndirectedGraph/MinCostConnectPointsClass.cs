@@ -1,4 +1,4 @@
-﻿using playground.UnionFinds;
+using playground.UnionFinds;
 
 namespace playground;
 
