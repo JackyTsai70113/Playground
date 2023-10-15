@@ -1,6 +1,6 @@
 ﻿using playground.Arrays;
 
-namespace playground.UnitTest;
+namespace playground.UnitTest.Arrays;
 
 public class MinProcessingTimeTest
 {

@@ -1,6 +1,6 @@
 ﻿using playground.DynamicPrograming;
 
-namespace playground.UnitTest;
+namespace playground.UnitTest.DynamicPrograming;
 
 public class ChampagneTowerTest
 {

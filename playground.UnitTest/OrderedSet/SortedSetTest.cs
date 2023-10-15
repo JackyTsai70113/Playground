@@ -1,6 +1,6 @@
 using playground.OrderedSet;
 
-namespace playground.UnitTest;
+namespace playground.UnitTest.OrderedSet;
 
 public class SortedSetTest
 {

@@ -1,6 +1,6 @@
 using playground.UnionFinds;
 
-namespace playground;
+namespace playground.Mathematics;
 
 public class MinCostConnectPointsClass
 {

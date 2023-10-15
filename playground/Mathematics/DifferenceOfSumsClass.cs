@@ -1,4 +1,4 @@
-﻿namespace playground;
+﻿namespace playground.Mathematics;
 
 public class DifferenceOfSumsClass
 {

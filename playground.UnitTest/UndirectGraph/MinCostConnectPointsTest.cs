@@ -1,4 +1,6 @@
-namespace playground.UnitTest;
+using playground.Mathematics;
+
+namespace playground.UnitTest.Mathematics;
 
 public class MinCostConnectPointsTest
 {
