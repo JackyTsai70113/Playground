@@ -2,6 +2,9 @@ namespace playground.BinarySearch;
 
 public class FindIndicesClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/find-indices-with-index-and-value-difference-ii
+    /// </summary>
     public static int[] FindIndices(int[] nums, int d, int v)
     {
         int mini = 0, maxi = 0, n = nums.Length;

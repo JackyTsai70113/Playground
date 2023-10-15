@@ -8,12 +8,14 @@ public class BinarySearchTemplateTest
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 0, -1, 0)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 1, 0, 0)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 2, 3, 3)]
+    [InlineData(new int[] { 1, 2, 2, 2, 2, 4, 5, 5 }, 2, 3, 3)] // !! not upper or lower
     [InlineData(new int[] { 1, 2, 2, 2, 2, 4, 5, 5, 6 }, 2, 4, 4)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 3, -5, 4)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 4, 4, 4)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 5, 5, 5)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 6, 7, 7)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 7, -9, 8)]
+    [InlineData(new int[] { 6, 14, 14, 29, 32, 32, 36, 42, 48 }, 14, 1, 1)] // !! not upper or lower
     public void ArrayBinarySearch(int[] nums, int p, int expected, int expected2)
     {
         int actual = BinarySearchTemplateClass.ArrayBinarySearch(nums, p);
