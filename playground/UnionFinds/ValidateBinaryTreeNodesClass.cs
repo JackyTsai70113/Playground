@@ -46,8 +46,8 @@ public class UnionFind2
     {
         var uGroup = Find(u);
         var vGroup = Find(v);
-        if (uGroup == vGroup) return false;
-        if (v != vGroup) return false;
+        if (uGroup == vGroup) return false; // cycle
+        if (v != vGroup) return false; // parent is occupied
         _roots[v] = uGroup;
         return true;
     }
