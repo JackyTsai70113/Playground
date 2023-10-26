@@ -21,7 +21,7 @@ public class IsSelfCrossingClass
             {
                 if (Math.Max(p3[1], p4[1]) >= Math.Min(p1[1], p2[1])
                     && Math.Max(p1[1], p2[1]) >= Math.Min(p3[1], p4[1]))
-                return true;
+                    return true;
             }
             if (p1[1] == p2[1] && p2[1] == p3[1] && p3[1] == p4[1])
             {
@@ -30,7 +30,7 @@ public class IsSelfCrossingClass
                     return true;
             }
             return false;
-        }
+        } 
 
         var ps = new int[7][];
         ps[0] = new int[2];
