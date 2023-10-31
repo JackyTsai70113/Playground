@@ -1,3 +1,4 @@
+# cd <testProject> && dotnet add package coverlet.msbuild
 CC=gcc
 shellName = $(shell uname)
 
