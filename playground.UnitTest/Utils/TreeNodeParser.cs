@@ -6,24 +6,24 @@ public static class TreeNodeParser
 {
     public static TreeNode ToTreeNode(this string str)
     {
-        var arr = str.ToArr<string>();
-        if (arr.Length == 0 || arr[0] == "null") return null;
-        var res = new TreeNode(int.Parse(arr[0]));
+        var arr = str.ToArr<int?>();
+        if (arr.Length == 0 || arr[0] == null) return null;
+        var res = new TreeNode(arr[0].Value);
         var q = new Queue<TreeNode>();
         q.Enqueue(res);
         int j = 1;
         while (j < arr.Length)
         {
             var node = q.Dequeue();
-            if (arr[j] != "null")
+            if (arr[j] != null)
             {
-                node.left = new TreeNode(int.Parse(arr[j]));
+                node.left = new TreeNode(arr[j].Value);
                 q.Enqueue(node.left);
             }
             j++;
-            if (j < arr.Length && arr[j] != "null")
+            if (j < arr.Length && arr[j] != null)
             {
-                node.right = new TreeNode(int.Parse(arr[j]));
+                node.right = new TreeNode(arr[j].Value);
                 q.Enqueue(node.right);
             }
             j++;

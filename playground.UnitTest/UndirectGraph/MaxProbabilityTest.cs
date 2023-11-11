@@ -8,7 +8,7 @@ public class MaxProbabilityTest
     [InlineData(3, "[[0,1],[1,2],[0,2]]", new double[] { 0.5, 0.5, 0.2 }, 0, 2, 0.25)]
     [InlineData(4, "[[0,1],[1,2],[0,2],[0,3],[3,1],[3,2]]", new double[] { 0.5, 0.5, 0.3, 0.6, 0.6, 0.6 }, 0, 3, 0.59999999999999998)]
     [InlineData(3, "[[0,1],[1,2],[0,2]]", new double[] { 0.5, 0.5, 0.3 }, 0, 2, 0.3)]
-    [InlineData(3, "[[0,1]", new double[] { 0.5 }, 0, 2, 0)]
+    [InlineData(3, "[[0,1]]", new double[] { 0.5 }, 0, 2, 0)]
     [MemberData(nameof(GetData))]
     public void MaxProbability(int n, string edges, double[] succProb, int start, int end, double expected)
     {

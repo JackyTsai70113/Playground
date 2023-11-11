@@ -2,6 +2,9 @@ namespace playground.DynamicPrograming;
 
 public class MinIncrementOperationsClass
 {
+    /// <summary>
+    /// https://leetcode.com/problems/minimum-increment-operations-to-make-array-beautiful
+    /// </summary>
     public static long MinIncrementOperations(int[] nums, int k)
     {
         long res = 0;
