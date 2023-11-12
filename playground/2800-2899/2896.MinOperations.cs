@@ -1,6 +1,6 @@
-namespace playground.DynamicPrograming;
+namespace playground;
 
-public class MinOperationsClass
+public class MinOperations_2896
 {
     /// <summary>
     /// https://leetcode.com/problems/apply-operations-to-make-two-strings-equal

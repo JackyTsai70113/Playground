@@ -1,8 +1,6 @@
-using playground.DynamicPrograming;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.DynamicPrograming;
-
-public class MinOperationsTest
+public class MinOperationsTest_2896
 {
     [Theory]
     [InlineData("0101001010", "0101001010", 2, 0)]
@@ -10,7 +8,7 @@ public class MinOperationsTest
     [InlineData("10110", "00011", 4, -1)]
     public void MinOperations(string s1, string s2, int x, int expected)
     {
-        int actual = MinOperationsClass.MinOperations(s1, s2, x);
+        var actual = MinOperations_2896.MinOperations(s1, s2, x);
         Assert.Equal(expected, actual);
     }
 }

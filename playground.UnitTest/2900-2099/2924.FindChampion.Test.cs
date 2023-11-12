@@ -1,5 +1,3 @@
-using System.Text.Json;
-
 namespace playground.UnitTest;
 
 public class FindChampionTest2

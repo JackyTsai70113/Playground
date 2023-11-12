@@ -1,6 +1,4 @@
-using playground.SlidingWindow;
-
-namespace playground.UnitTest.SlidingWindow;
+namespace playground.UnitTest;
 
 public class MinOperationsTest
 {
@@ -12,7 +10,7 @@ public class MinOperationsTest
     [InlineData(new int[] { 8828, 9581, 49, 9818, 9974, 9869, 9991, 10000, 10000, 10000, 9999, 9993, 9904, 8819, 1231, 6309 }, 134365, 16)]
     public void MinOperations(int[] nums, int x, int expected)
     {
-        var actual = MinOperationsClass.MinOperations(nums, x);
+        var actual = MinOperations_1658.MinOperations(nums, x);
         Assert.Equal(expected, actual);
     }
 }

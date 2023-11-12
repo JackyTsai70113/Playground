@@ -46,37 +46,49 @@ public class NumBusesToDestinationClass
     public static int NumBusesToDestination2(int[][] routes, int source, int target)
     {
         if (source == target) return 0;
-        var graph = new Dictionary<int, HashSet<int>>();
-        for (int bus = 0; bus < routes.Length; ++bus)
+        int n = routes.Length;
+        var busToRoutes = new HashSet<int>[n];
+        var routeToBuses = new Dictionary<int, List<int>>();
+        for (int i = 0; i < n; ++i)
         {
-            foreach (var station in routes[bus])
+            busToRoutes[i] = new();
+            for (int j = 0; j < routes[i].Length; ++j)
             {
-                if (!graph.ContainsKey(station)) graph[station] = new();
-                graph[station].Add(bus);
+                busToRoutes[i].Add(routes[i][j]);
+                if (!routeToBuses.ContainsKey(routes[i][j]))
+                    routeToBuses[routes[i][j]] = new();
+                routeToBuses[routes[i][j]].Add(i);
             }
         }
-        var seenBus = new HashSet<int>();
-        var seenStation = new HashSet<int>();
-        var buses = -1;
         var q = new Queue<int>();
-        q.Enqueue(source);
-        seenStation.Add(source);
+        var seenBus = new HashSet<int>();
+        var seenRoute = new HashSet<int>();
+        if (routeToBuses.ContainsKey(source))
+        {
+            seenRoute.Add(source);
+            foreach (var bus in routeToBuses[source])
+            {
+                q.Enqueue(bus);
+                seenBus.Add(bus);
+            }
+        }
+        var res = 0;
         while (q.Count > 0)
         {
-            buses++;
-            for (int i = q.Count - 1; i >= 0; --i)
+            res++;
+            for (int i = q.Count; i > 0; --i)
             {
-                var station = q.Dequeue();
-                if (station == target) return buses;
-                foreach (var bus in graph[station])
+                var bus = q.Dequeue();
+                if (busToRoutes[bus].Contains(target)) return res;
+                foreach (var route in busToRoutes[bus])
                 {
-                    if (seenBus.Contains(bus)) continue;
-                    seenBus.Add(bus);
-                    foreach (var neiStation in routes[bus])
+                    if (seenRoute.Contains(route)) continue;
+                    seenRoute.Add(route);
+                    foreach (var nextBus in routeToBuses[route])
                     {
-                        if (seenStation.Contains(neiStation)) continue;
-                        seenStation.Add(neiStation);
-                        q.Enqueue(neiStation);
+                        if (seenBus.Contains(nextBus)) continue;
+                        seenBus.Add(nextBus);
+                        q.Enqueue(nextBus);
                     }
                 }
             }

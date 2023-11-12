@@ -1,6 +1,6 @@
-namespace playground.SlidingWindow;
+namespace playground;
 
-public class MinOperationsClass
+public class MinOperations_1658
 {
     /// <summary>
     /// https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero
