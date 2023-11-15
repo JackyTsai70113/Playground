@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MaximumScoreAfterOperationsClass
+public class MaximumScoreAfterOperations_2925
 {
     /// <summary>
     /// https://leetcode.com/problems/maximum-score-after-applying-operations-on-a-tree

@@ -9,7 +9,7 @@ public class MaxBalancedSubsequenceSumTest
     public void MaxBalancedSubsequenceSum(string numsStr, long expected)
     {
         var nums = numsStr.ToArr();
-        var actual = MaxBalancedSubsequenceSumClass.MaxBalancedSubsequenceSum(nums);
+        var actual = MaxBalancedSubsequenceSum_2926.MaxBalancedSubsequenceSum(nums);
         Assert.Equal(expected, actual);
     }
 }

@@ -1,6 +1,6 @@
-namespace playground.Arrays;
+namespace playground;
 
-public class CheckArrayClass
+public class CheckArray_2772
 {
     /// <summary>
     /// https://leetcode.com/problems/apply-operations-to-make-all-array-elements-equal-to-zero

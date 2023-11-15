@@ -9,7 +9,7 @@ public class MaximumScoreAfterOperationsTest
     {
         var edges = edgesString.To2dArr();
         var values = valuesString.ToArr();
-        var actual = MaximumScoreAfterOperationsClass.MaximumScoreAfterOperations(edges, values);
+        var actual = MaximumScoreAfterOperations_2925.MaximumScoreAfterOperations(edges, values);
         Assert.Equal(expected, actual);
     }
 }

@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MaximumStrongPairXorClass
+public class MaximumStrongPairXor_2932
 {
     /// <summary>
     /// https://leetcode.com/problems/maximum-strong-pair-xor-i

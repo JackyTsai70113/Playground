@@ -8,7 +8,7 @@ public class MaximumStrongPairXorTest
     [InlineData("[5,6,25,30]", 7)]
     public void MaximumStrongPairXor(string nums, int expected)
     {
-        var actual = MaximumStrongPairXorClass.MaximumStrongPairXor(nums.ToArr());
+        var actual = MaximumStrongPairXor_2932.MaximumStrongPairXor(nums.ToArr());
         Assert.Equal(expected, actual);
     }
 }

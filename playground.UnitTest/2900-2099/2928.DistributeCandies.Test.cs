@@ -7,7 +7,7 @@ public class DistributeCandiesTest
     [InlineData(3, 3, 10)]
     public void DistributeCandies(int n, int limit, int expected)
     {
-        var actual = DistributeCandiesClass.DistributeCandies(n, limit);
+        var actual = DistributeCandies_2928.DistributeCandies(n, limit);
         Assert.Equal(expected, actual);
     }
 }

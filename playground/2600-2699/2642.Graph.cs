@@ -1,14 +1,14 @@
 namespace playground;
 
 /// <summary>
-/// https://leetcode.com/problems/design-graph-with-shortest-path-calculator/
+/// https://leetcode.com/problems/design-graph-with-shortest-path-calculator
 /// </summary>
-public class GraphClass
+public class Graph_2642
 {
     readonly int n;
     readonly List<(int v, int cost)>[] graph;
-    public GraphClass() { }
-    public GraphClass(int n, int[][] edges)
+    public Graph_2642() { }
+    public Graph_2642(int n, int[][] edges)
     {
         this.n = n;
         graph = new List<(int, int)>[n];

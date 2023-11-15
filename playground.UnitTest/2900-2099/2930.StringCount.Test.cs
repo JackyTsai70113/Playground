@@ -8,7 +8,7 @@ public class StringCountTest
     [InlineData(10, 83943898)]
     public void StringCount(int n, int expected)
     {
-        var actual = StringCountClass.StringCount(n);
+        var actual = StringCount_2930.StringCount(n);
         Assert.Equal(expected, actual);
     }
 }

@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MaxBalancedSubsequenceSumClass
+public class MaxBalancedSubsequenceSum_2926
 {
     /// <summary>
     /// https://leetcode.com/problems/maximum-balanced-subsequence-sum

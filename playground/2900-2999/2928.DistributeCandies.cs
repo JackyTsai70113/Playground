@@ -1,6 +1,6 @@
 namespace playground;
 
-public class DistributeCandiesClass
+public class DistributeCandies_2928
 {
     /// <summary>
     /// https://leetcode.com/problems/distribute-candies-among-children-i

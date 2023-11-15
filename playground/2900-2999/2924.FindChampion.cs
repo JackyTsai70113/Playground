@@ -1,6 +1,6 @@
 namespace playground;
 
-public class FindChampionClass2
+public class FindChampion_2924
 {
     /// <summary>
     /// https://leetcode.com/problems/find-champion-ii

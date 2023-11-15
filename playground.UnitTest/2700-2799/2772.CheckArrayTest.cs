@@ -1,6 +1,4 @@
-using playground.Arrays;
-
-namespace playground.UnitTest.Arrays;
+namespace playground.UnitTest;
 
 public class CheckArrayTest
 {
@@ -8,9 +6,9 @@ public class CheckArrayTest
     [InlineData(new int[] { 2, 2, 3, 1, 1, 0 }, 3, true)]
     [InlineData(new int[] { 1, 3, 1, 1 }, 2, false)]
     [InlineData(new int[] { 1 }, 2, false)]
-    public void MaxNonDecreasingLength(int[] nums, int k, bool expected)
+    public void CheckArray(int[] nums, int k, bool expected)
     {
-        var actual = CheckArrayClass.CheckArray(nums, k);
+        var actual = CheckArray_2772.CheckArray(nums, k);
         Assert.Equal(expected, actual);
     }
 }

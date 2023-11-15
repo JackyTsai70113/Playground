@@ -1,11 +1,12 @@
 namespace playground;
 
-public class FindChampionClass
+public class FindChampion_2923
 {
     /// <summary>
     /// https://leetcode.com/problems/find-champion-i
     /// </summary>
-    public int FindChampion(int[][] grid) {
+    public static int FindChampion(int[][] grid)
+    {
         int n = grid.Length, res = 0;
         for (int i = 0; i < n; ++i)
         {
@@ -15,7 +16,8 @@ public class FindChampionClass
                 if (i != j && grid[i][j] == 0)
                     break;
             }
-            if(j == n){
+            if (j == n)
+            {
                 res = i;
                 break;
             }

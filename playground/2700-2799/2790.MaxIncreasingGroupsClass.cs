@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MaxIncreasingGroupsClass
+public class MaxIncreasingGroups_2790
 {
     /// <summary>
     /// https://leetcode.com/problems/maximum-number-of-groups-with-increasing-length

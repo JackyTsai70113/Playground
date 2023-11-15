@@ -1,5 +1,3 @@
-using System.Diagnostics.Metrics;
-
 namespace playground;
 
 public class MaxSpending_2931

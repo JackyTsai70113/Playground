@@ -9,7 +9,7 @@ public class GraphTest
     public void Graph(string[] functions, string[] valStr, string expectedStr)
     {
         var expected = expectedStr.ToArr<int?>();
-        GraphClass graph = new();
+        Graph_2642 graph = new();
         for (int i = 0; i < functions.Length; ++i)
         {
             switch (functions[i])
@@ -18,7 +18,7 @@ public class GraphTest
                     var ctorObjects = valStr[i].ToArr<object>();
                     int n = int.Parse(JsonSerializer.Serialize(ctorObjects[0]));
                     var ctorEdges = JsonSerializer.Serialize(ctorObjects[1]).To2dArr();
-                    graph = new GraphClass(n, ctorEdges);
+                    graph = new Graph_2642(n, ctorEdges);
                     break;
                 case "addEdge":
                     var addedEdges = valStr[i].To2dArr();

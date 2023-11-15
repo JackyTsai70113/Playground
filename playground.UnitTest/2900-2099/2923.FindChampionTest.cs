@@ -1,8 +1,6 @@
-using System.Text.Json;
-
 namespace playground.UnitTest;
 
-public class FindChampionTest
+public class FindChampionTest_2923
 {
     [Theory]
     [InlineData("[[0,1],[0,0]]", 0)]
@@ -10,7 +8,7 @@ public class FindChampionTest
     public void FindChampion(string gridString, int expected)
     {
         var grid = gridString.To2dArr();
-        var actual = new FindChampionClass().FindChampion(grid);
+        var actual = FindChampion_2923.FindChampion(grid);
         Assert.Equal(expected, actual);
     }
 }
