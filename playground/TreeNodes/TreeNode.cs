@@ -8,7 +8,7 @@ public class TreeNode<T> where T : unmanaged
 
     public TreeNode(T value = default)
     {
-        value = default;
+        this.value = value;
     }
 
     public bool TrySearch(IEnumerable<int> routes, out T value)
