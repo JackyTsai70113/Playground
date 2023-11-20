@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class DistributeCandiesTest
+public class DistributeCandiesTest_2928
 {
     [Theory]
     [InlineData(5, 2, 3)]

@@ -1,16 +1,19 @@
-namespace playground.UnitTest.HashTables;
+namespace playground;
 
-public class SumCountsClass
+public class SumCounts_2913
 {
     /// <summary>
     /// https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-i
     /// </summary>
-    public static int SumCounts(IList<int> nums) {
+    public static int SumCounts(IList<int> nums)
+    {
         var res = 0;
-        var d = new Dictionary<int, int>();
-        for(int i = 0; i < nums.Count; ++i){
+        Dictionary<int, int> d;
+        for (int i = 0; i < nums.Count; ++i)
+        {
             d = new();
-            for(int j = i; j < nums.Count; ++j){
+            for (int j = i; j < nums.Count; ++j)
+            {
                 d[nums[j]] = d.ContainsKey(nums[j]) ? d[nums[j]] + 1 : 1;
                 res += d.Keys.Count * d.Keys.Count;
             }
