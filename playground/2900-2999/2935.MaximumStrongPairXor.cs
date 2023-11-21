@@ -5,16 +5,17 @@ public class MaximumStrongPairXor_2935
     public static int MaximumStrongPairXor(int[] nums)
     {
         var res = 0;
-        var trie = new Trie(21);
+        var trie = new Trie(20);
         foreach (var num in nums)
             trie.Insert(num);
         foreach (var num in nums)
             res = Math.Max(res, num ^ trie.SearchXorMax(num, num * 2));
         return res;
     }
+
     class Trie
     {
-        readonly TrieNode _root = new();
+        readonly TreeNode _root = new();
         readonly int _level;
         public Trie(int level)
         {
@@ -56,9 +57,9 @@ public class MaximumStrongPairXor_2935
         }
     }
 
-    class TrieNode
+    class TreeNode
     {
-        public TrieNode[] children = new TrieNode[2];
+        public TreeNode[] children = new TreeNode[2];
         public int min = int.MaxValue;
         public int max = int.MinValue;
     }

@@ -2,6 +2,9 @@ namespace playground;
 
 public class FindDifferentBinaryString_1980
 {
+    /// <summary>
+    /// https://leetcode.com/problems/find-unique-binary-string
+    /// </summary>
     public static string FindDifferentBinaryString(string[] nums)
     {
         var trie = new Trie(nums[0].Length);
@@ -10,10 +13,10 @@ public class FindDifferentBinaryString_1980
         return trie.SearchEmpty();
     }
 
-    private class Trie
+    class Trie
     {
-        private readonly TreeNode _root = new(' ');
-        private readonly int _level;
+        readonly TreeNode _root = new();
+        readonly int _level;
         public Trie(int level)
         {
             _level = level;
@@ -23,65 +26,40 @@ public class FindDifferentBinaryString_1980
             var cur = _root;
             for (int i = _level - 1; i >= 0; --i)
             {
-                if (s[_level - 1 - i] == '0')
-                {
-                    cur.left ??= new('0');
-                    cur = cur.left;
-                }
-                else
-                {
-                    cur.right ??= new('1');
-                    cur = cur.right;
-                }
+                int idx = s[_level - 1 - i] - '0';
+                if (cur.children[idx] == null)
+                    cur.children[idx] = new();
+                cur = cur.children[idx];
             }
         }
 
         public string SearchEmpty()
         {
-            var cur = _root;
             var res = new List<char>();
-            var q = new Queue<(TreeNode, List<char>)>();
-            q.Enqueue((cur, new List<char>()));
-            while (q.Count > 0)
+            var cur = _root;
+            for (int i = _level - 1; i >= 0; --i)
             {
-                var (node, chs) = q.Dequeue();
-                if (node.left == null)
+                if (cur.children[0] == null)
                 {
-                    chs.Add('0');
-                    res = chs;
-                    break;
+                    res.Add('0');
                 }
-                if (node.right == null)
+                else if (cur.children[1] == null)
                 {
-                    chs.Add('1');
-                    res = chs;
-                    break;
+                    res.Add('1');
                 }
-                chs.Add('0');
-                q.Enqueue((node.left, chs));
-                var chs2 = new List<char>(chs);
-                chs2[^1] = '1';
-                q.Enqueue((node.right, chs2));
-            }
-            while (res.Count < _level)
-            {
-                res.Add('0');
+                else
+                {
+                    res.Add('0');
+                    cur = cur.children[0];
+                }
             }
             return new string(res.ToArray());
         }
     }
 
-    public class TreeNode
+    class TreeNode
     {
-        public char val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(char val, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
+        public TreeNode[] children = new TreeNode[2];
     }
 }
 

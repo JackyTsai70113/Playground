@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class MaxBalancedSubsequenceSumTest
+public class MaxBalancedSubsequenceSumTest_2926
 {
     [Theory]
     [InlineData("[3,3,5,6]", 14)]

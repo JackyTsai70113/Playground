@@ -1,8 +1,10 @@
-namespace playground.Arrays;
+namespace playground;
 
-public class CircularGameLosersClass
+public class CircularGameLosers_2682
 {
-    /// <remarks>https://leetcode.com/problems/find-the-losers-of-the-circular-game</remarks>
+    /// <summary>
+    /// https://leetcode.com/problems/find-the-losers-of-the-circular-game
+    /// </summary>
     public static int[] CircularGameLosers(int n, int k)
     {
         var set = new HashSet<int>(Enumerable.Range(0, n));
@@ -11,6 +13,7 @@ public class CircularGameLosersClass
         {
             i = (i + j * k) % n;
             if (!set.Remove(i))
+
             {
                 break;
             }

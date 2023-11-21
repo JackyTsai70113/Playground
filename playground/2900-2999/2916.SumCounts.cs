@@ -2,37 +2,37 @@ namespace playground;
 
 public class SumCounts_2916
 {
-    private static long N = 100005;
-    private long hell = 1000000007;
-    private long[] a = new long[N];
+    private static readonly long N = 100005;
+    private readonly long hell = 1000000007;
+    private readonly long[] a = new long[N];
     private long[] seg = new long[4 * (int)N];
-    private long[] segsq = new long[4 * (int)N];
-    private long[] lazy = new long[4 * (int)N];
+    private readonly long[] segsq = new long[4 * (int)N];
+    private readonly long[] lazy = new long[4 * (int)N];
 
     // Build the segment tree.
-    private void build(int node, long start, long end)
+    private void Build(int node, long start, long end)
     {
         if (start == end)
         {
             seg[node] = a[(int)start];
-            segsq[node] = (a[(int)start] * a[(int)start]) % hell;
+            segsq[node] = a[(int)start] * a[(int)start] % hell;
             return;
         }
         long mid = (start + end) >> 1;
-        build(node << 1, start, mid);
-        build(node << 1 | 1, mid + 1, end);
+        Build(node << 1, start, mid);
+        Build(node << 1 | 1, mid + 1, end);
         seg[node] = (seg[node << 1] + seg[node << 1 | 1]) % hell;
         segsq[node] = (segsq[node << 1] + segsq[node << 1 | 1]) % hell;
     }
 
     // Update the segment tree and handle lazy propagation.
-    private void update(int node, long start, long end, int l, int r, int val)
+    private void Update(int node, long start, long end, int l, int r, int val)
     {
         if (lazy[node] != 0)
         {
-            segsq[node] += ((end - start + 1) * (lazy[node] * lazy[node]) % hell) % hell + (2 * lazy[node] * seg[node]) % hell;
+            segsq[node] += (end - start + 1) * lazy[node] * lazy[node] % hell % hell + 2 * lazy[node] * seg[node] % hell;
             segsq[node] %= hell;
-            seg[node] += ((end - start + 1) * lazy[node]) % hell;
+            seg[node] += (end - start + 1) * lazy[node] % hell;
             seg[node] %= hell;
             if (start != end)
             {
@@ -44,9 +44,9 @@ public class SumCounts_2916
         if (start > end || start > r || end < l) return;
         if (l <= start && end <= r)
         {
-            segsq[node] += ((end - start + 1) * (val * val) % hell) % hell + (2 * val * seg[node]) % hell;
+            segsq[node] += (end - start + 1) * (val * val) % hell % hell + (2 * val * seg[node]) % hell;
             segsq[node] %= hell;
-            seg[node] += ((end - start + 1) * val) % hell;
+            seg[node] += (end - start + 1) * val % hell;
             seg[node] %= hell;
             if (start != end)
             {
@@ -56,8 +56,8 @@ public class SumCounts_2916
             return;
         }
         long mid = (start + end) >> 1;
-        update(node << 1, start, mid, l, r, val);
-        update(node << 1 | 1, mid + 1, end, l, r, val);
+        Update(node << 1, start, mid, l, r, val);
+        Update(node << 1 | 1, mid + 1, end, l, r, val);
         seg[node] = (seg[node << 1] + seg[node << 1 | 1]) % hell;
         segsq[node] = (segsq[node << 1] + segsq[node << 1 | 1]) % hell;
     }
@@ -74,7 +74,7 @@ public class SumCounts_2916
         }
 
         // Build the segment tree.
-        build(1, 1, n);
+        Build(1, 1, n);
 
         Dictionary<int, int> prev_seen_at = new();
 
@@ -84,11 +84,11 @@ public class SumCounts_2916
         {
             if (!prev_seen_at.ContainsKey(nums[i]))
             {
-                update(1, 1, n, i + 1, n, 1);
+                Update(1, 1, n, i + 1, n, 1);
             }
             else
             {
-                update(1, 1, n, i + 1, prev_seen_at[nums[i]] - 1, 1);
+                Update(1, 1, n, i + 1, prev_seen_at[nums[i]] - 1, 1);
             }
 
             prev_seen_at[nums[i]] = i + 1;
