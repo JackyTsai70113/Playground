@@ -1,6 +1,6 @@
-namespace playground.Strings;
+namespace playground;
 
-public class ReverseWordsClass
+public class ReverseWords_0557
 {
     /// <summary>
     /// https://leetcode.com/problems/reverse-words-in-a-string-iii
@@ -8,22 +8,18 @@ public class ReverseWordsClass
     public static string ReverseWords(string s)
     {
         var res = new char[s.Length];
-        int l = 0;
-        for (int r = 0; r < s.Length; ++r)
+        for (int l = 0, r = 0; r <= s.Length; ++r)
         {
-            if (s[r] == ' ')
+            if (r == s.Length || s[r] == ' ')
             {
-                res[r] = ' ';
+                if (r < s.Length)
+                    res[r] = ' ';
                 for (int i = l; i < r; ++i)
                 {
                     res[i] = s[r - 1 + l - i];
                 }
                 l = r + 1;
             }
-        }
-        for (int i = l; i < s.Length; ++i)
-        {
-            res[i] = s[s.Length - 1 + l - i];
         }
         return new string(res);
     }

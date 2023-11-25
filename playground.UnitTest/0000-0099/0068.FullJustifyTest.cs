@@ -1,8 +1,6 @@
-using playground.Strings;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.Strings;
-
-public class FullJustifyTest
+public class FullJustifyTest_0068
 {
     [Theory]
     [InlineData(new string[] { "This", "is", "an", "example", "of", "text", "justification." }, 16, new string[] {
@@ -29,7 +27,7 @@ public class FullJustifyTest
         "d                   " })]
     public void FullJustify(string[] words, int maxWidth, string[] expected)
     {
-        var actual = FullJustifyClass.FullJustify(words, maxWidth);
+        var actual = FullJustify_0068.FullJustify(words, maxWidth);
         Assert.Equal(expected, actual);
     }
 }

@@ -1,7 +1,10 @@
-namespace playground.Arrays;
+namespace playground;
 
-public class ClosetTargetClass
+public class ClosetTarget_2515
 {
+    /// <summary>
+    /// https://leetcode.com/problems/shortest-distance-to-target-string-in-a-circular-array
+    /// </summary>
     public static int ClosetTarget(string[] words, string target, int startIndex)
     {
         int n = words.Length, res = int.MaxValue, len;
