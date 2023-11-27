@@ -1,6 +1,6 @@
 namespace playground;
 
-public class Sort
+public class Sorting
 {
     /// <summary>
     /// 插入演算法 Insertion Sort: O(N^2)/O(1)
