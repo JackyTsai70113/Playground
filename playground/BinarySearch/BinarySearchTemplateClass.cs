@@ -2,16 +2,14 @@ namespace playground.BinarySearch;
 
 public class BinarySearchTemplateClass
 {
-    public static int ArrayBinarySearch(int[] arr, int target)
-    {
-        return Array.BinarySearch(arr, target);
-    }
-
-    public static int ArrayBinarySearch(int[] arr, int index, int length, int target)
-    {
-        return Array.BinarySearch(arr, index, length, target);
-    }
-
+    /// <summary>
+    /// 取左極值
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="l">左邊界</param>
+    /// <param name="r">右邊界(要比搜尋範圍多1)</param>
+    /// <param name="func"></param>
+    /// <returns></returns>
     public static int GetLowerBound(int[] arr, int l, int r, Func<int, bool> func)
     {
         while (l < r)
@@ -30,26 +28,33 @@ public class BinarySearchTemplateClass
     }
 
     /// <summary>
-    /// 取得 arr 中大於等於 target 的最左index
+    /// 取右極值
     /// </summary>
-    public static int GetLowerBound(int[] arr, int target)
+    /// <param name="arr"></param>
+    /// <param name="l">左邊界(要比搜尋範圍少1)</param>
+    /// <param name="r">右邊界</param>
+    /// <param name="func"></param>
+    /// <returns></returns>
+    public static int GetUpperBound(int[] arr, int l, int r, Func<int, bool> func)
     {
-        int l = 0, r = arr.Length;
         while (l < r)
         {
-            int m = l + (r - l) / 2;
-            if (arr[m] >= target)
+            int m = l + (r - l + 1) / 2;
+            if (func(arr[m]))
             {
-                r = m;
+                l = m;
             }
             else
             {
-                l = m + 1;
+                r = m - 1;
             }
         }
         return l;
     }
 
+    /// <summary>
+    /// 取得 arr 中大於等於 target 的最右index
+    /// </summary>
     public static int GetUpperBound(int[] arr, int target)
     {
         int l = 0, r = arr.Length - 1;

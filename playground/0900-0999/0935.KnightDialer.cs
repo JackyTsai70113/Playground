@@ -4,57 +4,6 @@ public class KnightDialer_0935
 {
     public static int KnightDialer(int n)
     {
-        long MOD = (long)1e9 + 7;
-        var dp = new Dictionary<(int, int, int), long>();
-        var dirs = new int[][]{
-            new int[]{2,1},
-            new int[]{1,2},
-            new int[]{-1,2},
-            new int[]{-2,1},
-            new int[]{-2,-1},
-            new int[]{-1,-2},
-            new int[]{1,-2},
-            new int[]{2,-1},
-        };
-        long dfs(int[] pt, int cur)
-        {
-            if (cur == 1)
-                return 1;
-            if (dp.ContainsKey((pt[0], pt[1], cur)))
-                return dp[(pt[0], pt[1], cur)];
-            long res = 0;
-            for (int i = 0; i < 8; ++i)
-            {
-                int x = pt[0] + dirs[i][0], y = pt[1] + dirs[i][1];
-                if (x >= 0 && y >= 0 && x <= 2 && y <= 2 || x == 3 && y == 1)
-                {
-                    res = Add(res, dfs(new int[] { x, y }, cur - 1));
-                }
-            }
-            return dp[(pt[0], pt[1], cur)] = res;
-        }
-
-        long Add(long x, long y)
-        {
-            return (x + y) % MOD;
-        }
-
-        long Mul(long x, long y)
-        {
-            return x * y % MOD;
-        }
-        long res = Mul(2, dfs(new int[] { 0, 0 }, n));
-        res = Add(res, dfs(new int[] { 0, 1 }, n));
-        res = Add(res, Mul(2, dfs(new int[] { 1, 0 }, n)));
-        res = Add(res, dfs(new int[] { 1, 1 }, n));
-        res = Add(res, Mul(2, dfs(new int[] { 2, 0 }, n)));
-        res = Add(res, dfs(new int[] { 2, 1 }, n));
-        res = Add(res, dfs(new int[] { 3, 1 }, n));
-        return (int)res;
-    }
-
-    public static int KnightDialer2(int n)
-    {
         long[] dp = new long[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
         static long Add(long x, long y)
         {
@@ -81,7 +30,7 @@ public class KnightDialer_0935
         return (int)res;
     }
 
-    public static int KnightDialer3(int n)
+    public static int KnightDialer2(int n)
     {
         long MOD = (long)1e9 + 7;
         long Add(long x, long y)
