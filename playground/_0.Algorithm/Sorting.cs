@@ -143,7 +143,7 @@ public class Sorting
         MergeSort(nums, 0, n - 1);
     }
 
-    public static void MergeSort(int[] nums, int left, int right)
+    private static void MergeSort(int[] nums, int left, int right)
     {
         if (left >= right) return;
         int mid = left + (right - left) / 2;
@@ -152,7 +152,7 @@ public class Sorting
         Merge(nums, left, right);
     }
 
-    public static void Merge(int[] nums, int left, int right)
+    private static void Merge(int[] nums, int left, int right)
     {
         int mid = left + (right - left) / 2;
         int idx = left, i = left, j = mid + 1;
@@ -164,5 +164,51 @@ public class Sorting
             var b = j <= right ? nums2[j] : int.MaxValue;
             nums[idx++] = a < b ? nums2[i++] : nums2[j++];
         }
+    }
+
+/// <summary>
+    /// 堆積排序法 Merge Sort: O(NlogN)/O(1)
+    /// </summary>
+    /// <remarks>
+    /// 1. 建立最大二元堆疊
+    /// 2. 把根節點和末端元素交換位置，不再理會已排序的最後一個元素
+    /// 3. 對新的根節點及其左右節點進行 Heapify
+    /// * Heapify: 左中右三個節點中，取最小/最大的節點當作節點
+    /// </remarks>
+    public static void HeapSort(int[] nums, int n)
+    {
+        // 1. Build max heapify
+        BuildHeapify(nums, n);
+        for (int i = n - 1; i >= 1; i--)
+        {
+            // 2. Swap index 0 and i
+            (nums[0], nums[i]) = (nums[i], nums[0]);
+            // 3. Heapify index = 0
+            MaxHeapify(nums, 0, i);
+        }
+    }
+
+    public static void BuildHeapify(int[] nums, int n)
+    {
+        for (int i = n / 2 - 1; i >= 1; i--)
+        {
+            MaxHeapify(nums, i, n);
+        }
+    }
+
+    private static void MaxHeapify(int[] nums, int i, int n)
+    {
+        int left = i * 2 + 1;
+        int right = i * 2 + 2;
+        int maxIndex = i;
+        if (left < n && nums[left] > nums[maxIndex])
+            maxIndex = left;
+        if (right < n && nums[right] > nums[maxIndex])
+            maxIndex = right;
+
+        (nums[i], nums[maxIndex]) = (nums[maxIndex], nums[i]);
+
+        if (maxIndex != i)
+            MaxHeapify(nums, maxIndex, n);
     }
 }
