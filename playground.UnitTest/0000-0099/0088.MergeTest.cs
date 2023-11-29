@@ -10,6 +10,6 @@ public class MergeTest_0088
     {
         var actual = nums1.ToArr();
         Merge_0088.Merge(actual, m, nums2.ToArr(), n);
-        Assert.True(Enumerable.SequenceEqual(expected.ToArr(), actual));
+        Assert.Equal(expected.ToArr(), actual);
     }
 }

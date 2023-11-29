@@ -1,8 +1,6 @@
-using playground.BinarySearch;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.BinarySearch;
-
-public class LongestObstacleCourseAtEachPositionTest
+public class LongestObstacleCourseAtEachPositionTest_1964
 {
     [Theory]
     [InlineData(new int[] { 1, 2, 3, 2 }, new int[] { 1, 2, 3, 3 })]
@@ -17,7 +15,7 @@ public class LongestObstacleCourseAtEachPositionTest
     [InlineData(new int[] { 5, 3, 4, 4, 4, 2, 1, 1, 4, 1 }, new int[] { 1, 1, 2, 3, 4, 1, 1, 2, 5, 3 })]
     public void LongestObstacleCourseAtEachPosition(int[] obstacles, int[] expected)
     {
-        var actual = LongestObstacleCourseAtEachPositionClass.LongestObstacleCourseAtEachPosition(obstacles);
+        var actual = LongestObstacleCourseAtEachPosition_1964.LongestObstacleCourseAtEachPosition(obstacles);
         Assert.Equal(expected, actual);
     }
 
@@ -34,7 +32,7 @@ public class LongestObstacleCourseAtEachPositionTest
     [InlineData(new int[] { 5, 3, 4, 4, 4, 2, 1, 1, 4, 1 }, new int[] { 1, 1, 2, 3, 4, 1, 1, 2, 5, 3 })]
     public void LongestObstacleCourseAtEachPosition2(int[] obstacles, int[] expected)
     {
-        var actual = LongestObstacleCourseAtEachPositionClass.LongestObstacleCourseAtEachPosition2(obstacles);
+        var actual = LongestObstacleCourseAtEachPosition_1964.LongestObstacleCourseAtEachPosition2(obstacles);
         Assert.Equal(expected, actual);
     }
 }

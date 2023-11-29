@@ -8,7 +8,7 @@ public class SortingTest
     {
         var actual = nums.ToArr();
         Sorting.InsertionSort(actual, n);
-        Assert.True(Enumerable.SequenceEqual(expected.ToArr(), actual));
+        Assert.Equal(expected.ToArr(), actual);
     }
 
     [Theory]
@@ -17,7 +17,7 @@ public class SortingTest
     {
         var actual = nums.ToArr();
         Sorting.ShellSort(actual, n);
-        Assert.True(Enumerable.SequenceEqual(expected.ToArr(), actual));
+        Assert.Equal(expected.ToArr(), actual);
     }
 
     [Theory]
@@ -26,7 +26,7 @@ public class SortingTest
     {
         var actual = nums.ToArr();
         Sorting.SelectionSort(actual, n);
-        Assert.True(Enumerable.SequenceEqual(expected.ToArr(), actual));
+        Assert.Equal(expected.ToArr(), actual);
     }
 
     [Theory]
@@ -35,7 +35,7 @@ public class SortingTest
     {
         var actual = nums.ToArr();
         Sorting.BubbleSort(actual, n);
-        Assert.True(Enumerable.SequenceEqual(expected.ToArr(), actual));
+        Assert.Equal(expected.ToArr(), actual);
     }
 
     [Theory]
@@ -44,7 +44,7 @@ public class SortingTest
     {
         var actual = nums.ToArr();
         Sorting.ShakerSort(actual, n);
-        Assert.True(Enumerable.SequenceEqual(expected.ToArr(), actual));
+        Assert.Equal(expected.ToArr(), actual);
     }
 
     [Theory]
@@ -53,7 +53,7 @@ public class SortingTest
     {
         var actual = nums.ToArr();
         Sorting.MergeSort(actual, n);
-        Assert.True(Enumerable.SequenceEqual(expected.ToArr(), actual));
+        Assert.Equal(expected.ToArr(), actual);
     }
 
     [Theory]
@@ -62,6 +62,6 @@ public class SortingTest
     {
         var actual = nums.ToArr();
         Sorting.HeapSort(actual, n);
-        Assert.True(Enumerable.SequenceEqual(expected.ToArr(), actual));
+        Assert.Equal(expected.ToArr(), actual);
     }
 }

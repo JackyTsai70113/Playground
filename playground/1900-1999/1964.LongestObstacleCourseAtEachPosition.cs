@@ -1,8 +1,12 @@
-namespace playground.BinarySearch;
+using playground.BinarySearch;
 
-public class LongestObstacleCourseAtEachPositionClass
+namespace playground;
+
+public class LongestObstacleCourseAtEachPosition_1964
 {
-    /// <remarks>https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position</remarks>
+    /// <summary>
+    /// https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position
+    /// </summary>
     public static int[] LongestObstacleCourseAtEachPosition(int[] obstacles)
     {
         var d = new Dictionary<int, int>();
@@ -12,18 +16,13 @@ public class LongestObstacleCourseAtEachPositionClass
         {
             if (!d.ContainsKey(ob))
             {
-                var idx = BinarySearchTemplateClass.GetUpperBound(l.ToArray(), ob);
-                if (idx < l.Count && l[idx] <= ob)
-                    idx++;
+                var idx = BinarySearchTemplateClass.GetLowerBound(0, l.Count, (m) => l[m] > ob);
                 if (idx == l.Count)
                     l.Add(ob);
-                else
+                else if (ob < l[idx])
                 {
-                    if (ob < l[idx])
-                    {
-                        d.Remove(l[idx]);
-                        l[idx] = ob;
-                    }
+                    d.Remove(l[idx]);
+                    l[idx] = ob;
                 }
                 d[ob] = idx + 1;
             }
@@ -32,13 +31,10 @@ public class LongestObstacleCourseAtEachPositionClass
                 var idx = d[ob];
                 if (idx == l.Count)
                     l.Add(ob);
-                else
+                else if (ob < l[idx])
                 {
-                    if (ob < l[idx])
-                    {
-                        d.Remove(l[idx]);
-                        l[idx] = ob;
-                    }
+                    d.Remove(l[idx]);
+                    l[idx] = ob;
                 }
                 d[ob]++;
             }
@@ -47,7 +43,6 @@ public class LongestObstacleCourseAtEachPositionClass
         return res.ToArray();
     }
 
-    /// <remarks>https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-positionP</remarks>
     public static int[] LongestObstacleCourseAtEachPosition2(int[] obstacles)
     {
         int n = obstacles.Length, len = 0;
@@ -55,7 +50,7 @@ public class LongestObstacleCourseAtEachPositionClass
         for (int i = 0; i < n; i++)
         {
             // 取得大於給定範圍內 sub 的第一個數的 index
-            int idx = BinarySearchTemplateClass.GetLowerBound(sub, 0, len, (val) => val > obstacles[i]);
+            int idx = BinarySearchTemplateClass.GetLowerBound(0, len, (idx) => sub[idx] > obstacles[i]);
             sub[idx] = obstacles[i];
             res[i] = idx + 1;
             if (idx == len)

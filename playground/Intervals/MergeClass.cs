@@ -2,31 +2,19 @@ namespace playground.Intervals;
 
 public class MergeClass
 {
-    /// <remarks>https://leetcode.com/problems/merge-intervals</remarks>
+    /// <summary>
+    /// https://leetcode.com/problems/merge-intervals
+    /// </summary>
     public static int[][] Merge(int[][] A)
     {
-        Array.Sort(A, (x, y) =>
-        {
-            if (x[0] != y[0])
-            {
-                return x[0] - y[0];
-            }
-            else
-            {
-                return x[1] - y[1];
-            }
-        });
+        Array.Sort(A, (x, y) => x[0] == y[0] ? x[1] - y[1] : x[0] - y[0]);
         var res = new List<int[]> { A[0] };
         for (int i = 1; i < A.Length; ++i)
         {
-            if (Interval.DoOverlap(res[^1], A[i]))
-            {
-                res[^1] = Interval.MergedIntervals(res[^1], A[i]);
-            }
-            else
-            {
+            if (res[^1][1] < A[i][0])
                 res.Add(A[i]);
-            }
+            else
+                res[^1][1] = Math.Max(res[^1][1], A[i][1]);
         }
         return res.ToArray();
     }

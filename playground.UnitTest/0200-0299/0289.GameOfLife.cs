@@ -9,11 +9,6 @@ public class GameOfLifeTest_0289
     {
         var actual = A.To2dArr();
         GameOfLife_0289.GameOfLife(actual);
-        var expectedArr = expected.To2dArr();
-        Assert.Equal(expectedArr.Length, actual.Length);
-        for (int i = 0; i < expectedArr.Length; i++)
-        {
-            Assert.True(Enumerable.SequenceEqual(expectedArr[i], actual[i]));
-        }
+        Assert.Equal(expected.To2dArr(), actual);
     }
 }

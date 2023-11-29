@@ -16,7 +16,7 @@ public class BinarySearchTemplateTest
     [InlineData(new int[] { }, 5, 0)]
     public void GetLowerBoundWithFunc(int[] nums, int p, int expected)
     {
-        int actual = BinarySearchTemplateClass.GetLowerBound(nums, 0, nums.Length, (val) => val >= p);
+        int actual = BinarySearchTemplateClass.GetLowerBound(0, nums.Length, (idx) => nums[idx] >= p);
 
         Assert.Equal(expected, actual);
     }
@@ -32,7 +32,7 @@ public class BinarySearchTemplateTest
     [InlineData(new int[] { }, 5, -1)]
     public void GetUpperBound(int[] nums, int p, int expected)
     {
-        int actual = BinarySearchTemplateClass.GetUpperBound(nums, -1, nums.Length - 1, (val) => val <= p);
+        int actual = BinarySearchTemplateClass.GetUpperBound(-1, nums.Length - 1, (idx) => nums[idx] <= p);
 
         Assert.Equal(expected, actual);
     }

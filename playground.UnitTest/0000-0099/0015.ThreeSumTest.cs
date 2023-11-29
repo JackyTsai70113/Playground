@@ -9,15 +9,6 @@ public class ThreeSumTest_0015
     public void ThreeSum(string nums, string expected)
     {
         var actual = ThreeSum_0015.ThreeSum(nums.ToArr());
-        var expectedArr = expected.To2dArr();
-        if (expectedArr.Length == 0)
-        {
-            Assert.Equal(expectedArr.Length, actual.Count);
-        }
-        else
-        {
-            for (int i = 0; i < expectedArr.Length; ++i)
-                Assert.True(Enumerable.SequenceEqual(expectedArr[i], actual[i]));
-        }
+        Assert.Equal(expected.To2dArr(), actual);
     }
 }

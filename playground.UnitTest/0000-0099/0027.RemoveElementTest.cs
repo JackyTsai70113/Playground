@@ -10,6 +10,6 @@ public class RemoveElementTest_0027
         var actual = nums.ToArr();
         RemoveElement_0027.RemoveElement(actual, val);
         var expectedArr = expected.ToArr();
-        Assert.True(Enumerable.SequenceEqual(actual.Take(expectedArr.Length), expectedArr));
+        Assert.Equal(expectedArr, actual.Take(expectedArr.Length).ToArray());
     }
 }
