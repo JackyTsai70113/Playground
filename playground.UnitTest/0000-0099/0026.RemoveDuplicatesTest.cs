@@ -8,8 +8,8 @@ public class RemoveDuplicatesTest_0026
     public void RemoveDuplicates(string nums, string expected)
     {
         var actual = nums.ToArr();
-        var expectedArr = expected.ToArr();
         RemoveDuplicates_0026.RemoveDuplicates(actual);
-        Assert.True(Enumerable.SequenceEqual(expectedArr, actual.Take(expectedArr.Length)));
+        var expectedArr = expected.ToArr();
+        Assert.Equal(expectedArr, actual.Take(expectedArr.Length));
     }
 }

@@ -7,20 +7,12 @@ public class RemoveDuplicates_0026
     /// </summary>
     public static int RemoveDuplicates(int[] nums)
     {
-        var set = new HashSet<int>();
-        var l = new List<int>();
+        int idx = 0;
         for (int i = 0; i < nums.Length; ++i)
         {
-            if (!set.Contains(nums[i]))
-            {
-                set.Add(nums[i]);
-                l.Add(nums[i]);
-            }
+            if (nums[i] != nums[idx])
+                nums[++idx] = nums[i];
         }
-        for (int i = 0; i < l.Count; ++i)
-        {
-            nums[i] = l[i];
-        }
-        return l.Count;
+        return idx + 1;
     }
 }
