@@ -166,7 +166,7 @@ public class Sorting
         }
     }
 
-/// <summary>
+    /// <summary>
     /// 堆積排序法 Merge Sort: O(NlogN)/O(1)
     /// </summary>
     /// <remarks>
