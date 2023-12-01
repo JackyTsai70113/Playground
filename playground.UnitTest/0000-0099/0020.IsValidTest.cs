@@ -1,8 +1,6 @@
-using playground.Strings;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.Strings;
-
-public class IsValidTest
+public class IsValidTest_0020
 {
     [Theory]
     [InlineData("(([]){})", true)]
@@ -14,7 +12,7 @@ public class IsValidTest
     [InlineData("(}", false)]
     public void IsValid(string s, bool expected)
     {
-        var actual = IsValidClass.IsValid(s);
+        var actual = IsValid_0020.IsValid(s);
         Assert.Equal(expected, actual);
     }
 }
