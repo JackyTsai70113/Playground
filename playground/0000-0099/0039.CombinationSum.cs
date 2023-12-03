@@ -1,7 +1,10 @@
-namespace playground.Backtracking;
+namespace playground;
 
-public class CombinationSumClass
+public class CombinationSum_0039
 {
+    /// <summary>
+    /// https://leetcode.com/problems/combination-sum
+    /// </summary>
     public static IList<IList<int>> CombinationSum(int[] A, int target)
     {
         var res = new List<IList<int>>();

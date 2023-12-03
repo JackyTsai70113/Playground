@@ -1,8 +1,6 @@
-using playground.Backtracking;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.Backtracking;
-
-public class CombinationSumTest
+public class CombinationSumTest_0039
 {
     [Theory]
     [InlineData(new int[] { 2, 3, 6, 7 }, 7, "[[2,2,3],[7]]")]
@@ -10,7 +8,7 @@ public class CombinationSumTest
     [InlineData(new int[] { 2 }, 1, "[]")]
     public void CombinationSum(int[] A, int target, string str2)
     {
-        var actual = CombinationSumClass.CombinationSum(A, target);
+        var actual = CombinationSum_0039.CombinationSum(A, target);
         var expected = str2.To2dArr();
         Assert.Equal(expected, actual.ToArray());
     }

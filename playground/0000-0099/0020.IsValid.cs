@@ -8,18 +8,20 @@ public class IsValid_0020
     public static bool IsValid(string s)
     {
         Stack<char> stack = new();
-        Dictionary<char, char> d = new Dictionary<char, char> {
+        Dictionary<char, char> d = new()
+        {
             {'(',')'},
             {'[',']'},
             {'{','}'}
         };
-        foreach(var c in s){
-            if(d.ContainsKey(c))
+        foreach (var c in s)
+        {
+            if (d.ContainsKey(c))
                 stack.Push(d[c]);
-            else if(stack.Count > 0 && stack.Peek() == c)
+            else if (stack.Count > 0 && stack.Peek() == c)
                 stack.Pop();
-            else 
-            return false;
+            else
+                return false;
         }
         return stack.Count == 0;
     }

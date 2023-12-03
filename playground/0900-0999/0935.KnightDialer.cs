@@ -46,7 +46,7 @@ public class KnightDialer_0935
         long[,] Mul2(long[,] matrix1, long[,] matrix2)
         {
             int m1 = matrix1.GetLength(0), n1 = matrix1.GetLength(1);
-            int m2 = matrix2.GetLength(0), n2 = matrix2.GetLength(1);
+            int n2 = matrix2.GetLength(1);
             var res = new long[m1, n2];
             for (int i = 0; i < m1; i++)
             {
