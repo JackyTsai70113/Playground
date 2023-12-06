@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace playground.LinkedLists;
+namespace playground;
 
 public class ListNode
 {
@@ -17,32 +17,14 @@ public class ListNode
         var sb = new StringBuilder();
         sb.Append('[');
         sb.Append(val);
-        sb.Append(',');
         var cur = next;
         while (cur != null)
         {
-            sb.Append(cur.val);
             sb.Append(',');
+            sb.Append(cur.val);
             cur = cur.next;
         }
-        sb.Remove(sb.Length - 1, 1);
         sb.Append(']');
         return sb.ToString();
-    }
-}
-
-public static class ListNodeExtension
-{
-    public static ListNode Reverse(this ListNode head)
-    {
-        ListNode pre = new(), p = head;
-        while (p != null)
-        {
-            var temp = p.next;
-            p.next = pre.next;
-            pre.next = p;
-            p = temp;
-        }
-        return pre.next;
     }
 }

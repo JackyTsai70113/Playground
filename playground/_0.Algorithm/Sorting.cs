@@ -147,7 +147,7 @@ public class Sorting
     {
         if (left >= right) return;
         int mid = left + (right - left) / 2;
-        MergeSort(nums, 0, mid);
+        MergeSort(nums, left, mid);
         MergeSort(nums, mid + 1, right);
         Merge(nums, left, right);
     }
@@ -188,7 +188,7 @@ public class Sorting
         }
     }
 
-    public static void BuildHeapify(int[] nums, int n)
+    private static void BuildHeapify(int[] nums, int n)
     {
         for (int i = n / 2 - 1; i >= 1; i--)
         {
