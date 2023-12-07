@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace playground.Stacks;
 
 public class DecodeAtIndexClass
