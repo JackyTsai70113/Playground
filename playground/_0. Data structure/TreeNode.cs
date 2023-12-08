@@ -32,9 +32,6 @@ public class TreeNode
             q.Enqueue(node.left);
             q.Enqueue(node.right);
         }
-        // while(){
-
-        // }
         while (strs[^1] == "null")
             strs.RemoveAt(strs.Count - 1);
         var res = '[' + string.Join(',', strs) + ']';
