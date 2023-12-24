@@ -1,8 +1,6 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using System.Text;
-
-namespace playground;
+﻿namespace playground;
 
 public class Solution
 {
+
 }

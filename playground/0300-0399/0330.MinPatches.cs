@@ -13,7 +13,7 @@ public class MinPatches_0330
         {
             if (i < nums.Length && lastMiss >= nums[i])
             {
-                lastMiss = lastMiss + nums[i++];
+                lastMiss += nums[i++];
             }
             else
             {
