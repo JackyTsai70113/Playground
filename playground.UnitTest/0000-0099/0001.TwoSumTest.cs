@@ -8,7 +8,7 @@ public class TwoSumTest_0001
     [InlineData("[3,3]", 6, "[1,0]")]
     public void TwoSum(string A, int target, string expected)
     {
-        var actual = TwoSum_0001.TwoSum(A.ToArr(), target);
+        var actual = TwoSum0001.TwoSum(A.ToArr(), target);
         Assert.Equal(expected.ToArr(), actual);
     }
 }

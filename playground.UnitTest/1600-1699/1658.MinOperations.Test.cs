@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class MinOperationsTest
+public class MinOperationsTest1658
 {
     [Theory]
     [InlineData(new int[] { 1, 1 }, 3, -1)]

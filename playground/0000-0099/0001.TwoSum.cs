@@ -1,6 +1,6 @@
 namespace playground;
 
-public class TwoSum_0001
+public class TwoSum0001
 {
     /// <summary>
     /// https://leetcode.com/problems/two-sum
@@ -16,8 +16,7 @@ public class TwoSum_0001
                 res = new[] { i, d[target - nums[i]] };
                 break;
             }
-            else
-                d[nums[i]] = i;
+            d[nums[i]] = i;
         }
         return res;
     }
