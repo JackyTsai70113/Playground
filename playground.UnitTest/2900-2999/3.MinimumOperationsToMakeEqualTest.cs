@@ -8,7 +8,7 @@ public class MinimumOperationsToMakeEqualTest
     [InlineData(25, 30, 5)]
     public void MinimumOperationsToMakeEqual(int x, int y, int expected)
     {
-        var actual = MinimumOperationsToMakeEqual29.MinimumOperationsToMakeEqual(x, y);
+        var actual = MinimumOperationsToMakeEqual3.MinimumOperationsToMakeEqual(x, y);
         Assert.Equal(expected, actual);
     }
 }

@@ -7,7 +7,7 @@ public class MissingIntegerTest
     [InlineData("[3,4,5,1,12,14,13]", 15)]
     public void MissingInteger(string nums, int expected)
     {
-        var actual = MissingInteger29.MissingInteger(nums.ToArr());
+        var actual = MissingInteger1.MissingInteger(nums.ToArr());
         Assert.Equal(expected, actual);
     }
 }

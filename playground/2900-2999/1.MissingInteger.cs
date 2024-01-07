@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MissingInteger29
+public class MissingInteger1
 {
     /// <summary>
     /// https://leetcode.com/problems/smallest-missing-integer-greater-than-sequential-prefix-sum

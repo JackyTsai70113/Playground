@@ -1,6 +1,6 @@
 namespace playground;
 
-public class NumberOfPowerfulInt29
+public class NumberOfPowerfulInt4
 {
     /// <summary>
     /// https://leetcode.com/problems/count-the-number-of-powerful-integers
