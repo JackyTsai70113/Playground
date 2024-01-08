@@ -175,11 +175,11 @@ public class Sorting
     /// 3. 對新的根節點及其左右節點進行 Heapify
     /// * Heapify: 左中右三個節點中，取最小/最大的節點當作節點
     /// </remarks>
-    public static void HeapSort(int[] nums, int n)
+    public static void HeapSort(int[] nums, int len)
     {
         // 1. Build max heapify
-        BuildHeapify(nums, n);
-        for (int i = n - 1; i >= 1; i--)
+        BuildHeapify(nums, len);
+        for (int i = len - 1; i > 0; i--)
         {
             // 2. Swap index 0 and i
             (nums[0], nums[i]) = (nums[i], nums[0]);
@@ -188,27 +188,28 @@ public class Sorting
         }
     }
 
-    private static void BuildHeapify(int[] nums, int n)
+    private static void BuildHeapify(int[] nums, int len)
     {
-        for (int i = n / 2 - 1; i >= 1; i--)
+        for (int i = len / 2 - 1; i > 0; i--)
         {
-            MaxHeapify(nums, i, n);
+            MaxHeapify(nums, i, len);
         }
     }
 
-    private static void MaxHeapify(int[] nums, int i, int n)
+    private static void MaxHeapify(int[] nums, int i, int len)
     {
         int left = i * 2 + 1;
         int right = i * 2 + 2;
         int maxIndex = i;
-        if (left < n && nums[left] > nums[maxIndex])
+        if (left < len && nums[left] > nums[maxIndex])
             maxIndex = left;
-        if (right < n && nums[right] > nums[maxIndex])
+        if (right < len && nums[right] > nums[maxIndex])
             maxIndex = right;
 
-        (nums[i], nums[maxIndex]) = (nums[maxIndex], nums[i]);
-
         if (maxIndex != i)
-            MaxHeapify(nums, maxIndex, n);
+        {
+            (nums[i], nums[maxIndex]) = (nums[maxIndex], nums[i]);
+            MaxHeapify(nums, maxIndex, len);
+        }
     }
 }
