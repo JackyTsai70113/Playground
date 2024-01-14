@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class NumberOfPowerfulIntTest
+public class NumberOfPowerfulIntTest2999
 {
     [Theory]
     [InlineData(20, 1159, 5, "120", 2)]
@@ -11,7 +11,7 @@ public class NumberOfPowerfulIntTest
     [InlineData(1000, 2000, 4, "3000", 0)]
     public void NumberOfPowerfulInt(long start, long finish, int limit, string s, long expected)
     {
-        var actual = NumberOfPowerfulInt4.NumberOfPowerfulInt(start, finish, limit, s);
+        var actual = NumberOfPowerfulInt2999.NumberOfPowerfulInt(start, finish, limit, s);
         Assert.Equal(expected, actual);
     }
 }

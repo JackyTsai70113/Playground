@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MaximumSetSize7
+public class MaximumSetSize3002
 {
     /// <summary>
     /// https://leetcode.com/problems/maximum-size-of-a-set-after-removals

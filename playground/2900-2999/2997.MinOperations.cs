@@ -2,7 +2,7 @@ using System.Numerics;
 
 namespace playground;
 
-public class MinOperations2
+public class MinOperations2997
 {
     /// <summary>
     /// https://leetcode.com/problems/minimum-number-of-operations-to-make-array-xor-equal-to-k

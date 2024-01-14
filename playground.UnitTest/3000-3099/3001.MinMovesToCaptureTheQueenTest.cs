@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class MinMovesToCaptureTheQueenTest6
+public class MinMovesToCaptureTheQueenTest3001
 {
     [Theory]
     [InlineData(1, 1, 8, 8, 2, 3, 2)]
@@ -25,7 +25,7 @@ public class MinMovesToCaptureTheQueenTest6
     [InlineData(5, 1, 2, 4, 4, 2, 1)]
     public void MinMovesToCaptureTheQueen(int a, int b, int c, int d, int e, int f, int expected)
     {
-        var actual = MinMovesToCaptureTheQueen6.MinMovesToCaptureTheQueen(a, b, c, d, e, f);
+        var actual = MinMovesToCaptureTheQueen3001.MinMovesToCaptureTheQueen(a, b, c, d, e, f);
         Assert.Equal(expected, actual);
     }
 }

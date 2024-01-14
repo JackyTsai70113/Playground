@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class MaximumSetSizeTest7
+public class MaximumSetSizeTest3002
 {
     [Theory]
     [InlineData("[1,2,1,2]", "[1,1,1,1]", 2)]
@@ -8,7 +8,7 @@ public class MaximumSetSizeTest7
     [InlineData("[1,1,2,2,3,3]", "[4,4,5,5,6,6]", 6)]
     public void MaximumSetSize(string nums1, string nums2, int expected)
     {
-        var actual = MaximumSetSize7.MaximumSetSize(nums1.ToArr(), nums2.ToArr());
+        var actual = MaximumSetSize3002.MaximumSetSize(nums1.ToArr(), nums2.ToArr());
         Assert.Equal(expected, actual);
     }
 }

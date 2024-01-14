@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MinMovesToCaptureTheQueen6
+public class MinMovesToCaptureTheQueen3001
 {
     /// <summary>
     /// https://leetcode.com/problems/minimum-moves-to-capture-the-queen

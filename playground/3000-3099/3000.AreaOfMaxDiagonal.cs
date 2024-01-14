@@ -1,6 +1,6 @@
 namespace playground;
 
-public class AreaOfMaxDiagonal5
+public class AreaOfMaxDiagonal3000
 {
     /// <summary>
     /// https://leetcode.com/problems/maximum-area-of-longest-diagonal-rectangle

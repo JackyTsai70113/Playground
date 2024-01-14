@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MinimumOperationsToMakeEqual3
+public class MinimumOperationsToMakeEqual2998
 {
     /// <summary>
     /// https://leetcode.com/problems/minimum-number-of-operations-to-make-x-and-y-equal
