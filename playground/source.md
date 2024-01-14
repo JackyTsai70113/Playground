@@ -2,8 +2,10 @@
 
 ## 刷題
 
-- LeetCode Sulution: <https://github.com/doocs/leetcode>
+- LeetCode: <https://github.com/doocs/leetcode>
 - Google Coding Competitions Archive: <https://zibada.guru/gcj/>
+- CSES Problem Set: <https://cses.fi/problemset/>
+- Zero Judge: <https://zerojudge.tw>
 
 ## 學習
 
