@@ -212,4 +212,46 @@ public class Sorting
             MaxHeapify(nums, maxIndex, len);
         }
     }
+
+    /// <summary>
+    /// 快速排序法 Quick Sort: O(NlogN)/O(1)
+    /// </summary>
+    /// <remarks>
+    /// 1. 每次隨機選出一筆資料當基準點 pivot
+    /// 2. 比 pivot 小的放 pivot 左邊，比 pivot 大的放 pivot 右邊
+    /// (第一步加第二步稱為 Partition)
+    /// 3. 對基準點的左邊及右邊資料進行相同處理
+    /// 時間複雜度最好是 O(NlogN), 最差是 O(N^2)
+    /// </remarks>
+    public static void QuickSort(int[] nums, int len)
+    {
+        QuickSort(nums, 0, len - 1);
+    }
+
+    private static void QuickSort(int[] nums, int start, int finish)
+    {
+        if (start >= finish)
+            return;
+        int pivot = Partition(nums, start, finish);
+        QuickSort(nums, start, pivot - 1);
+        QuickSort(nums, pivot + 1, finish);
+    }
+
+    private static int Partition(int[] nums, int start, int finish)
+    {
+        // 選擇區間最右邊的值做 pivot
+        int pivot = nums[finish];
+        int p = start;
+        // 把比 pivot 小的值依序移動到左側
+        for (int i = start; i < finish; i++)
+        {
+            if (nums[i] < pivot)
+            {
+                (nums[i], nums[p]) = (nums[p], nums[i]);
+                p++;
+            }
+        }
+        (nums[p], nums[finish]) = (nums[finish], nums[p]);
+        return p;
+    }
 }
