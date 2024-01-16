@@ -1,8 +1,6 @@
-using playground.Design;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.Design;
-
-public class TrieTest
+public class TrieTest0208
 {
     [Theory]
     [InlineData(new string[] { "Trie", "insert", "search" }, "[[], [\"apple\"], [\"apple\"]]", "[null,null,true]")]
@@ -14,14 +12,11 @@ public class TrieTest
     {
         var vals = valArr.To2dArr<string>();
         var expected = expectedStr.ToArr<bool?>();
-        TrieClass trie = new();
-        for (int i = 0; i < functions.Length; ++i)
+        Trie0208 trie = new();
+        for (int i = 1; i < functions.Length; ++i)
         {
             switch (functions[i])
             {
-                case "Trie":
-                    trie = new TrieClass();
-                    break;
                 case "insert":
                     trie.Insert(vals[i][0]);
                     break;
