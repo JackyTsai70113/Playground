@@ -13,15 +13,15 @@ public class LetterCombinations0017
         return res;
     }
 
-    static void Bt(string ds, int start, List<char> cur, IList<string> res)
+    static void Bt(string digits, int start, List<char> cur, IList<string> res)
     {
-        if (start == ds.Length)
+        if (start == digits.Length)
         {
             res.Add(new string(cur.ToArray()));
             return;
         }
         List<char> temp = new();
-        switch (ds[start])
+        switch (digits[start])
         {
             case '2':
                 temp = new List<char> { 'a', 'b', 'c' };
@@ -51,7 +51,7 @@ public class LetterCombinations0017
         foreach (var c in temp)
         {
             cur.Add(c);
-            Bt(ds, start + 1, cur, res);
+            Bt(digits, start + 1, cur, res);
             cur.RemoveAt(cur.Count - 1);
         }
     }

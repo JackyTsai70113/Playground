@@ -52,7 +52,7 @@ public class CountPairs1803
     private static void Insert(TrieNode<int> root, int num)
     {
         var cur = root;
-        for (int i = 14; i >= 0 && cur != null; i--)
+        for (int i = 14; i >= 0; i--)
         {
             var numBit = (num >> i) & 1;
 
