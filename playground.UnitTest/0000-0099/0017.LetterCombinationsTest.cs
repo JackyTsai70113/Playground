@@ -1,8 +1,6 @@
-using playground.Backtracking;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.Backtracking;
-
-public class LetterCombinationsTest
+public class LetterCombinationsTest0017
 {
     [Theory]
     [InlineData("23", new string[] { "ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf" })]
@@ -15,9 +13,9 @@ public class LetterCombinationsTest
     [InlineData("7", new string[] { "p", "q", "r", "s" })]
     [InlineData("8", new string[] { "t", "u", "v" })]
     [InlineData("9", new string[] { "w", "x", "y", "z" })]
-    public void LetterCombinations(string digits, string[] expected)
+    public void Permute(string digits, string[] expected)
     {
-        var actual = LetterCombinationsClass.LetterCombinations(digits);
-        Assert.True(expected.SequenceEqual(actual));
+        var actual = LetterCombinations0017.LetterCombinations(digits);
+        Assert.Equal(expected, actual);
     }
 }

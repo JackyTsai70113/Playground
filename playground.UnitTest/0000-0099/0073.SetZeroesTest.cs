@@ -9,11 +9,6 @@ public class SetZeroesTest
     {
         var actual = A.To2dArr();
         SetZeroes_0073.SetZeroes(actual);
-        var expectedArr = expected.To2dArr();
-        Assert.Equal(expectedArr.Length, actual.Length);
-        for (int i = 0; i < expectedArr.Length; i++)
-        {
-            Assert.True(Enumerable.SequenceEqual(expectedArr[i], actual[i]));
-        }
+        Assert.Equal(expected.To2dArr(), actual);
     }
 }

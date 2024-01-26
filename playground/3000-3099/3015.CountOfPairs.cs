@@ -16,22 +16,27 @@ public class CountOfPairs3015
             }
             return res;
         }
-        var g = new List<int>[n + 1];
-        for (int i = 0; i <= n; i++)
+        List<int>[] getGraph()
         {
-            g[i] = new();
+            var g = new List<int>[n + 1];
+            for (int i = 0; i <= n; i++)
+            {
+                g[i] = new();
+            }
+            for (int i = 1; i <= n; ++i)
+            {
+                if (i - 1 >= 1)
+                    g[i].Add(i - 1);
+                if (i + 1 <= n)
+                    g[i].Add(i + 1);
+                if (i == x && i != y && y != i - 1 && y != i + 1)
+                    g[i].Add(y);
+                if (i == y && i != x && x != i - 1 && x != i + 1)
+                    g[i].Add(x);
+            }
+            return g;
         }
-        for (int i = 1; i <= n; ++i)
-        {
-            if (i - 1 >= 1)
-                g[i].Add(i - 1);
-            if (i + 1 <= n)
-                g[i].Add(i + 1);
-            if (i == x && i != y && y != i - 1 && y != i + 1)
-                g[i].Add(y);
-            if (i == y && i != x && x != i - 1 && x != i + 1)
-                g[i].Add(x);
-        }
+        var g = getGraph();
         Queue<int> q = new();
         HashSet<int> seen = new();
 
@@ -51,7 +56,6 @@ public class CountOfPairs3015
                     {
                         if (!seen.Contains(v))
                         {
-                            // Console.WriteLine(u + " " + v + " " + step);
                             res[step - 1]++;
                             q.Enqueue(v);
                             seen.Add(v);
@@ -61,7 +65,6 @@ public class CountOfPairs3015
                 step++;
             }
         }
-        // Console.WriteLine();
         return res;
     }
 }
