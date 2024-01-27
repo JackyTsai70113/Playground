@@ -36,22 +36,18 @@ public class LargestRectangleArea0084
 
     public static int LargestRectangleArea2(int[] A)
     {
-        int res = 0, i = 0;
+        int res = 0;
         Stack<int> st = new();
-        for (; i < A.Length; ++i)
+        for (int i = 0; i <= A.Length; ++i)
         {
-            while (st.Count > 0 && A[st.Peek()] >= A[i])
+            var cur = i == A.Length ? 0 : A[i];
+            while (st.Count > 0 && A[st.Peek()] > cur)
             {
-                int prevGreater = st.Pop();
-                res = Math.Max(res, A[prevGreater] * (st.Count == 0 ? i : i - st.Peek() - 1));
+                int h = A[st.Pop()];
+                int w = st.Count == 0 ? i : i - st.Peek() - 1;
+                res = Math.Max(res, h * w);
             }
             st.Push(i);
-        }
-
-        while (st.Count > 0)
-        {
-            int prevGreater = st.Pop();
-            res = Math.Max(res, A[prevGreater] * (st.Count == 0 ? i : i - st.Peek() - 1));
         }
         return res;
     }
