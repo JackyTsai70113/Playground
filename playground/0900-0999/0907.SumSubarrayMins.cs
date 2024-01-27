@@ -1,6 +1,6 @@
 namespace playground;
 
-public class SumSubarrayMins907
+public class SumSubarrayMins0907
 {
     /// <summary>
     /// https://leetcode.com/problems/sum-of-subarray-minimums

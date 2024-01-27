@@ -11,7 +11,7 @@ public class RecentCounterTest_0933
     {
         var vals = valStr.To2dArr();
         var expected = expectedStr.ToArr<int?>();
-        RecentCounter_0933 recentCounter = new();
+        RecentCounter0933 recentCounter = new();
         for (int i = 0; i < functions.Length; ++i)
         {
             switch (functions[i])

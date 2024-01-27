@@ -7,7 +7,6 @@
 ## 使用時機
 
 1. 需要`往前`或是`往後`尋找，`下一個比自己大或比自己小`的元素就可以使用monotonic stack
-
    1. PLE(Previous Less Element)
       - 找出 `之前` 比自己還小的值。
       - stack 存放 index，有很多好處，其中之一就是可以算和 target 的差距。
@@ -19,7 +18,7 @@
         Stack<int> st = new();
         for(int i = 0; i < nums.Length; ++i){
             while(st.Count > 0 && nums[st.Peek()] > nums[i]) 
-                st.Pop();
+                st.Pop(); // pop 不要的，意指一樣的也會算到
             ple[i] = st.Count == 0 ? -1 : st.Peek();
             st.Push(i);
         }
@@ -43,14 +42,42 @@
 
       - 另一種寫法，如果沒有辦法從後面走訪數列的話
 
+         ```csharp
+         int[] nums;
+         int[] nle = new int[nums.Length];
+         Array.Fill(nle, nums.Length);
+         Stack<int> st = new();
+         for(int i = 0; i < nums.Length; ++i){
+             while(st.Count > 0 && nums[st.Peek()] > nums[i])
+                 nle[st.Pop()] = i;
+             st.Push(i);
+         }
+         ```
+
+   3. PGE(Previous Greater Element)
+
         ```csharp
         int[] nums;
-        int[] nle = new int[nums.Length];
-        Array.Fill(nle, nums.Length);
+        int[] pge = new int[nums.Length];
         Stack<int> st = new();
         for(int i = 0; i < nums.Length; ++i){
-            while(st.Count > 0 && nums[st.Peek()] > nums[i])
-                nle[st.Pop()] = i;
+            while(st.Count > 0 && nums[st.Peek()] < nums[i]) 
+                st.Pop();
+            pge[i] = st.Count == 0 ? -1 : st.Peek();
+            st.Push(i);
+        }
+        ```
+
+   4. NLE(Next Greater Element)
+
+        ```csharp
+        int[] nums;
+        int[] nge = new int[nums.Length];
+        Stack<int> st = new();
+        for(int i = nums.Length - 1; i >= 0; --i){
+            while(st.Count > 0 && nums[st.Peek()] < nums[i]) 
+                st.Pop();
+            nge[i] = st.Count == 0 ? nums.Length : st.Peek();
             st.Push(i);
         }
         ```
@@ -61,7 +88,7 @@
         ```csharp
         int[] nums;
         int maxi = -1;
-        vector<int> backwardMax(nums.Length);
+        int[] backwardMax = new int[nums.Length];
         for(int i = 0; i < nums.Length; ++i) {
             if(maxi == -1 || nums[i] >= nums[maxi])
                 maxi = i;
@@ -74,7 +101,7 @@
         ```csharp
         int[] nums;
         int maxi = nums.Length;
-        vector<int> forwardMax(nums.Length);
+        int[] forwardMax = new int[nums.Length];
         for(int i = nums.Length - 1; i >= 0; --i) {
             if(maxi == nums.Length || nums[i] >= nums[maxi])
                 maxi = i;
@@ -98,3 +125,5 @@
      - [0316. Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/description/?envType=daily-question&envId=2023-09-26)
      - [2866. Beautiful Towers II](https://leetcode.com/problems/beautiful-towers-ii/description/)
      - [1944. Number of Visible People In a Queue](https://leetcode.com/problems/number-of-visible-people-in-a-queue/description/)
+
+4. ref: <https://hackmd.io/@meyr543/rkjS-x6wY>

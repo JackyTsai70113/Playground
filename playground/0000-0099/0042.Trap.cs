@@ -25,4 +25,32 @@ public class Trap_0042
         }
         return res;
     }
+
+    public static int Trap2(int[] A)
+    {
+        int n = A.Length, maxi = -1;
+        int[] backwardMax = new int[n];
+        for (int i = 0; i < n; ++i)
+        {
+            if (maxi == -1 || A[i] >= A[maxi])
+                maxi = i;
+            backwardMax[i] = maxi;
+        }
+
+        maxi = n;
+        int[] forwardMax = new int[n];
+        for (int i = n - 1; i >= 0; --i)
+        {
+            if (maxi == n || A[i] >= A[maxi])
+                maxi = i;
+            forwardMax[i] = maxi;
+        }
+
+        var res = 0;
+        for (int i = 0; i < n; i++)
+        {
+            res += Math.Min(A[backwardMax[i]], A[forwardMax[i]]) - A[i];
+        }
+        return res;
+    }
 }

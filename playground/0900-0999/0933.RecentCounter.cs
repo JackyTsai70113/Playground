@@ -3,13 +3,10 @@ namespace playground;
 /// <summary>
 /// https://leetcode.com/problems/number-of-recent-calls
 /// </summary>
-public class RecentCounter_0933
+public class RecentCounter0933
 {
-    Queue<int> q;
-    public RecentCounter_0933()
-    {
-        q = new();
-    }
+    readonly Queue<int> q = new();
+    public RecentCounter0933() { }
 
     public int Ping(int t)
     {
