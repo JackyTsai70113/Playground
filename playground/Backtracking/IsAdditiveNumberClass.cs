@@ -12,14 +12,14 @@ public class IsAdditiveNumberClass
         {
             for (int j = i + 1; j < n && j + Math.Max(i, j - i) - 1 < n; ++j)
             {
-                if (IsAdditive(num, 0, i, j))
+                if (Bt(num, 0, i, j))
                     return true;
             }
         }
         return false;
     }
 
-    private static bool IsAdditive(string num, int a, int b, int c)
+    private static bool Bt(string num, int a, int b, int c)
     {
         if (c == num.Length)
             return a != 0;
@@ -40,6 +40,6 @@ public class IsAdditiveNumberClass
         {
             return false;
         }
-        return IsAdditive(num, bb, cc, cc + str.Length);
+        return Bt(num, bb, cc, cc + str.Length);
     }
 }

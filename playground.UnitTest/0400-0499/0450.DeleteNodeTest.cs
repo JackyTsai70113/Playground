@@ -19,13 +19,9 @@ public class DeleteNodeTest0450
     {
         var actual = DeleteNode0450.DeleteNode(root.ToTreeNode(), key);
         if (actual == null)
-        {
             Assert.Equal(expected.ToTreeNode(), actual);
-        }
         else
-        {
             Assert.Equal(expected, actual.ToString());
-        }
     }
 }
 

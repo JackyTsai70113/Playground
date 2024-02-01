@@ -1,7 +1,7 @@
 namespace playground;
 
 /// <summary>
-/// a binary tree node.
+/// binary tree node
 /// </summary>
 public class TreeNode
 {

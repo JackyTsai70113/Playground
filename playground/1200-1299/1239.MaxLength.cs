@@ -13,13 +13,7 @@ public class MaxLength1239
             .Where(s => s.Distinct().Count() == s.Length)
             .Distinct()
             .ToList();
-        int ToMask(string s)
-        {
-            int mask = 0;
-            foreach (var c in s)
-                mask |= 1 << (c - 'a');
-            return mask;
-        }
+
         var q = new Queue<(int mask, int index)>();
         for (int i = 0; i < arr.Count; i++)
             q.Enqueue((ToMask(arr[i]), i));
@@ -36,5 +30,13 @@ public class MaxLength1239
             }
         }
         return res;
+    }
+
+    static int ToMask(string s)
+    {
+        int mask = 0;
+        foreach (var c in s)
+            mask |= 1 << (c - 'a');
+        return mask;
     }
 }
