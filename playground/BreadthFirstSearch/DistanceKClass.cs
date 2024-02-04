@@ -1,5 +1,3 @@
-using playground.BinaryTrees;
-
 namespace playground.BreadthFirstSearch;
 
 public class DistanceKClass
@@ -26,7 +24,6 @@ public class DistanceKClass
             }
         }
         dfs(null, root);
-
 
         var res = new List<int> { target.val };
         var seen = new HashSet<int>(res);

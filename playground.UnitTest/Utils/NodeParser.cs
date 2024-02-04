@@ -79,12 +79,4 @@ public static class NodeParser
         }
         return res;
     }
-
-    public static bool IsSameTree(this TreeNode p, TreeNode q)
-    {
-        if (p == null && q == null) return true;
-        if (p == null || q == null) return false;
-        if (p.val != q.val) return false;
-        return IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
-    }
 }

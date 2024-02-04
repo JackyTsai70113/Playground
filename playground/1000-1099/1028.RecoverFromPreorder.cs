@@ -1,6 +1,6 @@
-namespace playground.BinaryTrees;
+namespace playground;
 
-public class RecoverFromPreorderClass
+public class RecoverFromPreorder1028
 {
     /// <summary>
     /// https://leetcode.com/problems/recover-a-tree-from-preorder-traversal
@@ -8,16 +8,15 @@ public class RecoverFromPreorderClass
     public static TreeNode RecoverFromPreorder(string s)
     {
         var stack = new Stack<TreeNode>();
-        int i = 0, level, val;
-        while (i < s.Length)
+        int n = s.Length, i = 0, depth, val;
+        while (i < n)
         {
-            level = 0;
-            val = 0;
-            for (; s[i] == '-'; ++i)
-                level++;
-            for (; i < s.Length && s[i] != '-'; ++i)
+            depth = 0; val = 0;
+            for (; s[i] == '-'; i++)
+                depth++;
+            for (; i < n && s[i] != '-'; i++)
                 val = val * 10 + s[i] - '0';
-            while (stack.Count > level)
+            while (stack.Count > depth)
                 stack.Pop();
             var node = new TreeNode(val);
             if (stack.Count > 0)
@@ -29,8 +28,7 @@ public class RecoverFromPreorderClass
             }
             stack.Push(node);
         }
-        while (stack.Count > 1)
-            stack.Pop();
-        return stack.Pop();
+        while (stack.Count > 1) stack.Pop();
+        return stack.Peek();
     }
 }
