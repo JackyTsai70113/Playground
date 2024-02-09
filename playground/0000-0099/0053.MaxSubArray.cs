@@ -15,3 +15,13 @@ public class MaxSubArray0053
         return res;
     }
 }
+
+// 55 15 35
+
+// BAD LANDS
+// My Broken Mariko
+// 信用詐欺師
+// 垃圾頭
+ // 《做工的人》電影版（Workers）
+ // 聽我的電波吧
+ // 跳槽的魔王大人

@@ -11,13 +11,10 @@ public class RandomizedSetTest
         var vals = valStr.To2dArr();
         var expected = expectedStr.ToArr<JsonElement>();
         RandomizedSet obj = new();
-        for (int i = 0; i < functions.Length; ++i)
+        for (int i = 1; i < functions.Length; ++i)
         {
             switch (functions[i])
             {
-                case "RandomizedSet":
-                    obj = new();
-                    break;
                 case "insert":
                     var b1 = obj.Insert(vals[i][0]);
                     Assert.Equal(expected[i].GetBoolean(), b1);

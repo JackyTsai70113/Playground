@@ -34,7 +34,7 @@ public class MaxSumClass
                     dp[i, j] += g[i + 2][j + 1];
                     dp[i, j] += g[i + 2][j + 2];
                 }
-                else if (j > 0)
+                else
                 {
                     dp[i, j] = dp[i, j - 1];
                     dp[i, j] -= g[i][j - 1];
