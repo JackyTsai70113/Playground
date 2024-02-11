@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class FindNonMinOrMaxTest_2733
+public class FindNonMinOrMaxTest2733
 {
     [Theory]
     [InlineData("[3,2,1,4]", "[2,3]")]
@@ -9,7 +9,7 @@ public class FindNonMinOrMaxTest_2733
     [InlineData("[3,30,24]", "[24]")]
     public void FindNonMinOrMax(string nums, string expected)
     {
-        var actual = FindNonMinOrMax_2733.FindNonMinOrMax(nums.ToArr());
+        var actual = FindNonMinOrMax2733.FindNonMinOrMax(nums.ToArr());
         Assert.Contains(actual, expected.ToArr());
     }
 }

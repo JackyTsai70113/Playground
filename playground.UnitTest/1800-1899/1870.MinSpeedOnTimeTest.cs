@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class MinSpeedOnTimeTest_1870
+public class MinSpeedOnTimeTest1870
 {
     [Theory]
     [InlineData("[1,3,2]", 6, 1)]
@@ -9,7 +9,7 @@ public class MinSpeedOnTimeTest_1870
     [InlineData("[1,1]", 1, -1)]
     public void MinSpeedOnTime(string dist, double hour, int expected)
     {
-        var actual = MinSpeedOnTime_1870.MinSpeedOnTime(dist.ToArr(), hour);
+        var actual = MinSpeedOnTime1870.MinSpeedOnTime(dist.ToArr(), hour);
         Assert.Equal(expected, actual);
     }
 }

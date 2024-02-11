@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MinSpeedOnTime_1870
+public class MinSpeedOnTime1870
 {
     /// <summary>
     /// https://leetcode.com/problems/minimum-speed-to-arrive-on-time

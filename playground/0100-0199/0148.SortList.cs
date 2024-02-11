@@ -8,7 +8,7 @@ public class SortList0148
     public static ListNode SortList(ListNode head)
     {
         if (head == null || head.next == null) return head;
-        ListNode temp = null, slow = head, fast = head;
+        ListNode slow = head, fast = head, temp = slow;
         while (fast != null && fast.next != null)
         {
             temp = slow;
@@ -23,7 +23,7 @@ public class SortList0148
 
     private static ListNode Merge(ListNode n1, ListNode n2)
     {
-        ListNode pre = new ListNode(0), cur = pre;
+        ListNode pre = new(0), cur = pre;
         while (n1 != null && n2 != null)
         {
             if (n1.val <= n2.val)
@@ -38,7 +38,7 @@ public class SortList0148
             }
             cur = cur.next;
         }
-        cur.next = n1 != null ? n1 : n2;
+        cur.next = n1 ?? n2;
         return pre.next;
     }
 }

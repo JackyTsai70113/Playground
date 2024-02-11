@@ -1,6 +1,6 @@
 namespace playground;
 
-public class FindNonMinOrMax_2733
+public class FindNonMinOrMax2733
 {
     /// <summary>
     /// https://leetcode.com/problems/neither-minimum-nor-maximum
@@ -8,13 +8,13 @@ public class FindNonMinOrMax_2733
     public static int FindNonMinOrMax(int[] nums)
     {
         if (nums.Length <= 2) return -1;
-        int? a = null, b = null;
-        foreach (var x in nums)
+        int? a = nums[0], b = null;
+        for (int i = 1; i < nums.Length; i++)
         {
-            if (a == null || x > a)
-                (a, b) = (x, a);
-            else if (b == null || x > b)
-                b = x;
+            if (nums[i] > a)
+                (a, b) = (nums[i], a);
+            else if (b == null || nums[i] > b)
+                b = nums[i];
         }
         return b.Value;
     }
