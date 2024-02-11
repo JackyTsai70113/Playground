@@ -2,8 +2,11 @@ using System.Numerics;
 
 namespace playground;
 
-public class HammingWeight_0191
+public class HammingWeight0191
 {
+    /// <summary>
+    /// https://leetcode.com/problems/number-of-1-bits
+    /// </summary>
     public static int HammingWeight(uint n)
     {
         return BitOperations.PopCount(n);

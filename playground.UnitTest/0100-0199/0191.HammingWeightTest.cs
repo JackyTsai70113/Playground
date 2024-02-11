@@ -12,11 +12,11 @@ public class HammingWeightTest
     public void HammingWeight(string n, int expected)
     {
         var num = Convert.ToUInt32(n, 2);
-        var actual = HammingWeight_0191.HammingWeight(num);
+        var actual = HammingWeight0191.HammingWeight(num);
         Assert.Equal(expected, actual);
-        var actual2 = HammingWeight_0191.HammingWeight2(num);
+        var actual2 = HammingWeight0191.HammingWeight2(num);
         Assert.Equal(expected, actual2);
-        var actual3 = HammingWeight_0191.HammingWeight3(num);
+        var actual3 = HammingWeight0191.HammingWeight3(num);
         Assert.Equal(expected, actual3);
     }
 }
