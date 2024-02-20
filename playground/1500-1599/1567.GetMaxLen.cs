@@ -1,31 +1,31 @@
-namespace playground.Arrays;
+namespace playground;
 
-public class GetMaxLenClass
+public class GetMaxLen1567
 {
     /// <summary>
     /// https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product
     /// </summary>
     public static int GetMaxLen(int[] nums)
     {
-        int post = 0, neg = 0, res = 0;
+        int positive = 0, negative = 0, res = 0;
         foreach (var num in nums)
         {
             if (num > 0)
             {
-                post++;
-                neg = neg > 0 ? neg + 1 : 0;
+                positive++;
+                if (negative > 0) negative++;
             }
             else if (num < 0)
             {
-                var newPost = neg > 0 ? neg + 1 : 0;
-                neg = post + 1;
-                post = newPost;
+                var newPositive = negative > 0 ? negative + 1 : 0;
+                negative = positive + 1;
+                positive = newPositive;
             }
             else
             {
-                post = neg = 0;
+                positive = negative = 0;
             }
-            res = Math.Max(res, post);
+            res = Math.Max(res, positive);
         }
         return res;
     }

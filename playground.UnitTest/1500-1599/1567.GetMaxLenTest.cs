@@ -1,8 +1,6 @@
-using playground.Arrays;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.Arrays;
-
-public class GetMaxLenTest
+public class GetMaxLenTest1567
 {
     [Theory]
     [InlineData(new int[] { 1, -2, -3, 4 }, 4)]
@@ -10,7 +8,7 @@ public class GetMaxLenTest
     [InlineData(new int[] { -1, -2, -3, 0, 1 }, 2)]
     public void GetMaxLen(int[] A, int expected)
     {
-        var actual = GetMaxLenClass.GetMaxLen(A);
+        var actual = GetMaxLen1567.GetMaxLen(A);
         Assert.Equal(expected, actual);
     }
 }

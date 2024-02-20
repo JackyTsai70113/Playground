@@ -1,6 +1,6 @@
 namespace playground;
 
-public class LongestAlternatingSubarray_2760
+public class LongestAlternatingSubarray2760
 {
     public static int LongestAlternatingSubarray(int[] nums, int threshold)
     {
