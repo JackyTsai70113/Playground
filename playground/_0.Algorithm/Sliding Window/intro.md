@@ -8,7 +8,6 @@
     int FindSubstring(string s){
         var chs = new int[128]; // hash map
 
-
         foreach(var c in s){
             // initialize the hash map
             // ex: chs[c]++;

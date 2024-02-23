@@ -1,8 +1,6 @@
-using playground.SlidingWindow;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.SlidingWindow;
-
-public class MinWindowTest
+public class MinWindowTest0076
 {
     [Theory]
     [InlineData("ADOBECODEBANC", "ABC", "BANC")]
@@ -13,7 +11,7 @@ public class MinWindowTest
     [InlineData("a", "b", "")]
     public void MinWindow(string s, string t, string expected)
     {
-        var actual = MinWindowClass.MinWindow(s, t);
+        var actual = MinWindow0076.MinWindow(s, t);
         Assert.Equal(expected, actual);
     }
 }
