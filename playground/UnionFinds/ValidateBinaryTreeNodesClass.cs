@@ -25,7 +25,7 @@ public class ValidateBinaryTreeNodesClass
     }
 }
 
-public class UnionFind2
+class UnionFind2
 {
     private readonly int[] _roots;
     public UnionFind2(int n)

@@ -19,7 +19,7 @@ public class DistanceLimitedPathsExistClass
             {
                 var node1 = edgeList[edgesIndex][0];
                 var node2 = edgeList[edgesIndex][1];
-                uf.Join(node1, node2);
+                uf.Connect(node1, node2);
                 edgesIndex++;
             }
             res[queriesIndex] = uf.AreConnected(p, q);

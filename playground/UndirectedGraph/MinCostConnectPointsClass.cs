@@ -33,7 +33,7 @@ public class MinCostConnectPointsClass
             if (!uf.AreConnected(from, to))
             {
                 res += dist;
-                uf.Join(from, to);
+                uf.Connect(from, to);
             }
         }
 

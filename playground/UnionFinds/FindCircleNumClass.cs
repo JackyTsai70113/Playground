@@ -13,7 +13,7 @@ public class FindCircleNumClass
                 {
                     if (!uf.AreConnected(i, j))
                     {
-                        uf.Join(i, j);
+                        uf.Connect(i, j);
                     }
                 }
             }

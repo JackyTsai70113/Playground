@@ -1,6 +1,6 @@
 namespace playground.UnionFinds;
 
-public class HitBricksClass
+public class HitBricks0803
 {
     /// <summary>
     /// https://leetcode.com/problems/bricks-falling-when-hit
@@ -26,11 +26,11 @@ public class HitBricksClass
                     continue;
                 int node = r * C + c;
                 if (r == 0)
-                    uf.Join(node, R * C);
+                    uf.Connect(node, R * C);
                 if (r > 0 && A[r - 1][c] == 1)
-                    uf.Join(node, (r - 1) * C + c);
+                    uf.Connect(node, (r - 1) * C + c);
                 if (c > 0 && A[r][c - 1] == 1)
-                    uf.Join(node, r * C + c - 1);
+                    uf.Connect(node, r * C + c - 1);
             }
         }
 
@@ -41,7 +41,7 @@ public class HitBricksClass
                 int x = x0 + drs[i], y = y0 + dcs[i];
                 if (x >= 0 && y >= 0 && x < R && y < C && A[x][y] == 1)
                 {
-                    uf.Join(node, x * C + y);
+                    uf.Connect(node, x * C + y);
                 }
             }
         }
@@ -56,8 +56,7 @@ public class HitBricksClass
             A[x0][y0] = 1;
             int node = x0 * C + y0;
             f(node, x0, y0);
-            if (x0 == 0)
-                uf.Join(node, R * C);
+            if (x0 == 0) uf.Connect(node, R * C);
             res[t] = Math.Max(0, uf.GetSize(R * C) - preCount - 1);
         }
         return res;

@@ -1,6 +1,8 @@
-namespace playground.UnionFinds;
+using playground.UnionFinds;
 
-public class CanTraverseAllPairsClass
+namespace playground;
+
+public class CanTraverseAllPairs2709
 {
     /// <summary>
     /// https://leetcode.com/problems/greatest-common-divisor-traversal/description/
@@ -18,7 +20,7 @@ public class CanTraverseAllPairsClass
             {
                 if (nums[i] % p != 0) continue;
                 if (index.TryGetValue(p, out var val))
-                    uf.Join(val, i);
+                    uf.Connect(val, i);
                 else
                     index[p] = i;
                 while (nums[i] % p == 0) nums[i] /= p;
@@ -26,7 +28,7 @@ public class CanTraverseAllPairsClass
             if (nums[i] > 1)
             {
                 if (index.TryGetValue(nums[i], out var val))
-                    uf.Join(val, i);
+                    uf.Connect(val, i);
                 else
                     index[nums[i]] = i;
             }

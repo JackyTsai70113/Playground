@@ -12,7 +12,7 @@ public class CountCompleteComponentsClass
 
         foreach (var e in edges)
         {
-            uf.Join(e[0], e[1]);
+            uf.Connect(e[0], e[1]);
         }
         foreach (var e in edges)
         {

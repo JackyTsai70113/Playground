@@ -1,8 +1,6 @@
-using playground.Arrays;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.Arrays;
-
-public class VideoStitchingTest
+public class VideoStitchingTest1024
 {
     [Theory]
     [InlineData("[[0,2],[4,6],[8,10],[1,9],[1,5],[5,9]]", 10, 3)]
@@ -12,7 +10,7 @@ public class VideoStitchingTest
     [InlineData("[[5,7],[1,8],[0,0],[2,3],[4,5],[0,6],[5,10],[7,10]]", 5, 1)]
     public void VideoStitching(string A, int time, int expected)
     {
-        var actual = VideoStitchingClass.VideoStitching(A.To2dArr(), time);
+        var actual = VideoStitching1024.VideoStitching(A.To2dArr(), time);
         Assert.Equal(expected, actual);
     }
 
@@ -23,7 +21,7 @@ public class VideoStitchingTest
     [InlineData("[[5,7],[1,8],[0,0],[2,3],[4,5],[0,6],[5,10],[7,10]]", 5, 1)]
     public void VideoStitching2(string A, int time, int expected)
     {
-        var actual = VideoStitchingClass.VideoStitching2(A.To2dArr(), time);
+        var actual = VideoStitching1024.VideoStitching2(A.To2dArr(), time);
         Assert.Equal(expected, actual);
     }
 }

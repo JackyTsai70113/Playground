@@ -12,7 +12,7 @@ public class HitBricksTest
     [InlineData("[[1],[1],[1],[1],[1],[1],[1],[1],[1],[1],[1],[1]]", "[[5,0],[6,0],[3,0],[4,0],[7,0]]", new int[] { 6, 0, 1, 0, 0 })]
     public void MaxNumEdgesToRemove(string grid, string hits, int[] expected)
     {
-        var actual = HitBricksClass.HitBricks(grid.To2dArr(), hits.To2dArr());
+        var actual = HitBricks0803.HitBricks(grid.To2dArr(), hits.To2dArr());
         Assert.Equal(expected, actual);
     }
 }

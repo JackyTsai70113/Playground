@@ -1,6 +1,6 @@
-namespace playground.BinarySearch;
+namespace playground;
 
-public class FindIndicesClass
+public class FindIndices2905
 {
     /// <summary>
     /// https://leetcode.com/problems/find-indices-with-index-and-value-difference-ii
@@ -12,9 +12,8 @@ public class FindIndicesClass
         {
             if (nums[i - d] < nums[mini]) mini = i - d;
             if (nums[i - d] > nums[maxi]) maxi = i - d;
-            if (nums[i] - nums[mini] >= v) return new int[] { i, mini };
+            if (nums[i] - nums[mini] >= v) return new int[] { mini, i };
             if (nums[maxi] - nums[i] >= v) return new int[] { maxi, i };
-
         }
         return new int[] { -1, -1 };
     }

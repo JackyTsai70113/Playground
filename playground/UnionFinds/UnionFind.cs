@@ -22,6 +22,10 @@ public class UnionFind
         Groups = uf.Groups.ToArray();
         Ranks = uf.Ranks.ToArray();
     }
+
+    /// <summary>
+    /// 取得 disjoint group 的數量
+    /// </summary>
     public int GroupCount()
     {
         var hs = new HashSet<int>();
@@ -31,6 +35,10 @@ public class UnionFind
         }
         return hs.Count;
     }
+
+    /// <summary>
+    /// 取得 node 的 group
+    /// </summary>
     public int Find(int node)
     {
         if (Groups[node] != node)
@@ -39,7 +47,13 @@ public class UnionFind
         }
         return Groups[node];
     }
-    public void Join(int node1, int node2)
+
+    /// <summary>
+    /// 將節點 1 和節點 2 相連
+    /// </summary>
+    /// <param name="node1">節點 1</param>
+    /// <param name="node2">節點 2</param>
+    public void Connect(int node1, int node2)
     {
         int group1 = Find(node1);
         int group2 = Find(node2);
@@ -51,14 +65,38 @@ public class UnionFind
         Groups[group2] = group1;
         Ranks[group1] += Ranks[group2];
     }
+
+    /// <summary>
+    /// 確認節點 1 和節點 2 是否相連
+    /// </summary>
+    /// <param name="node1">節點 1</param>
+    /// <param name="node2">節點 2</param>
+    /// <returns>節點 1 和節點 2 是否相連</returns>
     public bool AreConnected(int node1, int node2)
     {
         int group1 = Find(node1);
         int group2 = Find(node2);
         return group1 == group2;
     }
+
+    /// <summary>
+    /// 取得該節點的 disjoint group 成員數量
+    /// </summary>
+    /// <param name="node">節點</param>
+    /// <returns>節點的 disjoint group 成員數量</returns>
     public int GetSize(int node)
     {
         return Ranks[Find(node)];
+    }
+
+    /// <summary>
+    /// 將節點重新放到獨立的 disjoint group
+    /// </summary>
+    /// <param name="node">節點</param>
+    public void Reset(int node)
+    {
+        int group = Find(node);
+        Ranks[group]--;
+        Groups[node] = node;
     }
 }

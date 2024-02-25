@@ -20,7 +20,7 @@ public class MaxNumEdgesToRemoveClass
             }
             else
             {
-                uf.Join(u, v);
+                uf.Connect(u, v);
             }
         }
 
@@ -35,7 +35,7 @@ public class MaxNumEdgesToRemoveClass
             }
             else
             {
-                uf1.Join(u, v);
+                uf1.Connect(u, v);
             }
         }
         for (int i = 2; i < n + 1; ++i)
@@ -54,7 +54,7 @@ public class MaxNumEdgesToRemoveClass
             }
             else
             {
-                uf2.Join(u, v);
+                uf2.Connect(u, v);
             }
         }
         for (int i = 2; i < n + 1; ++i)

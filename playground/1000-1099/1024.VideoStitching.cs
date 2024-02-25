@@ -1,11 +1,13 @@
-namespace playground.Arrays;
+namespace playground;
 
-public class VideoStitchingClass
+public class VideoStitching1024
 {
+    /// <summary>
+    /// https://leetcode.com/problems/video-stitching
+    /// </summary>
     /// <remarks>
-    /// https://leetcode.com/problems/video-stitching<br/>
     /// Time O(NlogN + NT), Space O(T)
-    /// </remarks>
+    /// </remarks> 
     public static int VideoStitching(int[][] clips, int T)
     {
         var memo = new int[101];
@@ -26,7 +28,7 @@ public class VideoStitchingClass
     }
 
     /// <remarks>
-    /// Time O(NlogN + NT), Space O(T)
+    /// Time O(NlogN), Space O(1)
     /// </remarks>
     public static int VideoStitching2(int[][] clips, int T)
     {

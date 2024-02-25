@@ -1,8 +1,7 @@
-using playground.BinarySearch;
 
 namespace playground.UnitTest.BinarySearch;
 
-public class FindIndicesTest
+public class FindIndicesTest2905
 {
     [Theory]
     [InlineData(new int[] { 1, 4, 1, 5 }, 2, 4, new int[] { 0, 3 })]
@@ -12,7 +11,7 @@ public class FindIndicesTest
     [InlineData(new int[] { 9, 5, 4 }, 1, 0, new int[] { 0, 1 })]
     public void FindIndices(int[] nums, int indexDifference, int valueDifference, int[] expected)
     {
-        var actual = FindIndicesClass.FindIndices(nums, indexDifference, valueDifference);
-        Assert.True(expected.OrderBy(x => x).SequenceEqual(actual.OrderBy(x => x)));
+        var actual = FindIndices2905.FindIndices(nums, indexDifference, valueDifference);
+        Assert.Equal(expected, actual);
     }
 }
