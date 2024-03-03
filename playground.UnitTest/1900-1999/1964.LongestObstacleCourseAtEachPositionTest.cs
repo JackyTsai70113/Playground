@@ -15,7 +15,7 @@ public class LongestObstacleCourseAtEachPositionTest_1964
     [InlineData(new int[] { 5, 3, 4, 4, 4, 2, 1, 1, 4, 1 }, new int[] { 1, 1, 2, 3, 4, 1, 1, 2, 5, 3 })]
     public void LongestObstacleCourseAtEachPosition(int[] obstacles, int[] expected)
     {
-        var actual = LongestObstacleCourseAtEachPosition_1964.LongestObstacleCourseAtEachPosition(obstacles);
+        var actual = LongestObstacleCourseAtEachPosition1964.LongestObstacleCourseAtEachPosition(obstacles);
         Assert.Equal(expected, actual);
     }
 
@@ -32,7 +32,7 @@ public class LongestObstacleCourseAtEachPositionTest_1964
     [InlineData(new int[] { 5, 3, 4, 4, 4, 2, 1, 1, 4, 1 }, new int[] { 1, 1, 2, 3, 4, 1, 1, 2, 5, 3 })]
     public void LongestObstacleCourseAtEachPosition2(int[] obstacles, int[] expected)
     {
-        var actual = LongestObstacleCourseAtEachPosition_1964.LongestObstacleCourseAtEachPosition2(obstacles);
+        var actual = LongestObstacleCourseAtEachPosition1964.LongestObstacleCourseAtEachPosition2(obstacles);
         Assert.Equal(expected, actual);
     }
 }

@@ -1,8 +1,6 @@
-using playground.BinarySearch;
+namespace playground.UnitTest._0.Algorithm;
 
-namespace playground.UnitTest.BinarySearch;
-
-public class BinarySearchTemplateTest
+public class BinarySearchTest
 {
     [Theory]             // 0  1  2  3  4  5  6  7
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 0, 0)]
@@ -16,7 +14,7 @@ public class BinarySearchTemplateTest
     [InlineData(new int[] { }, 5, 0)]
     public void GetLowerBoundWithFunc(int[] nums, int p, int expected)
     {
-        int actual = BinarySearchTemplateClass.GetLowerBound(0, nums.Length, (idx) => nums[idx] >= p);
+        int actual = BinarySearch2.GetLowerBound(0, nums.Length, (idx) => nums[idx] >= p);
 
         Assert.Equal(expected, actual);
     }
@@ -32,7 +30,7 @@ public class BinarySearchTemplateTest
     [InlineData(new int[] { }, 5, -1)]
     public void GetUpperBound(int[] nums, int p, int expected)
     {
-        int actual = BinarySearchTemplateClass.GetUpperBound(-1, nums.Length - 1, (idx) => nums[idx] <= p);
+        int actual = BinarySearch2.GetUpperBound(-1, nums.Length - 1, (idx) => nums[idx] <= p);
 
         Assert.Equal(expected, actual);
     }

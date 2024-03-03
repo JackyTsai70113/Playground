@@ -1,12 +1,14 @@
-namespace playground.LinkedLists;
+namespace playground;
 
-public class MergeTwoListsClass
+public class MergeTwoLists0021
 {
+    /// <summary>
+    /// https://leetcode.com/problems/merge-two-sorted-lists
+    /// </summary>
     public static ListNode MergeTwoLists(ListNode list1, ListNode list2)
     {
         if (list1 == null) return list2;
         if (list2 == null) return list1;
-
         if (list1.val < list2.val)
         {
             list1.next = MergeTwoLists(list1.next, list2);

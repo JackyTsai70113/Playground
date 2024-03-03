@@ -1,6 +1,6 @@
-namespace playground.BinarySearch;
+namespace playground;
 
-public class BinarySearchTemplateClass
+public class BinarySearch2
 {
     /// <summary>
     /// 取左極值
