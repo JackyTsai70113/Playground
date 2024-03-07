@@ -1,8 +1,10 @@
-namespace playground.Greedy;
+namespace playground;
 
-public class KSimilarityClass
+public class KSimilarity0854
 {
-    /// <remarks>https://leetcode.com/problems/k-similar-strings</remarks>
+    /// <summary>
+    /// https://leetcode.com/problems/k-similar-strings
+    /// </summary>
     public static int KSimilarity(string s1, string s2)
     {
         var q = new Queue<(string s, int d)>();

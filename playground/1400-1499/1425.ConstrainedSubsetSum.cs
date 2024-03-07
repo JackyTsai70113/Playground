@@ -1,6 +1,6 @@
-namespace playground.MonotonicQueues;
+namespace playground;
 
-public class ConstrainedSubsetSumClass
+public class ConstrainedSubsetSum1425
 {
     /// <summary>
     /// https://leetcode.com/problems/constrained-subsequence-sum
@@ -20,7 +20,6 @@ public class ConstrainedSubsetSumClass
             if (i >= k && ll.Count > 0 && ll.First.Value == nums[i - k])
                 ll.RemoveFirst();
         }
-
         return res;
     }
 }

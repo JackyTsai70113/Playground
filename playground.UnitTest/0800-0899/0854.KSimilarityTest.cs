@@ -1,8 +1,6 @@
-using playground.Greedy;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.DirectedGraph;
-
-public class KSimilarityTest
+public class KSimilarityTest0854
 {
     [Theory]
     [InlineData("ab", "ca", -1)]
@@ -11,7 +9,7 @@ public class KSimilarityTest
     [InlineData("abccaacceecdeea", "bcaacceeccdeaae", 9)]
     public void KSimilarity(string s1, string s2, int expected)
     {
-        var actual = KSimilarityClass.KSimilarity(s1, s2);
+        var actual = KSimilarity0854.KSimilarity(s1, s2);
         Assert.Equal(expected, actual);
     }
 }

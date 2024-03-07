@@ -1,6 +1,6 @@
-namespace playground.MonotonicQueues;
+namespace playground.UnitTest;
 
-public class ConstrainedSubsetSumTest
+public class ConstrainedSubsetSumTest1425
 {
     [Theory]
     [InlineData(new int[] { 10, 2, -10, 5, 20 }, 2, 37)]
@@ -8,7 +8,7 @@ public class ConstrainedSubsetSumTest
     [InlineData(new int[] { 10, -2, -10, -5, 20 }, 2, 23)]
     public void ConstrainedSubsetSum(int[] nums, int k, int expected)
     {
-        var actual = ConstrainedSubsetSumClass.ConstrainedSubsetSum(nums, k);
+        var actual = ConstrainedSubsetSum1425.ConstrainedSubsetSum(nums, k);
         Assert.Equal(expected, actual);
     }
 }

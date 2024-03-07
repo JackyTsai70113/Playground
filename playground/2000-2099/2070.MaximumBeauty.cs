@@ -1,5 +1,6 @@
-namespace playground.BinarySearch;
-public class MaximumBeautyClass
+namespace playground;
+
+public class MaximumBeauty2070
 {
     /// <summary>
     /// https://leetcode.com/problems/most-beautiful-item-for-each-query

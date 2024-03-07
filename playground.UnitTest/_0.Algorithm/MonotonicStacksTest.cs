@@ -1,4 +1,4 @@
-namespace playground.UnitTest._0.Algorithm;
+namespace playground.UnitTest;
 
 public class MonotonicStacksTest
 {
