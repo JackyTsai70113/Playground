@@ -1,6 +1,6 @@
-namespace playground.PrefixSum;
+namespace playground;
 
-public class RangeAddQueriesClass
+public class RangeAddQueries2536
 {
     /// <summary>
     /// https://leetcode.com/problems/increment-submatrices-by-one
@@ -8,11 +8,11 @@ public class RangeAddQueriesClass
     public static int[][] RangeAddQueries(int n, int[][] queries)
     {
         var res = new int[n][];
-        for (int i = 0; i < n; ++i) res[i] = new int[n];
-        int r1, c1, r2, c2;
+        for (int i = 0; i < n; ++i)
+            res[i] = new int[n];
         foreach (var q in queries)
         {
-            r1 = q[0]; c1 = q[1]; r2 = q[2]; c2 = q[3];
+            int r1 = q[0], c1 = q[1], r2 = q[2], c2 = q[3];
             for (int i = r1; i <= r2; ++i)
             {
                 res[i][c1]++;
