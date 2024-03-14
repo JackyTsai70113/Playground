@@ -1,6 +1,6 @@
-namespace playground.BinarySearch;
+namespace playground;
 
-public class MaximumSumQueriesClass
+public class MaximumSumQueries2736
 {
     /// <summary>
     /// https://leetcode.com/problems/maximum-sum-queries
@@ -30,10 +30,14 @@ public class MaximumSumQueriesClass
             {
                 if (sum < x + y)
                     break;
-                int index = Array.BinarySearch(sd[sum].ToArray(), x);
-                if (index < 0)
-                    index = ~index;
-                if (index < sd[sum].Count && sum - sd[sum][index] >= y)
+                int l = 0, r = sd[sum].Count;
+                while (l < r)
+                {
+                    int m = l + (r - l) / 2;
+                    if (sd[sum][m] >= x) r = m;
+                    else l = m + 1;
+                }
+                if (l < sd[sum].Count && sum - sd[sum][l] >= y)
                 {
                     res[i] = sum;
                     break;
