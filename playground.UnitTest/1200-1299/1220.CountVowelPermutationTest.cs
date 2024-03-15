@@ -1,8 +1,6 @@
-using playground.DynamicPrograming;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.DynamicPrograming;
-
-public class CountVowelPermutationTest
+public class CountVowelPermutationTest1220
 {
     [Theory]
     [InlineData(1, 5)]
@@ -10,7 +8,7 @@ public class CountVowelPermutationTest
     [InlineData(20000, 759959057)]
     public void CountVowelPermutation(int n, int expected)
     {
-        var actual = CountVowelPermutationClass.CountVowelPermutation(n);
+        var actual = CountVowelPermutation1220.CountVowelPermutation(n);
         Assert.Equal(expected, actual);
     }
 }
