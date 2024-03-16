@@ -21,22 +21,22 @@ public static class NodeParser
         var res = new TreeNode(arr[0].Value);
         var q = new Queue<TreeNode>();
         q.Enqueue(res);
-        int j = 1;
-        while (j < arr.Length)
+        int i = 1;
+        while (i < arr.Length)
         {
             var node = q.Dequeue();
-            if (arr[j] != null)
+            if (arr[i] != null)
             {
-                node.left = new(arr[j].Value);
+                node.left = new(arr[i].Value);
                 q.Enqueue(node.left);
             }
-            j++;
-            if (j < arr.Length && arr[j] != null)
+            i++;
+            if (i < arr.Length && arr[i] != null)
             {
-                node.right = new(arr[j].Value);
+                node.right = new(arr[i].Value);
                 q.Enqueue(node.right);
             }
-            j++;
+            i++;
         }
         return res;
     }
