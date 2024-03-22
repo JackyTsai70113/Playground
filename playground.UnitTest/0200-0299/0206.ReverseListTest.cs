@@ -1,8 +1,6 @@
-using playground.LinkedLists;
-
 namespace playground.UnitTest.LinkedLists;
 
-public class ReverseListTest_0206
+public class ReverseListTest0206
 {
     [Theory]
     [InlineData("[]", "[]")]
@@ -11,7 +9,7 @@ public class ReverseListTest_0206
     [InlineData("[1,2,3,4,5]", "[5,4,3,2,1]")]
     public void ReverseList(string head, string expected)
     {
-        var actual = ReverseList_206.ReverseList(head.ToListNode());
+        var actual = ReverseList206.ReverseList(head.ToListNode());
         if (!expected.ToArr().Any())
             Assert.Null(actual);
         else
