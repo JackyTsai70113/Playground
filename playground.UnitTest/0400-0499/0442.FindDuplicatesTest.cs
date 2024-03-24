@@ -8,7 +8,10 @@ public class FindDuplicatesTest0442
     [InlineData(new[] { 1 }, new int[] { })]
     public void FindDuplicates(int[] nums, int[] expected)
     {
+        var before = nums.ToArray();
         var actual = FindDuplicates0442.FindDuplicates(nums);
         Assert.Equal(expected, actual);
+        // ensure we don't modify the array after algorithm
+        Assert.Equal(nums, before);
     }
 }

@@ -20,6 +20,10 @@ public class FindDuplicates0442
                 nums[index] = -nums[index];
             }
         }
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = Math.Abs(nums[i]);
+        }
         return res;
     }
 }

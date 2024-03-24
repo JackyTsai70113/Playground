@@ -13,22 +13,47 @@ public class ReorderList_0143
             slow = slow.next;
             fast = fast.next.next;
         }
-
-        Stack<ListNode> s = new();
-        var cur = slow.next;
+        var temp = slow.next;
         slow.next = null;
-        while (cur != null)
+        slow = temp;
+        ListNode reversed = null;
+        while (slow != null)
         {
-            s.Push(cur);
-            cur = cur.next;
+            var slowNext = slow.next;
+            slow.next = reversed;
+            reversed = slow;
+            slow = slowNext;
         }
-        cur = head;
-        while (cur != null && s.Count > 0)
+        slow = head;
+        while (reversed != null)
         {
-            var node = s.Pop();
-            node.next = cur.next;
-            cur.next = node;
-            cur = cur.next.next;
+            var slowNext = slow.next;
+            var reversedNext = reversed.next;
+            reversed.next = slowNext;
+            slow.next = reversed;
+            reversed = reversedNext;
+            slow = slowNext;
         }
     }
 }
+/*
+- while (fast != null && fast.next != null)
+- odd
+0 1 2
+  s f
+  n/2
+- even
+0 1 2 3 -
+    s   f
+    n/2
+
+- while (fast.next != null && fast.next.next != null)
+- odd
+0 1 2
+  s f
+  n/2
+- even
+0 1 2 3
+  s f
+  n/2-1
+*/

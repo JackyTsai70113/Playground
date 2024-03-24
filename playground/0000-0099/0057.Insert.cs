@@ -4,42 +4,29 @@ public class Insert_0057
 {
     /// <summary>
     /// https://leetcode.com/problems/insert-interval
-    /// </summary>
-    public static int[][] Insert(int[][] A, int[] a)
+    /// </summary> 
+    /// <remarks>
+    /// O(N)/O(1)
+    /// </remarks>
+    public static int[][] Insert(int[][] intervals, int[] newInterval)
     {
-        int n = A.Length, left, right;
-        var (l, r) = (-1, n - 1); // 極右值
-        while (l < r)
+        var res = new List<int[]>();
+        int n = intervals.Length, i = 0;
+        while (i < n && intervals[i][1] < newInterval[0])
         {
-            int m = l + (r - l + 1) / 2;
-            if (A[m][0] <= a[0])
-                l = m;
-            else
-                r = m - 1;
+            res.Add(intervals[i++]);
         }
-        if (l >= 0 && A[l][1] >= a[0])
-            a[0] = A[l][0];
-        else
-            l++;
-        left = l;
-
-        (l, r) = (0, n); // 極左值
-        while (l < r)
+        while (i < n && intervals[i][0] <= newInterval[1])
         {
-            int m = l + (r - l) / 2;
-            if (A[m][1] >= a[1])
-                r = m;
-            else
-                l = m + 1;
+            newInterval[0] = Math.Min(newInterval[0], intervals[i][0]);
+            newInterval[1] = Math.Max(newInterval[1], intervals[i][1]);
+            i++;
         }
-        if (l < n && A[l][0] <= a[1])
-            a[1] = A[l][1];
-        else
-            l--;
-        right = l;
-        var res = A.ToList();
-        res.RemoveRange(left, right - left + 1);
-        res.Insert(left, a);
+        res.Add(newInterval);
+        while (i < n)
+        {
+            res.Add(intervals[i++]);
+        }
         return res.ToArray();
     }
 }
