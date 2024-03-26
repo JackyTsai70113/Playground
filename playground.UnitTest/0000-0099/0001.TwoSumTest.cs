@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class TwoSumTest_0001
+public class TwoSumTest0001
 {
     [Theory]
     [InlineData("[2,7,11,15]", 9, "[1,0]")]
