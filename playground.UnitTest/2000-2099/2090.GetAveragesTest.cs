@@ -1,8 +1,6 @@
-using playground.SlidingWindow;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.SlidingWindow;
-
-public class GetAveragesTest
+public class GetAveragesTest2090
 {
     [Theory]
     [InlineData(new int[] { 7, 4, 3, 9, 1, 8, 5, 2, 6 }, 3, new int[] { -1, -1, -1, 5, 4, 4, -1, -1, -1 })]
@@ -11,8 +9,7 @@ public class GetAveragesTest
     [MemberData(nameof(GetData))]
     public void GetAverages(int[] nums, int k, int[] expected)
     {
-        var actual = GetAveragesClass.GetAverages(nums, k);
-
+        var actual = GetAverages2090.GetAverages(nums, k);
         Assert.Equal(expected, actual);
     }
 
