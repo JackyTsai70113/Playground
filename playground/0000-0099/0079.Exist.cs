@@ -22,16 +22,12 @@ public class Exist0079
             board[r][c] != word[start])
             return false;
         var oldChar = board[r][c];
-        board[r][c] = '0';
-        if (Bt(board, word, start + 1, r - 1, c) ||
+        board[r][c] = default;
+        var res = Bt(board, word, start + 1, r - 1, c) ||
             Bt(board, word, start + 1, r + 1, c) ||
             Bt(board, word, start + 1, r, c - 1) ||
-            Bt(board, word, start + 1, r, c + 1))
-        {
-            board[r][c] = oldChar;
-            return true;
-        }
+            Bt(board, word, start + 1, r, c + 1);
         board[r][c] = oldChar;
-        return false;
+        return res;
     }
 }
