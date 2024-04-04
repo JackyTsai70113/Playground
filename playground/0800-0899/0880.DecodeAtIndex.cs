@@ -1,14 +1,14 @@
-namespace playground.Stacks;
+namespace playground;
 
-public class DecodeAtIndexClass
+public class DecodeAtIndex0880
 {
     /// <summary>
     /// https://leetcode.com/problems/decoded-string-at-index
     /// </summary>
     public static string DecodeAtIndex(string s, int k)
     {
+        long N = 0, K = k;
         int i;
-        long K = k, N = 0;
         for (i = 0; N < K; ++i)
             N = char.IsDigit(s[i]) ? N * (s[i] - '0') : N + 1;
         for (i--; i > 0; i--)
