@@ -10,9 +10,7 @@ public class HonaiClass
     /// <returns>次數</returns>
     public static int Honai(int n)
     {
-        // Console.WriteLine(n + " layer: ");
         int res = Honai(n, 'A', 'C');
-        // Console.WriteLine();
         return res;
     }
 
@@ -20,7 +18,6 @@ public class HonaiClass
     {
         if (n == 1)
         {
-            // Console.WriteLine(from + " -> " + to);
             return 1;
         }
         var other = (char)('A' + 'B' + 'C' - from - to);
