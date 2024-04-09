@@ -5,7 +5,9 @@ namespace playground;
 /// </summary>
 public class MedianFinder0295
 {
-    PriorityQueue<int, int> small = new(), big = new();
+    private readonly PriorityQueue<int, int> small = new();
+    private readonly PriorityQueue<int, int> big = new();
+
     public MedianFinder0295()
     {
 
