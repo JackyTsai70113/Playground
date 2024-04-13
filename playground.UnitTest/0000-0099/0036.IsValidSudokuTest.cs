@@ -49,7 +49,6 @@ public class IsValidSudokuTest
         , true)]
     public void IsValidSudoku(string A, bool expected)
     {
-        // var ddd = JsonSerializer.Deserialize<char[][]>(A);
         var actual = IsValidSudoku_0036.IsValidSudoku(A.To2dArr<char>());
         Assert.Equal(expected, actual);
     }
