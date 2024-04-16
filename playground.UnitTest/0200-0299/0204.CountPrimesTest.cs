@@ -1,6 +1,4 @@
-using playground.Mathematics;
-
-namespace playground.UnitTest.Mathematics;
+namespace playground.UnitTest;
 
 public class CountPrimesTest
 {
@@ -10,6 +8,7 @@ public class CountPrimesTest
     [InlineData(2, 0)]
     [InlineData(10, 4)]
     [InlineData(11, 4)]
+    [InlineData(5000000, 348513)]
     public void CountPrimes(int n, int expected)
     {
         var actual = CountPrimesClass.CountPrimes(n);

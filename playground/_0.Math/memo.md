@@ -1,5 +1,22 @@
 # memo
 
+## sieve of Eratosthenes 埃拉托斯特尼篩法
+
+```csharp
+private static bool[] EratosthenesSieve(int n)
+{
+    var isPrime = Enumerable.Repeat(true, n + 1).ToArray();
+    isPrime[0] = isPrime[1] = false;
+    for (int p = 2; p * p <= n; ++p)
+    {
+        if (!isPrime[p]) continue;
+        for (int i = p * 2; i <= n; i += p)
+            isPrime[i] = false;
+    }
+    return isPrime;
+}
+```
+
 ## Power
 
 | formula  | value         | power of 10 |

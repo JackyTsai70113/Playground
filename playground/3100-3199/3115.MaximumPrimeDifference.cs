@@ -8,15 +8,7 @@ public class MaximumPrimeDifference3115
     public static int MaximumPrimeDifference(int[] nums)
     {
         int n = nums.Max();
-        bool[] isPrime = new bool[n + 1];
-        Array.Fill(isPrime, true);
-        isPrime[1] = false;
-        for (int i = 2; i <= n; ++i)
-        {
-            if (!isPrime[i]) continue;
-            for (int j = i * 2; j <= n; j += i)
-                isPrime[j] = false;
-        }
+        bool[] isPrime = EratosthenesSieve(n);
         int l = -1, r = -1;
         for (int i = 0; i < nums.Length; i++)
         {
@@ -35,5 +27,18 @@ public class MaximumPrimeDifference3115
             }
         }
         return r - l;
+    }
+
+    private static bool[] EratosthenesSieve(int n)
+    {
+        var isPrime = Enumerable.Repeat(true, n + 1).ToArray();
+        isPrime[0] = isPrime[1] = false;
+        for (int p = 2; p * p <= n; ++p)
+        {
+            if (!isPrime[p]) continue;
+            for (int i = p * 2; i <= n; i += p)
+                isPrime[i] = false;
+        }
+        return isPrime;
     }
 }

@@ -1,6 +1,6 @@
-namespace playground.Mathematics;
+namespace playground;
 
-public class FindPrimePairsClass
+public class FindPrimePairs2761
 {
     /// <summary>
     /// https://leetcode.com/problems/prime-pairs-with-target-sum
@@ -8,12 +8,11 @@ public class FindPrimePairsClass
     public static IList<IList<int>> FindPrimePairs(int n)
     {
         var isPrime = Enumerable.Repeat(true, n).ToArray();
-        for (int i = 2; i < n; i++)
+        for (int p = 2; p * p < n; ++p)
         {
-            if (!isPrime[i])
-                continue;
-            for (int j = 2 * i; j < n; j += i)
-                isPrime[j] = false;
+            if (!isPrime[p]) continue;
+            for (int i = p * 2; i < n; i += p)
+                isPrime[i] = false;
         }
         var res = new List<IList<int>>();
         for (int i = 2; i <= n / 2; ++i)
