@@ -18,10 +18,9 @@ public class Sorting
         {
             int value = nums[i];
             int j = i - 1;
-            while (j >= 0 && nums[j] > value)
+            for (; j >= 0 && nums[j] > value; j--)
             {
                 nums[j + 1] = nums[j];
-                j--;
             }
             nums[j + 1] = value;
         }
