@@ -1,8 +1,6 @@
-using playground.DepthFirstSearch;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.DepthFirstSearch;
-
-public class DeserializeTest
+public class DeserializeTest0385
 {
     [Theory]
     [InlineData("[]", "[]")]
@@ -11,8 +9,8 @@ public class DeserializeTest
     [InlineData("[123,[456,[789]]]", "[123,[456,[789]]]")]
     public void Deserialize(string actualStr, string expectedStr)
     {
-        var actual = DeserializeClass.Deserialize(actualStr);
-        var expected = DeserializeClass.Deserialize(expectedStr);
+        var actual = Deserialize0385.Deserialize(actualStr);
+        var expected = Deserialize0385.Deserialize(expectedStr);
         Assert.Equivalent(expected, actual);
         Assert.Equal(expected.GetInteger(), actual.GetInteger());
         Assert.Equal(expected.IsInteger(), actual.IsInteger());

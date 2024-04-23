@@ -47,13 +47,7 @@ public class CatMouseGame0913
             {
                 int prevCat = prevCatMove == 1 ? prev : cat;
                 int prevMouse = prevCatMove == 1 ? mouse : prev;
-                if (prevCat == 0) // cat can't reach hole
-                    continue;
-                if (color[prevCat, prevMouse, prevCatMove] > 0) // known result
-                    continue;
-                if (prevCatMove == 1 && result == 2 || // mouse success
-                    prevCatMove == 0 && result == 1 || // cat success
-                    --outDegree[prevCat, prevMouse, prevCatMove] == 0) // use current result
+                if (IsValid(prevCat, prevMouse, prevCatMove, result, color, outDegree))
                 {
                     color[prevCat, prevMouse, prevCatMove] = result;
                     q.Enqueue((prevCat, prevMouse, prevCatMove, result));
@@ -61,5 +55,14 @@ public class CatMouseGame0913
             }
         }
         return color[2, 1, 0];
+    }
+
+    private static bool IsValid(int prevCat, int prevMouse, int prevCatMove, int result, int[,,] color, int[,,] outDegree)
+    {
+        return prevCat > 0 && // cat can't reach hole
+            color[prevCat, prevMouse, prevCatMove] == 0 && // known result
+            (prevCatMove == 1 && result == 2 || // mouse success
+            prevCatMove == 0 && result == 1 || // cat success
+            --outDegree[prevCat, prevMouse, prevCatMove] == 0); // use current result
     }
 }

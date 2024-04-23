@@ -1,6 +1,6 @@
-namespace playground.DepthFirstSearch;
+namespace playground;
 
-public class DeserializeClass
+public class Deserialize0385
 {
     /// <summary>
     /// https://leetcode.com/problems/mini-parser
@@ -36,30 +36,40 @@ public class DeserializeClass
     }
 }
 
-// This is the interface that allows for creating nested lists.
-// You should not implement it, or speculate about its implementation
+/// <summary>
+/// This is the interface that allows for creating nested lists.
+/// </summary>
 interface INestedInteger
 {
-
-    // public NestedInteger(int value);
-
-    // @return true if this NestedInteger holds a single integer, rather than a nested list.
+    /// <summary>
+    /// return true if this NestedInteger holds a single integer, rather than a nested list.
+    /// </summary>
     bool IsInteger();
 
-    // @return the single integer that this NestedInteger holds, if it holds a single integer
-    // Return null if this NestedInteger holds a nested list
+    /// <summary>
+    /// return the single integer that this NestedInteger holds, if it holds a single integer
+    /// </summary>
+    /// <remarks>
+    /// Return null if this NestedInteger holds a nested list
+    /// </remarks>
     int? GetInteger();
 
-    // Set this NestedInteger to hold a single integer.
-    public void SetInteger(int value);
+    /// <summary>
+    /// Set this NestedInteger to hold a single integer.
+    /// </summary>
+    void SetInteger(int val);
 
     /// <summary>
     /// Set this NestedInteger to hold a nested list and adds a nested integer to it.
     /// </summary>
-    public void Add(NestedInteger ni);
+    void Add(NestedInteger ni);
 
-    // @return the nested list that this NestedInteger holds, if it holds a nested list
-    // Return null if this NestedInteger holds a single integer
+    /// <summary>
+    /// return the nested list that this NestedInteger holds, if it holds a nested list
+    /// </summary>
+    /// <remarks>
+    /// return null if this NestedInteger holds a single integer
+    /// </remarks>
     IList<NestedInteger> GetList();
 }
 
@@ -69,12 +79,16 @@ public class NestedInteger : INestedInteger
 
     private List<NestedInteger> nis;
 
-    // Constructor initializes an empty nested list.
+    /// <summary>
+    /// Constructor initializes an empty nested list.
+    /// </summary>
     public NestedInteger()
     {
     }
 
-    // Constructor initializes a single integer.
+    /// <summary>
+    /// Constructor initializes a single integer.
+    /// </summary>
     public NestedInteger(int value)
     {
         this.value = value;
@@ -87,24 +101,28 @@ public class NestedInteger : INestedInteger
         nis.Add(ni);
     }
 
+    /// <inheritdoc/>
     public int? GetInteger()
     {
         return value;
     }
 
+    /// <inheritdoc/>
     public IList<NestedInteger> GetList()
     {
         return nis;
     }
 
+    /// <inheritdoc/>
     public bool IsInteger()
     {
         return value != null;
     }
 
-    public void SetInteger(int value)
+    /// <inheritdoc/>
+    public void SetInteger(int val)
     {
-        this.value = value;
-        this.nis = null;
+        value = val;
+        nis = null;
     }
 }
