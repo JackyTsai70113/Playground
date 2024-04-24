@@ -1,8 +1,6 @@
-using playground.BreadthFirstSearch;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.BreadthFirstSearch;
-
-public class ContainVirusTest
+public class ContainVirusTest0749
 {
     [Theory]
     [InlineData("[[0,1,0,0,0,0,0,1],[0,1,0,0,0,0,0,1],[0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0]]", 10)]
@@ -13,7 +11,7 @@ public class ContainVirusTest
     [InlineData("[[0,1,0,1,1,1,1,1,1,0],[0,0,0,1,0,0,0,0,0,0],[0,0,1,1,1,0,0,0,1,0],[0,0,0,1,1,0,0,1,1,0],[0,1,0,0,1,0,1,1,0,1],[0,0,0,1,0,1,0,1,1,1],[0,1,0,0,1,0,0,1,1,0],[0,1,0,1,0,0,0,1,1,0],[0,1,1,0,0,1,1,0,0,1],[1,0,1,1,0,1,0,1,0,1]]", 38)]
     public void ContainVirus(string A, int expected)
     {
-        var actual = ContainVirusClass.ContainVirus(A.To2dArr());
+        var actual = ContainVirus0749.ContainVirus(A.To2dArr());
         Assert.Equal(expected, actual);
     }
 }
