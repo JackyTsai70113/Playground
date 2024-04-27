@@ -15,7 +15,7 @@ public class LRUCacheTest
     {
         var vals = valStr.To2dArr();
         var expectedArr = expected.ToArr<int?>();
-        LRUCache_0146 lruCache = new(0);
+        LRUCache0146 lruCache = new(0);
         for (int i = 0; i < funcs.Length; ++i)
         {
             switch (funcs[i])

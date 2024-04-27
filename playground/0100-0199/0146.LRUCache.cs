@@ -1,12 +1,12 @@
 namespace playground;
 
-public class LRUCache_0146
+public class LRUCache0146
 {
     private readonly int _capacity;
     private readonly Dictionary<int, LinkedListNode<KeyValuePair<int, int>>> _cacheMap;
     private readonly LinkedList<KeyValuePair<int, int>> _cacheList;
 
-    public LRUCache_0146(int capacity)
+    public LRUCache0146(int capacity)
     {
         _capacity = capacity;
         _cacheMap = new();
