@@ -1,8 +1,6 @@
-using playground.DynamicPrograming;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.DynamicPrograming;
-
-public class CanMeasureWaterTest
+public class CanMeasureWaterTest0365
 {
     [Theory]
     [InlineData(3, 5, 9, false)]
@@ -11,7 +9,7 @@ public class CanMeasureWaterTest
     [InlineData(1, 2, 3, true)]
     public void CanMeasureWater(int a, int b, int target, bool expected)
     {
-        var actual = CanMeasureWaterClass.CanMeasureWater(a, b, target);
+        var actual = CanMeasureWater0365.CanMeasureWater(a, b, target);
         Assert.Equal(expected, actual);
     }
 
@@ -22,7 +20,7 @@ public class CanMeasureWaterTest
     [InlineData(1, 2, 3, true)]
     public void CanMeasureWater2(int a, int b, int target, bool expected)
     {
-        var actual = CanMeasureWaterClass.CanMeasureWater2(a, b, target);
+        var actual = CanMeasureWater0365.CanMeasureWater2(a, b, target);
         Assert.Equal(expected, actual);
     }
 }

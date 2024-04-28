@@ -27,8 +27,7 @@ public class FindKthSmallest3116
     {
         long gcd(long x, long y)
         {
-            if (y == 0) return x;
-            return gcd(y, x % y);
+            return y == 0 ? x : gcd(y, x % y);
         }
         long lcm(long x, long y)
         {

@@ -10,28 +10,28 @@ public class MyCalendar
     public bool Book(int start, int end)
     {
         int l = 0, r = list.Count - 1;
-        while (l < r)
+        while (l <= r)
         {
             int m = l + (r - l) / 2;
-            if (start < list[m].end)
+            if (end <= list[m].start)
             {
-                r = m;
+                r = m - 1;
             }
-            else
+            else if (list[m].end <= start)
             {
                 l = m + 1;
             }
-        }
-        if (l == list.Count || Math.Min(list[l].end, end) <= Math.Max(start, list[l].start))
-        {
-            if (l == list.Count || l == list.Count - 1 && list[l].end < start)
-                list.Add((start, end));
-            else if (Math.Min(list[l].end, end) < Math.Max(start, list[l].start))
-                list.Insert(l, (start, end));
-            else if (list[l].end <= start)
-                list[l] = (list[l].start, end);
             else
+            {
+                break;
+            }
+        }
+        if (l == list.Count || end <= list[l].start)
+        {
+            if (l < list.Count && end == list[l].start)
                 list[l] = (start, list[l].end);
+            else
+                list.Insert(l, (start, end));
             return true;
         }
         else
@@ -56,5 +56,42 @@ public class MyCalendar2
     public bool Book(int start, int end)
     {
         return ss.Add((start, end));
+    }
+}
+
+public class MyCalendar3
+{
+    readonly List<(int start, int end)> list = new();
+
+    public bool Book(int start, int end)
+    {
+        int l = 0, r = list.Count - 1;
+        while (l < r)
+        {
+            int m = l + (r - l) / 2;
+            if (start < list[m].end)
+            {
+                r = m;
+            }
+            else
+            {
+                l = m + 1;
+            }
+        }
+        if (l == list.Count - 1 && list[l].end < start) l++;
+        if (l == list.Count || Math.Max(start, list[l].start) >= Math.Min(end, list[l].end))
+        {
+            if (l < list.Count && start == list[l].end)
+                list[l] = (list[l].start, end);
+            else if (l < list.Count && end == list[l].start)
+                list[l] = (start, list[l].end);
+            else
+                list.Insert(l, (start, end));
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

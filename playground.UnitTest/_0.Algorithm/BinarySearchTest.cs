@@ -12,7 +12,7 @@ public class BinarySearchTest
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 6, 7)]
     [InlineData(new int[] { 1, 2, 2, 2, 4, 5, 5, 6 }, 7, 8)]
     [InlineData(new int[] { }, 5, 0)]
-    public void GetLowerBoundWithFunc(int[] nums, int p, int expected)
+    public void GetLowerBound(int[] nums, int p, int expected)
     {
         int actual = BinarySearch2.GetLowerBound(0, nums.Length, (idx) => nums[idx] >= p);
 

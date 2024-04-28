@@ -1,9 +1,9 @@
-namespace playground.DynamicPrograming;
+namespace playground;
 
-public class CanMeasureWaterClass
+public class CanMeasureWater0365
 {
     /// <summary>
-    /// https://leetcode.com/problems/water-and-jug-problem/
+    /// https://leetcode.com/problems/water-and-jug-problem
     /// </summary>
     public static bool CanMeasureWater(int a, int b, int target)
     {
