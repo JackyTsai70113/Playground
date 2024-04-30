@@ -8,14 +8,12 @@ public class DelNodesTest1110
     [InlineData("[1,2,4,3]", new int[] { 3 }, "[[1,2,4]]")]
     public void DelNodes(string root, int[] to_delete, string expected)
     {
+        var actual = DelNodes1110.DelNodes(root.ToTreeNode(), to_delete);
+        var expectedTrees = expected.ToArr<object>();
+        Assert.Equal(expectedTrees.Length, actual.Count);
+        for (int i = 0; i < expectedTrees.Length; i++)
         {
-            var actual = DelNodes1110.DelNodes(root.ToTreeNode(), to_delete);
-            var expectedTrees = expected.ToArr<object>();
-            Assert.Equal(expectedTrees.Length, actual.Count);
-            for (int i = 0; i < expectedTrees.Length; i++)
-            {
-                Assert.Equal(expectedTrees[i].ToString(), actual[i].ToString());
-            }
+            Assert.Equal(expectedTrees[i].ToString(), actual[i].ToString());
         }
     }
 }

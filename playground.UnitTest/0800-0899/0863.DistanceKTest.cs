@@ -7,9 +7,7 @@ public class DistanceKTest0863
     [InlineData("[1]", "[1]", 3, new int[0])]
     public void DistanceK(string root, string target, int k, int[] expected)
     {
-        {
-            var actual = DistanceK0863.DistanceK(root.ToTreeNode(), target.ToTreeNode(), k);
-            Assert.Equal(expected, actual);
-        }
+        var actual = DistanceK0863.DistanceK(root.ToTreeNode(), target.ToTreeNode(), k);
+        Assert.Equal(expected, actual);
     }
 }
