@@ -10,12 +10,8 @@ public class InvertTreeTest0226
     {
         var actual = InvertTree0226.InvertTree(root.ToTreeNode());
         if (actual == null)
-        {
             Assert.Equal(expected.ToTreeNode(), actual);
-        }
         else
-        {
             Assert.Equal(expected, actual.ToString());
-        }
     }
 }

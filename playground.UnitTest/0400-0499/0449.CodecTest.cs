@@ -14,12 +14,8 @@ public class CodecTest0449
         var str = Codec0449.Serialize(root.ToTreeNode());
         var actual = Codec0449.Deserialize(str);
         if (actual == null)
-        {
             Assert.Equal(expected.ToTreeNode(), actual);
-        }
         else
-        {
             Assert.Equal(expected, actual.ToString());
-        }
     }
 }

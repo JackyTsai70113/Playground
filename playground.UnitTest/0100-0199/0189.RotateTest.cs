@@ -7,7 +7,7 @@ public class RotateTest0189
     [InlineData(new[] { -1, -100, 3, 99 }, 2, new[] { 3, 99, -1, -100 })]
     public void Rotate(int[] nums, int k, int[] expected)
     {
-        new Rotate0189().Rotate(nums, k);
+        Rotate0189.Rotate(nums, k);
         Assert.Equal(expected, nums);
     }
 }

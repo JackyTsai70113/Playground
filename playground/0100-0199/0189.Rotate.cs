@@ -4,8 +4,8 @@ public class Rotate0189
 {
     /// <summary>
     /// https://leetcode.com/problems/rotate-array
-    /// /// </summary>
-    public void Rotate(int[] nums, int k)
+    /// </summary>
+    public static void Rotate(int[] nums, int k)
     {
         k %= nums.Length;
         Array.Reverse(nums, 0, nums.Length);
