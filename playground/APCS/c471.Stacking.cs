@@ -1,6 +1,6 @@
 namespace playground;
 
-public class Stackingc471
+public class Stacking_c471
 {
     /// <summary>
     /// https://zerojudge.tw/ShowProblem?problemid=c471

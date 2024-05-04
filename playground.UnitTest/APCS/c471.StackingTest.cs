@@ -1,14 +1,14 @@
 namespace playground.UnitTest;
 
-public class StackingTestc471
+public class StackingTest_c471
 {
     [Theory]
-    [InlineData(2, "[20,10]", "[1,1]", 10)]
-    [InlineData(2, "[1,2]", "[3,4]", 4)]
-    [InlineData(3, "[3,4,5]", "[1,2,3]", 19)]
-    public void Stacking(int n, string weights, string times, long expected)
+    [InlineData(2, new int[] { 20, 10 }, new int[] { 1, 1 }, 10)]
+    [InlineData(2, new int[] { 1, 2 }, new int[] { 3, 4 }, 4)]
+    [InlineData(3, new int[] { 3, 4, 5 }, new int[] { 1, 2, 3 }, 19)]
+    public void Stacking(int n, int[] weights, int[] times, long expected)
     {
-        var actual = Stackingc471.Stacking(n, weights.ToArr(), times.ToArr());
+        var actual = Stacking_c471.Stacking(n, weights, times);
         Assert.Equal(expected, actual);
     }
 }

@@ -10,7 +10,7 @@ public class SmallestFromLeafTest0988
     [InlineData("[3,9,20,null,null,15,7]", "hud")]
     [InlineData("[4,0,1,1]", "bae")]
     [InlineData("[0,null,1]", "ba")]
-    // [InlineData("[25,1,null,0,0,1,null,null,null,0]", "ababz")]
+    [InlineData("[25,1,null,0,0,1,null,null,null,0]", "ababz")]
     public void SmallestFromLeaf(string root, string expected)
     {
         var actual = SmallestFromLeaf0988.SmallestFromLeaf(root.ToTreeNode());

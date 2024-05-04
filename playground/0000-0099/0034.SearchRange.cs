@@ -7,42 +7,47 @@ public class SearchRange0034
     /// </summary>
     public static int[] SearchRange(int[] nums, int target)
     {
-        var res = new int[] { -1, -1 };
-        if (!nums.Any()) return res;
-        int l = 0, r = nums.Length - 1;
+        int left = FirstGreaterValue(nums, 0, nums.Length, target);
+        if (left == nums.Length || nums[left] != target)
+            return new int[] { -1, -1 };
+        int right = FirstGreaterValue(nums, left, nums.Length, target + 1);
+        return new int[] { left, right - 1 };
+    }
+
+    private static int FirstGreaterValue(int[] nums, int l, int r, int target)
+    {
         while (l < r)
         {
             int m = l + (r - l) / 2;
             if (nums[m] >= target)
-            {
                 r = m;
-            }
             else
-            {
                 l = m + 1;
-            }
         }
-        if (nums[l] != target)
-        {
-            return res;
-        }
-        res[0] = l;
+        return l;
+    }
 
-        l = 0;
-        r = nums.Length - 1;
-        while (l < r)
-        {
-            int m = l + (r - l + 1) / 2;
-            if (nums[m] <= target)
-            {
-                l = m;
-            }
-            else
-            {
-                r = m - 1;
-            }
-        }
-        res[1] = l;
-        return res;
+    /// <summary>
+    /// find duplicated values count in sorted array
+    /// </summary>
+    public static int SearchCount(int[] nums, int l, int r, int target)
+    {
+        int left = FirstGreaterValue(nums, l, r, target);
+        if (left == nums.Length || nums[left] != target)
+            return 0;
+        int right = FirstGreaterValue(nums, left, nums.Length, target + 1);
+        return right - left;
+    }
+
+    public static int SearchCount2(int[] nums, int l, int r, int target)
+    {
+        if (l >= r) return 0;
+        int m = l + (r - l) / 2;
+        if (nums[m] == target)
+            return 1 + SearchCount2(nums, l, m, target) + SearchCount2(nums, m + 1, r, target);
+        if (nums[m] > target)
+            return SearchCount2(nums, l, m, target);
+        else
+            return SearchCount2(nums, m + 1, r, target);
     }
 }

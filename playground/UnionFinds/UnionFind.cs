@@ -2,12 +2,10 @@ namespace playground.UnionFinds;
 
 public class UnionFind
 {
-    private readonly int n;
     private readonly int[] Groups;
     private readonly int[] Ranks;
     public UnionFind(int n)
     {
-        this.n = n;
         Groups = new int[n];
         Ranks = new int[n];
         for (int i = 0; i < n; ++i)
@@ -15,25 +13,6 @@ public class UnionFind
             Groups[i] = i;
             Ranks[i] = 1;
         }
-    }
-
-    public UnionFind(UnionFind uf)
-    {
-        Groups = uf.Groups.ToArray();
-        Ranks = uf.Ranks.ToArray();
-    }
-
-    /// <summary>
-    /// 取得 disjoint group 的數量
-    /// </summary>
-    public int GroupCount()
-    {
-        var hs = new HashSet<int>();
-        for (int node = 0; node < n; ++node)
-        {
-            hs.Add(Find(node));
-        }
-        return hs.Count;
     }
 
     /// <summary>

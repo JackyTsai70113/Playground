@@ -1,8 +1,6 @@
-using playground.Stacks;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.Stacks;
-
-public class LengthLongestPathTest
+public class LengthLongestPathTest0388
 {
     [Theory]
     [InlineData("dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext", 20)]
@@ -10,7 +8,7 @@ public class LengthLongestPathTest
     [InlineData("a", 0)]
     public void LengthLongestPath(string a, int expected)
     {
-        var actual = LengthLongestPathClass.LengthLongestPath(a);
+        var actual = LengthLongestPath0388.LengthLongestPath(a);
         Assert.Equal(expected, actual);
     }
 }

@@ -1,6 +1,6 @@
-namespace playground.Simulation;
+namespace playground;
 
-public class SumDistanceClass
+public class SumDistance2731
 {
     /// <summary>
     /// https://leetcode.com/problems/movement-of-robots
@@ -12,16 +12,16 @@ public class SumDistanceClass
         for (int i = 0; i < nums.Length; ++i)
         {
             if (s[i] == 'R')
-                l.Add(nums[i] + d);
+                l.Add((long)nums[i] + d);
             else
-                l.Add(nums[i] - d);
+                l.Add((long)nums[i] - d);
         }
         l.Sort();
         long res = 0, pre = 0;
         for (int i = 0; i < nums.Length; ++i)
         {
+            res = (res + i * l[i] - pre) % MOD;
             pre += l[i];
-            res = (res + (i + 1) * l[i] - pre) % MOD;
         }
         return (int)res;
     }

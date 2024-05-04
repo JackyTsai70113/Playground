@@ -7,13 +7,7 @@ public class FindCheapestPrice0787
     /// </summary>
     public static int FindCheapestPrice(int n, int[][] flights, int src, int dst, int k)
     {
-        var g = new List<(int v, int p)>[n];
-        foreach (var f in flights)
-        {
-            g[f[0]] ??= new();
-            g[f[0]].Add((f[1], f[2]));
-        }
-
+        var g = Graph.BuildDWG(n, flights);
         var stepsTo = new int[n];
         Array.Fill(stepsTo, int.MaxValue);
 
@@ -25,12 +19,9 @@ public class FindCheapestPrice0787
             if (steps > stepsTo[u] || steps > k + 1) continue;
             if (u == dst) return p;
             stepsTo[u] = steps;
-            if (g[u] != null)
+            foreach (var (v, price) in g[u])
             {
-                foreach (var (v, price) in g[u])
-                {
-                    pq.Enqueue((v, p + price, steps + 1), p + price);
-                }
+                pq.Enqueue((v, p + price, steps + 1), p + price);
             }
         }
         return -1;

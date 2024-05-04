@@ -7,13 +7,7 @@ public class ReachableNodes0882
     /// </summary>
     public static int ReachableNodes(int[][] edges, int maxMoves, int n)
     {
-        var g = new List<(int, int)>[n];
-        for (int i = 0; i < n; i++) g[i] = new();
-        foreach (var e in edges)
-        {
-            g[e[0]].Add((e[1], e[2]));
-            g[e[1]].Add((e[0], e[2]));
-        }
+        var g = Graph.BuildUWG(n, edges);
         var d = Dijkstra(0, g);
         var res = d.Count(x => x <= maxMoves);
         foreach (var e in edges)

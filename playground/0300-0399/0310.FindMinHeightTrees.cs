@@ -7,13 +7,7 @@ public class FindMinHeightTrees0310
     public static IList<int> FindMinHeightTrees(int n, int[][] edges)
     {
         if (n == 1) return new List<int> { 0 };
-        var g = new List<int>[n];
-        for (int i = 0; i < n; i++) g[i] = new();
-        foreach (var e in edges)
-        {
-            g[e[0]].Add(e[1]);
-            g[e[1]].Add(e[0]);
-        }
+        var g = Graph.BuildUG(n, edges);
         var outDegree = new int[n];
         var q = new Queue<int>();
         for (int i = 0; i < n; i++)

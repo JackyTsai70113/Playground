@@ -2,7 +2,7 @@
 
 ## Minimum Spanning Tree(MST, 最小生成樹)
 
-考慮一個connected、weighted的undirected graph，定義 Spanning Tree：
+考慮一個 connected、undirected weighted graph，定義 Spanning Tree：
 
 - 連結所有的 graph 的 vertex
 - 沒有 cycle

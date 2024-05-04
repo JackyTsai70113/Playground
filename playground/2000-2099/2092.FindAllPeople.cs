@@ -32,10 +32,11 @@ public class FindAllPeople2092
             }
         }
 
-        var res = new List<int>();
-        for (int i = 0; i < n; i++)
+        var res = new List<int> { 0 };
+        int group = uf.Find(0);
+        for (int i = 1; i < n; i++)
         {
-            if (uf.AreConnected(0, i))
+            if (group == uf.Find(i))
             {
                 res.Add(i);
             }
