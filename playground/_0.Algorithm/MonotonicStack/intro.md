@@ -112,18 +112,18 @@
    - Practice
      - [0042. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
      - [0739. Daily Temperatures[Medium]](https://leetcode.com/problems/daily-temperatures/)
-     - [0901. Online Stock Span](https://leetcode.com/problems/online-stock-span/description/)
+     - [0901. Online Stock Span](https://leetcode.com/problems/online-stock-span)
 
 3. 找出以第i個位置的山峰或是山谷
    - 應用前面的找出前面和後面比自己高或是比自己低的位置，如果左右邊都應用的話，就是找出以第i個位置的山峰或是山谷。
 例如: [1,4,3,7,4,5]，可以畫出以下的圖
    - ![Alt text](image.png)
    - Practice
-     - [1793. Maximum Score of a Good Subarray](https://leetcode.com/problems/maximum-score-of-a-good-subarray/description)
+     - [1793. Maximum Score of a Good Subarray](https://leetcode.com/problems/maximum-score-of-a-good-subarray)
      - [0084. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
-     - [0907. Sum of Subarray Minimums](https://leetcode.com/problems/sum-of-subarray-minimums/description/)
-     - [0316. Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/description/?envType=daily-question&envId=2023-09-26)
-     - [2866. Beautiful Towers II](https://leetcode.com/problems/beautiful-towers-ii/description/)
-     - [1944. Number of Visible People In a Queue](https://leetcode.com/problems/number-of-visible-people-in-a-queue/description/)
+     - [0907. Sum of Subarray Minimums](https://leetcode.com/problems/sum-of-subarray-minimums)
+     - [0316. Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters)
+     - [2866. Beautiful Towers II](https://leetcode.com/problems/beautiful-towers-ii)
+     - [1944. Number of Visible People In a Queue](https://leetcode.com/problems/number-of-visible-people-in-a-queue)
 
-4. ref: <https://hackmd.io/@meyr543/rkjS-x6wY>
+    1. ref: <https://hackmd.io/@meyr543/rkjS-x6wY>

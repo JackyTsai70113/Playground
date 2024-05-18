@@ -7,6 +7,11 @@ public class Intersection0349
     /// </summary>
     public static int[] Intersection(int[] nums1, int[] nums2)
     {
-        return nums1.ToHashSet().Intersect(nums2.ToHashSet()).ToArray();
+        var set = nums1.ToHashSet();
+        var res = new HashSet<int>();
+        foreach (var num in nums2)
+            if (set.Contains(num))
+                res.Add(num);
+        return res.ToArray();
     }
 }
