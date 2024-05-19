@@ -30,7 +30,7 @@ public class IsSelfCrossingClass
                     return true;
             }
             return false;
-        } 
+        }
 
         var ps = new int[7][];
         ps[0] = new int[2];

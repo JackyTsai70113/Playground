@@ -8,14 +8,20 @@ public class CheckValidString0678
     public static bool CheckValidString(string s)
     {
         int max = 0, min = 0;
-        foreach(var c in s){
-            if(c=='('){
+        foreach (var c in s)
+        {
+            if (c == '(')
+            {
                 max++;
                 min++;
-            } else if(c==')'){
+            }
+            else if (c == ')')
+            {
                 max--;
                 min--;
-            } else {
+            }
+            else
+            {
                 max++;
                 min--;
             }

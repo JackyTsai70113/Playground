@@ -1,8 +1,6 @@
-using playground.HashTables;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.HashTables;
-
-public class SimilarPairsTest
+public class SimilarPairsTest2506
 {
     [Theory]
     [InlineData(new string[] { "aba", "aabb", "abcd", "bac", "aabc" }, 2)]
@@ -10,7 +8,7 @@ public class SimilarPairsTest
     [InlineData(new string[] { "nba", "cba", "dba" }, 0)]
     public void SimilarPairs(string[] words, int expected)
     {
-        var actual = SimilarPairsClass.SimilarPairs(words);
+        var actual = SimilarPairs2506.SimilarPairs(words);
         Assert.Equal(expected, actual);
     }
 }

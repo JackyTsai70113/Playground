@@ -42,18 +42,4 @@ public class BinarySearch2
         }
         return l;
     }
-
-    /// <summary>
-    /// 取左極值
-    /// </summary>
-    /// <param name="left"></param>
-    /// <param name="right"></param>
-    /// <param name="func"></param>
-    /// <returns></returns>
-    public static int GetLowerBound2(int[] arr, int num)
-    {
-        int x = Array.BinarySearch(arr, num);
-        if (x < 0) x = ~x;
-        return x;
-    }
 }

@@ -11,7 +11,7 @@ public class MaxChunksToSorted0769
         for (int i = 0; i < n; i++)
         {
             max = Math.Max(max, arr[i]);
-            if(max == i)
+            if (max == i)
                 res++;
         }
         return res;

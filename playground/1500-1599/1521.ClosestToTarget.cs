@@ -15,12 +15,15 @@ public class ClosestToTarget_1521
         for (int i = n - 2; i >= 0; --i)
         {
             sets[i].Add(arr[i]);
-            foreach(var num in sets[i+1]){
+            foreach (var num in sets[i + 1])
+            {
                 sets[i].Add(arr[i] & num);
             }
         }
-        foreach(var set in sets){
-            foreach(var num in set){
+        foreach (var set in sets)
+        {
+            foreach (var num in set)
+            {
                 res = Math.Min(res, Math.Abs(num - target));
             }
         }

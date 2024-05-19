@@ -35,7 +35,7 @@ public class MyCalendarTwo0731
                 ss.Remove(val);
                 ss.Add((Math.Min(union.start, val.start), Math.Max(union.end, val.end)));
             }
-            
+
             else
             {
                 ss.Add(union);

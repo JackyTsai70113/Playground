@@ -17,10 +17,10 @@ public class CountRoutesClass
         {
             if (fuel < 0)
                 return 0;
-            if (memo[cur,fuel] != -1)
+            if (memo[cur, fuel] != -1)
                 return memo[cur, fuel];
             memo[cur, fuel] = 0;
-            if(cur == finish)
+            if (cur == finish)
                 memo[cur, fuel] = 1;
             for (int i = 0; i < n; ++i)
             {

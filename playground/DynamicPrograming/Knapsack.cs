@@ -9,7 +9,7 @@ public class Knapsack
     public static int PaintWalls(int[] cost, int[] time)
     {
         int n = cost.Length;
-        var memo = new int[n+1]; // memo[t] = c, 需要 cost 來得到
+        var memo = new int[n + 1]; // memo[t] = c, 需要 cost 來得到
         Array.Fill(memo, (int)1e9);
         memo[0] = 0;
         for (int i = 0; i < n; i++)

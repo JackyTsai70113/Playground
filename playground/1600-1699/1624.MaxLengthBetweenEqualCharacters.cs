@@ -11,7 +11,7 @@ public class MaxLengthBetweenEqualCharacters1624
         var res = int.MinValue;
         for (int i = 0; i < s.Length; i++)
         {
-            if(memo[s[i]-'a'] == -1)
+            if (memo[s[i] - 'a'] == -1)
                 memo[s[i] - 'a'] = i;
             else
                 res = Math.Max(res, i - memo[s[i] - 'a'] - 1);

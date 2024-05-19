@@ -9,7 +9,7 @@ public class FindProductsOfElementsTest3145
     [InlineData("[[2,5,3],[7,7,4]]", new int[] { 2, 2 })]
     public static void FindProductsOfElements(string queries, int[] expected)
     {
-        var actual = new FindProductsOfElements3145().FindProductsOfElements(queries.To2dArr<long>());
+        var actual = FindProductsOfElements3145.FindProductsOfElements(queries.To2dArr<long>());
         Assert.Equal(expected, actual);
     }
 }
