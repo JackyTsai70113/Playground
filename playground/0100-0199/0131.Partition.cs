@@ -8,11 +8,11 @@ public class Partition0131
     public static IList<IList<string>> Partition(string s)
     {
         var res = new List<IList<string>>();
-        Helper(s, new List<string>(), res);
+        Bt(s, new List<string>(), res);
         return res;
     }
 
-    static void Helper(string s, List<string> step, List<IList<string>> res)
+    static void Bt(string s, List<string> step, List<IList<string>> res)
     {
         if (s.Length == 0)
         {
@@ -26,7 +26,7 @@ public class Partition0131
                 continue;
 
             step.Add(temp);
-            Helper(s[len..], step, res);
+            Bt(s[len..], step, res);
             step.RemoveAt(step.Count - 1);
         }
     }
