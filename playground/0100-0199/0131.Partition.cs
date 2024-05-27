@@ -34,7 +34,7 @@ public class Partition0131
     static bool IsPalindrome(string s)
     {
         int l = 0, r = s.Length - 1;
-        while (l <= r)
+        while (l < r)
         {
             if (s[l++] != s[r--])
                 return false;
