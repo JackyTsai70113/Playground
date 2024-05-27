@@ -6,27 +6,27 @@ public class MinimumCost3108
     /// https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph
     /// </summary>
     /// <remarks>
-    /// UnionFind
+    /// DisjointSet
     /// </remarks>
     public static int[] MinimumCost(int n, int[][] edges, int[][] query)
     {
-        var uf = new UnionFind(n);
+        var ds = new DisjointSet(n);
         int[] costs = new int[n];
         Array.Fill(costs, int.MaxValue);
         foreach (var e in edges)
         {
-            int g1 = uf.Find(e[0]), g2 = uf.Find(e[1]);
+            int g1 = ds.Find(e[0]), g2 = ds.Find(e[1]);
             if (g1 != g2)
             {
-                uf.Union(e[0], e[1]);
-                g1 = uf.Find(e[0]);
+                ds.Union(e[0], e[1]);
+                g1 = ds.Find(e[0]);
             }
             costs[g1] &= costs[g2] & e[2];
         }
         var res = new List<int>();
         foreach (var q in query)
         {
-            int g1 = uf.Find(q[0]), g2 = uf.Find(q[1]);
+            int g1 = ds.Find(q[0]), g2 = ds.Find(q[1]);
             if (q[0] == q[1])
                 res.Add(0);
             else if (g1 != g2)
@@ -35,34 +35,6 @@ public class MinimumCost3108
                 res.Add(costs[g1]);
         }
         return res.ToArray();
-    }
-
-    public class UnionFind
-    {
-        private readonly int[] groups;
-        private readonly int[] ranks;
-        public UnionFind(int n)
-        {
-            groups = new int[n];
-            Array.Fill(groups, -1);
-            ranks = new int[n];
-            Array.Fill(ranks, 1);
-        }
-
-        public int Find(int node)
-        {
-            return groups[node] < 0 ? node : Find(groups[node]);
-        }
-
-        public void Union(int node1, int node2)
-        {
-            int g1 = Find(node1), g2 = Find(node2);
-            if (g1 == g2) return;
-            if (ranks[g2] > ranks[g1])
-                (g1, g2) = (g2, g1);
-            groups[g2] = g1;
-            ranks[g1] += ranks[g2];
-        }
     }
 
     /// <remarks>BFS</remarks>

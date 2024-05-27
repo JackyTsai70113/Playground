@@ -2,17 +2,12 @@ namespace playground;
 
 public class DisjointSet
 {
-    private readonly int[] Groups;
-    private readonly int[] Ranks;
+    public readonly int[] Groups;
+    public readonly int[] Ranks;
     public DisjointSet(int n)
     {
-        Groups = new int[n];
-        Ranks = new int[n];
-        for (int i = 0; i < n; ++i)
-        {
-            Groups[i] = i;
-            Ranks[i] = 1;
-        }
+        Groups = Enumerable.Range(0, n).ToArray();
+        Ranks = Enumerable.Repeat(1, n).ToArray();
     }
 
     /// <summary>
@@ -20,7 +15,9 @@ public class DisjointSet
     /// </summary>
     public int Find(int node)
     {
-        return Groups[node] = Groups[node] == node ? node : Find(Groups[node]);
+        if (node != Groups[node])
+            Groups[node] = Find(Groups[node]);
+        return Groups[node];
     }
 
     /// <summary>

@@ -1,4 +1,4 @@
-namespace playground.UnionFinds;
+namespace playground;
 
 public class HitBricks0803
 {
@@ -7,41 +7,38 @@ public class HitBricks0803
     /// </summary>
     public static int[] HitBricks(int[][] grid, int[][] hits)
     {
-        int R = grid.Length, C = grid[0].Length;
-        int[] drs = new int[] { 1, 0, -1, 0 };
-        int[] dcs = new int[] { 0, 1, 0, -1 };
-
+        int m = grid.Length, n = grid[0].Length;
+        var dirs = new int[] { -1, 0, 1, 0, -1 };
         var A = grid.Select(x => x.ToArray()).ToArray();
         foreach (var hit in hits)
-        {
             A[hit[0]][hit[1]] = 0;
-        }
 
-        var uf = new UnionFind(R * C + 1);
-        for (int r = 0; r < R; r++)
+        var ds = new DisjointSet(m * n + 1);
+        for (int r = 0; r < m; r++)
         {
-            for (int c = 0; c < C; c++)
+            for (int c = 0; c < n; c++)
             {
                 if (A[r][c] == 0)
                     continue;
-                int node = r * C + c;
+                int node = r * n + c;
                 if (r == 0)
-                    uf.Connect(node, R * C);
+                    ds.Union(node, m * n);
                 if (r > 0 && A[r - 1][c] == 1)
-                    uf.Connect(node, (r - 1) * C + c);
+                    ds.Union(node, (r - 1) * n + c);
                 if (c > 0 && A[r][c - 1] == 1)
-                    uf.Connect(node, r * C + c - 1);
+                    ds.Union(node, r * n + c - 1);
             }
         }
 
-        void f(int node, int x0, int y0)
+        void move(int x0, int y0)
         {
+            int node = x0 * n + y0;
             for (int i = 0; i < 4; ++i)
             {
-                int x = x0 + drs[i], y = y0 + dcs[i];
-                if (x >= 0 && y >= 0 && x < R && y < C && A[x][y] == 1)
+                int x = x0 + dirs[i], y = y0 + dirs[i + 1];
+                if (x >= 0 && y >= 0 && x < m && y < n && A[x][y] == 1)
                 {
-                    uf.Connect(node, x * C + y);
+                    ds.Union(node, x * n + y);
                 }
             }
         }
@@ -52,12 +49,11 @@ public class HitBricks0803
             if (grid[x0][y0] == 0)
                 continue;
 
-            var preCount = uf.GetSize(R * C);
+            var preCount = ds.Ranks[ds.Find(m * n)];
             A[x0][y0] = 1;
-            int node = x0 * C + y0;
-            f(node, x0, y0);
-            if (x0 == 0) uf.Connect(node, R * C);
-            res[t] = Math.Max(0, uf.GetSize(R * C) - preCount - 1);
+            move(x0, y0);
+            if (x0 == 0) ds.Union(x0 * n + y0, m * n);
+            res[t] = Math.Max(0, ds.Ranks[ds.Find(m * n)] - preCount - 1);
         }
         return res;
     }

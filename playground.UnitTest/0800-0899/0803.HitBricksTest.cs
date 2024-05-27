@@ -1,6 +1,4 @@
-using playground.UnionFinds;
-
-namespace playground.UnitTest.UnionFinds;
+namespace playground.UnitTest;
 
 public class HitBricksTest
 {

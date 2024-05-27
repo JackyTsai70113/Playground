@@ -14,14 +14,7 @@ public class BeautifulSubsets2597
     static int Bt(int[] nums, int k, int start, List<int> cur)
     {
         if (start == nums.Length)
-        {
-            foreach (var i in cur)
-            {
-                Console.Write(i + " ");
-            }
-            Console.WriteLine();
             return 1;
-        }
         var res = 0;
         if (cur.Count == 0 || !cur.Contains(nums[start] - k))
         {

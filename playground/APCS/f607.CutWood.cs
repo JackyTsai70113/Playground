@@ -1,6 +1,6 @@
-namespace playground.Sets;
+namespace playground;
 
-public class CutWoodClass
+public class CutWood_f607
 {
     /// <summary>
     /// https://zerojudge.tw/ShowProblem?problemid=f607
