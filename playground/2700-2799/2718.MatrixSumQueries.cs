@@ -1,7 +1,10 @@
-namespace playground.Arrays;
+namespace playground;
 
-public class MatrixSumQueriesClass
+public class MatrixSumQueries2718
 {
+    /// <summary>
+    /// https://leetcode.com/problems/sum-of-matrix-after-queries
+    /// </summary>
     public static long MatrixSumQueries(int n, int[][] qs)
     {
         HashSet<int> r = new(), c = new();
