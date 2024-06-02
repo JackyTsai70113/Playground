@@ -7,16 +7,16 @@ public class Stacking_c471
     /// </summary>
     public static long Stacking(int n, int[] weights, int[] times)
     {
-        var objs = Enumerable
+        var arr = Enumerable
             .Range(0, n)
             .Select(i => (weight: weights[i], time: times[i]))
             .ToArray();
-        Array.Sort(objs, (x, y) => x.weight * y.time - x.time * y.weight);
+        Array.Sort(arr, (x, y) => x.weight * y.time - x.time * y.weight);
         int res = 0;
         for (int i = 0, sum = 0; i < n; i++)
         {
-            res += sum * objs[i].time;
-            sum += objs[i].weight;
+            res += sum * arr[i].time;
+            sum += arr[i].weight;
         }
         return res;
     }

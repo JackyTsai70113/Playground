@@ -1,8 +1,6 @@
-using playground.BinarySearch;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.BinarySearch;
-
-public class SearchInRotatedSortedArrayTest
+public class SearchTest0033
 {
     [Theory]
     [InlineData(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 0, 4)]
@@ -15,10 +13,9 @@ public class SearchInRotatedSortedArrayTest
     [InlineData(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 7, 3)]
     [InlineData(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 8, -1)]
     [InlineData(new int[] { 1 }, 0, -1)]
-    public void SearchInRotatedSortedArray(int[] nums, int target, int expected)
+    public void Search(int[] nums, int target, int expected)
     {
-        var actual = SearchInRotatedSortedArrayClass.SearchInRotatedSortedArray(nums, target);
-
+        var actual = Search0033.Search(nums, target);
         Assert.Equal(expected, actual);
     }
 }

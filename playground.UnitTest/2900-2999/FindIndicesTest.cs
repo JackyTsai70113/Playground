@@ -1,5 +1,4 @@
-
-namespace playground.UnitTest.BinarySearch;
+namespace playground.UnitTest;
 
 public class FindIndicesTest2905
 {

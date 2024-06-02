@@ -1,8 +1,6 @@
-using playground.BinarySearch;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.BinarySearch;
-
-public class MinimizeMaxTest
+public class MinimizeMaxTest2616
 {
     [Theory]
     [InlineData(new int[] { 1, 2, 2, 2, 3, 3, 4 }, 3, 1)]
@@ -15,8 +13,7 @@ public class MinimizeMaxTest
     [InlineData(new int[] { 1, 2 }, 0, 0)]
     public void MinimizeMax(int[] nums, int p, int expected)
     {
-        int actual = MinimizeMaxClass.MinimizeMax(nums, p);
-
+        int actual = MinimizeMax2616.MinimizeMax(nums, p);
         Assert.Equal(expected, actual);
     }
 }
