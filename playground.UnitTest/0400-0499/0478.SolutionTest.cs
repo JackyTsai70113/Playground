@@ -16,8 +16,8 @@ public class SolutionTest0478
                 case "randPoint":
                     var actual = obj.RandPoint();
                     var xDiff = Math.Abs(actual[0] - x_center);
-                    var yDiff = Math.Abs(actual[0] - y_center);
-                    Assert.True(xDiff * xDiff + yDiff * yDiff <= radius * radius);
+                    var yDiff = Math.Abs(actual[1] - y_center);
+                    Assert.True(xDiff * xDiff + yDiff * yDiff <= radius * radius, $"{xDiff * xDiff} {yDiff * yDiff} {radius * radius}");
                     break;
                 default:
                     break;

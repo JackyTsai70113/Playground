@@ -8,7 +8,7 @@ public class MoveZeroesTest0283
     [InlineData(new[] { 4, 2, 4, 0, 0, 3, 0, 5, 1, 0 }, new[] { 4, 2, 4, 3, 5, 1, 0, 0, 0, 0 })]
     public void MoveZeroes(int[] nums, int[] expected)
     {
-        new MoveZeroes0283().MoveZeroes(nums);
+        MoveZeroes0283.MoveZeroes(nums);
         Assert.Equal(expected, nums);
     }
 }
