@@ -1,8 +1,6 @@
-using System.Numerics;
-
 namespace playground.UnitTest;
 
-public class HammingWeightTest
+public class HammingWeightTest0191
 {
     [Theory]
     [InlineData("00000000000000000000000000001011", 3)]

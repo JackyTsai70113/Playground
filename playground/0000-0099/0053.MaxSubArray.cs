@@ -10,9 +10,8 @@ public class MaxSubArray0053
         int sum = 0, res = int.MinValue;
         foreach (var num in nums)
         {
-            sum += num;
-            res = Math.Max(res, sum);
-            if (sum < 0) sum = 0;
+            res = Math.Max(res, sum + num);
+            sum = Math.Max(0, sum + num);
         }
         return res;
     }
