@@ -28,7 +28,7 @@ public class MyLinkedListTest
     {
         var vals = valStr.To2dArr();
         var expected = expectedStr.ToArr<int?>();
-        MyLinkedList_0707 linkedList = new();
+        MyLinkedList0707 linkedList = new();
         for (int i = 0; i < functions.Length; ++i)
         {
             switch (functions[i])

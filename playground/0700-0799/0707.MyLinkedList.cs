@@ -1,12 +1,15 @@
 namespace playground;
 
-public class MyLinkedList_0707
+/// <summary>
+/// https://leetcode.com/problems/design-linked-list
+/// </summary>
+public class MyLinkedList0707
 {
-    Node _head;
-    Node _tail;
+    ListNode _head;
+    ListNode _tail;
     int _count;
 
-    public MyLinkedList_0707()
+    public MyLinkedList0707()
     {
         _head = null;
         _tail = null;
@@ -33,7 +36,7 @@ public class MyLinkedList_0707
     /// </summary>
     public void AddAtHead(int val)
     {
-        var newNode = new Node(val);
+        var newNode = new ListNode(val);
         if (_count == 0)
         {
             _head = _tail = newNode;
@@ -51,7 +54,7 @@ public class MyLinkedList_0707
     /// </summary>
     public void AddAtTail(int val)
     {
-        var newNode = new Node(val);
+        var newNode = new ListNode(val);
         if (_count == 0)
         {
             _head = _tail = newNode;
@@ -81,12 +84,12 @@ public class MyLinkedList_0707
         }
         if (index > _count)
             return;
-        var pre = new Node(0, _head);
+        var pre = new ListNode(0, _head);
         for (int i = 0; i < index; ++i)
         {
             pre = pre.next;
         }
-        pre.next = new Node(val, pre.next);
+        pre.next = new ListNode(val, pre.next);
         _count++;
     }
 
@@ -103,7 +106,7 @@ public class MyLinkedList_0707
         }
         if (index >= _count)
             return;
-        var pre = new Node(0, _head);
+        var pre = new ListNode(0, _head);
         for (int i = 0; i < index; ++i)
         {
             pre = pre.next;
@@ -112,16 +115,5 @@ public class MyLinkedList_0707
         if (index == _count - 1)
             _tail = pre;
         _count--;
-    }
-
-    private class Node
-    {
-        public int val;
-        public Node next;
-        public Node(int val = 0, Node next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
     }
 }

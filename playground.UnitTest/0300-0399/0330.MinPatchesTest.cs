@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class MinPatchesTest_0330
+public class MinPatchesTest0330
 {
     [Theory]
     [InlineData("[1,3]", 6, 1)]
@@ -9,7 +9,7 @@ public class MinPatchesTest_0330
     [InlineData("[1,2,31,33]", 2147483647, 28)]
     public void MinPatches(string nums, int n, int expected)
     {
-        var actual = MinPatches_0330.MinPatches(nums.ToArr(), n);
+        var actual = MinPatches0330.MinPatches(nums.ToArr(), n);
         Assert.Equal(expected, actual);
     }
 }

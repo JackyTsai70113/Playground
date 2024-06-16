@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MinPatches_0330
+public class MinPatches0330
 {
     /// <summary>
     /// https://leetcode.com/problems/patching-array

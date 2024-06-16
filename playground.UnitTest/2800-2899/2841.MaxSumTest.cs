@@ -1,8 +1,6 @@
-using playground.SlidingWindow;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.SlidingWindow;
-
-public class MaxSumTest
+public class MaxSumTest2841
 {
     [Theory]
     [InlineData(new int[] { 2, 6, 7, 3, 1, 7 }, 3, 4, 18)]
@@ -10,7 +8,7 @@ public class MaxSumTest
     [InlineData(new int[] { 1, 2, 1, 2, 1, 2, 1 }, 3, 3, 0)]
     public void MaxSum(int[] nums, int m, int k, int expected)
     {
-        var actual = MaxSumClass.MaxSum(nums, m, k);
+        var actual = MaxSum2841.MaxSum(nums, m, k);
 
         Assert.Equal(expected, actual);
     }
