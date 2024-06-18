@@ -1,6 +1,6 @@
 namespace playground;
 
-public class CountPrimesClass
+public class CountPrimes0204
 {
     /// <summary>
     /// https://leetcode.com/problems/count-primes
@@ -8,7 +8,7 @@ public class CountPrimesClass
     public static int CountPrimes(int n)
     {
         int count = 0;
-        bool[] isPrime = new bool[n + 1];
+        bool[] isPrime = new bool[n];
         Array.Fill(isPrime, true);
         for (int p = 2; p < n; ++p)
         {

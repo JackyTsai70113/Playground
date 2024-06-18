@@ -7,6 +7,6 @@ public class IsPowerOfThree0326
     /// </summary>
     public static bool IsPowerOfThree(int n)
     {
-        return n <= 0 ? false : n == Math.Pow(3, Math.Round(Math.Log(n) / Math.Log(3)));
+        return n > 0 && n == Math.Pow(3, Math.Round(Math.Log(n) / Math.Log(3)));
     }
 }

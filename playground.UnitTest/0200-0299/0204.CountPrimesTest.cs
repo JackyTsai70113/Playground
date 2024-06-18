@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class CountPrimesTest
+public class CountPrimesTest0204
 {
     [Theory]
     [InlineData(0, 0)]
@@ -11,7 +11,7 @@ public class CountPrimesTest
     [InlineData(5000000, 348513)]
     public void CountPrimes(int n, int expected)
     {
-        var actual = CountPrimesClass.CountPrimes(n);
+        var actual = CountPrimes0204.CountPrimes(n);
         Assert.Equal(expected, actual);
     }
 }

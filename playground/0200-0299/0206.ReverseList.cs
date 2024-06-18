@@ -1,6 +1,6 @@
 namespace playground;
 
-public class ReverseList206
+public class ReverseList0206
 {
     /// <summary>
     /// https://leetcode.com/problems/reverse-linked-list

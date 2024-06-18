@@ -1,6 +1,6 @@
 namespace playground;
 
-public class MaxDepth104
+public class MaxDepth0104
 {
     /// <summary>
     /// https://leetcode.com/problems/maximum-depth-of-binary-tree
