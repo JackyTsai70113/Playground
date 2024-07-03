@@ -36,4 +36,28 @@ public class MaxNumEdgesToRemove1579
         }
         return res;
     }
+
+    public class DisjointSet
+    {
+        readonly int[] groups;
+        public DisjointSet(int n)
+        {
+            groups = Enumerable.Range(0, n).ToArray();
+        }
+        public int Find(int node)
+        {
+            if (groups[node] != node)
+                groups[node] = Find(groups[node]);
+            return groups[node];
+        }
+        public bool Union(int node1, int node2)
+        {
+            int group1 = Find(node1);
+            int group2 = Find(node2);
+            if (group1 == group2)
+                return false;
+            groups[group2] = group1;
+            return true;
+        }
+    }
 }

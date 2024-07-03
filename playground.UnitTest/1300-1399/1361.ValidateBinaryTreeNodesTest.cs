@@ -12,7 +12,7 @@ public class ValidateBinaryTreeNodesTest1361
     [InlineData(5, new int[] { -1, 0, 1, 2, 3 }, new int[] { -1, -1, -1, -1, -1 }, true)]
     public void ValidateBinaryTreeNodes(int n, int[] leftChild, int[] rightChild, bool expected)
     {
-        var actual = ValidateBinaryTreeNodes1361.ValidateBinaryTreeNodes(n, leftChild, rightChild);
+        var actual = new ValidateBinaryTreeNodes1361().ValidateBinaryTreeNodes(n, leftChild, rightChild);
         Assert.Equal(expected, actual);
     }
 }
