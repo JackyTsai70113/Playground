@@ -2,6 +2,9 @@ namespace playground;
 
 public class ValidStrings3211
 {
+    /// <summary>
+    /// https://leetcode.com/problems/generate-binary-strings-without-adjacent-zeros
+    /// </summary>
     public static IList<string> ValidStrings(int n)
     {
         var res = new List<string>();
