@@ -11,44 +11,30 @@ public class SurvivedRobotsHealths2751
         int[] indexes = new int[n];
         for (int i = 0; i < n; i++) indexes[i] = i;
         Array.Sort(positions, indexes);
-        List<int> lefts = new();
-        Stack<int> rights = new();
-        foreach (var idx in indexes)
+        Stack<int> robots = new();
+        foreach (var cur in indexes)
         {
-            if (directions[idx] == 'R')
-                rights.Push(idx);
-            else
+            robots.Push(cur);
+            while (robots.Count > 1)
             {
-                while (rights.Count > 0)
+                var right = robots.Pop();
+                var left = robots.Pop();
+                if (!(directions[left] == 'R' && directions[right] == 'L'))
                 {
-                    if (healths[rights.Peek()] == healths[idx])
-                    {
-                        healths[rights.Pop()] = 0;
-                        healths[idx] = 0;
-                        break;
-                    }
-                    else if (healths[rights.Peek()] > healths[idx])
-                    {
-                        healths[rights.Peek()]--;
-                        healths[idx] = 0;
-                        break;
-                    }
-                    else
-                    {
-                        healths[rights.Pop()] = 0;
-                        healths[idx]--;
-                    }
+                    robots.Push(left);
+                    robots.Push(right);
+                    break;
                 }
-                if (healths[idx] > 0)
-                    lefts.Add(idx);
+                if (healths[left] > healths[right] && --healths[left] > 0)
+                {
+                    robots.Push(left);
+                }
+                else if (healths[left] < healths[right] && --healths[right] > 0)
+                {
+                    robots.Push(right);
+                }
             }
         }
-        var res = new int[lefts.Count + rights.Count];
-        for (int i = 0, j = 0; i < n; i++)
-        {
-            if (healths[i] > 0)
-                res[j++] = healths[i];
-        }
-        return res;
+        return robots.OrderBy(idx => idx).Select(idx => healths[idx]).ToList();
     }
 }

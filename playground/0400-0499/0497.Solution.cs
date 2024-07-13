@@ -5,8 +5,8 @@ namespace playground;
 /// </summary>
 public class Solution0497
 {
-    long[] presum;
-    int[][] rects;
+    readonly long[] presum;
+    readonly int[][] rects;
     readonly Random random = new();
     public Solution0497(int[][] rects)
     {
@@ -16,28 +16,30 @@ public class Solution0497
         {
             var r = rects[i];
             var cur = ((long)r[2] - r[0] + 1) * ((long)r[3] - r[1] + 1);
-            presum[i + 1] = presum[i] + cur - 1;
+            presum[i + 1] = presum[i] + cur;
         }
     }
 
     public int[] Pick()
     {
         long cur = random.NextInt64(presum[^1]);
-        var index = GetMaxIndex(presum, cur) - 1;
-        int row = rects[index][2] - rects[index][0] + 1;
-        return new int[] { rects[index][0] + (int)(cur / row), rects[index][1] + (int)(cur % row) };
+        var r = rects[GetMaxIndex(presum, cur) - 1];
+        return new int[] {
+            r[0] + random.Next(r[2] - r[0] + 1),
+            r[1] + random.Next(r[3] - r[1] + 1)
+        };
     }
 
-    public int GetMaxIndex(long[] presum, long val)
+    static int GetMaxIndex(long[] presum, long val)
     {
-        int l = 0, r = presum.Length - 1;
+        int l = 1, r = presum.Length;
         while (l < r)
         {
-            int m = l + (r - l + 1) / 2;
-            if (presum[m] <= val)
-                l = m;
+            int m = l + (r - l) / 2;
+            if (presum[m] > val)
+                r = m;
             else
-                r = m - 1;
+                l = m + 1;
         }
         return r;
     }

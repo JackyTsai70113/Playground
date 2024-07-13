@@ -2,6 +2,9 @@ namespace playground;
 
 public class CountSubarrays3209
 {
+    /// <summary>
+    /// https://leetcode.com/problems/number-of-subarrays-with-and-value-of-k
+    /// </summary>
     public static long CountSubarrays(int[] nums, int k)
     {
         int n = nums.Length;
@@ -40,7 +43,6 @@ public class CountSubarrays3209
             }
             int right = l;
             res += right - left;
-            Console.WriteLine(i + " " + left + " " + right);
         }
         return res;
     }
