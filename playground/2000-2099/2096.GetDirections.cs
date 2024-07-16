@@ -6,55 +6,35 @@ public class GetDirections2096
 {
     public static string GetDirections(TreeNode root, int start, int dest)
     {
-        var (toStart, toDest) = Dfs(root, start, dest);
+        List<char> toStart = new(), toDest = new();
+        Dfs(root, start, toStart);
+        Dfs(root, dest, toDest);
         int i = 0;
-        for (; i < Math.Min(toStart.Length, toDest.Length); i++)
+        while (i < toStart.Count && i < toDest.Count &&
+            toStart[^(i + 1)] == toDest[^(i + 1)])
         {
-            if (toStart[i] != toDest[i])
-                break;
+            i++;
         }
-        return new string('U', toStart.Length - i) + toDest.ToString(i, toDest.Length);
+        return new string('U', toStart.Count - i) +
+            new string(toDest.Take(toDest.Count - i).Reverse().ToArray());
     }
 
-    public static (StringBuilder toStart, StringBuilder toDest) Dfs(TreeNode root, int start, int dest)
+    public static bool Dfs(TreeNode root, int val, List<char> cur)
     {
-        StringBuilder toStart = null, toDest = null;
-        if (root.val == start)
+        if (root == null)
+            return false;
+        if (root.val == val)
+            return true;
+        if (Dfs(root.left, val, cur))
         {
-            toStart = new();
+            cur.Add('L');
+            return true;
         }
-        if (root.val == dest)
+        if (Dfs(root.right, val, cur))
         {
-            toDest = new();
+            cur.Add('R');
+            return true;
         }
-        if (root.left != null)
-        {
-            var left = Dfs(root.left, start, dest);
-            if (left.toStart != null)
-            {
-                toStart = new StringBuilder("L");
-                toStart.Append(left.toStart);
-            }
-            if (left.toDest != null)
-            {
-                toDest = new StringBuilder("L");
-                toDest.Append(left.toDest);
-            }
-        }
-        if (root.right != null)
-        {
-            var right = Dfs(root.right, start, dest);
-            if (right.toStart != null)
-            {
-                toStart = new StringBuilder("R");
-                toStart.Append(right.toStart);
-            }
-            if (right.toDest != null)
-            {
-                toDest = new StringBuilder("R");
-                toDest.Append(right.toDest);
-            }
-        }
-        return (toStart, toDest);
+        return false;
     }
 }

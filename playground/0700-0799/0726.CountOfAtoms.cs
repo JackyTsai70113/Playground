@@ -27,12 +27,8 @@ public class CountOfAtoms0726
         {
             if (char.IsUpper(s[index]))
             {
-                if (atom != "")
-                {
-                    var curCount = count == "" ? 1 : int.Parse(count);
-                    res[atom] = res.GetValueOrDefault(atom, 0) + curCount;
-                    count = "";
-                }
+                AddAtom(res, atom, count);
+                count = "";
                 atom = s[index].ToString();
                 index++;
             }
@@ -57,12 +53,8 @@ public class CountOfAtoms0726
             }
             else if (s[index] == ')')
             {
-                if (atom != "")
-                {
-                    var curCount = count == "" ? 1 : int.Parse(count);
-                    res[atom] = res.GetValueOrDefault(atom, 0) + curCount;
-                    atom = "";
-                }
+                AddAtom(res, atom, count);
+                atom = "";
                 index++;
                 string multiplier = "";
                 while (index < s.Length && char.IsDigit(s[index]))
@@ -81,11 +73,16 @@ public class CountOfAtoms0726
                 return res;
             }
         }
+        AddAtom(res, atom, count);
+        return res;
+    }
+
+    private void AddAtom(Dictionary<string, int> dict, string atom, string count)
+    {
         if (atom != "")
         {
             var curCount = count == "" ? 1 : int.Parse(count);
-            res[atom] = res.GetValueOrDefault(atom, 0) + curCount;
+            dict[atom] = dict.GetValueOrDefault(atom, 0) + curCount;
         }
-        return res;
     }
 }
