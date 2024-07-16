@@ -1,4 +1,4 @@
-namespace playground.UnitTest9;
+namespace playground.UnitTest;
 
 public class MaximalRectangleTest0085
 {

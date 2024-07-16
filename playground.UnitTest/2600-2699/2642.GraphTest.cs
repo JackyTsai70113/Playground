@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace playground;
+namespace playground.UnitTest;
 
 public class GraphTest2642
 {
