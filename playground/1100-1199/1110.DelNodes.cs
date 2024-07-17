@@ -5,7 +5,7 @@ public class DelNodes1110
     /// <summary>
     /// https://leetcode.com/problems/delete-nodes-and-return-forest
     /// </summary>
-    public static IList<TreeNode> DelNodes(TreeNode root, int[] to_delete)
+    public static IList<TreeNode> DelNodesIteration(TreeNode root, int[] to_delete)
     {
         var res = new List<TreeNode>();
         var del = to_delete.ToHashSet();
@@ -30,5 +30,23 @@ public class DelNodes1110
             }
         }
         return res;
+    }
+
+    public static IList<TreeNode> DelNodesRecursion(TreeNode root, int[] to_delete)
+    {
+        var res = new List<TreeNode>();
+        Dfs(root, to_delete.ToHashSet(), true, res);
+        return res;
+    }
+
+    private static TreeNode Dfs(TreeNode root, HashSet<int> deletedVals, bool isRoot, List<TreeNode> res)
+    {
+        if (root == null) return null;
+        bool needDelete = deletedVals.Contains(root.val);
+        if (isRoot && !needDelete)
+            res.Add(root);
+        root.left = Dfs(root.left, deletedVals, needDelete, res);
+        root.right = Dfs(root.right, deletedVals, needDelete, res);
+        return needDelete ? null : root;
     }
 }
