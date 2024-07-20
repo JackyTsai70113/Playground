@@ -9,15 +9,17 @@ public class RestoreMatrix1605
     {
         int m = rowSum.Length, n = colSum.Length;
         var res = new int[m][];
-        for (int i = 0; i < m; i++)
-            res[i] = new int[n];
+        int j = 0;
         for (int i = 0; i < m; i++)
         {
-            for (int j = 0; j < n; j++)
+            res[i] = new int[n];
+            while (j < n)
             {
+                if(rowSum[i] == 0) break;
                 res[i][j] = Math.Min(rowSum[i], colSum[j]);
                 rowSum[i] -= res[i][j];
                 colSum[j] -= res[i][j];
+                if (colSum[j] == 0) j++;
             }
         }
         return res;
