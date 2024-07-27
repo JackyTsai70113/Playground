@@ -3,8 +3,11 @@ namespace playground;
 public class Solution0519
 {
     Dictionary<int, int> d;
-    Random random;
-    int r, c, total;
+    readonly Random random;
+    private readonly int r;
+    private readonly int c;
+    private int total;
+
     public Solution0519(int m, int n)
     {
         d = new();

@@ -1,8 +1,6 @@
-using playground.DepthFirstSearch;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.DepthFirstSearch;
-
-public class TreeQueriesTest
+public class TreeQueriesTest2458
 {
     [Theory]
     [InlineData("[1,3,4,2,null,6,5,null,null,null,null,null,7]", new int[] { 4 }, new int[] { 2 })]
@@ -11,7 +9,7 @@ public class TreeQueriesTest
     [InlineData("[1,3,null]", new int[] { 3 }, new int[] { 0 })]
     public void TreeQueries(string root, int[] queries, int[] expected)
     {
-        var actual = new TreeQueriesClass().TreeQueries(root.ToTreeNode(), queries);
+        var actual = new TreeQueries2458().TreeQueries(root.ToTreeNode(), queries);
         Assert.Equal(expected, actual);
     }
 
@@ -22,7 +20,7 @@ public class TreeQueriesTest
     [InlineData("[1,3,null]", new int[] { 3 }, new int[] { 0 })]
     public void TreeQueries2(string root, int[] queries, int[] expected)
     {
-        var actual = TreeQueriesClass.TreeQueries2(root.ToTreeNode(), queries);
+        var actual = new TreeQueries2458().TreeQueries2(root.ToTreeNode(), queries);
         Assert.Equal(expected, actual);
     }
 }

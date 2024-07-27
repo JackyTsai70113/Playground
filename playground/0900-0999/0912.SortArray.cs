@@ -11,26 +11,25 @@ public class SortArray0912
         return nums;
     }
 
-    private static void MergeSort(int[] nums, int begin, int end)
+    private static void MergeSort(int[] nums, int l, int r)
     {
-        if (begin >= end)
-            return;
-        int m = begin + (end - begin) / 2;
-        MergeSort(nums, begin, m);
-        MergeSort(nums, m + 1, end);
-        Merge(nums, begin, end);
+        if (l >= r) return;
+        int m = l + (r - l) / 2;
+        MergeSort(nums, l, m);
+        MergeSort(nums, m + 1, r);
+        Merge(nums, l, r);
     }
 
-    private static void Merge(int[] nums, int begin, int end)
+    private static void Merge(int[] nums, int l, int r)
     {
-        int m = begin + (end - begin) / 2;
-        var nums2 = new int[end - begin + 1];
-        Array.Copy(nums, begin, nums2, 0, end - begin + 1);
-        int i = 0, j = m + 1 - begin, k = begin;
-        while (i <= m - begin || j <= end - begin)
+        int m = l + (r - l) / 2;
+        var nums2 = new int[r - l + 1];
+        Array.Copy(nums, l, nums2, 0, r - l + 1);
+        int i = 0, j = m + 1 - l, k = l;
+        while (k <= r)
         {
-            int a = i <= m - begin ? nums2[i] : int.MaxValue;
-            int b = j <= end - begin ? nums2[j] : int.MaxValue;
+            int a = i <= m - l ? nums2[i] : int.MaxValue;
+            int b = j <= r - l ? nums2[j] : int.MaxValue;
             nums[k++] = a < b ? nums2[i++] : nums2[j++];
         }
     }
