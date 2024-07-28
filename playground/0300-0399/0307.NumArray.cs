@@ -5,7 +5,7 @@ namespace playground;
 /// /// </summary>
 public class NumArray0307
 {
-    SegmentTreeNode root;
+    readonly SegmentTreeNode root;
     public NumArray0307(int[] nums)
     {
         root = new SegmentTreeNode(0, nums.Length - 1, nums);
@@ -23,11 +23,11 @@ public class NumArray0307
 
     public class SegmentTreeNode
     {
-        int start;
-        int end;
+        readonly int start;
+        readonly int end;
         int val;
-        SegmentTreeNode left;
-        SegmentTreeNode right;
+        readonly SegmentTreeNode left;
+        readonly SegmentTreeNode right;
         public SegmentTreeNode(int start, int end, int[] nums)
         {
             this.start = start;

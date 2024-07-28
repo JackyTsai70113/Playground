@@ -18,6 +18,11 @@ public class MinimumCostTest2976
         new string[] { "e" },
         new int[] { 10000 },
         -1)]
+    [InlineData("d", "a",
+        new string[] { "b", "d", "d", "a", "c", "c", "a", "d", "a", "b" },
+        new string[] { "c", "c", "b", "d", "b", "d", "b", "a", "c", "a" },
+        new int[] { 9, 1, 7, 9, 2, 1, 3, 8, 8, 2 },
+        5)]
     public void MinimumCost(string source, string target, string[] original, string[] changed, int[] cost, long expected)
     {
         var actual = MinimumCost2976.MinimumCost(source, target, original.Select(s => s[0]).ToArray(), changed.Select(s => s[0]).ToArray(), cost);

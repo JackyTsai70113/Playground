@@ -2,7 +2,6 @@ namespace playground;
 
 public class MinimumCost2976
 {
-    // https://leetcode.com/problems/minimum-cost-to-convert-string-i
     public static long MinimumCost(string source, string target, char[] A, char[] B, int[] cost)
     {
         var distance = new long[26, 26];
@@ -21,8 +20,6 @@ public class MinimumCost2976
         {
             for (int i = 0; i < 26; i++)
             {
-                if (!source.Contains((char)(i + 'a')))
-                    break;
                 for (int j = 0; j < 26; j++)
                 {
                     if (distance[i, k] == int.MaxValue)
@@ -36,8 +33,6 @@ public class MinimumCost2976
         long res = 0;
         for (int i = 0; i < source.Length; i++)
         {
-            if (source[i] == target[i])
-                continue;
             if (distance[source[i] - 'a', target[i] - 'a'] == int.MaxValue)
                 return -1;
             res += distance[source[i] - 'a', target[i] - 'a'];
