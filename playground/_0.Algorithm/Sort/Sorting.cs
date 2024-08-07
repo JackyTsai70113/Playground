@@ -154,19 +154,19 @@ public class Sorting
     private static void Merge(int[] nums, int left, int right)
     {
         int mid = left + (right - left) / 2;
-        int idx = left, i = left, j = mid + 1;
-        var nums2 = new int[nums.Length]; // 需要額外的 O(N) 空間
-        Array.Copy(nums, nums2, nums.Length);
-        while (i <= mid || j <= right)
+        int idx = 0, i = left, j = mid + 1;
+        var nums2 = new int[right - left + 1]; // 需要額外的 O(N) 空間
+        while (idx < right - left + 1)
         {
-            var a = i <= mid ? nums2[i] : int.MaxValue;
-            var b = j <= right ? nums2[j] : int.MaxValue;
-            nums[idx++] = a < b ? nums2[i++] : nums2[j++];
+            var a = i <= mid ? nums[i] : long.MaxValue;
+            var b = j <= right ? nums[j] : long.MaxValue;
+            nums2[idx++] = a < b ? nums[i++] : nums[j++];
         }
+        Array.Copy(nums2, 0, nums, left, nums2.Length);
     }
 
     /// <summary>
-    /// 堆積排序法 Merge Sort: O(NlogN)/O(1)
+    /// 堆積排序法 Heap Sort: O(NlogN)/O(1)
     /// </summary>
     /// <remarks>
     /// 1. 建立最大二元堆疊
