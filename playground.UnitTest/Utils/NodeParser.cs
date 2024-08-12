@@ -14,6 +14,23 @@ public static class NodeParser
         return res.next;
     }
 
+    public static RandomNode ToRandomNode(this string str)
+    {
+        var arr = str.To2dArr<int?>();
+        var nodes = new RandomNode[arr.Length];
+        for (int i = 0; i < arr.Length; i++)
+            nodes[i] = new();
+        for (int i = 0; i < arr.Length; i++)
+        {
+            nodes[i].val = arr[i][0].Value;
+            if (i < arr.Length - 1)
+                nodes[i].next = nodes[i + 1];
+            if (arr[i][1].HasValue)
+                nodes[i].random = nodes[arr[i][1].Value];
+        }
+        return nodes.Length > 0 ? nodes[0] : null;
+    }
+
     public static TreeNode ToTreeNode(this string str)
     {
         var arr = str.ToArr<int?>();
