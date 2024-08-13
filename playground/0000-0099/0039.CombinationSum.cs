@@ -1,10 +1,7 @@
 namespace playground;
 
-public class CombinationSum_0039
+public class CombinationSum0039
 {
-    /// <summary>
-    /// https://leetcode.com/problems/combination-sum
-    /// </summary>
     public static IList<IList<int>> CombinationSum(int[] A, int target)
     {
         var res = new List<IList<int>>();
