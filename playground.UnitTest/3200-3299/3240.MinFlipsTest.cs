@@ -4,6 +4,7 @@ public class MinFlipsTest3240
 {
     [Theory]
     [InlineData("[[1,0,0],[0,1,0],[0,0,1]]", 3)]
+    [InlineData("[[1,1,1],[1,1,1],[1,1,1]]", 1)]
     [InlineData("[[0,0,1],[1,1,1]]", 2)]
     [InlineData("[[0,1],[0,1],[0,0]]", 2)]
     [InlineData("[[1],[1]]", 2)]

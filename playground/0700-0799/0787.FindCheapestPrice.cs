@@ -2,9 +2,6 @@ namespace playground;
 
 public class FindCheapestPrice0787
 {
-    /// <summary>
-    /// https://leetcode.com/problems/cheapest-flights-within-k-stops
-    /// </summary>
     public static int FindCheapestPrice(int n, int[][] flights, int src, int dst, int k)
     {
         var g = Graph.BuildDWG(n, flights);
