@@ -19,9 +19,6 @@ public class LeastInterval0621
                 maxCount++;
             }
         }
-        if (maxCount >= n + 1)
-            return m;
-        var other = Math.Max((n + 1 - maxCount) * (max - 1), m - max * maxCount);
-        return max * maxCount + other;
+        return Math.Max((n + 1) * (max - 1) + maxCount, m);
     }
 }
