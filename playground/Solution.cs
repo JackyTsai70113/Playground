@@ -1,4 +1,6 @@
-﻿namespace playground;
+﻿using System.Runtime.CompilerServices;
+
+namespace playground;
 
 public class Solution
 {
