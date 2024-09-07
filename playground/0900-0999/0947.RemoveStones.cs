@@ -43,8 +43,6 @@ public class RemoveStones0947
             int g1 = Find(node1), g2 = Find(node2);
             if (g1 == g2)
                 return false;
-            if (ranks[g1] < ranks[g2])
-                (g1, g2) = (g2, g1);
             groups[g2] = g1;
             ranks[g1] += ranks[g2];
             return true;
