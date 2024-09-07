@@ -11,7 +11,6 @@ public class RobotSim0874
             AddToDict(cols, ob[1], ob[0]);
         }
         int x = 0, y = 0, xx, yy;
-        var dirs = new int[] { 0, 1, 0, -1, 0 };
         int dirIndex = 0, max = 0, index;
         foreach (var com in commands)
         {
@@ -27,7 +26,7 @@ public class RobotSim0874
                     if (rows.ContainsKey(x))
                     {
                         index = leftIndex(rows[x], y);
-                        if (index < rows[x].Count && rows[x][index] <= y + com)
+                        if (index < rows[x].Count && rows[x][index] <= y+com)
                         {
                             yy = rows[x][index] - 1;
                         }
@@ -73,7 +72,6 @@ public class RobotSim0874
                     }
                     x = xx;
                 }
-                Console.WriteLine(x + " " + y);
                 max = Math.Max(max, x * x + y * y);
             }
         }
