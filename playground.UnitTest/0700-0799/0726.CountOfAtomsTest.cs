@@ -3,7 +3,7 @@ namespace playground.UnitTest;
 public class CountOfAtomsTest0726
 {
     [Theory]
-    // [?InlineData("Mg(H2O)N", "H2MgNO")]
+    [InlineData("Mg(H2O)N", "H2MgNO")]
     [InlineData("H2O", "H2O")]
     [InlineData("Mg(OH)2", "H2MgO2")]
     [InlineData("K4(ON(SO3)2)2", "K4N2O14S4")]
