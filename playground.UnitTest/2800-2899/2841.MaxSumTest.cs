@@ -9,7 +9,6 @@ public class MaxSumTest2841
     public void MaxSum(int[] nums, int m, int k, int expected)
     {
         var actual = MaxSum2841.MaxSum(nums, m, k);
-
         Assert.Equal(expected, actual);
     }
 }
