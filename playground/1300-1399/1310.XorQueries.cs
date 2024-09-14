@@ -6,27 +6,32 @@ public class XorQueries1310
     public int[] XorQueries(int[] arr, int[][] queries)
     {
         _arr = arr;
+        var root = SetTreeNode(0, arr.Length - 1);
+        var res = new int[queries.Length];
+        for (int i = 0; i < queries.Length; i++)
+        {
+            res[i] = Query(root, queries[i][0], queries[i][1]);
+        }
+        return res;
     }
 
     public TreeNode SetTreeNode(int l, int r)
     {
-        if (l == r)
-        {
-            return new TreeNode
-            {
-                val = _arr[l];
-            };
-        }
-        int m = l + (r - l) / 2;
-        var node = new TreeNode
+        var res = new TreeNode
         {
             start = l,
-            end = r,
+            end = r
+        };
+        if (l == r)
+        {
+            res.val = _arr[l];
+            return res;
         }
-        node.left = SetTreeNode(l, m);
-        node.right = SetTreeNode(m + 1, r);
-        node.val = node.left.val ^ node.right.val;
-        return node;
+        int m = l + (r - l) / 2;
+        res.left = SetTreeNode(l, m);
+        res.right = SetTreeNode(m + 1, r);
+        res.val = res.left.val ^ res.right.val;
+        return res;
     }
 
     public int Query(TreeNode node, int l, int r)
@@ -42,7 +47,7 @@ public class XorQueries1310
         {
             int left = Query(node.left, l, m);
             int right = Query(node.right, m + 1, r);
-            return left ^ right
+            return left ^ right;
         }
     }
 

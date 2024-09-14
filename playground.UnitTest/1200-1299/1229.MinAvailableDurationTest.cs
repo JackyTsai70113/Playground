@@ -8,6 +8,7 @@ public class MinAvailableDurationTest1229
     [InlineData("[[10,60]]", "[[12,17],[21,50]]", 8, new int[] { 21, 29 })]
     [InlineData("[[10,12],[15, 25]]", "[[0,100]]", 8, new int[] { 15, 23 })]
     [InlineData("[[0,100]]", "[[10,12],[15, 25]]", 8, new int[] { 15, 23 })]
+    [InlineData("[[0,2]]", "[[1,3]]", 2, new int[] { })]
     public void JobScheduling(string slots1, string slots2, int duration, int[] expected)
     {
         var actual = MinAvailableDuration1229.MinAvailableDuration(slots1.To2dArr(), slots2.To2dArr(), duration);
