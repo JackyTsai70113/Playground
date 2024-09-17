@@ -3,7 +3,7 @@ namespace playground.UnitTest;
 public class SolutionTest0497
 {
     [Theory]
-    [InlineData(new string[] { "Solution", "pick", "pick", "pick", "pick", "pick" }, new string[] { "[[-2, -2, 1, 1], [2, 2, 4, 6]]", "[]", "[]", "[]", "[]", "[]" })]
+    [InlineData(new string[] { "Solution", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", "pick", }, new string[] { "[[-2, -2, 1, 1], [2, 2, 4, 6]]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]" })]
     public void Solution(string[] funcs, string[] valStr)
     {
         var rects = valStr[0].To2dArr();

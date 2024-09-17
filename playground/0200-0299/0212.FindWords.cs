@@ -8,9 +8,9 @@ public class FindWords0212
     public static IList<string> FindWords(char[][] board, string[] words)
     {
         var root = new TrieNode<bool>(false, new TrieNode<bool>[26]);
-        int m = board.Length, n = board[0].Length;
         foreach (var word in words)
             Insert(root, word);
+        int m = board.Length, n = board[0].Length;
         var res = new List<string>();
         for (int i = 0; i < m; i++)
             for (int j = 0; j < n; j++)
