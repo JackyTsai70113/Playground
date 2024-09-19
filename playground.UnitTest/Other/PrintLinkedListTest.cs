@@ -1,6 +1,4 @@
-using playground.LinkedLists;
-
-namespace playground.UnitTest.LinkedLists;
+namespace playground.UnitTest;
 
 public class PrintLinkedListTest
 {

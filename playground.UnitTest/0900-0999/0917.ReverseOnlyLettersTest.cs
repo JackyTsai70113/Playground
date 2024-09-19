@@ -11,7 +11,7 @@ public class ReverseOnlyLettersTest0917
     [InlineData("Test1ng-Leet=code-Q!", "Qedo1ct-eeLg=ntse-T!")]
     public void ReverseOnlyLetters(string s, string expected)
     {
-        var actual = new ReverseOnlyLetters0917().ReverseOnlyLetters(s);
+        var actual = ReverseOnlyLetters0917.ReverseOnlyLetters(s);
         Assert.Equal(expected, actual);
     }
 }

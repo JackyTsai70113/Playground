@@ -2,34 +2,23 @@ namespace playground;
 
 public class IsPalindrome0234
 {
-    /// <summary>
-    /// https://leetcode.com/problems/palindrome-linked-list
-    /// </summary>
     public static bool IsPalindrome(ListNode head)
     {
-        ListNode reversedNode = null, cur = head;
-        int count = 0;
-        while (cur != null)
+        ListNode s = head, f = head;
+        while (f.next != null && f.next.next != null)
         {
-            cur = cur.next;
-            count++;
+            s = s.next;
+            f = f.next.next;
         }
-        cur = head;
-        for (int i = 0; i < count / 2; i++)
+        ListNode sNext = s.next;
+        s.next = null;
+        ListNode first = head, second = ListNode.Reverse(sNext);
+        while (second != null)
         {
-            var next = cur.next;
-            cur.next = reversedNode;
-            reversedNode = cur;
-            cur = next;
-        }
-        if (count % 2 == 1)
-            cur = cur.next;
-        while (reversedNode != null && cur != null)
-        {
-            if (reversedNode.val != cur.val)
+            if (first.val != second.val)
                 return false;
-            reversedNode = reversedNode.next;
-            cur = cur.next;
+            first = first.next;
+            second = second.next;
         }
         return true;
     }

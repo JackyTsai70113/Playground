@@ -1,8 +1,6 @@
-using playground.LinkedLists;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.LinkedLists;
-
-public class PairSumTest
+public class PairSumTest2130
 {
     [Theory]
     [InlineData("[5,3]", 8)]
@@ -11,7 +9,7 @@ public class PairSumTest
     [InlineData("[5,5,2,1]", 7)]
     public void PairSum(string a, int expected)
     {
-        var actual = PairSumClass.PairSum(a.ToListNode());
+        var actual = PairSum2130.PairSum(a.ToListNode());
         Assert.Equal(expected, actual);
     }
 }

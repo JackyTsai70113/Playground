@@ -2,19 +2,10 @@ namespace playground;
 
 public class ReverseList0206
 {
-    /// <summary>
-    /// https://leetcode.com/problems/reverse-linked-list
-    /// </summary>
     public static ListNode ReverseList(ListNode head)
     {
-        ListNode newHead = null, cur = head;
-        while (cur != null)
-        {
-            var next = cur.next;
-            cur.next = newHead;
-            newHead = cur;
-            cur = next;
-        }
-        return newHead;
+        if (head == null)
+            return null;
+        return ListNode.Reverse(head);
     }
 }

@@ -4,10 +4,7 @@ namespace playground;
 
 public class ReverseOnlyLetters0917
 {
-    /// <summary>
-    /// https://leetcode.com/problems/reverse-only-letters
-    /// </summary>
-    public string ReverseOnlyLetters(string s)
+    public static string ReverseOnlyLetters(string s)
     {
         StringBuilder sb = new(s);
         int n = s.Length, l = 0, r = n - 1;

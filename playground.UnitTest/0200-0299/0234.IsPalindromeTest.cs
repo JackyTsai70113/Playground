@@ -3,6 +3,7 @@ namespace playground.UnitTest;
 public class IsPalindromeTest0234
 {
     [Theory]
+    [InlineData("[1,0,0]", false)]
     [InlineData("[1,0,1]", true)]
     [InlineData("[1,2,2,1]", true)]
     [InlineData("[1,2]", false)]

@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace playground.LinkedLists;
+namespace playground;
 
 public class PrintLinkedListClass
 {
@@ -61,7 +61,6 @@ public class PrintLinkedListClass
             this.first = first;
             this.second = second;
             this.firstTime = firstTime;
-
         }
     }
 }

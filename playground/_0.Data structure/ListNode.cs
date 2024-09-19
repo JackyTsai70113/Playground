@@ -12,6 +12,19 @@ public class ListNode
         this.next = next;
     }
 
+    public static ListNode Reverse(ListNode head)
+    {
+        ListNode pre = new(), cur = head;
+        while (cur != null)
+        {
+            var next = cur.next;
+            cur.next = pre.next;
+            pre.next = cur;
+            cur = next;
+        }
+        return pre.next;
+    }
+
     public override string ToString()
     {
         var sb = new StringBuilder();
