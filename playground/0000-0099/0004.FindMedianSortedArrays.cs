@@ -12,7 +12,7 @@ public class FindMedianSortedArrays0004
         int m = A.Length, n = B.Length;
         int total = m + n, half = total / 2;
         int l = 0, r = m - 1;
-        double res = 0;
+        double res;
         while (true)
         {
             int i = l > r ? -1 : (l + r) / 2;
