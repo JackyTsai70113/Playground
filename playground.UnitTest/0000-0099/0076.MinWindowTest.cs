@@ -1,3 +1,5 @@
+using playground._0000_0099;
+
 namespace playground.UnitTest;
 
 public class MinWindowTest0076
@@ -11,7 +13,7 @@ public class MinWindowTest0076
     [InlineData("a", "b", "")]
     public void MinWindow(string s, string t, string expected)
     {
-        var actual = MinWindow0076.MinWindow(s, t);
+        var actual = _0076_MinWindow.MinWindow(s, t);
         Assert.Equal(expected, actual);
     }
 }

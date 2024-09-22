@@ -1,32 +1,26 @@
-namespace playground;
+namespace playground._1600_1699;
 
-public class MinOperations_1658
+public class _1658_MinOperations
 {
-    /// <summary>
-    /// https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero
-    /// </summary>
-    public static int MinOperations(int[] nums, int x)
+    public static int MinOperations(int[] nums, int k)
     {
-        int sum = nums.Sum();
-        var res = AtMost(nums, sum - x);
-        return res == -1 ? -1 : nums.Length - res;
-    }
-
-    static int AtMost(int[] nums, int x)
-    {
-        int res = -1;
-        for (int i = 0, j = 0; i < nums.Length; ++i)
+        int l = 0, max = -1;
+        int n = nums.Length, sum = 0;
+        foreach (var num in nums)
+            sum += num;
+        for (int r = 0; r < n; r++)
         {
-            x -= nums[i];
-            while (x < 0 && j < nums.Length)
+            // update state by A[r]
+            sum -= nums[r];
+            while (l <= r && sum < k)
             {
-                x += nums[j++];
+                // update state by A[l]
+                sum += nums[l];
+                l++;
             }
-            if (x == 0)
-            {
-                res = Math.Max(res, i - j + 1);
-            }
+            if (sum == k)
+                max = Math.Max(max, r - l + 1);
         }
-        return res;
+        return max == -1 ? -1 : n - max;
     }
 }

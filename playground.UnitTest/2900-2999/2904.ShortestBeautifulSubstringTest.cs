@@ -1,8 +1,6 @@
-using playground.SlidingWindow;
+namespace playground.UnitTest;
 
-namespace playground.UnitTest.SlidingWindow;
-
-public class ShortestBeautifulSubstringTest
+public class ShortestBeautifulSubstringTest2904
 {
     [Theory]
     [InlineData("100111001", 3, "111")]
@@ -12,7 +10,7 @@ public class ShortestBeautifulSubstringTest
     [InlineData("000", 1, "")]
     public void ShortestBeautifulSubstring(string s, int k, string expected)
     {
-        var actual = ShortestBeautifulSubstringClass.ShortestBeautifulSubstring(s, k);
+        var actual = ShortestBeautifulSubstring2904.ShortestBeautifulSubstring(s, k);
         Assert.Equal(expected, actual);
     }
 }

@@ -1,21 +1,29 @@
 namespace playground;
 
-public class LengthOfLongestSubstring0003
+public class _0003_LengthOfLongestSubstring
 {
-    /// <summary>
-    /// https://leetcode.com/problems/longest-substring-without-repeating-characters
-    /// </summary>
     public static int LengthOfLongestSubstring(string s)
     {
-        var chs = new bool[256];
-        int res = 0;
-        for (int l = 0, r = 0; r < s.Length; r++)
+        bool Valid(int[] cnt, int i)
         {
-            while (chs[s[r]])
-                chs[s[l++]] = false;
-            chs[s[r]] = true;
-            res = Math.Max(res, r - l + 1);
+            return cnt[i] <= 1;
         }
-        return res;
+        int n = s.Length;
+        int l = 0, max = 0;
+        int[] cnt = new int[256];
+        for (int r = 0; r < n; r++)
+        {
+            // update state by A[r]
+            cnt[s[r]]++;
+            while (!Valid(cnt, s[r]))
+            {
+                // update state by A[l]
+                cnt[s[l]]--;
+                l++;
+            }
+            if (Valid(cnt, s[r]))
+                max = Math.Max(max, r - l + 1);
+        }
+        return max;
     }
 }

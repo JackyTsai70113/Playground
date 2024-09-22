@@ -9,7 +9,7 @@ public class LengthOfLongestSubstringTest0003
     [InlineData(" ", 1)]
     public void LengthOfLongestSubstring(string s, int expected)
     {
-        var actual = LengthOfLongestSubstring0003.LengthOfLongestSubstring(s);
+        var actual = _0003_LengthOfLongestSubstring.LengthOfLongestSubstring(s);
         Assert.Equal(expected, actual);
     }
 }

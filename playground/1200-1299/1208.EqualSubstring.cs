@@ -1,23 +1,28 @@
-namespace playground;
+namespace playground._1200_1299;
 
-public class EqualSubstring1208
+public class _1208_EqualSubstring
 {
-    /// <summary>
-    /// https://leetcode.com/problems/get-equal-substrings-within-budget
-    /// </summary>
     public static int EqualSubstring(string s, string t, int maxCost)
     {
-        var res = 0;
-        for (int l = 0, r = 0; r < s.Length; r++)
+        bool Valid()
         {
+            return maxCost >= 0;
+        }
+        int l = 0, max = 0;
+        int n = s.Length;
+        for (int r = 0; r < n; r++)
+        {
+            // update state by A[r]
             maxCost -= Math.Abs(s[r] - t[r]);
-            while (maxCost < 0)
+            while (l <= r && !Valid())
             {
+                // update state by A[l]
                 maxCost += Math.Abs(s[l] - t[l]);
                 l++;
             }
-            res = Math.Max(res, r - l + 1);
+            if (Valid())
+                max = Math.Max(max, r - l + 1);
         }
-        return res;
+        return max;
     }
 }

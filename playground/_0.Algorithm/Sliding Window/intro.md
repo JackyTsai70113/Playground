@@ -4,26 +4,49 @@
 
 ## template
 
-    ```csharp
-    int FindSubstring(string s){
-        var chs = new int[128]; // hash map
+### Maximum Window
 
-        foreach(var c in s){
-            // initialize the hash map
-            // ex: chs[c]++;
+1. Shrinkable Sliding Window
+
+    ```csharp
+    bool Valid()
+    {
+        return false;
+    }
+    int l = 0, max = 0;
+    for (int r = 0; r < n; r++)
+    {
+        // update state by A[r]
+        while (l <= r && !Valid())
+        {
+            // update state by A[l]
+            l++;
         }
-        if(any next_candidate is invalid){
-            if(find solution(candidate)){
-                result add candidate
-            }
-            return;
-        }
-        for(next_candidate in list_of_candidates){
-            if(valid(next_candidate)){
-                place(next_candidate)  // 尋找這部分解的候選者
-                Bt(next_candidate)     // 再給定候選者的情況下，進一步探索。
-                remove(next_candidate) // 回溯
-            }
+        if (Valid())
+            max = Math.Max(max, r - l + 1);
+    }
+    return max;
+    ```
+
+1. Find Minimum Window
+
+    ```csharp
+    bool Valid()
+    {
+        return false;
+    }
+    int l = 0, min = int.MaxValue;
+    for (int r = 0; r < n; r++)
+    {
+        // update state by A[r]
+        while (l <= r && Valid())
+        {
+            min = Math.Min(min, r - l + 1);
+            // update state by A[l]
+            l++;
         }
     }
+    return min == int.MaxValue ? 0 : min;
     ```
+
+- ref: <https://liuzhenglaichn.gitbook.io/algorithm/array/sliding-window>

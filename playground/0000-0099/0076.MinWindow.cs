@@ -1,29 +1,39 @@
-namespace playground;
-
-public class MinWindow0076
+namespace playground._0000_0099;
+public class _0076_MinWindow
 {
-    /// <summary>
-    /// https://leetcode.com/problems/minimum-window-substring
-    /// </summary>
     public static string MinWindow(string s, string t)
     {
-        int resl = 0, resr = int.MaxValue, counter = 0;
-        int[] chs = new int[128], chs2 = new int[128]; // hash map
-        foreach (var c in t)
-            chs2[c]++;
-        for (int l = 0, r = 0; r < s.Length; ++r)
+        bool Valid(int count)
         {
-            chs[s[r]]++;
-            if (chs[s[r]] <= chs2[s[r]])
-                counter++;
-            while (l < s.Length && chs[s[l]] > chs2[s[l]])
-                chs[s[l++]]--;
-            if (counter == t.Length && resr - resl > r - l)
+            return count == t.Length;
+        }
+        int n = s.Length, count = 0;
+        int resL = -1, resR = -1;
+        int[] cnt1 = new int[128], cnt2 = new int[128];
+        for (int i = 0; i < t.Length; i++)
+        {
+            cnt2[t[i]]++;
+        }
+        for (int l = 0, r = 0; r < n; r++)
+        {
+            // update state by A[r]
+            cnt1[s[r]]++;
+            if (cnt1[s[r]] <= cnt2[s[r]])
+                count++;
+            while (l <= r && Valid(count))
             {
-                resl = l;
-                resr = r;
+                if (resL == -1 || resR - resL >= r - l)
+                {
+                    resL = l;
+                    resR = r;
+                }
+                // update state by A[l]
+                if (cnt1[s[l]] <= cnt2[s[l]])
+                    count--;
+                cnt1[s[l]]--;
+                l++;
             }
         }
-        return resr == int.MaxValue ? string.Empty : s.Substring(resl, resr - resl + 1);
+        return resL == -1 ? "" : s.Substring(resL, resR - resL + 1);
     }
 }
