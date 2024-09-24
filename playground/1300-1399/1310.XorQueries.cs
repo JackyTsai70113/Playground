@@ -34,7 +34,7 @@ public class XorQueries1310
         return res;
     }
 
-    public int Query(TreeNode node, int l, int r)
+    public static int Query(TreeNode node, int l, int r)
     {
         if (l == node.start && r == node.end)
             return node.val;
