@@ -1,5 +1,3 @@
-using System;
-
 namespace playground._2000_2099;
 
 public class _2024_MaxConsecutiveAnswers

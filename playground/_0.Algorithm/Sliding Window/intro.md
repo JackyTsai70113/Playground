@@ -6,7 +6,7 @@
 
 ### Maximum Window
 
-1. Shrinkable Sliding Window
+1. Find Maximum Window
 
     ```csharp
     bool Valid()
