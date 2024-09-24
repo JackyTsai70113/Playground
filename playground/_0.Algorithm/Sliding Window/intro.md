@@ -1,6 +1,6 @@
 # Sliding Window
 
-- 可以透過兩個 pointer 和 一個 hashmap 來尋找在限制底下的 substring
+- Sliding Window Technique is a method used to efficiently solve problems that involve defining a window or range in the input data (arrays or strings) and then moving that window across the data to perform some operation within the window
 
 ## template
 
