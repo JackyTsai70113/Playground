@@ -1,4 +1,6 @@
-namespace playground.UnitTest;
+using playground._0900_0999;
+
+namespace playground.UnitTest_0900_0999;
 
 public class NumSubarraysWithSumTest0930
 {
@@ -7,7 +9,7 @@ public class NumSubarraysWithSumTest0930
     [InlineData(new int[] { 0, 0, 0, 0, 0 }, 0, 15)]
     public void NumSubarraysWithSum(int[] nums, int goal, int expected)
     {
-        var actual = new NumSubarraysWithSum0930().NumSubarraysWithSum(nums, goal);
+        var actual = _0930_NumSubarraysWithSum.NumSubarraysWithSum(nums, goal);
         Assert.Equal(expected, actual);
     }
 }

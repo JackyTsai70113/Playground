@@ -1,24 +1,25 @@
-namespace playground;
+namespace playground._0900_0999;
 
-public class NumSubarraysWithSum0930
+public class _0930_NumSubarraysWithSum
 {
-    /// <summary>
-    /// https://leetcode.com/problems/binary-subarrays-with-sum
-    /// </summary>
-    public int NumSubarraysWithSum(int[] nums, int goal)
+    public static int NumSubarraysWithSum(int[] nums, int k)
     {
-        return AtMost(nums, goal) - AtMost(nums, goal - 1);
+        return AtMost(nums, k) - AtMost(nums, k - 1);
     }
 
-    private int AtMost(int[] nums, int goal)
+    private static int AtMost(int[] nums, int k)
     {
-        if (goal < 0) return 0;
-        int res = 0;
-        for (int l = 0, r = 0; r < nums.Length; r++)
+        if (k < 0) return 0;
+        bool Valid()
         {
-            goal -= nums[r];
-            while (goal < 0)
-                goal += nums[l++];
+            return k >= 0;
+        }
+        int l = 0, res = 0;
+        for (int r = 0; r < nums.Length; r++)
+        {
+            k -= nums[r];
+            while (!Valid())
+                k += nums[l++];
             res += r - l + 1;
         }
         return res;

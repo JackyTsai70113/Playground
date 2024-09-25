@@ -1,13 +1,15 @@
-namespace playground.UnitTest;
+using playground._0900_0999;
 
-public class SubarraysWithKDistinctTest0992
+namespace playground.UnitTest_0900_0999;
+
+public class _0992_SubarraysWithKDistinctTest
 {
     [Theory]
-    [InlineData("[1,2,1,2,3]", 2, 7)]
-    [InlineData("[1,2,1,3,4]", 3, 3)]
-    public void SubarraysWithKDistinct(string nums, int k, int expected)
+    [InlineData(new int[] { 1, 2, 1, 2, 3 }, 2, 7)]
+    [InlineData(new int[] { 1, 2, 1, 3, 4 }, 3, 3)]
+    public void SubarraysWithKDistinct(int[] nums, int k, int expected)
     {
-        var actual = SubarraysWithKDistinct0992.SubarraysWithKDistinct(nums.ToArr(), k);
+        var actual = _0992_SubarraysWithKDistinct.SubarraysWithKDistinct(nums, k);
         Assert.Equal(expected, actual);
     }
 }

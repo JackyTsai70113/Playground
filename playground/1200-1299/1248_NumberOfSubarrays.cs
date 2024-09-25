@@ -1,8 +1,8 @@
-namespace playground._0900_0999;
+﻿namespace playground;
 
-public class _0992_SubarraysWithKDistinct
+public class _1248_NumberOfSubarrays
 {
-    public static int SubarraysWithKDistinct(int[] nums, int k)
+    public static int NumberOfSubarrays(int[] nums, int k)
     {
         return AtMost(nums, k) - AtMost(nums, k - 1);
     }
@@ -14,27 +14,16 @@ public class _0992_SubarraysWithKDistinct
             return k >= 0;
         }
         int res = 0;
-        var d = new Dictionary<int, int>();
         for (int l = 0, r = 0; r < nums.Length; r++)
         {
             // update state by A[r]
-            if (d.ContainsKey(nums[r]) && d[nums[r]] > 0)
-            {
-                d[nums[r]]++;
-            }
-            else
-            {
-                d[nums[r]] = 1;
+            if (nums[r] % 2 == 1)
                 k--;
-            }
             while (!Valid())
             {
                 // update state by A[l]
-                d[nums[l]]--;
-                if (d[nums[l]] == 0)
-                {
+                if (nums[l] % 2 == 1)
                     k++;
-                }
                 l++;
             }
             res += r - l + 1;
