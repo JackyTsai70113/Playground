@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground._2700_2799;
 
-public class SemiOrderedPermutation2717
+public class _2717_SemiOrderedPermutation
 {
-    /// <summary>
-    /// https://leetcode.com/problems/semi-ordered-permutation
-    /// </summary>
     public static int SemiOrderedPermutation(int[] nums)
     {
         int l = 0, r = 0;

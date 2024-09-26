@@ -1,25 +1,24 @@
-namespace playground;
+namespace playground._2000_2099;
 
-public class GetAverages2090
+public class _2090_GetAverages
 {
-    /// <summary>
-    /// https://leetcode.com/problems/k-radius-subarray-averages
-    /// </summary>
     public static int[] GetAverages(int[] nums, int k)
     {
         int n = nums.Length;
+        int[] res = new int[n];
+        Array.Fill(res, -1);
         long sum = 0;
-        var res = Enumerable.Repeat(-1, n).ToArray();
-        if (2 * k + 1 > n) return res;
-        for (int i = 0; i <= k * 2 && i < nums.Length; i++)
+        for (int l = 0, r = 0; r < nums.Length; r++)
         {
-            sum += nums[i];
-        }
-        if(k * 2 < n) res[k] = (int)(sum / (2 * k + 1));
-        for (int i = k * 2 + 1; i < nums.Length; i++)
-        {
-            sum += nums[i] - nums[i - k * 2 - 1];
-            res[i - k] = (int)(sum / (2 * k + 1));
+            // update state by A[r]
+            sum += nums[r];
+            if (r >= k * 2)
+            {
+                res[r - k] = (int)(sum / (k * 2 + 1));
+                // update state by A[l]
+                sum -= nums[l];
+                l++;
+            }
         }
         return res;
     }

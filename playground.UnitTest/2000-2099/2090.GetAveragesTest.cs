@@ -1,4 +1,6 @@
-namespace playground.UnitTest;
+using playground._2000_2099;
+
+namespace playground.UnitTest._2000_2099;
 
 public class GetAveragesTest2090
 {
@@ -9,7 +11,7 @@ public class GetAveragesTest2090
     [MemberData(nameof(GetData))]
     public void GetAverages(int[] nums, int k, int[] expected)
     {
-        var actual = GetAverages2090.GetAverages(nums, k);
+        var actual = _2090_GetAverages.GetAverages(nums, k);
         Assert.Equal(expected, actual);
     }
 
