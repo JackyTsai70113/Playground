@@ -13,8 +13,8 @@
     {
         return false;
     }
-    int l = 0, max = 0;
-    for (int r = 0; r < nums.Length; r++)
+    int max = 0;
+    for (int l = 0, r = 0; r < nums.Length; r++)
     {
         // update state by A[r]
         while (l <= r && !Valid())
@@ -35,8 +35,8 @@
     {
         return false;
     }
-    int l = 0, min = int.MaxValue;
-    for (int r = 0; r < nums.Length; r++)
+    int min = int.MaxValue;
+    for (int l = 0, r = 0; r < nums.Length; r++)
     {
         // update state by A[r]
         while (l <= r && Valid())

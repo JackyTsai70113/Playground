@@ -1,37 +1,34 @@
-﻿namespace playground;
+﻿namespace playground._0400_0499;
 
 public class _0438_FindAnagrams
 {
     public static IList<int> FindAnagrams(string s, string p)
     {
-        int[] count = new int[s.Length];
+        int k = 0;
         bool Valid()
         {
-            for (int i = 0; i < 26; i++)
-            {
-                if (count[i] != 0)
-                    return false;
-            }
-            return true;
+            return k == p.Length;
         }
-        int l = 0;
+        int[] cnt = new int[s.Length];
         List<int> res = new();
         foreach (var c in p)
         {
-            count[c - 'a']++;
+            cnt[c - 'a']++;
         }
-        for (int r = 0; r < s.Length; r++)
+        for (int l = 0, r = 0; r < s.Length; r++)
         {
             // update state by A[r]
-            count[s[r] - 'a']--;
-            while (l <= r && !Valid())
+            if (--cnt[s[r] - 'a'] == 0)
+                k++;
+            if (r >= p.Length - 1)
             {
+                if (Valid())
+                    res.Add(l);
                 // update state by A[l]
-                count[s[l] - 'a']++;
+                if (cnt[s[l] - 'a']++ == 0)
+                    k--;
                 l++;
             }
-            if (Valid())
-                res.Add(l);
         }
         return res;
     }
