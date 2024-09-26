@@ -9,19 +9,20 @@ public class _1695_MaximumUniqueSubarray
         {
             return !set.Contains(num);
         }
-        int l = 0, max = 0;
-        int n = nums.Length;
-        for (int r = 0; r < n; r++)
+        int max = 0, sum = 0;
+        for (int l = 0, r = 0; r < nums.Length; r++)
         {
             // update state by A[r]
+            sum += nums[r];
             while (!Valid(nums[r]))
             {
                 // update state by A[l]
                 set.Remove(nums[l]);
+                sum -= nums[l];
                 l++;
             }
             set.Add(nums[r]);
-            max = Math.Max(max, r - l + 1);
+            max = Math.Max(max, sum);
         }
         return max;
     }
