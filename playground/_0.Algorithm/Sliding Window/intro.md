@@ -28,7 +28,7 @@
     return max;
     ```
 
-1. Find Minimum Window
+2. Find Minimum Window
 
     ```csharp
     bool Valid()
@@ -49,7 +49,7 @@
     return min == int.MaxValue ? 0 : min;
     ```
 
-1. At Most to Equal
+3. At Most to Equal
 
     ```csharp
     public static int NeedEqual(int[] nums, int k)
@@ -78,7 +78,36 @@
     }
     ```
 
-1. Fixed-length Sliding Window
+4. At Least to Equal
+
+    ```csharp
+    public static int NeedEqual(int[] nums, int k)
+    {
+        return AtLeast(nums, k) - AtLeast(nums, k + 1);
+    }
+
+    private static int AtLeast(int[] nums, int k)
+    {
+        bool Valid()
+        {
+            return false;
+        }
+        int res = 0;
+        for (int l = 0, r = 0; r < nums.Length; r++)
+        {
+            // update state by A[r]
+            while (l <= r && Valid())
+            {
+                res += nums.Length - r;
+                // update state by A[l]
+                l++;
+            }
+        }
+        return res;
+    }
+    ```
+
+5. Fixed-length Sliding Window
 
     ```csharp
     bool Valid()

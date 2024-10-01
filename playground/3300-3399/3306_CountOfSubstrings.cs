@@ -4,10 +4,10 @@ public class _3306_CountOfSubstrings
 {
     public static long CountOfSubstrings(string word, int k)
     {
-        return AtMost(word, k) - AtMost(word, k + 1);
+        return AtLeast(word, k) - AtLeast(word, k + 1);
     }
 
-    private static long AtMost(string word, int k)
+    private static long AtLeast(string word, int k)
     {
         var d = new Dictionary<char, int>
         {

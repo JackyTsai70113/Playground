@@ -28,16 +28,26 @@ public class MedianOfUniquenessArray3134
     static long AtMost(int[] nums, int k)
     {
         var d = new Dictionary<int, int>();
+        int count = 0;
         long res = 0;
+        bool Valid(int count)
+        {
+            return count <= k;
+        }
         for (int l = 0, r = 0; r < nums.Length; r++)
         {
-            d[nums[r]] = d.ContainsKey(nums[r]) ? d[nums[r]] + 1 : 1;
-            while (d.Count > k)
+            int val = d.GetValueOrDefault(nums[r]);
+            if (val == 0)
+            {
+                count++;
+            }
+            d[nums[r]] = val + 1;
+            while (!Valid(count))
             {
                 d[nums[l]]--;
                 if (d[nums[l]] == 0)
                 {
-                    d.Remove(nums[l]);
+                    count--;
                 }
                 l++;
             }

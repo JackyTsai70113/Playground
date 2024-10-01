@@ -43,11 +43,11 @@ public class _2062_CountVowelSubstrings
                 // update state by A[l]
                 if (d.ContainsKey(word[l]))
                 {
-                    if (d[word[l]] == 1)
+                    d[word[l]]--;
+                    if (d[word[l]] == 0)
                     {
                         k++;
                     }
-                    d[word[l]]--;
                 }
                 else
                 {
