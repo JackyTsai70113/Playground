@@ -1,4 +1,4 @@
-namespace playground_3300_3399;
+namespace playground._3300_3399;
 
 public class _3311_ConstructGridLayout
 {
