@@ -6,6 +6,8 @@ public class MaximumSwapTest0670
     [InlineData(2736, 7236)]
     [InlineData(98638, 98836)]
     [InlineData(1992, 9912)]
+    [InlineData(19931227, 99131227)]
+
     public void MaximumSwap(int num, int expected)
     {
         var actual = MaximumSwap0670.MaximumSwap(num);
