@@ -7,15 +7,15 @@ public class _3303_MinStartingIndex
     public static int MinStartingIndex(string s, string pattern)
     {
         int n = s.Length, m = pattern.Length;
-        int[] z1 = z_function(pattern + s);
-        int[] z2 = z_function(new string((s + pattern).ToCharArray().Reverse().ToArray()));
+        int[] z1 = ZFunction(pattern + s);
+        int[] z2 = ZFunction(new string((s + pattern).ToCharArray().Reverse().ToArray()));
         for (int i = 0; i <= n - m; ++i)
             if (z1[m + i] + 1 + z2[n - i] >= m)
                 return i;
         return -1;
     }
 
-    private static int[] z_function(String s)
+    private static int[] ZFunction(String s)
     {
         int n = s.Length, l = 0, r = 0;
         int[] z = new int[n];

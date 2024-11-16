@@ -4,37 +4,29 @@ namespace playground;
 
 public class CanSortArray3011
 {
-    /// <summary>
-    /// https://leetcode.com/problems/find-if-array-can-be-sorted
-    /// </summary>
     public static bool CanSortArray(int[] nums)
     {
-        var bits = nums
-            .Select(x => BitOperations.PopCount((uint)x))
-            .ToArray();
-        var ll = new List<List<int>>();
+        var l = new List<int> { nums[0] };
         var l2 = new List<int>();
-        for (int i = 0; i < nums.Length; i++)
+        for (int i = 1; i < nums.Length; i++)
         {
-            if (l2.Count > 0 && bits[l2[^1]] != bits[i])
+            if (BitOperations.PopCount((uint)nums[i - 1]) == BitOperations.PopCount((uint)nums[i]))
             {
-                ll.Add(new List<int>(l2));
-                l2 = new List<int> { i };
+                l.Add(nums[i]);
             }
             else
             {
-                l2.Add(i);
+                l.Sort();
+                l2.AddRange(l);
+                l = new List<int> { nums[i] };
             }
         }
-        ll.Add(new List<int>(l2));
-
-        var max = int.MinValue;
-        foreach (var l in ll)
+        l.Sort();
+        l2.AddRange(l);
+        for (int i = 1; i < l2.Count; i++)
         {
-            var arr = l.Select(i => nums[i]).ToArray();
-            var arr2 = l.Select(i => nums[i]).OrderBy(x => x).ToArray();
-            if (arr2[0] < max) return false;
-            max = arr2[^1];
+            if (l2[i - 1] > l2[i])
+                return false;
         }
         return true;
     }
