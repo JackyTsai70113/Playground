@@ -21,6 +21,6 @@ public static class ArrayParser
 
     public static T[][] To2dArr<T>(this string str)
     {
-        return JsonSerializer.Deserialize<T[][]>(str);
+    return JsonSerializer.Deserialize<T[][]>(str);
     }
 }

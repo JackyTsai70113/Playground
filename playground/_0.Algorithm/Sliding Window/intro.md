@@ -9,44 +9,50 @@
 1. Find Maximum Window
 
     ```csharp
-    bool Valid()
+    public static int MaximumWindow(int[] nums)
     {
-        return false;
-    }
-    int max = 0;
-    for (int l = 0, r = 0; r < nums.Length; r++)
-    {
-        // update state by A[r]
-        while (l <= r && !Valid())
+        bool Valid()
         {
-            // update state by A[l]
-            l++;
+            return false;
         }
-        if (Valid())
-            max = Math.Max(max, r - l + 1);
+        int max = 0;
+        for (int l = 0, r = 0; r < nums.Length; r++)
+        {
+            // update state by A[r]
+            while (l <= r && !Valid())
+            {
+                // update state by A[l]
+                l++;
+            }
+            if (Valid())
+                max = Math.Max(max, r - l + 1);
+        }
+        return max;
     }
-    return max;
     ```
 
 2. Find Minimum Window
 
     ```csharp
-    bool Valid()
+    public static int MaximumWindow(int[] nums)
     {
-        return false;
-    }
-    int min = int.MaxValue;
-    for (int l = 0, r = 0; r < nums.Length; r++)
-    {
-        // update state by A[r]
-        while (l <= r && Valid())
+        bool Valid()
         {
-            min = Math.Min(min, r - l + 1);
-            // update state by A[l]
-            l++;
+            return false;
         }
+        int min = int.MaxValue;
+        for (int l = 0, r = 0; r < nums.Length; r++)
+        {
+            // update state by A[r]
+            while (l <= r && Valid())
+            {
+                min = Math.Min(min, r - l + 1);
+                // update state by A[l]
+                l++;
+            }
+        }
+        return min == int.MaxValue ? 0 : min;
     }
-    return min == int.MaxValue ? 0 : min;
     ```
 
 3. At Most to Equal
@@ -110,24 +116,29 @@
 5. Fixed-length Sliding Window
 
     ```csharp
-    bool Valid()
+    private static int FixedLength(int[] nums, int k)
     {
-        return false;
-    }
-    int res = 0;
-    for (int l = 0, r = 0; r < nums.Length; r++)
-    {
-        // update state by A[r]
-        if (r >= k - 1)
+        bool Valid()
         {
-            if(Valid()){
-                res++;
-            }
-            // update state by A[l]
-            l++;
+            return false;
         }
+        int res = 0;
+        for (int l = 0, r = 0; r < nums.Length; r++)
+        {
+            // update state by A[r]
+            if (r >= k - 1)
+            {
+                if(r>=k){
+                    // update state by A[l]
+                    l++;
+                }
+                if(Valid()){
+                    res++;
+                }
+            }
+        }
+        return res;
     }
-    return res;
     ```
 
 - ref: <https://liuzhenglaichn.gitbook.io/algorithm/array/sliding-window>
