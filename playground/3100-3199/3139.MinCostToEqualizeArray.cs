@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace playground;
 
 public class MinCostToEqualizeArray3139
@@ -13,36 +15,46 @@ public class MinCostToEqualizeArray3139
     /// </remarks>
     public static int MinCostToEqualizeArray(int[] A, int c1, int c2)
     {
-        int n = A.Length, max = A[0], min = A[0], MOD = (int)1e9 + 7;
-        long total = 0;
-        foreach (var num in A)
+        int n = A.Length, max = A[0], min = A[0];
+        long sum = 0, MOD = (long)1e9 + 7;
+        foreach (var a in A)
         {
-            max = Math.Max(max, num);
-            min = Math.Min(min, num);
-            total += num;
+            max = Math.Max(max, a);
+            min = Math.Min(min, a);
+            sum += a;
         }
-        total = (long)max * n - total;
-        // case 1
-        if (c1 * 2 <= c2 || n <= 2)
-            return (int)(total * c1 % MOD);
+        if (n == 2 || c1 * 2 < c2)
+            return (int)(((long)max * n - sum) * c1 % MOD);
+        c2 = Math.Min(2 * c1, c2);
 
-        // case 2
-        long op1 = Math.Max(0, ((long)max - min) * 2 - total);
-        long op2 = total - op1;
-        long res = (op1 + op2 % 2) * c1 + op2 / 2 * c2;
+        long total = (long)max * n - sum;
+        long count1 = Math.Max(0, (max - min) * 2 - total);
+        count1 += (total - count1) % 2;
+        long count2 = (total - count1) / 2;
+        long res = count1 * c1 + count2 * c2;
 
-        // case 3: increase max to max+1, means that op1 save n-2 times, op2 more n-1 times
-        total += op1 / (n - 2) * n;
-        op1 %= n - 2;
-        op2 = total - op1;
-        res = Math.Min(res, (op1 + op2 % 2) * c1 + op2 / 2 * c2);
-
-        // case 4: use 0 or 1 op1
-        for (int i = 0; i < 2; i++)
+        long GetCost(long newMax)
         {
-            total += n;
-            res = Math.Min(res, total % 2 * c1 + total / 2 * c2);
+            long total = newMax * n - sum;
+            long count1 = Math.Max(0, (newMax - min) * 2 - total);
+            count1 += (total - count1) % 2;
+            long count2 = (total - count1) / 2;
+            return count1 * c1 + count2 * c2;
         }
+
+        int cur = max;
+        while (GetCost(cur + 2) < GetCost(cur))
+        {
+            cur += 2;
+        }
+        res = Math.Min(res, GetCost(cur));
+
+        cur = max + 1;
+        while (GetCost(cur + 2) < GetCost(cur))
+        {
+            cur += 2;
+        }
+        res = Math.Min(res, GetCost(cur));
 
         return (int)(res % MOD);
     }

@@ -2,54 +2,77 @@ namespace playground;
 
 public class TimeTaken3241
 {
-    List<int>[] g;
-    (int first, int second)[] farthest;
-    int[] res;
     public int[] TimeTaken(int[][] edges)
     {
         int n = edges.Length + 1;
-        g = new List<int>[n];
-        for (int i = 0; i < n; i++) g[i] = new();
+        int[] nodeParent = new int[n];
+        List<int>[] graph = new List<int>[n];
+        for (int i = 0; i < n; i++)
+        {
+            nodeParent[i] = -1;
+            graph[i] = new();
+        }
         foreach (var e in edges)
         {
-            g[e[0]].Add(e[1]);
-            g[e[1]].Add(e[0]);
+            graph[e[0]].Add(e[1]);
+            graph[e[1]].Add(e[0]);
         }
-        farthest = new (int first, int second)[n];
-        BuildFarthestDistance(0);
-        res = new int[n];
-        CalculateFarthestWithParent(0, 0);
+        var dists = new List<(int v, int d)>[n];
+        for (int i = 0; i < n; i++)
+        {
+            dists[i] = new List<(int, int)>{
+                (-1,0),
+                (-1,0)
+            };
+        }
+        // maximum distance of u to other v
+        int Dfs(int par, int u)
+        {
+            nodeParent[u] = par;
+            int maxDist = 0;
+            foreach (var v in graph[u])
+            {
+                if (v == par) continue;
+                int curDist = Dfs(u, v);
+                curDist += (v & 1) > 0 ? 1 : 2;
+                if (dists[u][0].d <= curDist)
+                {
+                    dists[u][1] = dists[u][0];
+                    dists[u][0] = (v, curDist);
+                }
+                else if (dists[u][1].d < curDist)
+                {
+                    dists[u][1] = (v, curDist);
+                }
+                maxDist = Math.Max(maxDist, curDist);
+            }
+            return maxDist;
+        }
+        Dfs(-1, 0);
+        var res = new int[n];
+        res[0] = dists[0][0].d;
+        for (int i = 1; i < n; i++)
+        {
+            int curDist = -1;
+            if (dists[nodeParent[i]][0].v != i)
+            {
+                curDist = dists[nodeParent[i]][0].d + ((nodeParent[i] & 1) > 0 ? 1 : 2);
+            }
+            else
+            {
+                curDist = dists[nodeParent[i]][1].d + ((nodeParent[i] & 1) > 0 ? 1 : 2);
+            }
+            if (dists[i][0].d <= curDist)
+            {
+                dists[i][1] = dists[i][0];
+                dists[i][0] = (nodeParent[i], curDist);
+            }
+            else if (dists[i][1].d < curDist)
+            {
+                dists[i][1] = (nodeParent[i], curDist);
+            }
+            res[i] = dists[i][0].d;
+        }
         return res;
-    }
-
-    void BuildFarthestDistance(int u)
-    {
-        int first = 0, second = 0;
-        foreach (var v in g[u])
-        {
-            if (v < u) continue;
-            BuildFarthestDistance(v);
-            int dist = ((v & 1) == 1 ? 1 : 2) + farthest[v].first;
-            if (dist >= first)
-                (first, second) = (dist, first);
-            else if (dist > second)
-                second = dist;
-        }
-        farthest[u] = (first, second);
-    }
-
-    void CalculateFarthestWithParent(int u, int parentDist)
-    {
-        res[u] = Math.Max(farthest[u].first, parentDist);
-        foreach (var v in g[u])
-        {
-            if (v < u) continue;
-            int toParent = (u & 1) == 1 ? 1 : 2;
-            int toChild = (v & 1) == 1 ? 1 : 2;
-            int distExceptThisChild =
-                farthest[u].first == toChild + farthest[v].first ?
-                farthest[u].second : farthest[u].first;
-            CalculateFarthestWithParent(v, toParent + Math.Max(parentDist, distExceptThisChild));
-        }
     }
 }

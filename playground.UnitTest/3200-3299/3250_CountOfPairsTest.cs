@@ -1,6 +1,6 @@
 namespace playground.UnitTest;
 
-public class CountOfPairsTest3250
+public class _3250_CountOfPairsTest
 {
     [Theory]
     [InlineData(new int[] { 2, 3, 2 }, 4)]
