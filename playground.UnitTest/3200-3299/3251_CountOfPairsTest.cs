@@ -1,3 +1,5 @@
+using playground._3200_3299;
+
 namespace playground.UnitTest._3200_3299;
 
 public class _3251_CountOfPairsTest
@@ -5,9 +7,10 @@ public class _3251_CountOfPairsTest
     [Theory]
     [InlineData(new int[] { 2, 3, 2 }, 4)]
     [InlineData(new int[] { 5, 5, 5, 5 }, 126)]
+    [InlineData(new int[] { 40, 91, 187, 256, 334, 337, 694, 749, 782, 833 }, 272278100)]
     public void CountOfPairs(int[] nums, int expected)
     {
-        var actual = CountOfPairs3250.CountOfPairs(nums);
+        var actual = _3251_CountOfPairs.CountOfPairs(nums);
         Assert.Equal(expected, actual);
     }
 }

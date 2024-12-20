@@ -17,7 +17,7 @@ public class MaximumLength2981
             for (int m = j - i, count = 1; m > res; m--, count++)
             {
                 var str = s.Substring(i, m);
-                d[str] = d.ContainsKey(str) ? d[str] + count : count;
+                d[str] = d.GetValueOrDefault(str) + count;
                 if (d[str] >= 3) res = m;
             }
             i = j;

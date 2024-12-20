@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace playground;
 
 public class MinCostToEqualizeArray3139

@@ -7,17 +7,23 @@ public class MinimumTime2577
     /// </summary>
     public static int MinimumTime(int[][] grid)
     {
+        if (grid[0][1] > 1 && grid[1][0] > 1)
+            return -1;
         int m = grid.Length, n = grid[0].Length;
         var dirs = new int[] { -1, 0, 1, 0, -1 };
         var pq = new PriorityQueue<(int, int, int), int>();
-        if (grid[0][1] <= 1 || grid[1][0] <= 1)
-            pq.Enqueue((0, 0, 0), 0);
+        pq.Enqueue((0, 0, 0), 0);
         var seen = new bool[m, n];
         seen[0, 0] = true;
+        int res = -1;
         while (pq.Count > 0)
         {
             var (x0, y0, t0) = pq.Dequeue();
-            if (x0 == m - 1 && y0 == n - 1) return t0;
+            if (x0 == m - 1 && y0 == n - 1)
+            {
+                res = t0;
+                break;
+            }
             for (int i = 0; i < 4; i++)
             {
                 var (x, y) = (x0 + dirs[i], y0 + dirs[i + 1]);
@@ -29,6 +35,6 @@ public class MinimumTime2577
                 pq.Enqueue((x, y, t), t);
             }
         }
-        return -1;
+        return res;
     }
 }

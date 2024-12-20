@@ -22,7 +22,6 @@ public class _0952_LargestComponentSize
         var res = 0;
         for (int i = 0; i < nums.Length; i++)
         {
-            Console.WriteLine(i);
             int group;
             if (isPrime[nums[i]])
             {

@@ -6,10 +6,10 @@ public class SlidingPuzzle0773
 {
     int m;
     int n;
-    readonly string targetState = "123450";
     public int SlidingPuzzle(int[][] A)
     {
         m = A.Length; n = A[0].Length;
+        string targetState = "123450";
         var q = new Queue<string>();
         var seen = new HashSet<string>();
         var firstState = ToState(A);

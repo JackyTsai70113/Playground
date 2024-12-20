@@ -1,6 +1,6 @@
-namespace playground;
+namespace playground._3200_3299;
 
-public class CountOfPairs3250
+public class _3250_CountOfPairs
 {
     public static int CountOfPairs(int[] nums) {
         int n = nums.Length;

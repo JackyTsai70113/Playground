@@ -2,7 +2,7 @@ namespace playground._3200_3299;
 
 public class _3251_CountOfPairs
 {
-    public int CountOfPairs(int[] nums)
+    public static int CountOfPairs(int[] nums)
     {
         int m = nums.Length, n = 1002;
         long MOD = (long)1e9 + 7;

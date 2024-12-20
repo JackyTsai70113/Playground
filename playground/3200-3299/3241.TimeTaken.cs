@@ -2,7 +2,7 @@ namespace playground;
 
 public class TimeTaken3241
 {
-    public int[] TimeTaken(int[][] edges)
+    public static int[] TimeTaken(int[][] edges)
     {
         int n = edges.Length + 1;
         int[] nodeParent = new int[n];
@@ -53,7 +53,7 @@ public class TimeTaken3241
         res[0] = dists[0][0].d;
         for (int i = 1; i < n; i++)
         {
-            int curDist = -1;
+            int curDist;
             if (dists[nodeParent[i]][0].v != i)
             {
                 curDist = dists[nodeParent[i]][0].d + ((nodeParent[i] & 1) > 0 ? 1 : 2);
