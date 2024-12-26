@@ -28,74 +28,24 @@ z[]        x   0   6   0   4   0   2   0
 
 ```csharp
 // Fills Z array for given string str[]
-private static void getZarr(string str,
-                            int[] Z)
+// z函數
+// https://www.youtube.com/watch?v=2EqYY0c--QI
+// https://personal.utdallas.edu/~besp/demo/John2010/z-algorithm.htm
+private static int[] GetZArr(string str)
 {
- 
     int n = str.Length;
- 
-    // [L,R] make a window which 
-    // matches with prefix of s 
-    int L = 0, R = 0;
- 
-    for (int i = 1; i < n; ++i)
+    int left = 0, right = 0; // l, r 定義了 z-box(已匹配prefix的滑動窗口)
+    var z = new int[n];
+    for (int i = 1; i < n; i++)
     {
- 
-        // if i>R nothing matches so we will 
-        // calculate. Z[i] using naive way. 
-        if (i > R)
+        if (i <= right) // i 在 z-box 裡
+            z[i] = Math.Min(z[i - left], right - i + 1); // z函數核心思想
+        while (i + z[i] < n && str[z[i]] == str[i + z[i]])
         {
-            L = R = i;
- 
-            // R-L = 0 in starting, so it will start 
-            // checking from 0'th index. For example, 
-            // for "ababab" and i = 1, the value of R 
-            // remains 0 and Z[i] becomes 0. For string 
-            // "aaaaaa" and i = 1, Z[i] and R become 5 
-            while (R < n && str[R - L] == str[R])
-            {
-                R++;
-            }
- 
-            Z[i] = R - L;
-            R--;
- 
-        }
-        else
-        {
- 
-            // k = i-L so k corresponds to number 
-            // which matches in [L,R] interval. 
-            int k = i - L;
- 
-            // if Z[k] is less than remaining interval 
-            // then Z[i] will be equal to Z[k]. 
-            // For example, str = "ababab", i = 3, 
-            // R = 5 and L = 2 
-            if (Z[k] < R - i + 1)
-            {
-                Z[i] = Z[k];
-            }
- 
-            // For example str = "aaaaaa" and 
-            // i = 2, R is 5, L is 0 
-            else
-            {
- 
- 
-                // else start from R and 
-                // check manually 
-                L = i;
-                while (R < n && str[R - L] == str[R])
-                {
-                    R++;
-                }
- 
-                Z[i] = R - L;
-                R--;
-            }
+            (left, right) = (i, i + z[i]);
+            z[i]++;
         }
     }
+    return z;
 }
-
 ```

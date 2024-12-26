@@ -4,61 +4,47 @@ public class _3292_MinValidStrings
 {
     public static int MinValidStrings(string[] words, string target)
     {
-        var root = new TrieNode();
-        root.Insert(words);
-
-        var dp = new int[target.Length + 1];
-        Array.Fill(dp, int.MaxValue);
-        dp[0] = 0;
-        for (int i = 0; i < target.Length; i++)
+        int n = target.Length;
+        // target 各元素所匹配word的最長長度
+        var match = new int[n];
+        foreach (var w in words)
         {
-            if (dp[i] == int.MaxValue)
-                break;
-            root.Search(target, i, dp);
-        }
-        return dp[target.Length] == int.MaxValue ? -1 : dp[target.Length];
-    }
+            var str = w + '#' + target;
+            // target[0] 在 str 的 index
+            int excess = w.Length + 1;
+            int wordLen = w.Length;
 
-    public class TrieNode
-    {
-        public bool val = default;
-        public readonly TrieNode[] children;
-        public TrieNode()
-        {
-            val = false;
-            children = new TrieNode[26];
-        }
-
-        public void Insert(IList<string> words)
-        {
-            TrieNode node;
-            for (int i = 0; i < words.Count; i++)
+            int nn = str.Length;
+            int left = 0, right = 0; // l, r 定義了 z-box(已匹配prefix的滑動窗口)
+            var z = new int[nn];
+            for (int i = 1; i < nn; i++)
             {
-                node = this;
-                for (int j = 0; j < words[i].Length; j++)
+                if (i <= right) // i 在 z-box 裡
+                    z[i] = Math.Min(z[i - left], right - i + 1); // z函數核心思想
+                while (i + z[i] < nn && str[z[i]] == str[i + z[i]])
                 {
-                    if (node.children[words[i][j] - 'a'] == null)
-                    {
-                        node.children[words[i][j] - 'a'] = new TrieNode();
-                    }
-                    node = node.children[words[i][j] - 'a'];
+                    (left, right) = (i, i + z[i]);
+                    z[i]++;
                 }
-                node.val = true;
+                if (i >= excess && z[i] > 0)
+                {
+                    match[i - excess] = Math.Max(match[i - excess], z[i]);
+                }
             }
         }
-
-        public void Search(string str, int start, int[] dp)
+        // greedy algorithm
+        int step = 0, curEnd = 0, farthest = 0;
+        for (int i = 0; i < n; i++)
         {
-            TrieNode node = this;
-            for (int i = start; i < str.Length; i++)
+            farthest = Math.Max(farthest, i + match[i]);
+            if (i == curEnd)
             {
-                if (node.children[str[i] - 'a'] == null)
-                {
-                    break;
-                }
-                dp[i + 1] = Math.Min(dp[i + 1], dp[start] + 1);
-                node = node.children[str[i] - 'a'];
+                step++;
+                curEnd = farthest;
+                if (curEnd >= n) break;
             }
         }
+        if (curEnd < n) return -1;
+        return step;
     }
 }

@@ -13,36 +13,36 @@ public class _1976_CountPaths
             g[r[1]].Add((r[0], r[2]));
         }
 
-        var dists = new (long d, long count)[n];
-        dists[0] = (0, 1);
-        for (int i = 1; i < n; i++)
-        {
-            dists[i] = (long.MaxValue, 0);
-        }
-
-        var pq = new PriorityQueue<int, long>();
-        pq.Enqueue(0, dists[0].d);
+        var pq = new PriorityQueue<(int, long), long>();
+        var dists = new long[n];
+        var ways = new long[n];
+        var seen = new bool[n];
         long MOD = (long)1e9 + 7;
+
+        pq.Enqueue((0, 0), 0);
+        Array.Fill(dists, long.MaxValue);
+        dists[0] = 0;
+        ways[0] = 1;
+
         while (pq.Count > 0)
         {
-            var u = pq.Dequeue();
-            if (u == n - 1)
+            var (u, ud) = pq.Dequeue();
+            if (seen[u]) continue;
+            seen[u] = true;
+            foreach (var (v, vd) in g[u])
             {
-                continue;
-            }
-            foreach (var (v, d) in g[u])
-            {
-                if (dists[v].d > dists[u].d + d)
+                if (dists[v] > ud + vd)
                 {
-                    dists[v] = (dists[u].d + d, 1);
-                    pq.Enqueue(v, dists[v].d);
+                    dists[v] = ud + vd;
+                    ways[v] = ways[u];
+                    pq.Enqueue((v, dists[v]), dists[v]);
                 }
-                else if (dists[v].d == dists[u].d + d)
+                else if (dists[v] == ud + vd)
                 {
-                    dists[v] = (dists[v].d, dists[v].count + 1);
+                    ways[v] = (ways[v] + ways[u]) % MOD;
                 }
             }
         }
-        return (int)(dists[n - 1].count % MOD);
+        return (int)ways[n - 1];
     }
 }
