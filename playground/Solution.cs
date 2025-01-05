@@ -2,6 +2,7 @@
 
 public class Solution
 {
+    // https://leetcode.com/problems/subsequences-with-a-unique-middle-mode-i/description/
     // public int SubsequencesWithMiddleMode(int[] nums)
     // {
     //     int n = nums.Length;
@@ -28,70 +29,66 @@ public class Solution
     //     }
     // }
 
-    public static int MinLength(string s, int flipCount)
-    {
-        int n = s.Length;
-        var chs = s.ToCharArray();
-        bool Valid(int minLength)
-        {
-            int n = s.Length;
+    // https://leetcode.com/problems/smallest-substring-with-identical-characters-i
+    // public static int MinLength(string s, int flipCount)
+    // {
+    //     int n = s.Length;
+    //     var chs = s.ToCharArray();
+    //     bool Valid(int minLength)
+    //     {
+    //         int n = s.Length;
 
-            // Helper function to check if we can make all substrings for a target character less than or equal to minLength
-            bool CanReduce(char targetChar)
-            {
-                int flips = 0;
-                int left = 0;
+    //         // Helper function to check if we can make all substrings for a target character less than or equal to minLength
+    //         bool CanReduce(char targetChar)
+    //         {
+    //             int flips = 0;
+    //             int left = 0;
 
-                for (int right = 0; right < n; right++)
-                {
-                    if (s[right] != targetChar)
-                    {
-                        flips++;
-                    }
+    //             for (int right = 0; right < n; right++)
+    //             {
+    //                 if (s[right] != targetChar)
+    //                 {
+    //                     flips++;
+    //                 }
 
-                    // If flips exceed allowed flipCount, move the left pointer
-                    while (flips > flipCount)
-                    {
-                        if (s[left] != targetChar)
-                        {
-                            flips--;
-                        }
-                        left++;
-                    }
+    //                 // If flips exceed allowed flipCount, move the left pointer
+    //                 while (flips > flipCount)
+    //                 {
+    //                     if (s[left] != targetChar)
+    //                     {
+    //                         flips--;
+    //                     }
+    //                     left++;
+    //                 }
 
-                    // If the current window length is greater than minLength, return false
-                    if (right - left + 1 > minLength)
-                    {
-                        return false;
-                    }
-                }
+    //                 // If the current window length is greater than minLength, return false
+    //                 if (right - left + 1 > minLength)
+    //                 {
+    //                     return false;
+    //                 }
+    //             }
 
-                return true;
-            }
+    //             return true;
+    //         }
 
-            // Check for both '0' and '1' as target characters
-            return CanReduce('0') && CanReduce('1');
-        }
+    //         // Check for both '0' and '1' as target characters
+    //         return CanReduce('0') && CanReduce('1');
+    //     }
 
-        int l = 1, r = n, res = n;
-        while (l <= r)
-        {
-            int m = l + (r - l) / 2;
-            if (Valid(m))
-            {
-                res = m;
-                r = m - 1;
-            }
-            else
-            {
-                l = m + 1;
-            }
-        }
-        return res;
-    }
+    //     int l = 1, r = n, res = n;
+    //     while (l <= r)
+    //     {
+    //         int m = l + (r - l) / 2;
+    //         if (Valid(m))
+    //         {
+    //             res = m;
+    //             r = m - 1;
+    //         }
+    //         else
+    //         {
+    //             l = m + 1;
+    //         }
+    //     }
+    //     return res;
+    // }
 }
-/*
-Console.Write(s + " " + minLength + " " + flipCount + " ");
-            Console.WriteLine(false);
-            Console.WriteLine(true);
-*/

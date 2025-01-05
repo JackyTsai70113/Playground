@@ -5,6 +5,7 @@ public class CountPrimes0204
     /// <summary>
     /// https://leetcode.com/problems/count-primes
     /// </summary>
+    /// 計算質數
     public static int CountPrimes(int n)
     {
         int count = 0;
