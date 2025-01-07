@@ -11,8 +11,6 @@ public class _3403_AnswerStringTest
     [InlineData("gh", 1, "gh")]
     [InlineData("dah", 3, "h")]
     [InlineData("nbjnc", 2, "nc")]
-    [InlineData("nbjnc", 2, "nc")]
-    [InlineData("nbjnc", 2, "nc")]
     public void MinStartingIndex(string word, int numFriends, string expected)
     {
         var actual = _3403_AnswerString.AnswerString(word, numFriends);
