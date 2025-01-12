@@ -68,7 +68,7 @@
         }
         ```
 
-   4. NLE(Next Greater Element)
+   4. NGE(Next Greater Element)
 
         ```csharp
         int[] nums;
