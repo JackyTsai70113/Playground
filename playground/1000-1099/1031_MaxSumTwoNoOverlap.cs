@@ -29,7 +29,6 @@ public class _1031_MaxSumTwoNoOverlap
                 if (r >= firstLen + secondLen - 1)
                 {
                     res = Math.Max(res, dp[l - 1] + sum);
-                    // Console.WriteLine(l + " " + r + " " + dp[l-1] + " " + sum + " " + res);
                 }
                 sum -= nums[l];
                 l++;

@@ -1,16 +1,15 @@
-using playground.DynamicPrograming.Kadane;
+namespace playground.UnitTest._2200_2299;
 
-namespace playground.UnitTest.DynamicPrograming.Kadane;
-
-public class LargestVarianceTest
+public class _2272_LargestVarianceTest
 {
     [Theory]
     [InlineData("aabbbb", 3)]
     [InlineData("aababbb", 3)]
     [InlineData("abcde", 0)]
+    [InlineData("lripaa", 1)]
     public void LargestVariance(string s, int expected)
     {
-        var actual = LargestVarianceClass.LargestVariance(s);
+        var actual = _2272_LargestVariance.LargestVariance(s);
         Assert.Equal(expected, actual);
     }
 }
