@@ -1,4 +1,6 @@
-﻿namespace playground;
+﻿using System.Numerics;
+
+namespace playground;
 
 public class Solution
 {
