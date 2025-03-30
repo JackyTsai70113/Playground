@@ -9,7 +9,7 @@ public class _0684_FindRedundantConnection
         var ds = new DisjointSet(n);
         foreach (var e in edges)
         {
-            if (!ds.Union(e[0], e[1]))
+            if (!ds.Join(e[0], e[1]))
                 res = e;
         }
         return res;

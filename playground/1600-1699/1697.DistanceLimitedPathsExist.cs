@@ -22,7 +22,7 @@ public class DistanceLimitedPathsExist1697
         {
             for (; i < edgeList.Length && edgeList[i][2] < limit; i++)
             {
-                ds.Union(edgeList[i][0], edgeList[i][1]);
+                ds.Join(edgeList[i][0], edgeList[i][1]);
             }
             if (ds.Find(p) == ds.Find(q))
             {

@@ -22,11 +22,11 @@ public class HitBricks0803
                     continue;
                 int node = r * n + c;
                 if (r == 0)
-                    ds.Union(node, m * n);
+                    ds.Join(node, m * n);
                 if (r > 0 && A[r - 1][c] == 1)
-                    ds.Union(node, (r - 1) * n + c);
+                    ds.Join(node, (r - 1) * n + c);
                 if (c > 0 && A[r][c - 1] == 1)
-                    ds.Union(node, r * n + c - 1);
+                    ds.Join(node, r * n + c - 1);
             }
         }
 
@@ -38,7 +38,7 @@ public class HitBricks0803
                 int x = x0 + dirs[i], y = y0 + dirs[i + 1];
                 if (x >= 0 && y >= 0 && x < m && y < n && A[x][y] == 1)
                 {
-                    ds.Union(node, x * n + y);
+                    ds.Join(node, x * n + y);
                 }
             }
         }
@@ -49,11 +49,11 @@ public class HitBricks0803
             if (grid[x0][y0] == 0)
                 continue;
 
-            var preCount = ds.Ranks[ds.Find(m * n)];
+            var preCount = ds.rs[ds.Find(m * n)];
             A[x0][y0] = 1;
             move(x0, y0);
-            if (x0 == 0) ds.Union(x0 * n + y0, m * n);
-            res[t] = Math.Max(0, ds.Ranks[ds.Find(m * n)] - preCount - 1);
+            if (x0 == 0) ds.Join(x0 * n + y0, m * n);
+            res[t] = Math.Max(0, ds.rs[ds.Find(m * n)] - preCount - 1);
         }
         return res;
     }

@@ -18,7 +18,7 @@ public class MinimumCost3108
             int g1 = ds.Find(e[0]), g2 = ds.Find(e[1]);
             if (g1 != g2)
             {
-                ds.Union(e[0], e[1]);
+                ds.Join(e[0], e[1]);
                 g1 = ds.Find(e[0]);
             }
             costs[g1] &= costs[g2] & e[2];

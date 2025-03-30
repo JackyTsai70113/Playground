@@ -17,7 +17,7 @@ public class _3448_CountSubstrings
         //   3^0 = 1, 3^1 = 3, 3^2 = 2, 3^3 = 6, 3^4 = 4, 3^5 = 5, 3^6 = 1, ...
         // Their inverses modulo 7 are:
         //   1 -> 1, 3 -> 5, 2 -> 4, 6 -> 6, 4 -> 2, 5 -> 3.
-        var inverses_modulo_7 = new int[] { 1, 5, 4, 6, 2, 3 };
+        var inverse_modulo_7 = new int[] { 1, 5, 4, 6, 2, 3 };
 
         for (int i = 0; i < n; i++)
         {
@@ -26,7 +26,7 @@ public class _3448_CountSubstrings
             mod9 = (mod9 + lastDigit) % 9;
 
             prefix7 = (prefix7 * 10 + lastDigit) % 7;
-            int norm7 = (prefix7 * inverses_modulo_7[i % 6]) % 7;
+            int norm7 = (prefix7 * inverse_modulo_7[(i + 1) % 6]) % 7;
 
             if (lastDigit == 1 || lastDigit == 2 || lastDigit == 5)
             {

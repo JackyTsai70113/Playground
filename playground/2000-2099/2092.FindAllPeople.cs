@@ -9,7 +9,7 @@ public class FindAllPeople2092
     {
         meetings = meetings.OrderBy(m => m[2]).ToArray();
         var ds = new DisjointSet(n);
-        ds.Union(0, firstPerson);
+        ds.Join(0, firstPerson);
         HashSet<int> curGroup = new();
         for (int i = 0; i < meetings.Length;)
         {
@@ -18,7 +18,7 @@ public class FindAllPeople2092
             for (; i < meetings.Length && meetings[i][2] == time; i++)
             {
                 var (x, y) = (meetings[i][0], meetings[i][1]);
-                ds.Union(x, y);
+                ds.Join(x, y);
                 curGroup.Add(x);
                 curGroup.Add(y);
             }
@@ -27,8 +27,8 @@ public class FindAllPeople2092
             {
                 if (ds.Find(0) != ds.Find(x))
                 {
-                    ds.Ranks[ds.Find(x)]--;
-                    ds.Groups[x] = x;
+                    ds.rs[ds.Find(x)]--;
+                    ds.gs[x] = x;
                 }
             }
         }

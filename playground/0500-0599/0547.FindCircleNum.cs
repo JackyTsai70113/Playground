@@ -12,7 +12,7 @@ public class FindCircleNum0547
         for (int i = 0; i < n; ++i)
             for (int j = i + 1; j < n; ++j)
                 if (isConnected[i][j] == 1)
-                    ds.Union(i, j);
+                    ds.Join(i, j);
         var set = new HashSet<int>();
         for (int i = 0; i < isConnected.Length; i++)
         {

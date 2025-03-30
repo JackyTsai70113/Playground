@@ -10,7 +10,8 @@ public class MinCostConnectPoints1584
     /// Prim's algroithm<br/>
     /// Kruskal's Algorithm: 按照「weight由小到大」的順序挑選edge，並且避免產生cycle
     /// </remarks>
-    public static int MinCostConnectPoints(int[][] ps){
+    public static int MinCostConnectPoints(int[][] ps)
+    {
         var n = ps.Length;
         var pq = new PriorityQueue<(int, int, int), int>();
         for (int i = 0; i < n; i++)
@@ -23,10 +24,12 @@ public class MinCostConnectPoints1584
         }
         int count = 1, res = 0;
         var ds = new DisjointSet(n);
-        while(count<n){
+        while (count < n)
+        {
             var (i, j, dist) = pq.Dequeue();
-            if(ds.Find(i) != ds.Find(j)){
-                ds.Union(i, j);
+            if (ds.Find(i) != ds.Find(j))
+            {
+                ds.Join(i, j);
                 count++;
                 res += dist;
             }

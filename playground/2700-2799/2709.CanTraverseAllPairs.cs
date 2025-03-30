@@ -18,7 +18,7 @@ public class CanTraverseAllPairs2709
             {
                 if (nums[i] % p != 0) continue;
                 if (index.TryGetValue(p, out var val))
-                    ds.Union(val, i);
+                    ds.Join(val, i);
                 else
                     index[p] = i;
                 while (nums[i] % p == 0) nums[i] /= p;
@@ -26,11 +26,11 @@ public class CanTraverseAllPairs2709
             if (nums[i] > 1)
             {
                 if (index.TryGetValue(nums[i], out var val))
-                    ds.Union(val, i);
+                    ds.Join(val, i);
                 else
                     index[nums[i]] = i;
             }
         }
-        return ds.Ranks[ds.Find(0)] == n;
+        return ds.rs[ds.Find(0)] == n;
     }
 }
