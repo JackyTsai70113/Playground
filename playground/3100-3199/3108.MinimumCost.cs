@@ -2,40 +2,25 @@ namespace playground;
 
 public class MinimumCost3108
 {
-    /// <summary>
-    /// https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph
-    /// </summary>
-    /// <remarks>
-    /// DisjointSet
-    /// </remarks>
     public static int[] MinimumCost(int n, int[][] edges, int[][] query)
     {
-        var ds = new DisjointSet(n);
-        int[] costs = new int[n];
-        Array.Fill(costs, int.MaxValue);
+        var ds = new DisjointSet2(n);
         foreach (var e in edges)
         {
-            int g1 = ds.Find(e[0]), g2 = ds.Find(e[1]);
-            if (g1 != g2)
-            {
-                ds.Join(e[0], e[1]);
-                g1 = ds.Find(e[0]);
-            }
-            costs[g1] &= costs[g2] & e[2];
+            ds.Union(e[0], e[1], e[2]);
         }
-        var res = new List<int>();
-        foreach (var q in query)
+        var res = new int[query.Length];
+        for (int i = 0; i < query.Length; i++)
         {
-            int g1 = ds.Find(q[0]), g2 = ds.Find(q[1]);
-            if (q[0] == q[1])
-                res.Add(0);
-            else if (g1 != g2)
-                res.Add(-1);
+            int g1 = ds.Find(query[i][0]), g2 = ds.Find(query[i][1]);
+            if (g1 != g2)
+                res[i] = -1;
             else
-                res.Add(costs[g1]);
+                res[i] = ds.ands[g1];
         }
-        return res.ToArray();
+        return res;
     }
+
 
     /// <remarks>BFS</remarks>
     public static int[] MinimumCost2(int n, int[][] edges, int[][] query)
@@ -76,13 +61,48 @@ public class MinimumCost3108
         var res = new List<int>();
         foreach (var q in query)
         {
-            if (q[0] == q[1])
-                res.Add(0);
-            else if (groups[q[0]] != groups[q[1]])
+            if (groups[q[0]] != groups[q[1]])
                 res.Add(-1);
             else
                 res.Add(costs[groups[q[0]]]);
         }
         return res.ToArray();
+    }
+}
+
+public class DisjointSet2
+{
+    public int[] groups;
+    public int[] ranks;
+    public int[] ands;
+    public DisjointSet2(int n)
+    {
+        groups = new int[n];
+        for (int i = 0; i < n; i++)
+            groups[i] = i;
+        ranks = new int[n];
+        Array.Fill(ranks, 1);
+        ands = new int[n];
+        Array.Fill(ands, int.MaxValue);
+    }
+
+    public int Find(int node)
+    {
+        groups[node] =
+            groups[node] == node ?
+            node :
+            Find(groups[node]);
+        return groups[node];
+    }
+
+    public bool Union(int n1, int n2, int w)
+    {
+        int g1 = Find(n1);
+        int g2 = Find(n2);
+        if (g1 > g2)
+            (g1, g2) = (g2, g1);
+        groups[g2] = g1;
+        ands[g1] &= ands[g2] & w;
+        return true;
     }
 }
