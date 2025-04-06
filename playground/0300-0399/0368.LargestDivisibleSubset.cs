@@ -5,32 +5,36 @@ public class _0368_LargestDivisibleSubset
     public static IList<int> LargestDivisibleSubset(int[] nums)
     {
         Array.Sort(nums);
-        int maxLen = 0, maxIndex = 0;
-        var dp = new int[nums.Length];
-        for (int i = 1; i < nums.Length; i++)
+        var len = new int[nums.Length];
+        var par = new int[nums.Length];
+        int maxLength = 0, maxi = -1;
+        for (int i = 0; i < nums.Length; i++)
         {
+            par[i] = -1;
+            len[i] = 1;
             for (int j = 0; j < i; j++)
             {
-                if (nums[i] % nums[j] == 0 && dp[i] < dp[j] + 1)
+                if (nums[i] % nums[j] == 0)
                 {
-                    dp[i] = dp[j] + 1;
+                    if (len[j] + 1 > len[i])
+                    {
+                        len[i] = len[j] + 1;
+                        par[i] = j;
+                    }
                 }
             }
-            if (maxLen < dp[i])
+            if (len[i] > maxLength)
             {
-                maxLen = dp[i];
-                maxIndex = i;
+                maxLength = len[i];
+                maxi = i;
             }
         }
+
         var res = new List<int>();
-        for (int i = maxIndex; i >= 0; i--)
+        while (maxi != -1)
         {
-            if (nums[maxIndex] % nums[i] == 0 && dp[i] == maxLen)
-            {
-                res.Add(nums[i]);
-                maxIndex = i;
-                maxLen--;
-            }
+            res.Add(nums[maxi]);
+            maxi = par[maxi];
         }
         return res;
     }

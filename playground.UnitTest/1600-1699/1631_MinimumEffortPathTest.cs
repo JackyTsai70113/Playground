@@ -1,8 +1,8 @@
-using playground.PriorityQueues;
+using playground._1600_1699;
 
-namespace playground.UnitTest.PriorityQueue;
+namespace playground.UnitTest._1600_1699;
 
-public class MinimumEffortPathTest
+public class _1631_MinimumEffortPathTest
 {
     [Theory]
     [InlineData("[[1,2,2],[3,8,2],[5,3,5]]", 2)]
@@ -10,7 +10,7 @@ public class MinimumEffortPathTest
     [InlineData("[[1,2,1,1,1],[1,2,1,2,1],[1,2,1,2,1],[1,2,1,2,1],[1,1,1,2,1]]", 0)]
     public void MinimumEffortPath(string A, int expected)
     {
-        var actual = MinimumEffortPathClass.MinimumEffortPath(A.To2dArr());
+        var actual = _1631_MinimumEffortPath.MinimumEffortPath(A.To2dArr());
         Assert.Equal(expected, actual);
     }
 }

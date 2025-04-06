@@ -1,8 +1,8 @@
-using playground.PriorityQueues;
+using playground._2400_2499;
 
-namespace playground.UnitTest.PriorityQueues;
+namespace playground.UnitTest._2400_2499;
 
-public class TotalCostTest
+public class _2462_TotalCostTest
 {
     [Theory]
     [InlineData(new int[] { 1, 2, 4, 5 }, 3, 2, 7)]
@@ -10,10 +10,11 @@ public class TotalCostTest
     [InlineData(new int[] { 4, 5, 1, 2 }, 3, 3, 7)]
     [InlineData(new int[] { 1, 2, 4, 1 }, 3, 3, 4)]
     [InlineData(new int[] { 17, 12, 10, 2, 7, 2, 11, 20, 8 }, 3, 4, 11)]
+    [InlineData(new int[] { 69, 10, 63, 24, 1, 71, 55, 46, 4, 61, 78, 21, 85, 52, 83, 77, 42, 21, 73, 2, 80, 99, 98, 89, 55, 94, 63, 50, 43, 62, 14 }, 21, 31, 829)]
     [MemberData(nameof(GetData))]
     public void TotalCost(int[] costs, int k, int ca, long expected)
     {
-        var actual = TotalCostClass.TotalCost(costs, k, ca);
+        var actual = _2462_TotalCost.TotalCost(costs, k, ca);
         Assert.Equal(expected, actual);
     }
 

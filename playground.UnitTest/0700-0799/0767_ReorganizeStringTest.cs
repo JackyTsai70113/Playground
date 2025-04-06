@@ -1,18 +1,18 @@
-using playground.PriorityQueues;
+using playground._0700_0799;
 
-namespace playground.UnitTest.PriorityQueue;
+namespace playground.UnitTest._0700_0799;
 
-public class ReorganizeStringTest
+public class _0767_ReorganizeStringTest
 {
     [Theory]
     [InlineData("aab", "aba")]
     [InlineData("aaab", "")]
     [InlineData("eqmeyggvp", "egegvqpmy")]
     [InlineData("aabbcc", "acbcba")]
-    [InlineData("kkkkzrkatkwpkkkktrq", "ktkrktkrkakwkqkpkzk")]
+    [InlineData("kkkkzrkatkwpkkkktrq", "ktkrkzktkrkwkqkpkak")]
     public void ReorganizeString(string s, string expected)
     {
-        var actual = ReorganizeStringClass.ReorganizeString(s);
+        var actual = _0767_ReorganizeString.ReorganizeString(s);
         Assert.Equal(expected, actual);
     }
 }
