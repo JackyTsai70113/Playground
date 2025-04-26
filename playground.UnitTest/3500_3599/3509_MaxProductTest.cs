@@ -4,7 +4,6 @@ namespace playground.UnitTest._3500_3599;
 
 public class _3509_MaxProductTest
 {
-
     [Theory]
     [InlineData(new int[] { 1, 2, 3 }, 2, 10, 6)]
     [InlineData(new int[] { 0, 2, 3 }, -5, 12, -1)]

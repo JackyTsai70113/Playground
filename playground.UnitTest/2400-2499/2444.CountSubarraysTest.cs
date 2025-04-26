@@ -8,7 +8,7 @@ public class CountSubarraysTest2444
     [InlineData(new int[] { 1, 1, 1, 1 }, 1, 1, 10)]
     public void CountSubarrays(int[] nums, int minK, int maxK, long expected)
     {
-        var actual = CountSubarrays2444.CountSubarrays(nums, minK, maxK);
+        var actual = _2444_CountSubarrays.CountSubarrays(nums, minK, maxK);
         Assert.Equal(expected, actual);
     }
 }

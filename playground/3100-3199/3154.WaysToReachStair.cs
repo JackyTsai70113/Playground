@@ -8,7 +8,7 @@ public class WaysToReachStair3154
     public static int WaysToReachStair(int k)
     {
         int n = 32;
-        var comb = MathHelper.GetComb(n);
+        var comb = MathHelper.GetCombination(n);
         k--;
         int res = 0;
         for (int i = 0; i < n; i++)

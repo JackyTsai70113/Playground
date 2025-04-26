@@ -1,10 +1,7 @@
 namespace playground;
 
-public class CountSubarrays2444
+public class _2444_CountSubarrays
 {
-    /// <summary>
-    /// https://leetcode.com/problems/count-subarrays-with-fixed-bounds
-    /// </summary>
     public static long CountSubarrays(int[] nums, int minK, int maxK)
     {
         int imin = -1, imax = -1;
