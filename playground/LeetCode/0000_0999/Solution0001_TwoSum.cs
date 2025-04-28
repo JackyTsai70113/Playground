@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._0000_0999;
 
-public class TwoSum0001
+public class Solution0001_TwoSum
 {
-    /// <summary>
-    /// https://leetcode.com/problems/two-sum
-    /// </summary>
     public static int[] TwoSum(int[] nums, int target)
     {
         var d = new Dictionary<int, int>();
@@ -19,5 +16,5 @@ public class TwoSum0001
             d[nums[i]] = i;
         }
         return res;
-    }
+    }   
 }

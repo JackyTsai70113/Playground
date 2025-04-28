@@ -1,5 +1,3 @@
-using System;
-
 namespace playground._1000_1099;
 
 public class _1004_LongestOnes

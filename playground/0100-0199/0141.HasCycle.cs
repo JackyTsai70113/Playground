@@ -1,3 +1,5 @@
+using playground.Notes.DataStructure;
+
 namespace playground;
 
 public class HasCycle0141

@@ -1,4 +1,3 @@
-using System;
 using playground._1000_1099;
 
 namespace playground.UnitTest._1000_1099;

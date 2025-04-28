@@ -1,6 +1,6 @@
 namespace playground;
 
-public class CarPooling1094
+public class _1094_CarPooling
 {
     public static bool CarPooling(int[][] trips, int capacity)
     {

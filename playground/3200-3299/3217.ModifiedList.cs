@@ -1,3 +1,5 @@
+using playground.Notes.DataStructure;
+
 namespace playground;
 
 public class ModifiedList3217

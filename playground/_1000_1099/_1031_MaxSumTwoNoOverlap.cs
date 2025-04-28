@@ -1,4 +1,4 @@
-namespace playground_1000_1099;
+namespace playground._1000_1099;
 
 public class _1031_MaxSumTwoNoOverlap
 {

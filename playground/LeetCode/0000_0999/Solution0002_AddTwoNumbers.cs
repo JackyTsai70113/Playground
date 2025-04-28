@@ -1,10 +1,9 @@
-namespace playground;
+using playground.Notes.DataStructure;
 
-public class AddTwoNumbers0002
+namespace playground.LeetCode._0000_0999;
+
+public class Solution0002_AddTwoNumbers
 {
-    /// <summary>
-    /// https://leetcode.com/problems/add-two-numbers
-    /// </summary>
     public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
     {
         int carry = 0;

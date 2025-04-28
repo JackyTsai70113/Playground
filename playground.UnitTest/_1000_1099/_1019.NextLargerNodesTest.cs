@@ -7,7 +7,7 @@ public class NextLargerNodesTest1019
     [InlineData("[2,7,4,3,5]", new int[] { 7, 0, 5, 5, 0 })]
     public void NextLargerNodes(string head, int[] expected)
     {
-        var actual = NextLargerNodes1019.NextLargerNodes(head.ToListNode());
+        var actual = _1019_NextLargerNodes.NextLargerNodes(head.ToListNode());
         Assert.Equal(expected, actual);
     }
 }

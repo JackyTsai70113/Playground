@@ -1,6 +1,8 @@
+using playground.Notes.DataStructure;
+
 namespace playground;
 
-public class NextLargerNodes1019
+public class _1019_NextLargerNodes
 {
     public static int[] NextLargerNodes(ListNode head)
     {

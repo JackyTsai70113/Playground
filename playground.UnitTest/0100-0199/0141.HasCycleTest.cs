@@ -1,3 +1,5 @@
+using playground.Notes.DataStructure;
+
 namespace playground.UnitTest;
 
 public class HasCycleTest0141
