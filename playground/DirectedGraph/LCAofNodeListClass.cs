@@ -1,6 +1,6 @@
 namespace playground.DirectedGraph;
 
-public class LCAofNaryNodesClass
+public class LCAofNodeListClass
 {
     public static List<int> LCAofNaryNodes(NaryTreeNode root, List<int> nodes)
     {

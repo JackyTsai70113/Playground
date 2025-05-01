@@ -2,7 +2,7 @@ using playground.BitManipulation;
 
 namespace playground.UnitTest.BitManipulation;
 
-public class FindKOrTest
+public class FindKOrClassTest
 {
     [Theory]
     [InlineData(new int[] { 7, 12, 9, 8, 9, 15 }, 4, 9)]

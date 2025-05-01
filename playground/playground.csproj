@@ -8,4 +8,9 @@
     <EmitCompilerGeneratedFiles>false</EmitCompilerGeneratedFiles>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="LeetCode/Algorithms/" />
+    <Folder Include="Notes/DataStructure/" />
+  </ItemGroup>
+
 </Project>

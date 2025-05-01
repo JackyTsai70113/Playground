@@ -1,4 +1,4 @@
-using playground.Notes.DataStructure;
+using playground.LeetCode.DataStructures;
 
 namespace playground.UnitTest.Utils;
 

@@ -89,7 +89,7 @@ public class LCAofNaryNodesTest
     [InlineData(new int[] { 1, 2, 3, 4, 5, 6 }, new int[] { 1 })]
     public void LCAofNaryNodes(int[] nodes, int[] expected)
     {
-        var actual = LCAofNaryNodesClass.LCAofNaryNodes(TestDataRoot, nodes.ToList());
+        var actual = LCAofNodeListClass.LCAofNaryNodes(TestDataRoot, nodes.ToList());
         Assert.Equal(expected.ToList(), actual);
     }
 
@@ -97,7 +97,7 @@ public class LCAofNaryNodesTest
     [InlineData(new int[] { }, new int[] { })]
     public void LCAofNaryNodes2(int[] nodes, int[] expected)
     {
-        var actual = LCAofNaryNodesClass.LCAofNaryNodes(null, nodes.ToList());
+        var actual = LCAofNodeListClass.LCAofNaryNodes(null, nodes.ToList());
         Assert.Equal(expected.ToList(), actual);
     }
 }
