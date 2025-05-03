@@ -20,7 +20,8 @@ public class _2576_MaxNumOfMarkedIndices
                 else
                     l = m + 1;
             }
-            if(l<n){
+            if (l < n)
+            {
                 res += 2;
             }
             j = l + 1;

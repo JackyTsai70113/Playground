@@ -15,7 +15,7 @@ public class _1605_RestoreMatrix
             res[i] = new int[n];
             while (j < n)
             {
-                if(rowSum[i] == 0) break;
+                if (rowSum[i] == 0) break;
                 res[i][j] = Math.Min(rowSum[i], colSum[j]);
                 rowSum[i] -= res[i][j];
                 colSum[j] -= res[i][j];

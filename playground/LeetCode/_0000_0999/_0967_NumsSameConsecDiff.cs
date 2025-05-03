@@ -35,8 +35,8 @@ public class _0967_NumsSameConsecDiff
             List<int> cur = new();
             foreach (var x in res)
             {
-                if (x % 10 - k >=0) cur.Add(x * 10 + x % 10 - k);
-                if (k != 0 && x % 10 + k <10) cur.Add(x * 10 + x % 10 + k);
+                if (x % 10 - k >= 0) cur.Add(x * 10 + x % 10 - k);
+                if (k != 0 && x % 10 + k < 10) cur.Add(x * 10 + x % 10 + k);
             }
             res = cur;
         }

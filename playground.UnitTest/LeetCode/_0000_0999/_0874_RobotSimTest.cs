@@ -1,6 +1,6 @@
 using playground.LeetCode._0000_0999;
 
-﻿namespace playground.UnitTest;
+namespace playground.UnitTest.LeetCode._0000_0999;
 
 public class _0874_RobotSimTest
 {

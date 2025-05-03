@@ -5,7 +5,8 @@ public class _3121_NumberOfSpecialChars
     /// <summary>
     /// https://leetcode.com/problems/count-the-number-of-special-characters-ii
     /// </summary>
-    public static int NumberOfSpecialChars(string word) {
+    public static int NumberOfSpecialChars(string word)
+    {
         var valid = new int[26];
         var lower = new bool[26];
         var upper = new bool[26];
@@ -24,7 +25,8 @@ public class _3121_NumberOfSpecialChars
             {
                 if (lower[c - 'A'])
                 {
-                    if(valid[c-'A']==0){
+                    if (valid[c - 'A'] == 0)
+                    {
                         valid[c - 'A'] = 1;
                     }
                 }

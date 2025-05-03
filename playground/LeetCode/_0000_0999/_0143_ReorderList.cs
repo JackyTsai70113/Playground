@@ -4,39 +4,39 @@ namespace playground.LeetCode._0000_0999;
 
 public class _0143_ReorderList
 {
-  /// <summary>
-  /// https://leetcode.com/problems/reorder-list
-  /// </summary>
-  public static void ReorderList(ListNode head)
-  {
-    ListNode slow = head, fast = head;
-    while (fast.next != null && fast.next.next != null)
+    /// <summary>
+    /// https://leetcode.com/problems/reorder-list
+    /// </summary>
+    public static void ReorderList(ListNode head)
     {
-      slow = slow.next;
-      fast = fast.next.next;
+        ListNode slow = head, fast = head;
+        while (fast.next != null && fast.next.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        var temp = slow.next;
+        slow.next = null;
+        slow = temp;
+        ListNode reversed = null;
+        while (slow != null)
+        {
+            var slowNext = slow.next;
+            slow.next = reversed;
+            reversed = slow;
+            slow = slowNext;
+        }
+        slow = head;
+        while (reversed != null)
+        {
+            var slowNext = slow.next;
+            var reversedNext = reversed.next;
+            reversed.next = slowNext;
+            slow.next = reversed;
+            reversed = reversedNext;
+            slow = slowNext;
+        }
     }
-    var temp = slow.next;
-    slow.next = null;
-    slow = temp;
-    ListNode reversed = null;
-    while (slow != null)
-    {
-      var slowNext = slow.next;
-      slow.next = reversed;
-      reversed = slow;
-      slow = slowNext;
-    }
-    slow = head;
-    while (reversed != null)
-    {
-      var slowNext = slow.next;
-      var reversedNext = reversed.next;
-      reversed.next = slowNext;
-      slow.next = reversed;
-      reversed = reversedNext;
-      slow = slowNext;
-    }
-  }
 }
 /*
 - while (fast != null && fast.next != null)

@@ -6,8 +6,8 @@ public class _0528_PickIndexTest
 {
     [Theory]
     [InlineData(new string[] { "Solution", "pickIndex" }, "[[1],[]]", new string[] { null, "[0]" })]
-    [InlineData(new string[] { "Solution", "pickIndex", "pickIndex", "pickIndex", "pickIndex" }, "[[1,100000],[],[],[],[]]", new string[] { null, "[0,1]", "[0,1]", "[0,1]" , "[0,1]" })]
-    [InlineData(new string[] { "Solution", "pickIndex", "pickIndex", "pickIndex", "pickIndex" }, "[[100000,1],[],[],[],[]]", new string[] { null, "[0,1]", "[0,1]", "[0,1]" , "[0,1]" })]
+    [InlineData(new string[] { "Solution", "pickIndex", "pickIndex", "pickIndex", "pickIndex" }, "[[1,100000],[],[],[],[]]", new string[] { null, "[0,1]", "[0,1]", "[0,1]", "[0,1]" })]
+    [InlineData(new string[] { "Solution", "pickIndex", "pickIndex", "pickIndex", "pickIndex" }, "[[100000,1],[],[],[],[]]", new string[] { null, "[0,1]", "[0,1]", "[0,1]", "[0,1]" })]
     [InlineData(new string[] { "Solution", "pickIndex", "pickIndex", "pickIndex", "pickIndex", "pickIndex" }, "[[1,3],[],[],[],[],[]]", new string[] { null, "[0,1]", "[0,1]", "[0,1]", "[0,1]", "[0,1]" })]
     public void PickIndex(string[] functions, string valStr, string[] expected)
     {

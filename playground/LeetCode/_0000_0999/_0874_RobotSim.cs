@@ -1,4 +1,4 @@
-﻿namespace playground;
+﻿namespace playground.LeetCode._0000_0999;
 
 public class _0874_RobotSim
 {
@@ -26,7 +26,7 @@ public class _0874_RobotSim
                     if (rows.ContainsKey(x))
                     {
                         index = leftIndex(rows[x], y);
-                        if (index < rows[x].Count && rows[x][index] <= y+com)
+                        if (index < rows[x].Count && rows[x][index] <= y + com)
                         {
                             yy = rows[x][index] - 1;
                         }

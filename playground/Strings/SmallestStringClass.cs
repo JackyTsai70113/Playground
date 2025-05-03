@@ -9,15 +9,20 @@ public class SmallestStringClass
     {
         var chs = s.ToArray();
         bool changed = false;
-        for (int i = 0; i < s.Length; ++i){
-            if(chs[i] > 'a'){
+        for (int i = 0; i < s.Length; ++i)
+        {
+            if (chs[i] > 'a')
+            {
                 chs[i] = (char)(chs[i] - 1);
                 changed = true;
-            } else if(changed){
+            }
+            else if (changed)
+            {
                 break;
             }
         }
-        if(!changed){
+        if (!changed)
+        {
             chs[^1] = 'z';
         }
         return new string(chs);

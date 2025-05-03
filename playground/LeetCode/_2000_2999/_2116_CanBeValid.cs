@@ -7,7 +7,7 @@ public class _2116_CanBeValid
     /// </summary>
     public static bool CanBeValid(string s, string locked)
     {
-        if(s.Length % 2 != 0) return false;
+        if (s.Length % 2 != 0) return false;
         int max = 0, min = 0;
         for (int i = 0; i < s.Length; i++)
         {

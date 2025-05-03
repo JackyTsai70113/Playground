@@ -19,7 +19,8 @@ public class _0350_Intersect
         var res = new List<int>();
         foreach (var k in d1.Keys)
         {
-            if(d2.ContainsKey(k)){
+            if (d2.ContainsKey(k))
+            {
                 var count = Math.Min(d1[k], d2[k]);
                 res.AddRange(Enumerable.Repeat(k, count));
             }

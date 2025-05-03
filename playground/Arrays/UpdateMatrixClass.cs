@@ -46,7 +46,7 @@ public class UpdateMatrixClass
                     {
                         seen[x, y] = true;
                         q.Enqueue((x, y));
-                    };
+                    }
                 }
             }
             dist++;

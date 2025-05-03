@@ -20,14 +20,14 @@ public class _2747_CountServers
             while (r < m && logs[r][1] <= q[0])
             {
                 d[logs[r][0]] = 1 + (d.ContainsKey(logs[r][0]) ? d[logs[r][0]] : 0);
-                if(d[logs[r][0]] == 1)
+                if (d[logs[r][0]] == 1)
                     count++;
                 r++;
             }
             while (logs[l][1] < q[0] - x)
             {
                 d[logs[l][0]]--;
-                if(d[logs[l][0]] == 0)
+                if (d[logs[l][0]] == 0)
                     count--;
                 l++;
             }

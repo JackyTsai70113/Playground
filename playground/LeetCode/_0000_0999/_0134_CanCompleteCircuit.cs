@@ -11,7 +11,7 @@ public class _0134_CanCompleteCircuit
         int sum = gas[start] - cost[start];
         while (start > end)
         {
-            if (sum > 0 )
+            if (sum > 0)
             {
                 sum += gas[end] - cost[end];
                 end++;

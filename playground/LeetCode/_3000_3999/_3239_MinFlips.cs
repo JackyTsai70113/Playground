@@ -2,7 +2,8 @@ namespace playground;
 
 public class _3239_MinFlips
 {
-    public static int MinFlips(int[][] A) {
+    public static int MinFlips(int[][] A)
+    {
         int m = A.Length, n = A[0].Length;
         int row = 0, col = 0;
         for (int i = 0; i < m; i++)

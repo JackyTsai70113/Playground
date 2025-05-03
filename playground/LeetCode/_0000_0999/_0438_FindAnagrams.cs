@@ -1,4 +1,4 @@
-﻿namespace playground._0400_0499;
+﻿namespace playground.LeetCode._0000_0999;
 
 public class _0438_FindAnagrams
 {

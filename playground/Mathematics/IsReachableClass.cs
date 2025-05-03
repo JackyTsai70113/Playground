@@ -7,7 +7,8 @@ public class IsReachableClass
     /// <summary>
     /// https://leetcode.com/problems/check-if-point-is-reachable
     /// </summary>
-    public static bool IsReachable(int x, int y) {
+    public static bool IsReachable(int x, int y)
+    {
         var gcd = BigInteger.GreatestCommonDivisor(x, y);
         while (gcd % 2 == 0)
             gcd /= 2;

@@ -1,4 +1,4 @@
-﻿namespace playground;
+﻿namespace playground.LeetCode._0000_0999;
 
 public class _0567_CheckInclusion
 {

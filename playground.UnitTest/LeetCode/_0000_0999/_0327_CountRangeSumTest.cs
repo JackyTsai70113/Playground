@@ -11,7 +11,7 @@ public class _0327_CountRangeSumTest
     [InlineData(new int[] { 0, 0 }, 0, 0, 3)]
     public void CountRangeSum(int[] nums, int lower, int upper, int expected)
     {
-        var actual =  _0327_CountRangeSum.CountRangeSum(nums, lower, upper);
+        var actual = _0327_CountRangeSum.CountRangeSum(nums, lower, upper);
         Assert.Equal(expected, actual);
     }
 }

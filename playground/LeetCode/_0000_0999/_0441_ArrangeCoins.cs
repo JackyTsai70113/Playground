@@ -7,7 +7,7 @@ public class _0441_ArrangeCoins
     /// </summary>
     public static int ArrangeCoins(int n)
     {
-        long l = 1, r = int.MaxValue,nn = n;
+        long l = 1, r = int.MaxValue, nn = n;
         while (l < r)
         {
             long m = l + (r - l + 1) / 2;

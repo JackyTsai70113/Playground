@@ -16,7 +16,6 @@ public class _1040_NumMovesStonesIITest
     [InlineData(new int[] { 3, 4, 5, 6, 7 }, new int[] { 0, 0 })]
     public void NumMovesStonesII_Test(int[] A, int[] expected)
     {
-        var solution = new _1040_NumMovesStonesII();
         var actual = _1040_NumMovesStonesII.NumMovesStonesII(A);
         Assert.Equal(expected, actual);
     }
