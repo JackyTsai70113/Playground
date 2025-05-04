@@ -2,116 +2,98 @@
 
 public class _0874_RobotSim
 {
-    public static int RobotSim(int[] commands, int[][] obstacles)
+    readonly Dictionary<int, SortedSet<int>> verticalObstacles = new();   // x -> set of y
+    readonly Dictionary<int, SortedSet<int>> horizontalObstacles = new(); // y -> set of x
+    readonly int[] dx = new int[] { 0, 1, 0, -1 };
+    readonly int[] dy = new int[] { 1, 0, -1, 0 };
+
+    public int RobotSim(int[] commands, int[][] obstacles)
     {
-        Dictionary<int, List<int>> rows = new(), cols = new();
         foreach (var ob in obstacles)
         {
-            AddToDict(rows, ob[0], ob[1]);
-            AddToDict(cols, ob[1], ob[0]);
+            AddObstacle(verticalObstacles, ob[0], ob[1]);    // x -> y
+            AddObstacle(horizontalObstacles, ob[1], ob[0]);  // y -> x
         }
-        int x = 0, y = 0, xx, yy;
-        int dirIndex = 0, max = 0, index;
-        foreach (var com in commands)
+
+        int x = 0, y = 0, dir = 0, max = 0;
+
+        foreach (var cmd in commands)
         {
-            if (com == -1)
-                dirIndex = (dirIndex + 1) % 4;
-            else if (com == -2)
-                dirIndex = (dirIndex + 3) % 4;
-            else
-            {
-                if (dirIndex == 0)
-                {
-                    yy = y + com;
-                    if (rows.ContainsKey(x))
-                    {
-                        index = leftIndex(rows[x], y);
-                        if (index < rows[x].Count && rows[x][index] <= y + com)
-                        {
-                            yy = rows[x][index] - 1;
-                        }
-                    }
-                    y = yy;
-                }
-                else if (dirIndex == 1)
-                {
-                    xx = x + com;
-                    if (cols.ContainsKey(y))
-                    {
-                        index = leftIndex(cols[y], x);
-                        if (index < cols[y].Count && cols[y][index] <= x + com)
-                        {
-                            xx = cols[y][index] - 1;
-                        }
-                    }
-                    x = xx;
-                }
-                else if (dirIndex == 2)
-                {
-                    yy = y - com;
-                    if (rows.ContainsKey(x))
-                    {
-                        index = rightIndex(rows[x], y);
-                        if (index >= 0 && rows[x][index] >= y - com)
-                        {
-                            yy = rows[x][index] + 1;
-                        }
-                    }
-                    y = yy;
-                }
-                else
-                {
-                    xx = x - com;
-                    if (cols.ContainsKey(y))
-                    {
-                        index = rightIndex(cols[y], x);
-                        if (index >= 0 && cols[y][index] >= x - com)
-                        {
-                            xx = cols[y][index] + 1;
-                        }
-                    }
-                    x = xx;
-                }
-                max = Math.Max(max, x * x + y * y);
-            }
+            if (cmd == -1) dir = (dir + 1) % 4;
+            else if (cmd == -2) dir = (dir + 3) % 4;
+            else Move(ref x, ref y, dir, cmd);
+            max = Math.Max(max, x * x + y * y);
         }
+
         return max;
     }
 
-    public static void AddToDict(Dictionary<int, List<int>> dict, int x, int y)
+    void Move(ref int x, ref int y, int dir, int steps)
     {
-        if (!dict.ContainsKey(x))
-            dict[x] = new();
-        int index = leftIndex(dict[x], y);
-        if (index < dict[x].Count)
-            dict[x].Insert(index, y);
+        if (dx[dir] == 0)
+            y = MoveVertical(x, y, dy[dir], steps);
         else
-            dict[x].Add(y);
+            x = MoveHorizontal(y, x, dx[dir], steps);
     }
-    public static int leftIndex(List<int> nums, int target)
+
+    int MoveVertical(int x, int y, int dy, int steps)
     {
-        int l = 0, r = nums.Count;
-        while (l < r)
+        int targetY = y + dy * steps;
+
+        if (!verticalObstacles.TryGetValue(x, out var ySet))
+            return targetY;
+
+        if (dy > 0) // up
         {
-            int m = l + (r - l) / 2;
-            if (nums[m] > target)
-                r = m;
-            else
-                l = m + 1;
+            foreach (var oy in ySet)
+            {
+                if (oy > y && oy <= targetY)
+                    return oy - 1;
+            }
         }
-        return l;
+        else // down
+        {
+            foreach (var oy in ySet.Reverse())
+            {
+                if (oy < y && oy >= targetY)
+                    return oy + 1;
+            }
+        }
+
+        return targetY;
     }
-    public static int rightIndex(List<int> nums, int target)
+
+    int MoveHorizontal(int y, int x, int dx, int steps)
     {
-        int l = -1, r = nums.Count - 1;
-        while (l < r)
+        int targetX = x + dx * steps;
+
+        if (!horizontalObstacles.TryGetValue(y, out var xSet))
+            return targetX;
+
+        if (dx > 0) // right
         {
-            int m = l + (r - l + 1) / 2;
-            if (nums[m] < target)
-                l = m;
-            else
-                r = m - 1;
+            foreach (var ox in xSet)
+            {
+                if (ox > x && ox <= targetX)
+                    return ox - 1;
+            }
         }
-        return l;
+        else // left
+        {
+            foreach (var ox in xSet.Reverse())
+            {
+                if (ox < x && ox >= targetX)
+                    return ox + 1;
+            }
+        }
+
+        return targetX;
+    }
+
+    static void AddObstacle(Dictionary<int, SortedSet<int>> dict, int key, int val)
+    {
+        if (!dict.ContainsKey(key))
+            dict[key] = new();
+        dict[key].Add(val);
     }
 }

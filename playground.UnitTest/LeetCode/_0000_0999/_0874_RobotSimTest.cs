@@ -23,7 +23,7 @@ public class _0874_RobotSimTest
     [InlineData(new int[] { 7, -2, -2, 7, 5 }, "[[-3,2],[-2,1],[0,1],[-2,4],[-1,0],[-2,-3],[0,-3],[4,4],[-3,3],[2,2]]", 4)]
     public void RobotSim(int[] commands, string obstacles, int expected)
     {
-        var actual = _0874_RobotSim.RobotSim(commands, obstacles.To2dArr());
+        var actual = new _0874_RobotSim().RobotSim(commands, obstacles.To2dArr());
         Assert.Equal(expected, actual);
     }
 }

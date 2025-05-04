@@ -1,6 +1,6 @@
-using playground._3500_3599;
+using playground.LeetCode._3000_3999;
 
-namespace playground.UnitTest._3500_3599;
+namespace playground.UnitTest.LeetCode._3000_3999;
 
 public class _3533_ConcatenatedDivisibilityTest
 {

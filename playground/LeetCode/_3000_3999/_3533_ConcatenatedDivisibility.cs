@@ -1,4 +1,4 @@
-namespace playground._3500_3599;
+namespace playground.LeetCode._3000_3999;
 
 public class _3533_ConcatenatedDivisibility
 {
@@ -14,7 +14,7 @@ public class _3533_ConcatenatedDivisibility
         int n = nums.Length;
         this.n = n;
         this.k = k;
-        this.total = (1 << n) - 1;
+        total = (1 << n) - 1;
         this.nums = nums;
 
         int[] multiplicationWithLen = new int[n];
