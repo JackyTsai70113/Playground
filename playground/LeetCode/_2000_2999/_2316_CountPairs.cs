@@ -1,6 +1,6 @@
 namespace playground.LeetCode._2000_2999;
 
-public class c
+public class _2316_CountPairs
 {
     public static long CountPairs(int n, int[][] edges)
     {
