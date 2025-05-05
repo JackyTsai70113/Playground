@@ -1,10 +1,7 @@
 namespace playground.LeetCode._2000_2999;
 
-public class _2316_CountPairs
+public class c
 {
-    /// <summary>
-    /// https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph
-    /// </summary>
     public static long CountPairs(int n, int[][] edges)
     {
         var g = new List<int>[n];

@@ -2,9 +2,6 @@ namespace playground.LeetCode._2000_2999;
 
 public class _2302_CountSubarrays
 {
-    /// <summary>
-    /// https://leetcode.com/problems/count-subarrays-with-score-less-than-k
-    /// </summary>
     public static long CountSubarrays(int[] nums, long k)
     {
         long res = 0, sum = 0;
