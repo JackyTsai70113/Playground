@@ -2,9 +2,6 @@ namespace playground.LeetCode._0000_0999;
 
 public class _0053_MaxSubArray
 {
-    /// <summary>
-    /// https://leetcode.com/problems/maximum-subarray
-    /// </summary>
     public static int MaxSubArray(int[] nums)
     {
         int sum = 0, res = int.MinValue;
@@ -15,14 +12,17 @@ public class _0053_MaxSubArray
         }
         return res;
     }
+
+    public static int MaxSubArray2(int[] nums)
+    {
+        var dp = new int[nums.Length];
+        dp[0] = nums[0];
+        int max = nums[0];
+        for (int i = 1; i < nums.Length; i++)
+        {
+            dp[i] = Math.Max(dp[i - 1] + nums[i], nums[i]);
+            max = Math.Max(max, dp[i]);
+        }
+        return max;
+    }
 }
-
-// 55 15 35
-
-// BAD LANDS
-// My Broken Mariko
-// 信用詐欺師
-// 垃圾頭
-// 《做工的人》電影版（Workers）
-// 聽我的電波吧
-// 跳槽的魔王大人

@@ -34,14 +34,14 @@
 2. Find Minimum Window
 
     ```csharp
-    public static int MaximumWindow(int[] nums)
+    public static int MaximumWindow(int[] A)
     {
         bool Valid()
         {
             return false;
         }
         int min = int.MaxValue;
-        for (int l = 0, r = 0; r < nums.Length; r++)
+        for (int l = 0, r = 0; r < A.Length; r++)
         {
             // update state by A[r]
             while (l <= r && Valid())
@@ -58,19 +58,19 @@
 3. At Most to Equal
 
     ```csharp
-    public static int NeedEqual(int[] nums, int k)
+    public static int NeedEqual(int[] A, int k)
     {
-        return AtMost(nums, k) - AtMost(nums, k - 1);
+        return AtMost(A, k) - AtMost(A, k - 1);
     }
 
-    private static int AtMost(int[] nums, int k)
+    private static int AtMost(int[] A, int k)
     {
         bool Valid()
         {
             return false;
         }
         int res = 0;
-        for (int l = 0, r = 0; r < nums.Length; r++)
+        for (int l = 0, r = 0; r < A.Length; r++)
         {
             // update state by A[r]
             while (l <= r && !Valid())
@@ -87,19 +87,19 @@
 4. At Least to Equal
 
     ```csharp
-    public static int NeedEqual(int[] nums, int k)
+    public static int NeedEqual(int[] A, int k)
     {
-        return AtLeast(nums, k) - AtLeast(nums, k + 1);
+        return AtLeast(A, k) - AtLeast(A, k + 1);
     }
 
-    private static int AtLeast(int[] nums, int k)
+    private static int AtLeast(int[] A, int k)
     {
         bool Valid()
         {
             return false;
         }
         int res = 0;
-        for (int l = 0, r = 0; r < nums.Length; r++)
+        for (int l = 0, r = 0; r < A.Length; r++)
         {
             // update state by A[r]
             while (l <= r && Valid())
@@ -116,14 +116,14 @@
 5. Fixed-length Sliding Window
 
     ```csharp
-    private static int FixedLength(int[] nums, int k)
+    private static int FixedLength(int[] A, int k)
     {
         bool Valid()
         {
             return false;
         }
         int res = 0;
-        for (int l = 0, r = 0; r < nums.Length; r++)
+        for (int l = 0, r = 0; r < A.Length; r++)
         {
             // update state by A[r]
             if (r >= k - 1)
@@ -140,5 +140,32 @@
         return res;
     }
     ```
+
+6. 
+
+    ```csharp
+    private static int FixedLength(int[] A, int k)
+    {
+        bool Valid()
+        {
+            return false;
+        }
+        int res = 0;
+        for (int l = 0, r = 0; r < A.Length; r++)
+        {
+            // update state by A[r]
+            if (r >= k - 1)
+            {
+                if(r>=k){
+                    // update state by A[l]
+                    l++;
+                }
+                if(Valid()){
+                    res++;
+                }
+            }
+        }
+        return res;
+    }
 
 - ref: <https://liuzhenglaichn.gitbook.io/algorithm/array/sliding-window>

@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Folder Include="LeetCode/Algorithms/" />
-    <Folder Include="Notes/DataStructure/" />
+    <Folder Include="LeetCode/Algorithms/DynamicPrograming/" />
   </ItemGroup>
 
 </Project>

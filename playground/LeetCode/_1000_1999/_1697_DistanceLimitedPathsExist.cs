@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1697_DistanceLimitedPathsExist
 {
-    /// <summary>
-    /// https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths
-    /// </summary>
     public static bool[] DistanceLimitedPathsExist(int n, int[][] edgeList, int[][] queries)
     {
         edgeList = edgeList

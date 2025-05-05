@@ -1,36 +1,30 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1235_JobScheduling
 {
-    /// <summary>
-    /// https://leetcode.com/problems/maximum-profit-in-job-scheduling
-    /// </summary>
     public static int JobScheduling(int[] startTime, int[] endTime, int[] profit)
     {
         var jobs = Enumerable.Range(0, startTime.Length)
             .Select(i => (start: startTime[i], end: endTime[i], p: profit[i]))
-            .OrderBy(x => x.end)
+            .OrderBy(j => j.end)
             .ToArray();
-        var dp = new List<(int end, int p)>();
-        dp.Add((0, 0));
-        foreach (var job in jobs)
+        var dp = new List<(int end, int p)> { (0, 0) };
+        foreach (var (start, end, p) in jobs)
         {
-            var (start, end, p) = job;
             int l = 0, r = dp.Count - 1;
             while (l < r)
             {
                 int m = l + (r - l + 1) / 2;
                 if (dp[m].end <= start)
-                {
                     l = m;
-                }
                 else
-                {
                     r = m - 1;
-                }
             }
-            if (dp[l].p + p > dp[^1].p)
-                dp.Add((end, dp[l].p + p));
+            int newProfit = dp[l].p + p;
+            if (newProfit > dp[^1].p)
+            {
+                dp.Add((end, newProfit));
+            }
         }
         return dp[^1].p;
     }

@@ -13,5 +13,7 @@ public class _0053_MaxSubArrayTest
     {
         var actual = _0053_MaxSubArray.MaxSubArray(A.ToArr());
         Assert.Equal(expected, actual);
+        var actual2 = _0053_MaxSubArray.MaxSubArray2(A.ToArr());
+        Assert.Equal(expected, actual2);
     }
 }
