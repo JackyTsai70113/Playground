@@ -10,7 +10,7 @@ public class _1331_ArrayRankTransformTest
     [InlineData(new int[] { 37, 12, 28, 9, 100, 56, 80, 5, 12 }, new int[] { 5, 3, 4, 2, 8, 6, 7, 1, 3 })]
     public void ArrayRankTransform(int[] arr, int[] expected)
     {
-        var actual = _1331_ArrayRankTransform_cs.ArrayRankTransform(arr);
+        var actual = _1331_ArrayRankTransform.ArrayRankTransform(arr);
         Assert.Equal(expected, actual);
     }
 }

@@ -1,6 +1,6 @@
-using playground._1900_1999;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1900_1999;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1976_CountPathsTest
 {
@@ -11,7 +11,7 @@ public class _1976_CountPathsTest
     [InlineData(5, "[[0,1,1],[1,2,4],[0,4,3],[3,2,5],[3,4,1],[3,0,5],[1,3,1]]", 2)]
     public void CountPaths(int n, string roads, int expected)
     {
-        var actual = _1976_CountPaths_cs.CountPaths(n, roads.To2dArr());
+        var actual = _1976_CountPaths.CountPaths(n, roads.To2dArr());
         Assert.Equal(expected, actual);
     }
 }

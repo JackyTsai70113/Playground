@@ -1,4 +1,4 @@
-using playground_1500_1599;
+using playground.LeetCode._1000_1999;
 
 namespace playground.UnitTest_1500_1599;
 
@@ -11,7 +11,7 @@ public class _1590_MinSubarrayTest
     [InlineData(new int[] { 1, 2, 3 }, 7, -1)]
     public void MinSubarray(int[] nums, int p, int expected)
     {
-        var actual = _1590_MinSubarray_cs.MinSubarray(nums, p);
+        var actual = _1590_MinSubarray.MinSubarray(nums, p);
         Assert.Equal(expected, actual);
     }
 }

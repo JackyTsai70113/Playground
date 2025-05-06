@@ -1,6 +1,6 @@
-namespace playground._1600_1699;
+namespace playground.LeetCode._1000_1999;
 
-public class _1631_MinimumEffortPath_cs
+public class _1631_MinimumEffortPath
 {
     public static int MinimumEffortPath(int[][] A)
     {

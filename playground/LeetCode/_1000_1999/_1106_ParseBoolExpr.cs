@@ -1,42 +1,61 @@
-namespace playground._1100_1199;
+namespace playground.LeetCode._1000_1999;
 
-public class _1106_ParseBoolExpr_cs
+public class _1106_ParseBoolExpr
 {
     public static bool ParseBoolExpr(string s)
     {
         var st = new Stack<char>();
-        for (int i = 0; i < s.Length; i++)
+
+        foreach (char c in s)
         {
-            if (s[i] == '(' || s[i] == ',')
+            if (c == ',' || c == '(')
                 continue;
-            else if (s[i] == '&' || s[i] == '|' || s[i] == '!' || s[i] == 't' || s[i] == 'f')
+
+            if (c == ')')
             {
-                st.Push(s[i]);
+                Evaluate(st);
             }
-            else // s[i] == ')'
+            else
             {
-                bool hasTrue = false;
-                bool hasFalse = false;
-                while (st.Peek() != '&' && st.Peek() != '|' && st.Peek() != '!')
-                {
-                    if (st.Pop() == 't') hasTrue = true;
-                    else hasFalse = true;
-                }
-                var op = st.Pop();
-                if (op == '!')
-                {
-                    st.Push(hasTrue ? 'f' : 't');
-                }
-                else if (op == '&')
-                {
-                    st.Push(hasFalse ? 'f' : 't');
-                }
-                else
-                { // op == '|'
-                    st.Push(hasTrue ? 't' : 'f');
-                }
+                st.Push(c);
             }
         }
-        return st.Peek() == 't' ? true : false;
+
+        return st.Peek() == 't';
+    }
+
+    /// <summary>
+    /// 進行布林運算評估，當遇到 ')' 時觸發。
+    /// </summary>
+    private static void Evaluate(Stack<char> st)
+    {
+        bool hasTrue = false;
+        bool hasFalse = false;
+
+        // 收集布林值直到遇到運算符
+        while (!IsOperator(st.Peek()))
+        {
+            char val = st.Pop();
+            if (val == 't') hasTrue = true;
+            else if (val == 'f') hasFalse = true;
+        }
+
+        char op = st.Pop(); // 運算符：&, |, !
+        char result = op switch
+        {
+            '&' => hasFalse ? 'f' : 't',
+            '|' => hasTrue ? 't' : 'f',
+            _ => hasTrue ? 'f' : 't',
+        };
+
+        st.Push(result);
+    }
+
+    /// <summary>
+    /// 判斷是否為布林運算符。
+    /// </summary>
+    private static bool IsOperator(char c)
+    {
+        return c == '&' || c == '|' || c == '!';
     }
 }

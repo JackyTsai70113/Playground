@@ -1,6 +1,6 @@
 namespace playground.LeetCode._2000_2999;
 
-public class _2894_DifferenceOfSums_cs
+public class _2894_DifferenceOfSums
 {
     public static int DifferenceOfSums(int n, int m)
     {

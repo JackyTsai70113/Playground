@@ -1,6 +1,6 @@
-using playground._1700_1799;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1700_1799;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1718_ConstructDistancedSequenceTest
 {
@@ -10,7 +10,7 @@ public class _1718_ConstructDistancedSequenceTest
     [InlineData(8, new int[] { 8, 6, 4, 2, 7, 2, 4, 6, 8, 5, 3, 7, 1, 3, 5 })]
     public void ConstructDistancedSequence(int n, int[] expected)
     {
-        var actual = _1718_ConstructDistanceSequence_cs.ConstructDistancedSequence(n);
+        var actual = _1718_ConstructDistanceSequence.ConstructDistancedSequence(n);
         Assert.Equal(expected, actual);
     }
 }

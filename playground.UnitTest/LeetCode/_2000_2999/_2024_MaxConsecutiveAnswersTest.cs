@@ -2,7 +2,7 @@ using playground.LeetCode._2000_2999;
 
 namespace playground.UnitTest.LeetCode._2000_2999;
 
-public class _2024_MaxConsecutiveAnswersTest_cs
+public class _2024_MaxConsecutiveAnswersTest
 {
     [Theory]
     [InlineData("TTFF", 2, 4)]

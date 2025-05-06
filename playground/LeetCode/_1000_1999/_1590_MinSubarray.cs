@@ -1,6 +1,6 @@
-namespace playground_1500_1599;
+namespace playground.LeetCode._1000_1999;
 
-public class _1590_MinSubarray_cs
+public class _1590_MinSubarray
 {
     public static int MinSubarray(int[] nums, int p)
     {

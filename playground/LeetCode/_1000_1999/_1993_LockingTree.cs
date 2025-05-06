@@ -1,13 +1,13 @@
-namespace playground._1900_1999;
+namespace playground.LeetCode._1000_1999;
 
-public class _1993_LockingTree_cs
+public class _1993_LockingTree
 {
-    List<int>[] graph;
-    int[] parent;
-    int[] lockedParentCount;
-    int[] lockedChildenCount;
-    int[] lockUser;
-    public _1993_LockingTree_cs(int[] parent)
+    readonly List<int>[] graph;
+    readonly int[] parent;
+    readonly int[] lockedParentCount;
+    readonly int[] lockedChildenCount;
+    readonly int[] lockUser;
+    public _1993_LockingTree(int[] parent)
     {
         int n = parent.Length;
         graph = new List<int>[n];

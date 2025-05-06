@@ -1,6 +1,6 @@
-namespace playground._1600_1699;
+namespace playground.LeetCode._1000_1999;
 
-public class _1695_MaximumUniqueSubarray_cs
+public class _1695_MaximumUniqueSubarray
 {
     public static int MaximumUniqueSubarray(int[] nums)
     {

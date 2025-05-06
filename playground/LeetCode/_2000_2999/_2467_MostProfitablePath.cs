@@ -1,6 +1,6 @@
 namespace playground.LeetCode._2000_2999;
 
-public class _2467_MostProfitablePath_cs
+public class _2467_MostProfitablePath
 {
     public static int MostProfitablePath(int[][] edges, int bob, int[] amount)
     {

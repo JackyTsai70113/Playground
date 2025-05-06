@@ -1,6 +1,6 @@
 namespace playground.LeetCode._2000_2999;
 
-public class _2461_MaximumSubarraySum_cs
+public class _2461_MaximumSubarraySum
 {
     public static long MaximumSubarraySum(int[] nums, int k)
     {

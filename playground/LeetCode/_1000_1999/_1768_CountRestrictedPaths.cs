@@ -1,6 +1,6 @@
-namespace playground._1700_1799;
+namespace playground.LeetCode._1000_1999;
 
-public class _1768_CountRestrictedPaths_cs
+public class _1768_CountRestrictedPaths
 {
     public static int CountRestrictedPaths(int n, int[][] edges)
     {

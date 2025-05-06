@@ -2,7 +2,7 @@ using playground.LeetCode._2000_2999;
 
 namespace playground.UnitTest.LeetCode._2000_2999;
 
-public class _2563_CountFairPairsTest_cs
+public class _2563_CountFairPairsTest
 {
     [Theory]
     [InlineData(new int[] { 0, 1, 7, 4, 4, 5 }, 3, 6, 6)]

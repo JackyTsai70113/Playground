@@ -1,4 +1,4 @@
-using playground._1700_1799;
+using playground.LeetCode._1000_1999;
 
 namespace playground.UnitTest._1700_1799;
 
@@ -10,7 +10,7 @@ public class _1737_MinCharactersTest
     [InlineData("a", "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", 2)]
     public void MinCharacters(string a, string b, int expected)
     {
-        var actual = _1737_MinCharacters_cs.MinCharacters(a, b);
+        var actual = _1737_MinCharacters.MinCharacters(a, b);
         Assert.Equal(expected, actual);
     }
 }

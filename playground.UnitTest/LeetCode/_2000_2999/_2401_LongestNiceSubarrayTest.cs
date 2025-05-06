@@ -2,7 +2,7 @@ using playground.LeetCode._2000_2999;
 
 namespace playground.UnitTest.LeetCode._2000_2999;
 
-public class _2401_LongestNiceSubarrayTest_cs
+public class _2401_LongestNiceSubarrayTest
 {
     [Theory]
     [InlineData(new int[] { 1, 3, 8, 48, 10 }, 3)]

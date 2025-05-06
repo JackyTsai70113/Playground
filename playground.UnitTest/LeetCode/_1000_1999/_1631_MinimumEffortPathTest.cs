@@ -1,6 +1,6 @@
-using playground._1600_1699;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1600_1699;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1631_MinimumEffortPathTest
 {
@@ -10,7 +10,7 @@ public class _1631_MinimumEffortPathTest
     [InlineData("[[1,2,1,1,1],[1,2,1,2,1],[1,2,1,2,1],[1,2,1,2,1],[1,1,1,2,1]]", 0)]
     public void MinimumEffortPath(string A, int expected)
     {
-        var actual = _1631_MinimumEffortPath_cs.MinimumEffortPath(A.To2dArr());
+        var actual = _1631_MinimumEffortPath.MinimumEffortPath(A.To2dArr());
         Assert.Equal(expected, actual);
     }
 }

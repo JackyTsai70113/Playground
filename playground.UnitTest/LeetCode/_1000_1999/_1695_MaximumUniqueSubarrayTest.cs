@@ -1,6 +1,6 @@
-using playground._1600_1699;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1600_1699;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1695_MaximumUniqueSubarrayTest
 {
@@ -9,7 +9,7 @@ public class _1695_MaximumUniqueSubarrayTest
     [InlineData(new int[] { 5, 2, 1, 2, 5, 2, 1, 2, 5 }, 8)]
     public void GetSumAbsoluteDifferences(int[] nums, int expected)
     {
-        var actual = _1695_MaximumUniqueSubarray_cs.MaximumUniqueSubarray(nums);
+        var actual = _1695_MaximumUniqueSubarray.MaximumUniqueSubarray(nums);
         Assert.Equal(expected, actual);
     }
 }

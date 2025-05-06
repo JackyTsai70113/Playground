@@ -1,6 +1,6 @@
-namespace playground._1700_1799;
+namespace playground.LeetCode._1000_1999;
 
-public class _1769_MinOperations_cs
+public class _1769_MinOperations
 {
     public static int[] MinOperations(string boxes)
     {

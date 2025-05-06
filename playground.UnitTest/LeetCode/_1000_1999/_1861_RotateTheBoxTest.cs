@@ -1,6 +1,6 @@
-using playground._1800_1899;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1800_1899;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1861_RotateTheBoxTest
 {
@@ -32,7 +32,7 @@ public class _1861_RotateTheBoxTest
         ,[""#"",""."","".""]]")]
     public void RotateTheBox(string box, string expected)
     {
-        var actual = _1861_RotateTheBox_cs.RotateTheBox(box.To2dArr<char>());
+        var actual = _1861_RotateTheBox.RotateTheBox(box.To2dArr<char>());
         Assert.Equal(expected.To2dArr<char>(), actual);
     }
 }

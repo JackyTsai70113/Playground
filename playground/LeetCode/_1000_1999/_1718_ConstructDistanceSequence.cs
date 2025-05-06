@@ -1,6 +1,6 @@
-namespace playground._1700_1799;
+namespace playground.LeetCode._1000_1999;
 
-public class _1718_ConstructDistanceSequence_cs
+public class _1718_ConstructDistanceSequence
 {
     public static int[] ConstructDistancedSequence(int n)
     {

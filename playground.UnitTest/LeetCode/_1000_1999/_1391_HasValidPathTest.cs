@@ -1,6 +1,6 @@
-using playground._1300_1399;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest_1300_1399;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1391_HasValidPathTest
 {
@@ -12,7 +12,7 @@ public class _1391_HasValidPathTest
     [InlineData("[[4,3,3],[6,5,2]]", false)]
     public void HasValidPath(string A, bool expected)
     {
-        var actual = new _1391_HasValidPath_cs().HasValidPath(A.To2dArr());
+        var actual = new _1391_HasValidPath().HasValidPath(A.To2dArr());
         Assert.Equal(expected, actual);
     }
 }

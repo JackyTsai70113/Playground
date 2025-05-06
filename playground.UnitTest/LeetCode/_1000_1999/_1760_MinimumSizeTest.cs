@@ -1,6 +1,6 @@
-using playground._1700_1799;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1700_1799;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1760_MinimumSizeTest
 {
@@ -9,7 +9,7 @@ public class _1760_MinimumSizeTest
     [InlineData(new int[] { 2, 4, 8, 2 }, 4, 2)]
     public void MinimumSize(int[] nums, int maxOperations, int expected)
     {
-        var actual = _1760_MinimumSize_cs.MinimumSize(nums, maxOperations);
+        var actual = _1760_MinimumSize.MinimumSize(nums, maxOperations);
         Assert.Equal(expected, actual);
     }
 }

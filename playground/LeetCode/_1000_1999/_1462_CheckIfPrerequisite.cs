@@ -1,6 +1,6 @@
-namespace playground._1400_1499;
+namespace playground.LeetCode._1000_1999;
 
-public class _1462_CheckIfPrerequisite_cs
+public class _1462_CheckIfPrerequisite
 {
     public static IList<bool> CheckIfPrerequisite(int n, int[][] prerequisites, int[][] queries)
     {

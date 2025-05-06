@@ -1,6 +1,6 @@
-using playground._1900_1999;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1900_1999;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1993_LockingTreeTest
 {
@@ -12,7 +12,7 @@ public class _1993_LockingTreeTest
     {
         var vals = valStr.To2dArr();
         var expected = expectedStr.ToArr<bool?>();
-        _1993_LockingTree_cs obj = new(vals[0]);
+        _1993_LockingTree obj = new(vals[0]);
         for (int i = 1; i < functions.Length; ++i)
         {
             switch (functions[i])

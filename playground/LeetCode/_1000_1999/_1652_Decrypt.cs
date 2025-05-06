@@ -1,6 +1,6 @@
-namespace playground._1600_1699;
+namespace playground.LeetCode._1000_1999;
 
-public class _1652_Decrypt_cs
+public class _1652_Decrypt
 {
     public static int[] Decrypt(int[] code, int k)
     {

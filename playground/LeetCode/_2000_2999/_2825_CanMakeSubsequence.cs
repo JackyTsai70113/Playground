@@ -1,6 +1,6 @@
 namespace playground.LeetCode._2000_2999;
 
-public class _2825_CanMakeSubsequence_cs
+public class _2825_CanMakeSubsequence
 {
     public static bool CanMakeSubsequence(string str1, string str2)
     {

@@ -1,6 +1,6 @@
-namespace playground._1400_1499;
+namespace playground.LeetCode._1000_1999;
 
-public class _1641_HasAllCodes_cs
+public class _1641_HasAllCodes
 {
     public static bool HasAllCodes(string s, int k)
     {
@@ -9,7 +9,7 @@ public class _1641_HasAllCodes_cs
         for (int r = 0; r < s.Length; r++)
         {
             // update state by A[r]
-            cur = (cur << 1) | (s[r] - '0');
+            cur = cur << 1 | s[r] - '0';
             if (r >= k - 1)
             {
                 // update state by A[l]
@@ -17,7 +17,7 @@ public class _1641_HasAllCodes_cs
                 if (exist[cur] == false)
                 {
                     count++;
-                    if (count == (1 << k))
+                    if (count == 1 << k)
                         return true;
                 }
                 exist[cur] = true;

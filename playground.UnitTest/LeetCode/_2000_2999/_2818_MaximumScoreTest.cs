@@ -2,7 +2,7 @@ using playground.LeetCode._2000_2999;
 
 namespace playground.UnitTest.LeetCode._2000_2999;
 
-public class _2818_MaximumScoreTest_cs
+public class _2818_MaximumScoreTest
 {
     [Theory]
     [InlineData(new int[] { 8, 3, 9, 3, 8 }, 2, 81)]

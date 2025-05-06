@@ -1,6 +1,6 @@
-using playground._1900_1999;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1900_1999;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1942_SmallestChairTest
 {
@@ -10,7 +10,7 @@ public class _1942_SmallestChairTest
     [InlineData("[[3,10],[1,5],[2,6]]", 0, 2)]
     public void CountPalindromicSubsequence(string times, int targetFriend, int expected)
     {
-        var actual = _1942_SmallestChair_cs.SmallestChair(times.To2dArr(), targetFriend);
+        var actual = _1942_SmallestChair.SmallestChair(times.To2dArr(), targetFriend);
         Assert.Equal(expected, actual);
     }
 }

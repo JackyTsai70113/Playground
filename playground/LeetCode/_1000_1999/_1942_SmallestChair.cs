@@ -1,6 +1,6 @@
-namespace playground._1900_1999;
+namespace playground.LeetCode._1000_1999;
 
-public class _1942_SmallestChair_cs
+public class _1942_SmallestChair
 {
     public static int SmallestChair(int[][] times, int targetFriend)
     {

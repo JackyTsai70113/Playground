@@ -1,6 +1,6 @@
-﻿namespace playground;
+﻿namespace playground.LeetCode._2000_2999;
 
-public class _2290_MinimumObstacles_cs
+public class _2290_MinimumObstacles
 {
     public static int MinimumObstacles(int[][] A)
     {

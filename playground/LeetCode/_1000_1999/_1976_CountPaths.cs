@@ -1,6 +1,6 @@
-namespace playground._1900_1999;
+namespace playground.LeetCode._1000_1999;
 
-public class _1976_CountPaths_cs
+public class _1976_CountPaths
 {
     public static int CountPaths(int n, int[][] roads)
     {

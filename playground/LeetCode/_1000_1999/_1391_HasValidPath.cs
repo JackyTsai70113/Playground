@@ -1,6 +1,6 @@
-namespace playground._1300_1399;
+namespace playground.LeetCode._1000_1999;
 
-public class _1391_HasValidPath_cs
+public class _1391_HasValidPath
 {
     readonly Dictionary<int, (int start, int end)> d = new()
     {
@@ -11,6 +11,7 @@ public class _1391_HasValidPath_cs
         [5] = (0, 2),
         [6] = (0, 1)
     };
+
     public bool HasValidPath(int[][] A)
     {
         int m = A.Length, n = A[0].Length;

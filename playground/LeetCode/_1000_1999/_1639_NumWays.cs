@@ -1,6 +1,6 @@
-namespace playground._1600_1699;
+namespace playground.LeetCode._1000_1999;
 
-public class _1639_NumWays_cs
+public class _1639_NumWays
 {
     public static int NumWays(string[] words, string target)
     {
@@ -41,7 +41,7 @@ public class _1639_NumWays_cs
                     }
                     else
                     {
-                        memo[i, j] = (memo[i - 1, j - 1] * chs[i][target[j] - 'a']) % MOD;
+                        memo[i, j] = memo[i - 1, j - 1] * chs[i][target[j] - 'a'] % MOD;
                         memo[i, j] = (memo[i, j] + memo[i - 1, j]) % MOD;
                     }
                 }

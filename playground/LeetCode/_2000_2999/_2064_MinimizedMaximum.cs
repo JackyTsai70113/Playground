@@ -1,6 +1,6 @@
 namespace playground.LeetCode._2000_2999;
 
-public class _2064_MinimizedMaximum_cs
+public class _2064_MinimizedMaximum
 {
     public static int MinimizedMaximum(int n, int[] qs)
     {

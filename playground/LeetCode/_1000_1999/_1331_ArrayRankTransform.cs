@@ -1,6 +1,6 @@
 namespace playground._1300_1399;
 
-public class _1331_ArrayRankTransform_cs
+public class _1331_ArrayRankTransform
 {
     public static int[] ArrayRankTransform(int[] arr)
     {

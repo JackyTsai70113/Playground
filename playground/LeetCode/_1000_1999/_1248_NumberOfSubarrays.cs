@@ -1,6 +1,6 @@
-﻿namespace playground;
+﻿namespace playground.LeetCode._1000_1999;
 
-public class _1248_NumberOfSubarrays_cs
+public class _1248_NumberOfSubarrays
 {
     public static int NumberOfSubarrays(int[] nums, int k)
     {

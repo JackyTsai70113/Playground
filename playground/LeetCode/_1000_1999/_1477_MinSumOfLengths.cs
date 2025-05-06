@@ -1,6 +1,6 @@
-namespace playground._1400_1499;
+namespace playground.LeetCode._1000_1999;
 
-public class _1477_MinSumOfLengths_cs
+public class _1477_MinSumOfLengths
 {
     public static int MinSumOfLengths(int[] nums, int target)
     {
@@ -18,7 +18,7 @@ public class _1477_MinSumOfLengths_cs
                 {
                     if (l > 0 && dp[l - 1] != int.MaxValue)
                     {
-                        res = Math.Min(res, dp[l - 1] + (r - l + 1));
+                        res = Math.Min(res, dp[l - 1] + r - l + 1);
                     }
                     min = Math.Min(min, r - l + 1);
                 }

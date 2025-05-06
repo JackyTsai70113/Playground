@@ -1,6 +1,6 @@
-using playground._1600_1699;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1600_1699;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1639_NumWaysTest
 {
@@ -9,7 +9,7 @@ public class _1639_NumWaysTest
     [InlineData(new string[] { "abba", "baab" }, "bab", 4)]
     public void NumWays(string[] words, string target, int expected)
     {
-        var actual = _1639_NumWays_cs.NumWays(words, target);
+        var actual = _1639_NumWays.NumWays(words, target);
         Assert.Equal(expected, actual);
     }
 }

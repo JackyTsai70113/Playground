@@ -1,6 +1,6 @@
 namespace playground.LeetCode._2000_2999;
 
-public class _2940_LeftmostBuildingQueries_cs
+public class _2940_LeftmostBuildingQueries
 {
     public static int[] LeftmostBuildingQueries(int[] heights, int[][] queries)
     {

@@ -2,7 +2,7 @@ using playground.LeetCode._2000_2999;
 
 namespace playground.UnitTest.LeetCode._2000_2999;
 
-public class _2671_FrequencyTrackerTest_cs
+public class _2671_FrequencyTrackerTest
 {
     [Theory]
     [InlineData(new string[] { "FrequencyTracker", "deleteOne", "add", "add", "hasFrequency" }, "[[], [3], [3], [3], [2]]", new object[] { null, null, null, null, true })]

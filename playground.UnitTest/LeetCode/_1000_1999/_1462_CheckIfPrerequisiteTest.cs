@@ -1,4 +1,4 @@
-using playground._1400_1499;
+using playground.LeetCode._1000_1999;
 
 namespace playground.UnitTest._1400_1499;
 
@@ -10,7 +10,7 @@ public class _1462_CheckIfPrerequisiteTest
     [InlineData(3, "[[1,2],[1,0],[2,0]]", "[[1,0],[1,2]]", new bool[] { true, true })]
     public void CheckIfPrerequisite(int numCourses, string prerequisites, string queries, IList<bool> expected)
     {
-        var actual = _1462_CheckIfPrerequisite_cs.CheckIfPrerequisite(numCourses, prerequisites.To2dArr(), queries.To2dArr());
+        var actual = _1462_CheckIfPrerequisite.CheckIfPrerequisite(numCourses, prerequisites.To2dArr(), queries.To2dArr());
         Assert.Equal(expected, actual);
     }
 }

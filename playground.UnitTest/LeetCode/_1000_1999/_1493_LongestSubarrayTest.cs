@@ -1,7 +1,6 @@
-using System;
-using playground._1400_1499;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1400_1499;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1493_LongestSubarrayTest
 {
@@ -11,7 +10,7 @@ public class _1493_LongestSubarrayTest
     [InlineData(new int[] { 1, 1, 1 }, 2)]
     public void MaximumElementAfterDecrementingAndRearranging(int[] nums, int expected)
     {
-        var actual = _1493_LongestSubarray_cs.LongestSubarray(nums);
+        var actual = _1493_LongestSubarray.LongestSubarray(nums);
         Assert.Equal(expected, actual);
     }
 }

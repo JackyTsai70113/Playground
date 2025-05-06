@@ -1,6 +1,6 @@
-namespace playground._1800_1899;
+namespace playground.LeetCode._1000_1999;
 
-public class _1838_MaxFrequency_cs
+public class _1838_MaxFrequency
 {
     public static int MaxFrequency(int[] A, int k)
     {

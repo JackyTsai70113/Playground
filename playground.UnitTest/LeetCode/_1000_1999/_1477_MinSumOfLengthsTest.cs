@@ -1,6 +1,6 @@
-using playground._1400_1499;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1400_1499;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1477_MinSumOfLengthsTest
 {
@@ -12,7 +12,7 @@ public class _1477_MinSumOfLengthsTest
     [InlineData(new int[] { 1, 1, 1, 2, 2, 2, 4, 4 }, 6, 6)]
     public void MinSumOfLengths(int[] A, int target, int expected)
     {
-        var actual = _1477_MinSumOfLengths_cs.MinSumOfLengths(A, target);
+        var actual = _1477_MinSumOfLengths.MinSumOfLengths(A, target);
         Assert.Equal(expected, actual);
     }
 }

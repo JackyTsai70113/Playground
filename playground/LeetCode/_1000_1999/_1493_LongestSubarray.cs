@@ -1,15 +1,13 @@
-using System;
+namespace playground.LeetCode._1000_1999;
 
-namespace playground._1400_1499;
-
-public class _1493_LongestSubarray_cs
+public class _1493_LongestSubarray
 {
     /// <summary>
     /// O(N)/O(1)
     /// </summary>
     public static int LongestSubarray(int[] nums)
     {
-        bool Valid(int zeroCount)
+        static bool Valid(int zeroCount)
         {
             return zeroCount <= 1;
         }

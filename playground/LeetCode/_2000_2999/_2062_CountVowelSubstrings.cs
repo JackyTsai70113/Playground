@@ -1,6 +1,6 @@
-﻿namespace playground;
+﻿namespace playground.LeetCode._2000_2999;
 
-public class _2062_CountVowelSubstrings_cs
+public class _2062_CountVowelSubstrings
 {
     public static int CountVowelSubstrings(string word)
     {

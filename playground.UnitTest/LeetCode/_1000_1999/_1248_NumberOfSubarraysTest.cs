@@ -1,4 +1,6 @@
-﻿namespace playground.UnitTest;
+﻿using playground.LeetCode._1000_1999;
+
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1248_NumberOfSubarraysTest
 {
@@ -8,7 +10,7 @@ public class _1248_NumberOfSubarraysTest
     [InlineData(new int[] { 2, 2, 2, 1, 2, 2, 1, 2, 2, 2 }, 2, 16)]
     public void SubarraysWithKDistinct(int[] nums, int k, int expected)
     {
-        var actual = _1248_NumberOfSubarrays_cs.NumberOfSubarrays(nums, k);
+        var actual = _1248_NumberOfSubarrays.NumberOfSubarrays(nums, k);
         Assert.Equal(expected, actual);
     }
 }

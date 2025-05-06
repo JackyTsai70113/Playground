@@ -1,4 +1,6 @@
-﻿namespace playground.UnitTest;
+﻿using playground.LeetCode._2000_2999;
+
+namespace playground.UnitTest.LeetCode._2000_2999;
 
 public class _2290_MinimumObstaclesTest
 {
@@ -7,7 +9,7 @@ public class _2290_MinimumObstaclesTest
     [InlineData("[[0,1,0,0,0],[0,1,0,1,0],[0,0,0,1,0]]", 0)]
     public void MinimumObstacles(string A, int expected)
     {
-        var actual = _2290_MinimumObstacles_cs.MinimumObstacles(A.To2dArr());
+        var actual = _2290_MinimumObstacles.MinimumObstacles(A.To2dArr());
         Assert.Equal(expected, expected);
     }
 }

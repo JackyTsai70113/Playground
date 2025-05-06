@@ -1,6 +1,6 @@
-using playground._1600_1699;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1652_DecryptTest
 {
@@ -10,7 +10,7 @@ public class _1652_DecryptTest
     [InlineData(new int[] { 2, 4, 9, 3 }, -2, new int[] { 12, 5, 6, 13 })]
     public void FrequencySort(int[] code, int k, int[] expected)
     {
-        var actual = _1652_Decrypt_cs.Decrypt(code, k);
+        var actual = _1652_Decrypt.Decrypt(code, k);
         Assert.Equal(expected, actual);
     }
 }

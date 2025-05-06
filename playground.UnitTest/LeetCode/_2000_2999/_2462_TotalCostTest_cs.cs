@@ -2,7 +2,7 @@ using playground.LeetCode._2000_2999;
 
 namespace playground.UnitTest.LeetCode._2000_2999;
 
-public class _2462_TotalCostTest_cs
+public class _2462_TotalCostTest
 {
     [Theory]
     [InlineData(new int[] { 1, 2, 4, 5 }, 3, 2, 7)]

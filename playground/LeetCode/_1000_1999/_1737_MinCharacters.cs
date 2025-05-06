@@ -1,6 +1,6 @@
-namespace playground._1700_1799;
+namespace playground.LeetCode._1000_1999;
 
-public class _1737_MinCharacters_cs
+public class _1737_MinCharacters
 {
     public static int MinCharacters(string a, string b)
     {
