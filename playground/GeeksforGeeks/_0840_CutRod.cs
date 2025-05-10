@@ -1,12 +1,10 @@
 namespace playground.GeeksforGeeks;
 
-public class DP_13_CutRod
+public class _0840_CutRod
 {
     /// <summary>
     /// https://www.geeksforgeeks.org/problems/rod-cutting0840/1
     /// </summary>
-    /// <param name="price"></param>
-    /// <returns></returns>
     public static int CutRod_TopDown(int[] price)
     {
         int n = price.Length;
@@ -19,7 +17,7 @@ public class DP_13_CutRod
             if (dp[len] != 0)
                 return dp[len];
 
-            
+
             for (int i = 1; i <= len; i++)
             {
                 dp[len] = Math.Max(dp[len], price[i - 1] + Helper(len - i));
