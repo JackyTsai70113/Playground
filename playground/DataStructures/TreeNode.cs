@@ -1,4 +1,4 @@
-namespace playground;
+namespace playground.DataStructures;
 
 /// <summary>
 /// binary tree node

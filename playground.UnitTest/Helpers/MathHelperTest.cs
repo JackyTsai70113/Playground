@@ -1,6 +1,6 @@
-using playground.LeetCode.Helpers;
+using playground.Helpers;
 
-namespace playground.UnitTest.LeetCode.Helpers;
+namespace playground.UnitTest.Helpers;
 
 public class MathHelperTest
 {

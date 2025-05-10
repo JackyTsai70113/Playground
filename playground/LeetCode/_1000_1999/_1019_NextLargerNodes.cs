@@ -1,4 +1,4 @@
-using playground.LeetCode.DataStructures;
+using playground.DataStructures;
 
 namespace playground.LeetCode._1000_1999;
 

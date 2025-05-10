@@ -1,4 +1,4 @@
-namespace playground;
+namespace playground.DataStructures;
 
 public class SegmentTreeNode
 {
@@ -17,13 +17,13 @@ public class SegmentTreeNode
         this.end = end;
         if (start == end)
         {
-            this.sum = nums[start];
+            sum = nums[start];
             return;
         }
         var mid = start + (end - start) / 2;
-        this.left = left = new SegmentTreeNode(start, mid, nums);
-        this.right = new SegmentTreeNode(mid + 1, end, nums);
-        this.sum = left.sum + right.sum;
+        left = left = new SegmentTreeNode(start, mid, nums);
+        right = new SegmentTreeNode(mid + 1, end, nums);
+        sum = left.sum + right.sum;
     }
 
     /// <summary>

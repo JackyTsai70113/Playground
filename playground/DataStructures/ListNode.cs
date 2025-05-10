@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace playground.LeetCode.DataStructures;
+namespace playground.DataStructures;
 
 public class ListNode
 {

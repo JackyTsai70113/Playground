@@ -2,7 +2,6 @@ namespace playground.LeetCode._0000_0999;
 
 public class _0440_FindKthNumber
 {
-
     /// <remarks>https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/solutions/5818066/yes-visualize-the-explanation-in-most-simple-way-beats-100</remarks>
     public static int FindKthNumber(int n, int k)
     {

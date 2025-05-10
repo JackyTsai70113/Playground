@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._3000_3999;
 
 public class _3129_NumberOfStableArrays
 {
-    /// <summary>
-    /// https://leetcode.com/problems/find-all-possible-stable-binary-arrays-i
-    /// </summary>
     public static int NumberOfStableArrays(int zero, int one, int limit)
     {
         int MOD = (int)1e9 + 7;

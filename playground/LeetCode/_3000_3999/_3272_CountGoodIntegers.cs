@@ -1,4 +1,4 @@
-using playground.LeetCode.Helpers;
+using playground.Helpers;
 
 namespace playground.LeetCode._3000_3999;
 

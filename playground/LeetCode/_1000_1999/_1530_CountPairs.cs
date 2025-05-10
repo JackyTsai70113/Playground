@@ -1,3 +1,5 @@
+using playground.DataStructures;
+
 namespace playground;
 
 public class _1530_CountPairs

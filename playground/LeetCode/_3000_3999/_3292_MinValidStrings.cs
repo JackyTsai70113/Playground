@@ -1,3 +1,5 @@
+using playground.Algorithms;
+
 namespace playground._3200_3299;
 
 public class _3292_MinValidStrings
@@ -5,30 +7,21 @@ public class _3292_MinValidStrings
     public static int MinValidStrings(string[] words, string target)
     {
         int n = target.Length;
-        // target 各元素所匹配word的最長長度
         var match = new int[n];
+
         foreach (var w in words)
         {
-            var str = w + '#' + target;
-            // target[0] 在 str 的 index
-            int excess = w.Length + 1;
-            int wordLen = w.Length;
+            string concat = w + "#" + target;
+            int[] z = ZAlgorithm.ZFunction(concat);
+            int offset = w.Length + 1;
 
-            int nn = str.Length;
-            int left = 0, right = 0; // l, r 定義了 z-box(已匹配prefix的滑動窗口)
-            var z = new int[nn];
-            for (int i = 1; i < nn; i++)
+            for (int i = offset; i < z.Length; i++)
             {
-                if (i <= right) // i 在 z-box 裡
-                    z[i] = Math.Min(z[i - left], right - i + 1); // z函數核心思想
-                while (i + z[i] < nn && str[z[i]] == str[i + z[i]])
+                if (z[i] > 0)
                 {
-                    (left, right) = (i, i + z[i]);
-                    z[i]++;
-                }
-                if (i >= excess && z[i] > 0)
-                {
-                    match[i - excess] = Math.Max(match[i - excess], z[i]);
+                    int idx = i - offset;
+                    if (idx < n)
+                        match[idx] = Math.Max(match[idx], z[i]);
                 }
             }
         }
@@ -44,7 +37,6 @@ public class _3292_MinValidStrings
                 if (curEnd >= n) break;
             }
         }
-        if (curEnd < n) return -1;
-        return step;
+        return curEnd < n ? -1 : step;
     }
 }

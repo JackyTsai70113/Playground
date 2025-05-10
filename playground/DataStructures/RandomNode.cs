@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace playground;
+namespace playground.DataStructures;
 
 public class RandomNode
 {

@@ -1,6 +1,5 @@
+using playground.DataStructures;
 using playground.LeetCode._0000_0999;
-
-using playground.LeetCode.DataStructures;
 
 namespace playground.UnitTest.LeetCode._0000_0999;
 

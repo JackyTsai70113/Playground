@@ -1,13 +1,7 @@
-using System.Globalization;
-using playground.Mathematics;
-
 namespace playground.DynamicPrograming;
 
 public class NumWaysClass
 {
-    /// <summary>
-    /// https://leetcode.com/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps
-    /// </summary>
     public static int NumWays(int steps, int n)
     {
         int MOD = (int)1e9 + 7;

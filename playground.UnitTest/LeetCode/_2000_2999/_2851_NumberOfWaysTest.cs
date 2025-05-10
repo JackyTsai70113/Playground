@@ -1,6 +1,7 @@
 using playground.DynamicPrograming;
+using playground.LeetCode._2000_2999;
 
-namespace playground.UnitTest.DynamicPrograming;
+namespace playground.UnitTest.LeetCode._2000_2999;
 
 public class NumberOfWaysTest
 {
@@ -13,7 +14,7 @@ public class NumberOfWaysTest
     [InlineData("rkjojlqlcjlujiahqqemdsldbjhcekhhwhyaqqimhwxsqrsyiaqhthebpubtssmcjlfybwvjiivsyutzudaxxkvgnekbvwtab", "cjlfybwvjiivsyutzudaxxkvgnekbvwtabrkjojlqlcjlujiahqqemdsldbjhcekhhwhyaqqimhwxsqrsyiaqhthebpubtssm", 113173393214299, 295976496)]
     public void NumberOfWays(string s, string t, long k, int expected)
     {
-        var actual = NumberOfWaysClass.NumberOfWays(s, t, k);
+        var actual = _2851_NumberOfWays.NumberOfWays(s, t, k);
         Assert.Equal(expected, actual);
     }
 }

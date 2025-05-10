@@ -1,14 +1,9 @@
-namespace playground.DynamicPrograming;
+using playground.Algorithms;
 
-public class NumberOfWaysClass
+namespace playground.LeetCode._2000_2999;
+
+public class _2851_NumberOfWays
 {
-    /// <summary>
-    /// https://leetcode.com/problems/string-transformation
-    /// </summary>
-    /// <remarks>
-    /// 矩陣連乘
-    /// z-algoriothm
-    /// </remarks>
     public static int NumberOfWays(string s, string t, long k)
     {
         var chs = new int[26];
@@ -30,36 +25,11 @@ public class NumberOfWaysClass
         dp = Pow(dp, k, MOD);
         long a0 = dp[0][0], a1 = dp[0][1];
 
-        // z-algoriothm
-        int[] z = new int[3 * n];
         string text = s + t + t;
-        int l = 0, r = 0;
-        for (int i = 1; i < n * 2; ++i)
+        int[] z = ZAlgorithm.ZFunction(text);
+        for (int i = n + 1; i < n * 2; i++)
         {
-            if (i > r)
-            {
-                l = r = i;
-                while (r < n * 3 && text[r - l] == text[r])
-                    r++;
-                z[i] = r - l;
-                r--;
-            }
-            else
-            {
-                if (z[i - l] < r - i + 1)
-                {
-                    z[i] = z[i - l];
-                }
-                else
-                {
-                    l = i;
-                    while (r < n * 3 && text[r - l] == text[r])
-                        r++;
-                    z[i] = r - l;
-                    r--;
-                }
-            }
-            if (i > n && i < n * 2 && z[i] >= n)
+            if (z[i] >= n)
             {
                 res = (res + (int)a1) % MOD;
             }

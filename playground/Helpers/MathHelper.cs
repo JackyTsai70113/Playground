@@ -1,4 +1,4 @@
-namespace playground.LeetCode.Helpers;
+namespace playground.Helpers;
 
 public class MathHelper
 {
