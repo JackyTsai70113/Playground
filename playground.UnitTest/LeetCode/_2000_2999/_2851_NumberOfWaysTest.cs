@@ -1,9 +1,8 @@
-using playground.DynamicPrograming;
 using playground.LeetCode._2000_2999;
 
 namespace playground.UnitTest.LeetCode._2000_2999;
 
-public class NumberOfWaysTest
+public class _2851_NumberOfWaysTest
 {
     [Theory]
     [InlineData("abcd", "cdab", 2, 2)]

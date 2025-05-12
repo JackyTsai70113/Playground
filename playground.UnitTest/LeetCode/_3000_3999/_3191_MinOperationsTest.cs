@@ -1,6 +1,6 @@
-using playground._3100_3199;
+using playground.LeetCode._3000_3999;
 
-namespace playground.UnitTest._3100_3199;
+namespace playground.UnitTest.LeetCode._3000_3999;
 
 public class _3191_MinOperationsTest
 {

@@ -1,6 +1,6 @@
 using playground._3300_3399;
 
-namespace playground.UnitTest_3300_3399;
+namespace playground.UnitTest.LeetCode._3000_3999;
 
 public class _3302_ValidSequenceTest
 {

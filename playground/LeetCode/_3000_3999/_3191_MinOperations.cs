@@ -1,4 +1,4 @@
-namespace playground._3100_3199;
+namespace playground.LeetCode._3000_3999;
 
 public class _3191_MinOperations
 {
@@ -8,7 +8,7 @@ public class _3191_MinOperations
         var res = 0;
         for (int i = 0; i < nums.Length - 2; i++)
         {
-            if ((nums[i] == 0) ^ change[0])
+            if (nums[i] == 0 ^ change[0])
             {
                 res++;
                 change[1] = !change[1];
@@ -18,7 +18,7 @@ public class _3191_MinOperations
             change[1] = change[2];
             change[2] = false;
         }
-        if (((nums[^2] == 1) ^ change[0]) && ((nums[^1] == 1) ^ change[1]))
+        if (nums[^2] == 1 ^ change[0] && nums[^1] == 1 ^ change[1])
             return res;
         return -1;
     }
