@@ -1,4 +1,4 @@
-namespace playground._3500_3599;
+namespace playground.LeetCode._3000_3999;
 
 public class _3532_PathExistenceQueries
 {

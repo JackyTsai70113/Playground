@@ -1,4 +1,4 @@
-namespace playground._1000_1099;
+namespace playground.LeetCode._1000_1999;
 
 public class _1042_GardenNoAdj
 {

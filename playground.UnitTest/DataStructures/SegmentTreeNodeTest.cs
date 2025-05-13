@@ -1,6 +1,6 @@
 using playground.DataStructures;
 
-namespace playground.UnitTest;
+namespace playground.UnitTest.DataStructures;
 
 public class SegmentTreeNodeTest
 {

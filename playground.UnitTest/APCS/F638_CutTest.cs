@@ -1,6 +1,6 @@
 using playground.APCS;
 
-namespace playground.UnitTest;
+namespace playground.UnitTest.APCS;
 
 public class F638_CutTest
 {

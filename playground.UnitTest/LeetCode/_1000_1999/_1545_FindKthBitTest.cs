@@ -1,4 +1,4 @@
-namespace playground.UnitTest;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1545_FindKthBitTest
 {

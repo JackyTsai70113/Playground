@@ -1,4 +1,4 @@
-namespace playground._3200_3299;
+namespace playground.LeetCode._3000_3999;
 
 public class _3250_CountOfPairs
 {

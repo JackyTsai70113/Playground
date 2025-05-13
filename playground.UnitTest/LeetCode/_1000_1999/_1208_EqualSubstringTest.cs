@@ -1,6 +1,6 @@
-using playground._1200_1299;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1208_EqualSubstringTest
 {

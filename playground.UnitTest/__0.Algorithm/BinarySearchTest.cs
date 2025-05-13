@@ -1,4 +1,4 @@
-namespace playground.UnitTest;
+namespace playground.UnitTest.__0.Algorithm;
 
 public class BinarySearchTest
 {

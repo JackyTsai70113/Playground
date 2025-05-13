@@ -1,4 +1,4 @@
-namespace playground._1500_1599;
+namespace playground.LeetCode._1000_1999;
 
 public class _1574_FindLengthOfShortestSubarray
 {

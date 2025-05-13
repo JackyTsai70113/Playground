@@ -1,4 +1,4 @@
-namespace playground._3400_3499;
+namespace playground.LeetCode._3000_3999;
 
 public class _3425_LongestSpecialPath
 {

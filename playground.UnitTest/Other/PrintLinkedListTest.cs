@@ -1,4 +1,4 @@
-namespace playground.UnitTest;
+namespace playground.UnitTest.Other;
 
 public class PrintLinkedListTest
 {

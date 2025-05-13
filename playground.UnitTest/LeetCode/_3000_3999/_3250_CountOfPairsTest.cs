@@ -1,6 +1,6 @@
-using playground._3200_3299;
+using playground.LeetCode._3000_3999;
 
-namespace playground.UnitTest;
+namespace playground.UnitTest.LeetCode._3000_3999;
 
 public class _3250_CountOfPairsTest
 {

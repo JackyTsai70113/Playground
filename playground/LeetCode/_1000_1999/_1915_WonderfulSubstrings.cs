@@ -1,4 +1,4 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1915_WonderfulSubstrings
 {
@@ -13,10 +13,10 @@ public class _1915_WonderfulSubstrings
         int mask = 0;
         foreach (var w in word)
         {
-            mask ^= 1 << (w - 'a');
+            mask ^= 1 << w - 'a';
             for (int i = 0; i < 10; i++)
             {
-                int oneDiff = mask ^ (1 << i);
+                int oneDiff = mask ^ 1 << i;
                 res += count[oneDiff];
             }
             res += count[mask]++;

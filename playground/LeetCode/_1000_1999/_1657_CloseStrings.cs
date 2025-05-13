@@ -1,4 +1,4 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1657_CloseStrings
 {
@@ -19,7 +19,7 @@ public class _1657_CloseStrings
         }
         Array.Sort(chs1);
         Array.Sort(chs2);
-        return Enumerable.SequenceEqual(chs1, chs2) &&
-            Enumerable.SequenceEqual(exist1, exist2);
+        return chs1.SequenceEqual(chs2) &&
+            exist1.SequenceEqual(exist2);
     }
 }

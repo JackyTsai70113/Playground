@@ -1,4 +1,4 @@
-namespace playground.UnitTest;
+namespace playground.UnitTest.LeetCode._3000_3999;
 
 public class _3158_DuplicateNumbersXORTest
 {

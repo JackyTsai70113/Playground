@@ -1,4 +1,4 @@
-namespace playground.UnitTest;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1424_FindDiagonalOrderTest
 {
@@ -8,6 +8,6 @@ public class _1424_FindDiagonalOrderTest
     public void FindDiagonalOrder(string nums, string expected)
     {
         var actualArr = _1424_FindDiagonalOrder.FindDiagonalOrder(nums.To2dArr());
-        Assert.True(Enumerable.SequenceEqual(expected.ToArr(), actualArr));
+        Assert.True(expected.ToArr().SequenceEqual(actualArr));
     }
 }

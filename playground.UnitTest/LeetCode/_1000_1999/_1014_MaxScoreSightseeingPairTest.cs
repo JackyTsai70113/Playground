@@ -1,6 +1,6 @@
 using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1000_1099;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1014_MaxScoreSightseeingPairTest
 {

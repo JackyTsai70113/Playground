@@ -1,4 +1,4 @@
-namespace playground._1300_1399;
+namespace playground.LeetCode._1000_1999;
 
 public class _1331_ArrayRankTransform
 {

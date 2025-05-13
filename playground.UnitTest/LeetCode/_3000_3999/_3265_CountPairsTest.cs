@@ -1,7 +1,7 @@
 using System;
-using playground._3200_3299;
+using playground.LeetCode._3000_3999;
 
-namespace playground.UnitTest._3200_3299;
+namespace playground.UnitTest.LeetCode._3000_3999;
 
 public class _3265_CountPairsTest
 {

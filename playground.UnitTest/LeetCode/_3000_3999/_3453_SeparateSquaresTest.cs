@@ -1,6 +1,6 @@
-using playground._3400_3499;
+using playground.LeetCode._3000_3999;
 
-namespace playground.UnitTest._3400_3499;
+namespace playground.UnitTest.LeetCode._3000_3999;
 
 public class _3453_SeparateSquaresTest
 {

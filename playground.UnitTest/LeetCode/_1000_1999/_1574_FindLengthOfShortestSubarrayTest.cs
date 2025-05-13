@@ -1,6 +1,6 @@
-using playground._1500_1599;
+using playground.LeetCode._1000_1999;
 
-namespace playground.UnitTest._1500_1599;
+namespace playground.UnitTest.LeetCode._1000_1999;
 
 public class _1574_FindLengthOfShortestSubarrayTest
 {
