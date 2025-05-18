@@ -2,9 +2,6 @@ namespace playground.LeetCode._0000_0999;
 
 public class _0300_LengthOfLIS
 {
-    /// <summary>
-    /// https://leetcode.com/problems/longest-increasing-subsequence
-    /// </summary>
     public static int LengthOfLIS(int[] nums)
     {
         var monoList = new List<int>();

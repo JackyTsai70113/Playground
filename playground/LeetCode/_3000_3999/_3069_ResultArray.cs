@@ -1,4 +1,4 @@
-namespace playground;
+namespace playground.LeetCode._3000_3999;
 
 public class _3069_ResultArray
 {

@@ -1,3 +1,5 @@
+using playground._0.Algorithm;
+
 namespace playground.LeetCode._2000_2999;
 
 public class _2092_FindAllPeople

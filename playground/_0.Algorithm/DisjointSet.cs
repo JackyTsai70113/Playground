@@ -1,4 +1,4 @@
-namespace playground;
+namespace playground._0.Algorithm;
 
 public class DisjointSet
 {

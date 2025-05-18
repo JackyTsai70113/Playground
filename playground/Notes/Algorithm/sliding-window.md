@@ -141,31 +141,8 @@
     }
     ```
 
-6. 
-
-    ```csharp
-    private static int FixedLength(int[] A, int k)
-    {
-        bool Valid()
-        {
-            return false;
-        }
-        int res = 0;
-        for (int l = 0, r = 0; r < A.Length; r++)
-        {
-            // update state by A[r]
-            if (r >= k - 1)
-            {
-                if(r>=k){
-                    // update state by A[l]
-                    l++;
-                }
-                if(Valid()){
-                    res++;
-                }
-            }
-        }
-        return res;
-    }
+6. 要從 windows 裡面刪除元素，可以用一個 dictionary 記錄該元素
+   1. dict[element_to_delete] += 1
+   2. if(dict[nums[i-k]] > 0) { 從 window 移除並 dict[element_to_delete] -= 1}
 
 - ref: <https://liuzhenglaichn.gitbook.io/algorithm/array/sliding-window>

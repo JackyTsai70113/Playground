@@ -10,8 +10,7 @@ shellName = $(shell uname)
 
 test:
 	dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./TestResults/coverage.cobertura.xml
-	reportgenerator -reports:"./playground.UnitTest/TestResults/coverage.cobertura.xml" -targetdir:"./playground.UnitTest/TestResults" -reporttypes:Html
-
+	reportgenerator -reports:"./playground.UnitTest/TestResults/coverage.cobertura.xml" -targetdir:"./playground.UnitTest/TestResults" -reporttypes:"Html"
 tresult:
 ifeq ($(shellName),Darwin)
 	open playground.UnitTest/TestResults/index.html

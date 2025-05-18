@@ -1,4 +1,4 @@
-namespace playground.LeetCode._0000_0999;
+namespace playground.LeetCode._3000_3999;
 
 public class _3547_MaxScore
 {
@@ -23,7 +23,7 @@ public class _3547_MaxScore
             seen[i] = true;
             var nodes = new List<int> { i };
             q.Enqueue(i);
-            while(q.Count>0)
+            while (q.Count > 0)
             {
                 var u = q.Dequeue();
                 foreach (var v in g[u])

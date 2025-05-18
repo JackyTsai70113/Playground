@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._3000_3999;
 
 public class _3184_CountCompleteDayPairs
 {
-    /// <summary>
-    /// https://leetcode.com/problems/count-pairs-that-form-a-complete-day-i
-    /// </summary>
     public static int CountCompleteDayPairs(int[] hours)
     {
         var res = 0;

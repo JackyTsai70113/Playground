@@ -1,3 +1,5 @@
+using playground._0.Algorithm;
+
 namespace playground.LeetCode._0000_0999;
 
 public class _0803_HitBricks

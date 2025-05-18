@@ -1,3 +1,5 @@
+using playground._0.Algorithm;
+
 namespace playground.LeetCode._3000_3999;
 
 public class _3532_PathExistenceQueries
