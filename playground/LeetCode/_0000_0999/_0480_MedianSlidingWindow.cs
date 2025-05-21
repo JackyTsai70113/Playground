@@ -8,9 +8,9 @@ public class _0480_MedianSlidingWindow
     {
         int n = nums.Length;
         var res = new double[n - k + 1];
-        PriorityQueue<int, int> low = new(); // max heap [0:k/2]
-        PriorityQueue<int, int> high = new(); // min heap [k/2: k]
-        var removed = new Dictionary<int, int>();
+        PriorityQueue<double, double> low = new(); // max heap [0:k/2]
+        PriorityQueue<double, double> high = new(); // min heap [k/2: k]
+        var removed = new Dictionary<double, int>();
         for (int i = 0; i < k; i++)
         {
             if (low.Count == high.Count)

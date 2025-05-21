@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1463_CherryPickup
 {
-    /// <summary>
-    /// https://leetcode.com/problems/cherry-pickup-ii
-    /// </summary>
     public static int CherryPickup(int[][] A)
     {
         int m = A.Length, n = A[0].Length;
@@ -15,6 +12,7 @@ public class _1463_CherryPickup
                     dp[i, j, k] = -1;
         return Dfs(A, 0, 0, n - 1, dp);
     }
+
     static int Dfs(int[][] A, int row, int col1, int col2, int[,,] dp)
     {
         if (row == A.Length || col1 < 0 || col1 >= A[0].Length || col2 < 0 || col2 >= A[0].Length || col1 >= col2)

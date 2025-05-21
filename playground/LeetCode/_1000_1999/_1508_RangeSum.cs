@@ -1,4 +1,4 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1508_RangeSum
 {
@@ -41,7 +41,7 @@ public class _1508_RangeSum
     /// <summary>
     /// 取得不大於 targetSum 的 subarray 數量及其 sum 總和
     /// </summary>
-    private (int count, long totalSum) CountAndTotalSumBelowTargetSum(int[] nums, long targetSum)
+    private static (int count, long totalSum) CountAndTotalSumBelowTargetSum(int[] nums, long targetSum)
     {
         int n = nums.Length;
         int count = 0;

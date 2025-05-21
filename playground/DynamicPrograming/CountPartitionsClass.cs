@@ -5,7 +5,8 @@ public class CountPartitionsClass
     /// <remarks>https://leetcode.com/problems/number-of-great-partitions</remarks>
     public static int CountPartitions(int[] A, int k)
     {
-        long mod = (long)1e9 + 7, total = 0, res = 1; long[] dp = new long[k];
+        long mod = (long)1e9 + 7, total = 0, res = 1;
+        long[] dp = new long[k];
         dp[0] = 1;
         foreach (int a in A)
         {

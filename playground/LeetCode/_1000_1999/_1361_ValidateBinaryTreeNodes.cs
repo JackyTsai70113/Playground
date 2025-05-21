@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1361_ValidateBinaryTreeNodes
 {
-    /// <summary>
-    /// https://leetcode.com/problems/validate-binary-tree-nodes
-    /// </summary>
     public bool ValidateBinaryTreeNodes(int n, int[] leftChild, int[] rightChild)
     {
         _groups = Enumerable.Range(0, n).ToArray();

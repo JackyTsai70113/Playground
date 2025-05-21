@@ -1,12 +1,7 @@
-using System.Text;
-
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1190_ReverseParentheses
 {
-    /// <summary>
-    /// https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/
-    /// </summary>
     public static string ReverseParentheses(string s)
     {
         var stack = new Stack<int>();

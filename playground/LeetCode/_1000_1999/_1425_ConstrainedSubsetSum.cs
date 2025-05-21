@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1425_ConstrainedSubsetSum
 {
-    /// <summary>
-    /// https://leetcode.com/problems/constrained-subsequence-sum
-    /// </summary>
     public static int ConstrainedSubsetSum(int[] nums, int k)
     {
         var res = nums[0];

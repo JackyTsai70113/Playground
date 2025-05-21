@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1492_KthFactor
 {
-    /// <summary>
-    /// https://leetcode.com/problems/the-kth-factor-of-n
-    /// </summary>
     public static int KthFactor(int n, int k)
     {
         for (int i = 1; i <= n; i++)

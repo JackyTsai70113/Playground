@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1475_FinalPrices
 {
-    /// <summary>
-    /// https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop
-    /// </summary>
     public static int[] FinalPrices(int[] prices)
     {
         int n = prices.Length;

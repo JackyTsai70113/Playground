@@ -1,12 +1,9 @@
 using playground.DataStructures;
 
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1110_DelNodes
 {
-    /// <summary>
-    /// https://leetcode.com/problems/delete-nodes-and-return-forest
-    /// </summary>
     public static IList<TreeNode> DelNodesIteration(TreeNode root, int[] to_delete)
     {
         var res = new List<TreeNode>();
