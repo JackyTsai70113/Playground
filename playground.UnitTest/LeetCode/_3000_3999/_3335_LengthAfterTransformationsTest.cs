@@ -12,7 +12,7 @@ public class _3335_LengthAfterTransformationsTest
         int actual;
         actual = _3335_LengthAfterTransformations.LengthAfterTransformations_TopDown(s, t);
         Assert.Equal(expected, actual);
-        actual = _3335_LengthAfterTransformations.LengthAfterTransformations_ButtomUp(s, t);
+        actual = _3335_LengthAfterTransformations.LengthAfterTransformations_BottomUp(s, t);
         Assert.Equal(expected, actual);
         actual = _3335_LengthAfterTransformations.LengthAfterTransformations_OptimizeSpace(s, t);
         Assert.Equal(expected, actual);

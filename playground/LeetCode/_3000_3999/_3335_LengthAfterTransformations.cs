@@ -8,20 +8,6 @@ public class _3335_LengthAfterTransformations
     {
         var dp = new long[26, t + 1];
         long res = 0, MOD = (long)1e9 + 7;
-        // long dfs(int c, int k)
-        // {
-        //     if (dp[c, k] != 0)
-        //         return dp[c, k];
-        //     if (k + c >= 26)
-        //     {
-        //         dp[c, k] = (dfs(0, k + c - 26) + dfs(1, k + c - 26)) % MOD;
-        //     }
-        //     else
-        //     {
-        //         dp[c, k] = 1;
-        //     }
-        //     return dp[c, k];
-        // }
         long dfs(int c, int k)
         {
             if (dp[c, k] != 0)
@@ -43,7 +29,7 @@ public class _3335_LengthAfterTransformations
         return (int)res;
     }
 
-    public static int LengthAfterTransformations_ButtomUp(string s, int t)
+    public static int LengthAfterTransformations_BottomUp(string s, int t)
     {
         long res = 0, MOD = (long)1e9 + 7;
         var dp = new long[t + 1, 26];
