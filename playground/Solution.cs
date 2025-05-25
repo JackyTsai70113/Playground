@@ -1,7 +1,4 @@
-﻿using System.Numerics;
-using System.Text;
-
-namespace playground;
+﻿namespace playground;
 
 public class Solution
 {
@@ -70,5 +67,125 @@ public class Solution
     //         cur *= 4;
     //     }
     //     return res;
+    // }
+
+    // public int[] AssignEdgeWeights(int[][] edges, int[][] queries)
+    // {
+    //     int n = edges.Length + 1;
+    //     var g = new List<int>[n + 1];
+    //     for (int i = 0; i <= n; i++) g[i] = new();
+    //     foreach (var e in edges)
+    //     {
+    //         g[e[0]].Add(e[1]);
+    //         g[e[1]].Add(e[0]);
+    //     }
+
+    //     var dist = new int[n + 1, n + 1];
+    //     for (int i = 0; i <= n; i++)
+    //     {
+    //         for (int j = 0; j <= n; j++)
+    //         {
+    //             dist[i, j] = -1;
+    //         }
+    //     }
+
+    //     var q = new Queue<int>();
+    //     int edgesCount(int start, int end)
+    //     {
+    //         if (dist[start, end] != -1) return dist[start, end];
+    //         dist[start, start] = 0;
+    //         q.Clear();
+    //         q.Enqueue(start);
+    //         while (q.Count > 0)
+    //         {
+    //             var u = q.Dequeue();
+    //             foreach (var v in g[u])
+    //             {
+    //                 if (dist[start, v] == -1)
+    //                 {
+    //                     dist[start, v] = dist[start, u] + 1;
+    //                     q.Enqueue(v);
+    //                 }
+    //             }
+    //         }
+    //         return dist[start, end];
+    //     }
+
+    //     long MOD = (long)1e9 + 7;
+    //     var precompute = new long[100001];
+    //     precompute[1] = 1;
+    //     for (int i = 1; i < 100001; i++)
+    //     {
+    //         precompute[i] = precompute[i] * 2 % MOD;
+    //     }
+    //     var res = new List<int>();
+    //     foreach (var qu in queries)
+    //     {
+    //         var count = edgesCount(qu[0], qu[1]);
+    //         res.Add((int)precompute[count]);
+    //     }
+    //     return res.ToArray();
+    // }
+
+    // public int MaxProfit(int n, int[] A, int[] B, int[][] hierarchy, int budget)
+    // {
+    //     var g = new List<int>[n + 1];
+    //     for (int i = 0; i < n; i++) g[i] = new();
+    //     var indegree = new int[n + 1];
+    //     foreach (var e in hierarchy)
+    //     {
+    //         g[e[0]].Add(e[1]);
+    //         indegree[e[1]]++;
+    //     }
+
+    //     int maxProfit = 0;
+    //     var buyProfit = new int[budget + 1];
+    //     Array.Fill(buyProfit, int.MinValue);
+    //     var notBuyProfit = new int[budget + 1];
+    //     Array.Fill(notBuyProfit, int.MinValue);
+    //     if (A[0] <= budget) buyProfit[A[0]] = B[0] - A[0];
+
+    //     void Bt(int u)
+    //     {
+    //         maxProfit = Math.Max(maxProfit, buyProfit.Max());
+    //         maxProfit = Math.Max(maxProfit, notBuyProfit.Max());
+
+    //         var lastBuyProfit = buyProfit.ToArray();
+    //         var lastNotBuyProfit = notBuyProfit.ToArray();
+
+    //         foreach (var v in g[u])
+    //         {
+    //             // not buy
+    //             for (int i = 0; i <= budget; i++)
+    //             {
+    //                 notBuyProfit[i] = Math.Max(lastBuyProfit[i], lastNotBuyProfit[i]);
+    //             }
+
+    //             // buy
+    //             buyProfit = new int[budget + 1];
+    //             Array.Fill(buyProfit, int.MinValue);
+    //             for (int i = budget; i >= A[v] / 2; i--)
+    //             {
+    //                 if (lastBuyProfit[i - A[v] / 2] != int.MinValue)
+    //                 {
+    //                     buyProfit[i] = Math.Max(buyProfit[i], lastBuyProfit[i - A[v] / 2] + B[v] - A[v] / 2);
+    //                 }
+    //             }
+    //             for (int i = budget; i >= A[v]; i--)
+    //             {
+    //                 if (lastNotBuyProfit[i - A[v]] != int.MinValue)
+    //                 {
+    //                     buyProfit[i] = Math.Max(buyProfit[i], lastNotBuyProfit[i - A[v]] + B[v] - A[v]);
+    //                 }
+    //             }
+    //             Bt(v);
+
+    //             buyProfit = lastBuyProfit;
+    //             notBuyProfit = lastNotBuyProfit;
+    //         }
+    //     }
+
+    //     Bt(1);
+    //     return maxProfit;
     // }
 }
