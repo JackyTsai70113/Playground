@@ -1,41 +1,57 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1298_MaxCandies
 {
-    /// <summary>
-    /// https://leetcode.com/problems/maximum-candies-you-can-get-from-boxes
-    /// </summary>
-    public static int MaxCandies(int[] status, int[] candies, int[][] keys, int[][] containedBoxes, int[] initialBoxes)
+    public static int MaxCandies(
+        int[] status,
+        int[] candies,
+        int[][] keys,
+        int[][] containedBoxes,
+        int[] initialBoxes)
     {
-        var res = 0;
-        bool canOpen = true;
-        var q = new Queue<int>();
-        foreach (var box in initialBoxes) q.Enqueue(box);
-        var curBoxes = new HashSet<int>();
-        while (canOpen && q.Count > 0)
+        int n = status.Length;
+        int res = 0;
+
+        var validBoxes = new Queue<int>();
+        var ownedBoxes = new bool[n];
+        var ownedKeys = new bool[n];
+        foreach (var initialBox in initialBoxes)
         {
-            canOpen = false;
-            for (int i = q.Count; i > 0; i--)
+            ownedBoxes[initialBox] = true;
+            if (status[initialBox] == 1)
             {
-                var box = q.Dequeue();
-                if (status[box] == 0)
+                validBoxes.Enqueue(initialBox);
+            }
+        }
+
+        while (validBoxes.Count > 0)
+        {
+            int box = validBoxes.Dequeue();
+
+            res += candies[box];
+
+            foreach (var key in keys[box])
+            {
+                if (!ownedKeys[key])
                 {
-                    curBoxes.Add(box);
-                    q.Enqueue(box);
-                    continue;
+                    ownedKeys[key] = true;
+                    if (ownedBoxes[key] && status[key] == 0)
+                    {
+                        status[key] = 1;
+                        validBoxes.Enqueue(key);
+                    }
                 }
-                res += candies[box];
-                foreach (var key in keys[box])
+            }
+
+            foreach (int containedBox in containedBoxes[box])
+            {
+                if (!ownedBoxes[containedBox])
                 {
-                    if (curBoxes.Contains(key))
-                        canOpen = true;
-                    status[key] = 1;
-                }
-                foreach (var nextBox in containedBoxes[box])
-                {
-                    if (status[nextBox] == 1)
-                        canOpen = true;
-                    q.Enqueue(nextBox);
+                    ownedBoxes[containedBox] = true;
+                    if (status[containedBox] == 1 || ownedKeys[containedBox])
+                    {
+                        validBoxes.Enqueue(containedBox);
+                    }
                 }
             }
         }

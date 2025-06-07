@@ -1,12 +1,9 @@
 using playground.DataStructures;
 
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1171_RemoveZeroSumSublists
 {
-    /// <summary>
-    /// https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list
-    /// </summary>
     public static ListNode RemoveZeroSumSublists(ListNode head)
     {
         var st = new Stack<int>();

@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1334_FindTheCity
 {
-    /// <summary>
-    /// https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance
-    /// </summary>
     public static int FindTheCity(int n, int[][] edges, int distanceThreshold)
     {
         var g = Graph.BuildUWG(n, edges);

@@ -2,9 +2,6 @@ namespace playground;
 
 public class _1137_Tribonacci
 {
-    /// <summary>
-    /// https://leetcode.com/problems/n-th-tribonacci-number
-    /// </summary>
     public static int Tribonacci(int n)
     {
         if (n < 2) return n;

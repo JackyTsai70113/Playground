@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1376_NumOfMinutes
 {
-    /// <summary>
-    /// https://leetcode.com/problems/time-needed-to-inform-all-employees
-    /// </summary>
     public static int NumOfMinutes(int n, int headID, int[] manager, int[] informTime)
     {
         var g = new List<int>[n];

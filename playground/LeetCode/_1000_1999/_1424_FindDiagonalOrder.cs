@@ -1,10 +1,7 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1424_FindDiagonalOrder
 {
-    /// <summary>
-    /// https://leetcode.com/problems/diagonal-traverse-ii
-    /// </summary>
     public static int[] FindDiagonalOrder(IList<IList<int>> nums)
     {
         var ll = new List<List<int>>();

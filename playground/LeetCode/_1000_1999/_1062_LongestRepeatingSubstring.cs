@@ -1,4 +1,4 @@
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1062_LongestRepeatingSubstring
 {
