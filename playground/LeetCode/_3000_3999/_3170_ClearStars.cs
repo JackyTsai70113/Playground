@@ -1,29 +1,45 @@
-namespace playground;
+using System.Text;
+
+namespace playground.LeetCode._3000_3999;
 
 public class _3170_ClearStars
 {
-    /// <summary>
-    /// https://leetcode.com/problems/lexicographically-minimum-string-after-removing-stars
-    /// </summary>
     public static string ClearStars(string s)
     {
-        var chs = new char[s.Length];
-        var indexes = new List<int>[26];
-        for (int i = 0; i < 26; i++) indexes[i] = new();
-        for (int i = 0; i < s.Length; i++)
+        var chs = new List<int>[26];
+        for (int i = 0; i < 26; i++) chs[i] = new();
+        int n = s.Length;
+        var valid = new bool[n];
+        int minCharIndex = 0;
+
+        for (int i = 0; i < n; i++)
         {
-            if (s[i] == '*')
+            if (s[i] != '*')
             {
-                var list = indexes.First(l => l.Count > 0);
-                chs[list[^1]] = default;
-                list.RemoveAt(list.Count - 1);
+                minCharIndex = Math.Min(minCharIndex, s[i] - 'a');
+                valid[i] = true;
+                chs[s[i] - 'a'].Add(i);
             }
             else
             {
-                chs[i] = s[i];
-                indexes[s[i] - 'a'].Add(i);
+                while (minCharIndex < 26 && chs[minCharIndex].Count == 0)
+                {
+                    minCharIndex++;
+                }
+                if (minCharIndex < 26)
+                {
+                    int idx = chs[minCharIndex][^1];
+                    valid[idx] = false;
+                    chs[minCharIndex].RemoveAt(chs[minCharIndex].Count - 1);
+                }
             }
         }
-        return new string(chs.Where(x => x != default).ToArray());
+        var sb = new StringBuilder();
+        for (int i = 0; i < n; i++)
+        {
+            if (valid[i])
+                sb.Append(s[i]);
+        }
+        return sb.ToString();
     }
 }
