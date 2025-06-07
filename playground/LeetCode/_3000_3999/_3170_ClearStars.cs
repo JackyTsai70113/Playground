@@ -22,16 +22,13 @@ public class _3170_ClearStars
             }
             else
             {
-                while (minCharIndex < 26 && chs[minCharIndex].Count == 0)
+                while (chs[minCharIndex].Count == 0)
                 {
                     minCharIndex++;
                 }
-                if (minCharIndex < 26)
-                {
-                    int idx = chs[minCharIndex][^1];
-                    valid[idx] = false;
-                    chs[minCharIndex].RemoveAt(chs[minCharIndex].Count - 1);
-                }
+                int idx = chs[minCharIndex][^1];
+                valid[idx] = false;
+                chs[minCharIndex].RemoveAt(chs[minCharIndex].Count - 1);
             }
         }
         var sb = new StringBuilder();
