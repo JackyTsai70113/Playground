@@ -19,5 +19,7 @@ public class _0200_NumIslandsTest
     {
         var actual = _0200_NumIslands.NumIslands(A.To2dArr<char>());
         Assert.Equal(expected, actual);
+        var actual2 = _0200_NumIslands.NumIslands_DFS(A.To2dArr<char>());
+        Assert.Equal(expected, actual2);
     }
 }
