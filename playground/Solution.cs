@@ -1,4 +1,8 @@
-﻿namespace playground;
+﻿using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
+
+namespace playground;
 
 public class Solution
 {
@@ -188,6 +192,4 @@ public class Solution
     //     Bt(1);
     //     return maxProfit;
     // }
-
-    
 }
