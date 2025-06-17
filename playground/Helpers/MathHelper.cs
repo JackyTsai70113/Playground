@@ -20,6 +20,66 @@ public class MathHelper
     };
 
     /// <summary>
+    /// 計算組合數 C(n, r)，即「n 個取 r 個」的方式數，支援取模（通常用於大數/競賽）
+    /// </summary>
+    /// <param name="n">總數 n</param>
+    /// <param name="r">取 r 個</param>
+    /// <param name="mod">取模基底（通常是質數，例如 1e9+7）</param>
+    /// <returns>C(n, r) % mod</returns>
+    public static long GetCombination(int n, int r, long mod)
+    {
+        // if (r < 0 || r > n) return 0;
+
+        // C(n, r) 在 r=0 或 r=n 時為 1
+        if (r == 0 || r == n) return 1;
+        // 利用 C(n, r) = C(n, n-r) 性質，加速計算
+        if (r > n - r) r = n - r;
+
+        long numerator = 1;
+        for (int i = 0; i < r; i++)
+            numerator = numerator * (n - i) % mod; // 計算分子 n*(n-1)*...*(n-r+1)
+        long denominator = 1;
+        for (int i = 1; i <= r; i++)
+            denominator = denominator * i % mod; // 計算分子 n*(n-1)*...*(n-r+1)
+
+        // 利用費馬小定理，分母取逆元（模質數才有效）
+        return numerator * ModInverse(denominator, mod) % mod;
+    }
+
+    /// <summary>
+    /// 求 n 的模逆元（即 n^(-1) % mod），假設 mod 是質數
+    /// </summary>
+    /// <param name="n">被取逆的數</param>
+    /// <param name="mod">質數模數</param>
+    /// <returns>n 在 mod 下的逆元</returns>
+    public static long ModInverse(long n, long mod)
+    {
+        // 費馬小定理：n^(mod-2) % mod
+        return Pow(n, mod - 2, mod);
+    }
+
+    /// <summary>
+    /// 快速冪演算法，計算 (val^exp) % mod
+    /// </summary>
+    /// <param name="val">底數</param>
+    /// <param name="exp">指數</param>
+    /// <param name="mod">模數</param>
+    /// <returns>(val^exp) % mod</returns>
+    public static long Pow(long val, long exp, long mod)
+    {
+        long res = 1;
+        val %= mod;
+        while (exp > 0)
+        {
+            if ((exp & 1) == 1)
+                res = res * val % mod;
+            val = val * val % mod;
+            exp >>= 1;
+        }
+        return res;
+    }
+
+    /// <summary>
     /// i 中取 j 個的組合數
     /// </summary>
     /// <remarks>
@@ -31,7 +91,7 @@ public class MathHelper
     ///  1 3 3 1 0<br/>
     ///  1 4 6 4 1<br/>
     /// </remarks>
-    public static int[,] GetCombination(int n)
+    public static int[,] GetCombinations(int n)
     {
         var combination = new int[n, n];
         for (int i = 0; i < n; ++i)
@@ -42,7 +102,7 @@ public class MathHelper
         {
             for (int j = 1; j <= i; ++j)
             {
-                // C i 取 j
+                // C(i, j) = C(i-1, j-1) + C(i-1, j)
                 combination[i, j] = combination[i - 1, j - 1] + combination[i - 1, j];
             }
         }

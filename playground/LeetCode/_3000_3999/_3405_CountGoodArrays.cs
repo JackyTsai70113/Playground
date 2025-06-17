@@ -1,3 +1,5 @@
+using playground.Helpers;
+
 namespace playground.LeetCode._3000_3999;
 
 public class _3405_CountGoodArrays
@@ -16,41 +18,7 @@ public class _3405_CountGoodArrays
         //     next if num == 0: count for m-1
         // m * (m-1) ^ n-1-k
 
-        long Pow(long val, long exp, long mod)
-        {
-            long res = 1;
-            val %= mod;
-            while (exp > 0)
-            {
-                if ((exp & 1) == 1)
-                    res = res * val % mod;
-                val = val * val % mod;
-                exp >>= 1;
-            }
-            return res;
-        }
-
-        long ModInverse(long n, long mod)
-        {
-            return Pow(n, mod - 2, mod);
-        }
-
-        long Comb(int n, int r, long mod)
-        {
-            // if (r < 0 || r > n) return 0;
-            if (r == 0 || r == n) return 1;
-            if (r > n - r) r = n - r;
-
-            long numerator = 1;
-            for (int i = 0; i < r; i++)
-                numerator = numerator * (n - i) % mod;
-            long denominator = 1;
-            for (int i = 1; i <= r; i++)
-                denominator = denominator * i % mod;
-            return numerator * ModInverse(denominator, mod) % mod;
-        }
-
         long MOD = 1_000_000_007;
-        return (int)(Comb(n - 1, k, MOD) * m % MOD * Pow(m - 1, n - 1 - k, MOD) % MOD);
+        return (int)(MathHelper.GetCombination(n - 1, k, MOD) * m % MOD * MathHelper.Pow(m - 1, n - 1 - k, MOD) % MOD);
     }
 }

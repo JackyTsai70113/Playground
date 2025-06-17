@@ -50,7 +50,7 @@ public class _1267_CountServers
 
         int Dfs(int i, int j)
         {
-            if (i < 0 || j < 0 || i == m || j == n || A[i][j] != 1)
+            if (A[i][j] != 1)
                 return 0;
             A[i][j] = 0;
             int res = 1;
@@ -72,7 +72,6 @@ public class _1267_CountServers
                     {
                         res += count;
                     }
-                    // Console.WriteLine(i+" "+j+" "+res);
                 }
             }
         }
