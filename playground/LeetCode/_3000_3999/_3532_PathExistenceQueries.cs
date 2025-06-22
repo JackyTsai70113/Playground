@@ -1,4 +1,4 @@
-using playground._0.Algorithm;
+using playground.Helpers;
 
 namespace playground.LeetCode._3000_3999;
 
@@ -11,7 +11,7 @@ public class _3532_PathExistenceQueries
         {
             if (Math.Abs(nums[i] - nums[i - 1]) <= maxDiff)
             {
-                ds.Join(i - 1, i);
+                ds.Union(i - 1, i);
             }
         }
 

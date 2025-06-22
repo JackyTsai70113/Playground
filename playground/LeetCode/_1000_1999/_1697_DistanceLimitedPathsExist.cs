@@ -1,4 +1,4 @@
-using playground._0.Algorithm;
+using playground.Helpers;
 
 namespace playground.LeetCode._1000_1999;
 
@@ -21,7 +21,7 @@ public class _1697_DistanceLimitedPathsExist
         {
             for (; i < edgeList.Length && edgeList[i][2] < limit; i++)
             {
-                ds.Join(edgeList[i][0], edgeList[i][1]);
+                ds.Union(edgeList[i][0], edgeList[i][1]);
             }
             if (ds.Find(p) == ds.Find(q))
             {

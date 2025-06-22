@@ -152,20 +152,31 @@ public class MathHelper
     /// <returns>
     /// 一個布林陣列，其中 isPrime[i] 為 true 表示 i 是質數，false 表示不是。
     /// </returns>
-    public static bool[] GetPrimes(int n)
+    /// <remarks>
+    /// #IsPrime
+    /// </remarks>
+    public static bool[] GetPrimesSieve(int n)
     {
-        if (n == 0)
-        {
-            return new bool[] { false };
-        }
+        if (n < 0) return Array.Empty<bool>();
         var isPrime = Enumerable.Repeat(true, n + 1).ToArray();
-        isPrime[0] = isPrime[1] = false;
-        for (int p = 2; p * p <= n; ++p)
+        if (n >= 0) isPrime[0] = false;
+        if (n >= 1) isPrime[1] = false;
+        if (n >= 2)
         {
-            if (!isPrime[p])
-                continue;
-            for (int i = p * 2; i <= n; i += p)
+            for (int i = 4; i <= n; i += 2)
+            {
                 isPrime[i] = false;
+            }
+        }
+        for (int j = 3; j * j <= n; j += 2)
+        {
+            if (isPrime[j])
+            {
+                for (int p = j * j; p <= n; p += 2 * j)
+                {
+                    isPrime[p] = false;
+                }
+            }
         }
 
         return isPrime;

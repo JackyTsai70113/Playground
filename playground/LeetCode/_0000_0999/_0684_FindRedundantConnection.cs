@@ -1,4 +1,4 @@
-using playground._0.Algorithm;
+using playground.Helpers;
 
 namespace playground.LeetCode._0000_0999;
 
@@ -11,7 +11,7 @@ public class _0684_FindRedundantConnection
         var ds = new DisjointSet(n);
         foreach (var e in edges)
         {
-            if (!ds.Join(e[0], e[1]))
+            if (!ds.Union(e[0], e[1]))
                 res = e;
         }
         return res;

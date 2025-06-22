@@ -1,10 +1,9 @@
-namespace playground;
+using playground.Helpers;
+
+namespace playground.LeetCode._1000_1999;
 
 public class _1579_MaxNumEdgesToRemove
 {
-    /// <summary>
-    /// https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable
-    /// </summary>
     public static int MaxNumEdgesToRemove(int n, int[][] edges)
     {
         Array.Sort(edges, (x, y) => y[0] - x[0]);
@@ -35,29 +34,5 @@ public class _1579_MaxNumEdgesToRemove
                 return -1;
         }
         return res;
-    }
-
-    public class DisjointSet
-    {
-        readonly int[] groups;
-        public DisjointSet(int n)
-        {
-            groups = Enumerable.Range(0, n).ToArray();
-        }
-        public int Find(int node)
-        {
-            if (groups[node] != node)
-                groups[node] = Find(groups[node]);
-            return groups[node];
-        }
-        public bool Union(int node1, int node2)
-        {
-            int group1 = Find(node1);
-            int group2 = Find(node2);
-            if (group1 == group2)
-                return false;
-            groups[group2] = group1;
-            return true;
-        }
     }
 }

@@ -1,4 +1,4 @@
-using playground._0.Algorithm;
+using playground.Helpers;
 
 namespace playground.LeetCode._2000_2999;
 
@@ -14,7 +14,7 @@ public class _2685_CountCompleteComponents
             int count1 = edgeCount[g1], count2 = edgeCount[g2];
             if (g1 != g2)
             {
-                ds.Join(e[0], e[1]);
+                ds.Union(e[0], e[1]);
                 g1 = ds.Find(e[0]);
                 edgeCount[g1] = count1 + count2 + 1;
             }
@@ -29,7 +29,7 @@ public class _2685_CountCompleteComponents
         {
             var g = ds.Find(i);
             if (g != i) continue;
-            if (edgeCount[g] == ds.rs[g] * (ds.rs[g] - 1) / 2)
+            if (edgeCount[g] == ds.ranks[g] * (ds.ranks[g] - 1) / 2)
                 res++;
         }
         return res;

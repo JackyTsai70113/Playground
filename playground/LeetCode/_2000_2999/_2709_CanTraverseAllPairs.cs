@@ -1,12 +1,9 @@
-using playground._0.Algorithm;
+using playground.Helpers;
 
 namespace playground.LeetCode._2000_2999;
 
 public class _2709_CanTraverseAllPairs
 {
-    /// <summary>
-    /// https://leetcode.com/problems/greatest-common-divisor-traversal
-    /// </summary>
     public static bool CanTraverseAllPairs(int[] nums)
     {
         if (nums.Length == 1) return true;
@@ -20,7 +17,7 @@ public class _2709_CanTraverseAllPairs
             {
                 if (nums[i] % p != 0) continue;
                 if (index.TryGetValue(p, out var val))
-                    ds.Join(val, i);
+                    ds.Union(val, i);
                 else
                     index[p] = i;
                 while (nums[i] % p == 0) nums[i] /= p;
@@ -28,11 +25,11 @@ public class _2709_CanTraverseAllPairs
             if (nums[i] > 1)
             {
                 if (index.TryGetValue(nums[i], out var val))
-                    ds.Join(val, i);
+                    ds.Union(val, i);
                 else
                     index[nums[i]] = i;
             }
         }
-        return ds.rs[ds.Find(0)] == n;
+        return ds.ranks[ds.Find(0)] == n;
     }
 }

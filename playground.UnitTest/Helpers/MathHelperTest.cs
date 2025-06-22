@@ -68,24 +68,24 @@ public class MathHelperTest
     [Fact]
     public void GetPrimes_N_Equals_0_Or_1_ShouldReturnAllFalse()
     {
-        var result0 = MathHelper.GetPrimes(0);
+        var result0 = MathHelper.GetPrimesSieve(0);
         Assert.Equal(new bool[] { false }, result0);
 
-        var result1 = MathHelper.GetPrimes(1);
+        var result1 = MathHelper.GetPrimesSieve(1);
         Assert.Equal(new bool[] { false, false }, result1);
     }
 
     [Fact]
     public void GetPrimes_N_Equals_2_ShouldReturnCorrectPrimes()
     {
-        var result = MathHelper.GetPrimes(2);
+        var result = MathHelper.GetPrimesSieve(2);
         Assert.Equal(new bool[] { false, false, true }, result);
     }
 
     [Fact]
     public void GetPrimes_N_Equals_10_ShouldReturnCorrectPrimes()
     {
-        var result = MathHelper.GetPrimes(10);
+        var result = MathHelper.GetPrimesSieve(10);
         // 0 and 1 are not prime, 2,3,5,7 are prime
         var expected = new bool[]
         {
@@ -98,7 +98,7 @@ public class MathHelperTest
     [Fact]
     public void GetPrimes_N_Equals_20_ShouldReturnCorrectPrimes()
     {
-        var result = MathHelper.GetPrimes(20);
+        var result = MathHelper.GetPrimesSieve(20);
         var expected = new bool[]
         {
             false, false, true,  true,  false,

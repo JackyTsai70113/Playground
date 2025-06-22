@@ -1,12 +1,9 @@
-using playground._0.Algorithm;
+using playground.Helpers;
 
 namespace playground.LeetCode._0000_0999;
 
 public class _0547_FindCircleNum
 {
-    /// <summary>
-    /// https://leetcode.com/problems/number-of-provinces
-    /// </summary>
     public static int FindCircleNum(int[][] isConnected)
     {
         int n = isConnected.Length;
@@ -14,7 +11,7 @@ public class _0547_FindCircleNum
         for (int i = 0; i < n; ++i)
             for (int j = i + 1; j < n; ++j)
                 if (isConnected[i][j] == 1)
-                    ds.Join(i, j);
+                    ds.Union(i, j);
         var set = new HashSet<int>();
         for (int i = 0; i < isConnected.Length; i++)
         {

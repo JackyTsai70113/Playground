@@ -1,6 +1,6 @@
-using playground._0.Algorithm;
+using playground.Helpers;
 
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1584_MinCostConnectPoints
 {
@@ -31,7 +31,7 @@ public class _1584_MinCostConnectPoints
             var (i, j, dist) = pq.Dequeue();
             if (ds.Find(i) != ds.Find(j))
             {
-                ds.Join(i, j);
+                ds.Union(i, j);
                 count++;
                 res += dist;
             }

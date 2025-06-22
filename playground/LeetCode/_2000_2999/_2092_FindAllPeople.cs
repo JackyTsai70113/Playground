@@ -1,17 +1,14 @@
-using playground._0.Algorithm;
+using playground.Helpers;
 
 namespace playground.LeetCode._2000_2999;
 
 public class _2092_FindAllPeople
 {
-    /// <summary>
-    /// https://leetcode.com/problems/find-all-people-with-secret
-    /// </summary>
     public static IList<int> FindAllPeople(int n, int[][] meetings, int firstPerson)
     {
         meetings = meetings.OrderBy(m => m[2]).ToArray();
         var ds = new DisjointSet(n);
-        ds.Join(0, firstPerson);
+        ds.Union(0, firstPerson);
         HashSet<int> curGroup = new();
         for (int i = 0; i < meetings.Length;)
         {
@@ -20,7 +17,7 @@ public class _2092_FindAllPeople
             for (; i < meetings.Length && meetings[i][2] == time; i++)
             {
                 var (x, y) = (meetings[i][0], meetings[i][1]);
-                ds.Join(x, y);
+                ds.Union(x, y);
                 curGroup.Add(x);
                 curGroup.Add(y);
             }
@@ -29,8 +26,8 @@ public class _2092_FindAllPeople
             {
                 if (ds.Find(0) != ds.Find(x))
                 {
-                    ds.rs[ds.Find(x)]--;
-                    ds.gs[x] = x;
+                    ds.ranks[ds.Find(x)]--;
+                    ds.groups[x] = x;
                 }
             }
         }
