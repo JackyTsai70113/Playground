@@ -6,6 +6,7 @@ public class _3588_MaxAreaTest
 {
     [Theory]
     [InlineData("[[1,1],[1,2],[3,2],[3,3]]", 2)]
+    [InlineData("[[1,1],[2,2]]", -1)]
     [InlineData("[[1,1],[2,2],[3,3]]", -1)]
     [InlineData("[[1,1],[2,2],[3,3],[4,4]]", -1)]
     [InlineData("[[1,1],[2,2],[3,3],[4,4],[5,5]]", -1)]

@@ -59,6 +59,6 @@ public class _3587_MinSwaps
         long minSwaps = long.MaxValue;
         minSwaps = Math.Min(minSwaps, calculate(0));
         minSwaps = Math.Min(minSwaps, calculate(1));
-        return minSwaps == long.MaxValue ? -1 : (int)minSwaps;
+        return (int)minSwaps;
     }
 }

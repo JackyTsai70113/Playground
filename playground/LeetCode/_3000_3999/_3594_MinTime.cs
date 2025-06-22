@@ -19,7 +19,6 @@ public class _3594_MinTime
             cmp = a.mask.CompareTo(b.mask);
             if (cmp != 0) return cmp;
             cmp = a.stage.CompareTo(b.stage);
-            if (cmp != 0) return cmp;
             return a.boatLocation.CompareTo(b.boatLocation);
         });
 
@@ -41,7 +40,7 @@ public class _3594_MinTime
         int initialMask = (1 << _n) - 1;
         _minTime[(initialMask, 0, 0)] = 0.0;
         _pq.Add((0.0, initialMask, 0, 0));
-
+        double res = -1.0;
         while (_pq.Count > 0)
         {
             var current = _pq.Min;
@@ -52,14 +51,15 @@ public class _3594_MinTime
             int currentStage = current.stage;
             int currentBoatLocation = current.boatLocation;
 
-            if (_minTime.ContainsKey((currentMask, currentStage, currentBoatLocation)) && currentTime > _minTime[(currentMask, currentStage, currentBoatLocation)])
+            if (currentTime > _minTime[(currentMask, currentStage, currentBoatLocation)])
             {
                 continue;
             }
 
             if (currentMask == 0)
             {
-                return currentTime;
+                res = currentTime;
+                break;
             }
 
             if (currentBoatLocation == 0)
@@ -72,7 +72,7 @@ public class _3594_MinTime
             }
         }
 
-        return -1.0;
+        return res;
     }
 
     /// <summary>
