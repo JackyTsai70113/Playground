@@ -6,13 +6,13 @@ public class PeekingIteratorTest
 {
     [Theory]
     [InlineData(new string[] { "PeekingIterator", "next", "peek", "next", "next", "hasNext" }, "[[1,2,3],[],[],[],[],[]]", new string[] { null, "1", "2", "2", "3", "false" })]
-    public void PeekingIterator(string[] funcs, string valArr, string[] expected)
+    public void PeekingIterator(string[] functions, string valArr, string[] expected)
     {
         var vals = valArr.To2dArr();
         PeekingIterator obj = new(((IEnumerable<int>)vals[0]).GetEnumerator());
-        for (int i = 1; i < funcs.Length; ++i)
+        for (int i = 1; i < functions.Length; ++i)
         {
-            switch (funcs[i])
+            switch (functions[i])
             {
                 case "peek":
                     Assert.Equal(int.Parse(expected[i]), obj.Peek());

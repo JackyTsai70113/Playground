@@ -1,4 +1,4 @@
-using playground.DynamicPrograming;
+using playground.DynamicProgramming;
 
 namespace playground.UnitTest.Strings;
 
