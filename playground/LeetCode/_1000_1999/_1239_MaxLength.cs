@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1239_MaxLength
 {

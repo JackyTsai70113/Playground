@@ -1,6 +1,6 @@
 using playground.DataStructures;
 
-namespace playground;
+namespace playground.LeetCode._1000_1999;
 
 public class _1367_IsSubPath
 {

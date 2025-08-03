@@ -1,4 +1,3 @@
-using System;
 using System.Text;
 
 namespace playground.LeetCode._3000_3999;
